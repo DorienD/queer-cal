@@ -1,0 +1,125 @@
+html {
+    font-size: 10px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px,1px,1px,1px);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    word-wrap: normal;
+
+    @include setInteractive {
+        position: fixed !important;
+        width: 100% !important;
+        clip: auto;
+        overflow: visible;
+        height: auto;
+        z-index: 2000;
+    }
+}
+
+.sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important; 
+    -webkit-clip-path: inset(50%) !important;
+        clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;            
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+    clip: auto !important;
+    -webkit-clip-path: none !important;
+        clip-path: none !important;
+    height: auto !important;
+    margin: auto !important;
+    overflow: visible !important;
+    width: auto !important;
+    white-space: normal !important;
+}
+
+.skip-link {
+    display: block;
+    position: relative;
+    z-index: 1002;
+    background-color: white;
+    font-size: 2rem;
+    line-height: 2.6rem;
+    color: var(--primaryColor);
+    text-align: center;
+}
+
+body {
+    background: white;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2em;
+        background: var(--theme);
+        border-bottom: 3px solid color-mix(in srgb, var(--theme), black 30%);
+    }
+
+    &.-is-menu-open {
+        height: 100dvh;
+        overflow: hidden;
+    }
+}
+
+main {
+    padding: 2rem 2.5%;
+    
+    @include breakpoint($mediumBreakpoint) {
+        padding: 4rem;
+    }
+}
+
+#top {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+p {
+    max-width: 70ch;
+}
+
+audio {
+    width: 100%;
+}
+
+.print-only {
+    display: none;
+}
+
+.cookie-consent {
+    @include aa;
+}
+
+.cookie-options label:after {
+    top: 10px;
+    left: 9px;
+}
+
+.cookie-consent__upper__controls {
+    flex-flow: row wrap;
+}

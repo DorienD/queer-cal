@@ -1,0 +1,185 @@
+body {   
+    color: var(--typographyColor);
+    font-family: var(--bodyFont);
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
+
+    @include breakpoint($largeBreakpoint) {
+        font-size: 18px;
+    }
+}
+
+a {
+    color: currentColor;
+    text-decoration: underline;
+
+    @include setInteractive {
+        color: currentColor;
+        text-decoration: none;
+    }
+}
+
+a[href*="youtube"],
+a[href*="google"],
+a[href*="vimeo"] {
+    word-break: break-all;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 0;
+}
+
+h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
+    margin: 0 0 1em 0;
+    font-feature-settings: "lnum";
+    font-family: var(--primaryFont);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+.h1,
+h1 {
+    font-size: 2.6em;
+    margin-bottom: 0.5em;
+
+    @include breakpoint($mediumBreakpoint) {
+        font-size: 5rem;
+    }
+}
+
+.h2,
+h2 {
+    font-size: 2.2em;
+    margin-bottom: 0.8em;
+}
+
+h2 a {
+    text-decoration: none;
+
+    @include setInteractive {
+        text-decoration: underline;
+    }
+}
+
+.h3,
+h3 {
+    font-size: 1.9em;
+    margin-bottom: 0.8em;
+}
+
+.h4,
+h4 {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+}
+
+.title-card {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 400;
+
+    &.-small {
+        font-family: var(--bodyFont);
+        font-size: 1.4rem;
+        text-transform: none;
+    }
+}
+
+.summary:not(h1,h2,h3) {
+    font-size: 1.15em;
+    line-height: 1.4;
+    font-weight: 500;
+    margin-top: 0;
+    max-width: 60ch;
+}
+
+.summary-small {
+    font-size: 1.8rem;
+    line-height: 1.6;
+}
+
+.color-primary {
+    color: var(--primaryColor);
+}
+
+.small-title {
+    color: var(--primaryColor);
+    font-size: 1.3em;
+}
+
+.body-text {
+    max-width: 70ch;
+
+    a:not(.c-btn) {
+        color: var(--primaryColor);
+        text-decoration: underline;
+
+        @include setInteractive {
+            text-decoration: none;
+        }
+    }
+
+    ul, ol {
+        padding-left: 1em;
+        margin-left: 0;
+    }
+
+    img {
+        height: auto;
+    }
+
+    figure {
+        margin: 0 0 1em;
+    }
+
+    figure.pull-left {
+        margin: 0 3rem 1em 0;
+    }
+
+    figure.pull-right {
+        margin: 0 0 1em 3rem;
+    }
+
+    figcaption {
+        font-size: 0.825em;
+    }
+
+    p + h3,
+    p + h2 {
+        margin-top: 1em;
+    }
+}
+
+blockquote {
+    padding: 0;
+    margin: 2em 0 2em 2em;
+    border: none;
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: var(--primaryColor);
+    font-style: italic;
+    font-family: var(--quoteFont);
+
+    p {
+        display: inline;
+    }
+
+    &:before,
+    &:after {
+        content:'"'
+    }
+
+    @include breakpoint($mediumBreakpoint) {
+        font-size: 1.3em;
+    }
+}

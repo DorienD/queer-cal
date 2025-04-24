@@ -1,0 +1,34 @@
+$mediumBreakpoint: 800px;
+$largeBreakpoint: 1088px;
+$hugeBreakpoint: 1200px;
+
+body {
+    --primaryFont: "Roboto mono", monospace, sans-serif;
+    --bodyFont: var(--primaryFont);
+
+    --white: #fff;
+
+    --flagRed: #FF575B;
+    --flagPink: #D99FC8;
+    --flagWhite: white;
+    --flagLightBlue: #7CCAF2;
+    --flagBrown: #5B3A1B;
+    --flagBlack: black;
+    --flagOrange: #FF8353;
+    --flagYellow: #FABA2C;
+    --flagGreen: #7AC74D;
+    --flagBlue: #00B0FF;
+    --flagPurple: #B99FE4;
+
+    --primaryColor: var(--theme, var(--flagRed));
+    --typographyColor: black;
+    --errorColor: red;
+
+    --mainMargin: 4rem;
+}
+
+@include breakpoint($mediumBreakpoint) {
+    :root {
+        --mainMargin: 7rem;
+    }
+}

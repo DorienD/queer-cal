@@ -1,0 +1,50 @@
+.o-grid {
+    @include breakpoint($mediumBreakpoint) {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 4rem;
+    }
+}
+
+.o-flex {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 2.5rem;
+
+    .c-card {
+        flex: 1;
+    }
+
+    @include breakpoint($mediumBreakpoint) {
+        flex-flow: row wrap;
+    }
+
+    @include breakpoint($largeBreakpoint) {
+        flex-flow: row wrap;
+    }
+}
+
+.o-grid.-grid-three {
+    .c-card {
+        grid-column: span 4;
+    }
+
+    .c-card__image {
+        aspect-ratio: 2/1;
+    }
+}
+
+.o-grid.-grid-two {
+    .c-card {
+        grid-column: span 6;
+    }
+    
+    .c-card__image {
+        aspect-ratio: 2/1;
+    }
+}
+
+.o-main-container {
+    width: 100%;
+    max-width: 1400px;
+}

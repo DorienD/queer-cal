@@ -1,0 +1,22 @@
+@mixin setInteractive {
+    &:hover, &:active, &:focus, &:focus:active {
+        @content;
+    }
+}
+
+@mixin aa {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin striplist {
+    padding: 0;
+    margin: 0;
+    list-style-type: "";
+}
+
+@mixin breakpoint($breakpoint) {
+    @media only screen and (min-width: $breakpoint) {
+        @content
+    }
+}

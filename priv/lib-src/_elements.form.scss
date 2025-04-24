@@ -1,0 +1,55 @@
+form {
+    input[type="text"].form-control,
+    input[type="text"],
+    input[type="search"].form-control,
+    input[type="search"],
+    input[type="password"].form-control,
+    input[type="password"],
+    input[type="email"].form-control,
+    input[type="email"],
+    input[type="file"].form-control,
+    input[type="file"] {
+        width: 100%;
+        height: 4.5rem;
+        border: 2px solid var(--typographyColor);
+        font-family: inherit;
+        font-size: inherit;
+    }
+
+    .form-control {
+        margin-bottom: 1em;
+    }
+
+    input[type="password"],
+    input[type="email"],
+    input[type="text"] {
+        padding: 0 1rem;
+    }
+
+    fieldset {
+        padding: 0;
+    }
+
+    textarea.form-control,
+    textarea {
+        height: auto;
+        border: 2px solid var(--typographyColor);
+    }
+
+    label {
+        font-family: var(--primaryFont);
+        font-size: 1.3em;
+        letter-spacing: 0.02em;
+    }
+
+    select.form-control,
+    select {
+        height: 4.5rem;
+        padding: 0 1.5rem;
+        border: 2px solid var(--typographyColor);
+    }
+
+    .picture-preview {
+        display: none;
+    }
+}

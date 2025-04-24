@@ -1,0 +1,25 @@
+.z-logon-box {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.z-logon-form {
+    width: 100%;
+}
+
+.modal-header {
+    display: flex;
+}
+
+.modal-header .close {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    margin-left: auto;
+    text-decoration: none;
+}

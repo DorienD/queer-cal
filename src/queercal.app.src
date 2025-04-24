@@ -1,0 +1,20 @@
+{application, queercal, [
+    {description, "Queer Calendar"},
+    {vsn, git},
+    {registered, []},
+    {applications, [
+        kernel,
+        stdlib,
+        crypto,
+        public_key,
+        ssl,
+        inets,
+        cowboy,
+        cowmachine,
+        zotonic_launcher,
+        zotonic_core,
+        mysql
+    ]},
+    {env, []},
+    {modules, []}
+]}.

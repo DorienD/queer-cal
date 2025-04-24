@@ -1,0 +1,226 @@
+.c-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 5rem;
+    padding: 0.1em 1.3em 0 1.3em;
+    background: var(--typographyColor);
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-family: var(--primaryFont);
+    color: #fff;
+    font-size: 1.5em;
+    line-height: 0;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.2s, border 0.2s, background 0.3s ease-out;
+
+    @include aa;
+
+    &.-full {
+        width: 100%;
+        justify-content: center;
+    }
+
+    &.-icon-before {
+        svg {
+            height: 2rem;
+            position: relative;
+            top: -2px;
+            margin-right: 1rem;
+        }
+    }
+
+    &.-icon-after {
+        svg {
+            height: 2rem;
+            position: relative;
+            top: -2px;
+            margin-left: 1rem;
+        }
+    }
+
+    &.-bg-white {
+        background: #fff;
+        color: #000;
+
+        @include setInteractive {
+            border-color: #000;
+            color: #000;
+        }
+    }
+
+    .i-arrow-right,
+    .i-arrow-left {
+        position: relative;
+        left: 0;
+        transition: left 0.3s ease-out;
+    }
+
+    @include setInteractive {
+        text-decoration: none;
+        border: 2px solid var(--typographyColor);
+        background: white;
+        color: var(--typographyColor);
+
+        .i-arrow-right path,
+        .i-arrow-left path {
+            fill: var(--typographyColor);
+        }
+
+        .i-arrow-left {
+            left: -8px;
+        }
+
+        .i-arrow-right { 
+            left: 8px;
+        }
+    }
+}
+
+.c-btn-big {
+    font-size: 3rem;
+    padding: 1em 0 0.8em;
+
+    @include breakpoint($mediumBreakpoint) {
+        font-size: 4rem;
+    }
+}
+
+.c-btn-keyword {
+    display: inline-flex;
+    align-items: center;
+    min-height: 4rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9em;
+    line-height: 1;
+    font-family: var(--quoteFont);
+    text-transform: lowercase;
+    text-decoration: none;
+    border: 1px solid black;
+
+    &.-tickets {
+        background: var(--primaryColor);
+    }
+}
+
+.c-btn-primary {
+    background: var(--primaryColor);
+    color: #fff;
+
+    @include setInteractive {
+        text-decoration: none;
+        color: var(--primaryColor);
+        border-color: var(--primaryColor);
+    }
+}
+
+.c-btn-download {
+    svg {
+        width: auto;
+        height: auto;
+    }
+}
+
+.c-btn-text {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    svg {
+        margin-right: 1.5rem;
+    }
+
+    &.-icon-after {
+        svg {
+            margin-right: 0;
+            margin-left: 0.7rem;
+        }
+    }
+
+    &.-rotate-arrow {
+        svg {
+            transform: rotate(-180deg);
+        }
+    }
+}
+
+.c-btn-arrow {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &:before {
+        content: '';
+        width: 2rem;
+        height: 1.3rem;
+        margin-right: 1.5rem;
+        background: url('/lib/images/arrow-right.svg')
+    }
+}
+
+.c-btn--scroll {
+    align-items: center;
+    gap: 1rem;
+    padding: 0.4rem 1rem 0 1.5rem;
+    min-height: 4rem;
+    background: black;
+    font-size: 1.2em;
+    line-height: 1;
+
+    svg {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+
+    @include setInteractive {
+        background: black;
+        color: white;
+        border-color: white;
+    }
+}
+
+.c-btn-admin-edit {
+    padding: 1rem 2rem;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 900;
+    background: #FFBF00;
+}
+
+.c-btn-cover {
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 20;
+        background: transparent;
+    }
+
+    @include setInteractive {
+        text-decoration: none;
+    }
+}
+
+.btn-primary {
+    @extend .c-btn-primary;
+}
+
+.btn {
+    @extend .c-btn;
+}
+
+button {
+    cursor: pointer;
+}

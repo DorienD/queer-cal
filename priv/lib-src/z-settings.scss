@@ -1,0 +1,118 @@
+// Zotonic blue
+$zotonic-blue:          rgb(28,165,222);
+
+/* ------tufte css settings-------- */
+
+// $body-font: ETBook, "Chronicle Text G2", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+
+$body-font: Athelas, Constantia, Georgia, serif;
+
+// Note that Gill Sans is the top of the stack and corresponds to what is used in Tufte's books
+// However, it is not a free font, so if it is not present on the computer that is viewing the webpage
+// The free Google 'Lato' font is used instead. It is similar.
+
+$sans-font:     "Gill Sans", "Gill Sans MT", "Gotham Narrow", "Lato", Calibri, sans-serif;
+$code-font:     Consolas, "Liberation Mono", Menlo, Courier, monospace;
+$url-font:      "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
+
+$text-color:     #111;
+$bg-color:       #fffffc;
+// $contrast-color: #a00000;
+$contrast-color: darken($zotonic-blue, 10%);
+$border-color:   #333333;
+
+$link-style:     underline; // choices are 'color' or 'underline'. Color option styles links with $contrast-color set above
+$font-size-base: 15px;
+
+/* -------Bootstrap customization-------- */
+
+// Bg color
+$bg-color-dark:         rgb(0,0,32);
+$bg-color-light:        #f3f3ff;
+$bg-color-marker:       lighten($zotonic-blue, 40%);
+
+$brand-primary:      $zotonic-blue;
+$brand-success:      #5cb85c;
+$brand-info:         #5bc0de;
+$brand-warning:      #f0ad4e;
+$brand-danger:       #d9534f;
+
+$body-bg:            $bg-color;
+
+$border-radius:      8px;
+
+$gray-base:          #000 !default;
+$gray-darker:        lighten($gray-base, 13.5%); // #222
+$gray-dark:          lighten($gray-base, 20%);   // #333
+$gray:               lighten($gray-base, 33.5%); // #555
+$gray-light:         lighten($gray-base, 46.7%); // #777
+$gray-lighter:       lighten($gray-base, 69%);   // #b0b0b0
+$gray-lightest:      lighten($gray-base, 93.5%); // #eee
+
+$icon-font-path:     "/lib/fonts/";
+
+$input-border-radius:         0;
+$input-border-radius-large:   0;
+$input-border-radius-small:   0;
+
+$font-family-sans-serif:  $sans-font;
+$font-family-serif:       $body-font;
+$font-family-monospace:   $code-font;
+$font-family-base:        $body-font;
+
+$font-size-medium:    ceil(($font-size-base * 1.15));
+$font-size-large:     ceil(($font-size-base * 1.25));
+$font-size-small:     ceil(($font-size-base * .85));
+$font-size-smallest:  ceil(($font-size-base * 0.6)) !default; // ~10px
+
+$text-color-gray: #555;
+$link-color: black;
+
+$screen-width-breakpoint:  760px;
+$screen-menu-breakpoint:  1200px;
+$screen-menu-breakpoint1: 1199px;
+
+$nav-active-text: #FA9AD1;
+$nav-link-hover-bg: inherit;
+
+$navbar-height:           110px;
+$navbar-height-home:       30px;
+
+// $link-hover-color: lighten($link-color, 8%);
+
+$pagination-bg:          $bg-color;
+// $pagination-disabled-bg: none;
+// $pagination-color:       white;
+// $pagination-active-bg:   $item-bg-dark;
+// $pagination-active-border: $pagination-border;
+
+// Grid for uploaded photos on wall
+$file-grid-height:      400px !default;
+
+
+
+/* -------Grid break points-------- */
+
+// No sidemenu (use hamburger menu)
+$grid-max-no-sidemenu:    759px;
+$grid-min-sidemenu:       760px;
+
+
+/* -------Include bootstrap basic settings-------- */
+
+@import "bootstrap-sass-3.4.1/assets/stylesheets/bootstrap/variables";
+
+// Core variables and mixins
+@import "bootstrap-sass-3.4.1/assets/stylesheets/bootstrap/mixins";
+
+// Reset and dependencies
+@import "bootstrap-sass-3.4.1/assets/stylesheets/bootstrap/normalize";
+
+
+/* -------Extra site definitions-------- */
+
+// Generic border color, for white background.
+$divider-color:         $zotonic-blue;
+
+// Misc
+$line-height-sm:        floor($font-size-small * $line-height-small) !default;
