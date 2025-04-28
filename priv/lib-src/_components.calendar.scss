@@ -1,27 +1,46 @@
 .c-calendar {
     @include striplist;
-    // margin-top: 4em;
 
     display: flex;
     flex-flow: column;
     gap: 1em;
+    margin-bottom: 2em;
+
+    > li:first-child {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
 }
 
 .c-calendar__divider {
-    width: fit-content;
-    margin: 0.5em 0 0;
+    width: calc(100% + 0.2em);
+    margin: 0 0 0.5em;
     padding: 0 0.2em;
     position: relative;
     left: -0.2em;
     background: color-mix(in srgb, var(--theme), white 90%);
-    color: var(--theme);
-    // border: 1px solid red;
+    border-bottom: 3px solid color-mix(in srgb, var(--theme), black 30%);
+    // border-bottom: 3px solid var(--theme);
+    color: color-mix(in srgb, var(--theme), black 30%);
+    // color: var(--theme);
 }
 
 .c-calendar-item {
     padding: 0 0 1em;
-    border-bottom: 3px solid color-mix(in srgb, var(--theme), black 30%);
-    // border: 1px solid blue;
+    position: relative;
+
+    &:after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: color-mix(in srgb, var(--theme), black 30%);
+        // background: var(--theme);
+        opacity: 0.4;
+    }
 
     h3 {
         margin: 0 0 0.5em;
@@ -29,14 +48,53 @@
     }
 
     time {
-        margin: 0 0 0.25em;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        margin: 0;
+        text-transform: uppercase;
+
+        span {
+            display: inline-flex;
+            gap: 0.5em;
+            align-items: center;
+            font-weight: bold;
+            color: color-mix(in srgb, var(--theme), black 30%);
+
+            &:after {
+                content: '';
+                width: 2px;
+                height: 0.7lh;
+                background: color-mix(in srgb, var(--theme), black 30%);
+            }
+        }
     }
 
+    
+}
+
+.c-calendar-item__title {
     a {
-        text-decoration: underline;
+        position: relative;
+        text-decoration: none;
+
+        &:before {
+            content: '';
+            width: 100%;
+            height: 3px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: color-mix(in srgb, var(--theme), black 30%);
+            transition: width 0.3s;
+        }
 
         &:hover {
             text-decoration: none;
+
+            &:before {
+                width: 105%;
+            }
         }
     }
 }

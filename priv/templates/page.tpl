@@ -8,11 +8,11 @@
 
         {% block body %}
             {% if id.summary %}
-                <p class="summary">{{ id.summary }}</p>
+                <p class="c-summary">{{ id.summary }}</p>
             {% endif %}
             
             {% if id.body %}
-                <div class="body-text">
+                <div class="c-body-text">
                     {{ id.body|show_media }}
                 </div>
             {% endif %}

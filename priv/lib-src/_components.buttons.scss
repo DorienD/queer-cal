@@ -224,3 +224,12 @@
 button {
     cursor: pointer;
 }
+
+.c-btn-agenda {
+    text-decoration: none;
+    opacity: 0.8;
+    
+    svg {
+        height: 1.6rem;
+    }
+}

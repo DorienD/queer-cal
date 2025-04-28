@@ -1,15 +1,9 @@
-<nav id="main-nav" class="c-side-nav">
-    <a href="{% url home %}" class="c-side-nav__logo">
-        {% if id.name == "page_home" %}
-            <h1>{{ m.site.title }}</h1>
-        {% else %}
+<nav id="main-nav" class="c-main-nav">
+    {% if id.name != "page_home" %}
+        <a href="{% url home %}" class="c-main-nav__logo">
             <span>{{ m.site.title }}</span>
-        {% endif %}
-    </a>
-
-    <button id="main-nav-toggle" class="c-nav__toggle"><span class="visually-hidden">Toon/verberg menu</span><i></i></button>
+        </a>
+    {% endif %}
     
-    <div class="c-side-nav__menu">
-        {% menu class="c-main-nav__list" %}
-    </div>
+    {% menu class="c-main-nav__menu" %}
 </nav>

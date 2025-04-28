@@ -1,189 +1,51 @@
-body.is-menu-open {
-    overflow: hidden;
-}
-
-.c-side-nav {
+.c-main-nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 5rem;
-    padding: 0 2.5%;
-
-    @include breakpoint($mediumBreakpoint) {
-        grid-column: 1;
-        grid-row: 1;
-        flex-flow: column wrap;
-        justify-content: center;
-        align-items: start;
-        gap: 5rem;
-        height: 100vh;
-        padding: 0 10%;
-        border-right: 1px solid black;
-        position: sticky;
-        top: 0;
-        box-shadow: 0 0px 8px rgba(0,0,0,0.4);
-    }
-}
-
-.c-side-nav__logo {
-    font-size: 2rem;
-    line-height: 1;
-    text-underline-offset: 5px;
-    font-variant: lining-nums;
-
-    h1 {
-        margin: 0;
-        font: inherit;
-    }
-
-    @include breakpoint($mediumBreakpoint) {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        min-height: 4.5rem;
-    }
-}
-
-.c-side-nav__menu {
+    justify-content: end;
     width: 100%;
-    position: fixed;
-    top: 5rem;
-    left: 0;
-    bottom: 0;
-    z-index: 500;
-    padding: 5rem 5%;
-    background: rgba(255,255,255,0.95);
-    font-size: min(5vw, 50px);
-    transform: translateX(-100%);
-    transition: transform 0.3s;
-
-    .is-open & {
-        transform: translateX(0);
-    }
+    height: 40px;
+    padding: 0 2.5%;
+    margin-bottom: 2em;
+    background: var(--theme);
+    border-bottom: 3px solid color-mix(in srgb, var(--theme), black 30%);
+    text-transform: uppercase;
+    font-size: 0.9em;
 
     ul {
         @include striplist;
-
         display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
+        align-items: center;
+        justify-content: end;
+        gap: 1.5em;
         height: 100%;
-        gap: 0.7em;
     }
 
-    a {
-        display: inline-block;
-        padding: 0.05em 1em 0.05em 0;
+    li {
         position: relative;
-        text-decoration: none;
+    }
 
-        &:before {
-            content: '';
-            width: 0;
-            height: 1px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            background: #000;
-            transition: width 0.3s;
-        }
-
-        @include setInteractive {
-            &:before {
-                width: 100%;
-            }
-        }
+    li:not(:last-child):after {
+        content: '';
+        width: 0.08em;
+        height: 0.8lh;
+        background: currentColor;
+        position: absolute;
+        right: -0.75em;
+        top: 0.15lh;
     }
 
     @include breakpoint($mediumBreakpoint) {
-        position: static;
-        padding: 0;
-        transform: translateX(0);
-        justify-content: center;
-        gap: 1em;
-        font-size: 1.7rem;
-        line-height: 1.2;
+        padding: 0 4rem;
     }
 }
 
-.c-nav__toggle {
-    flex-shrink: 0;
-    display: block;
-    width: 4.5rem;
-    height: 4.5rem;
-    padding: 0;
-    position: relative;
-    z-index: 1000;
-    background: #fff;
-    overflow: hidden;
-    border: 1px solid transparent;
-    color: #000;
+.c-main-nav__logo {
+    margin-right: auto;
+}
 
-    @include setInteractive {
-        border: 1px solid black;
-        color: #000;
-    }
-
-    i {
-        display: block;
-        width: 70%;
-        height: 2px;
-        margin: 0 auto;
-        position: relative;
-        background: #000;
-        border-radius: 3px;
-        transition: background 0.3s;
-
-        &:before,
-        &:after {
-            content: '';
-            width: 100%;
-            height: 100%;
-            background: #000;
-            left: 0;
-            position: absolute;
-            border-radius: inherit;
-            transition: transform 0.3s;
-        }
-
-        &:before {
-            top: -9px;
-            width: 70%;
-        }
-
-        &:after {
-            left: auto;
-            right: 0;
-            width: 70%;
-            bottom: -9px;
-        }
-    }
-
-    .is-open & {
-        i {
-            background: transparent;
-
-            &:before,
-            &:after {
-                width: 100%;
-                left: 0px;
-                background: #000;
-            }
-
-            &:before {
-                transform: rotate(45deg);
-                top: 0;
-            }
-
-            &:after {
-                transform: rotate(-45deg);
-                bottom: 0;
-                right: auto;
-            }
-        }
-    }
-
-    @include breakpoint($mediumBreakpoint) {
-        display: none;
+body.color--flagBlack,
+body.color--flagBrown {
+    .c-main-nav {
+        color: white;
     }
 }

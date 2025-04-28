@@ -45,16 +45,16 @@
 	{% block html_head_extra %}{% endblock %}
 </head>
 {% with ["--flagRed", "--flagPink", "--flagLightBlue", "--flagBrown", "--flagBlack", "--flagOrange", "--flagYellow", "--flagGreen", "--flagBlue", "--flagPurple"] as colors %}
-
-<body class="{% block body_class %}page-{{ id.name }}{% endblock %} {% for cat in id.is_a %}cat-{{ cat }} {% endfor %}" style="--theme: var({{ colors|random }})" {% block body_attrs %}{% endblock %} data-cotonic-pathname-search="{% cotonic_pathname_search %}">
+{% with colors|random as theme %}
+<body class="{% block body_class %}page-{{ id.name }}{% endblock %} {% for cat in id.is_a %}cat-{{ cat }} {% endfor %} color{{ theme }}" style="--theme: var({{ theme }}) " {% block body_attrs %}{% endblock %} data-cotonic-pathname-search="{% cotonic_pathname_search %}">
 	<div id="top"></div>
 	{% block skip_link %}
 		<a href="#main-content" class="sr-only sr-only-focusable skip-link">Skip to main content</a>
 	{% endblock %}
 
-	{# {% block nav %}
+	{% block nav %}
         {% include 'nav/nav.tpl' %}
-    {% endblock %} #}
+    {% endblock %}
 
     <main id="main-content">
     	{# {% block header %}
@@ -90,5 +90,6 @@
 
 	{% script %}
 </body>
+{% endwith %}
 {% endwith %}
 </html>

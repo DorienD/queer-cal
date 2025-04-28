@@ -2,7 +2,7 @@ body {
     color: var(--typographyColor);
     font-family: var(--bodyFont);
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.4;
     font-weight: 400;
 
     @include breakpoint($largeBreakpoint) {
@@ -95,12 +95,19 @@ h4 {
     }
 }
 
-.summary:not(h1,h2,h3) {
-    font-size: 1.15em;
-    line-height: 1.4;
-    font-weight: 500;
-    margin-top: 0;
-    max-width: 60ch;
+.t-intro {
+    max-width: 70ch;
+    margin: 0 0 2em;
+    font-size: 1em;
+    text-wrap: balance;
+}
+
+.c-summary:not(h1,h2,h3) {
+    max-width: 70ch;
+    margin: 0 0 2em;
+    font-size: 1.2em;
+    text-wrap: balance;
+    font-weight: bold;
 }
 
 .summary-small {
@@ -117,11 +124,12 @@ h4 {
     font-size: 1.3em;
 }
 
-.body-text {
+.c-body-text {
     max-width: 70ch;
+    text-wrap: balance;
 
     a:not(.c-btn) {
-        color: var(--primaryColor);
+        color: color-mix(in srgb, var(--theme), black 30%);
         text-decoration: underline;
 
         @include setInteractive {
