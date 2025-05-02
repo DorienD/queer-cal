@@ -232,4 +232,15 @@ button {
     svg {
         height: 1.6rem;
     }
+
+    path {
+        fill: color-mix(in srgb, var(--theme), black 30%);
+        transition: fill 0.3s;
+    }
+
+    &:hover {
+        path {
+            fill: color-mix(in srgb, var(--theme), black 50%);
+        }   
+    }
 }

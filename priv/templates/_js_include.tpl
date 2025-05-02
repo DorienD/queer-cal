@@ -4,8 +4,6 @@
     "cotonic/cotonic.js"
     "js/apps/zotonic-wired.js"
     "js/apps/z.widgetmanager.js"
-    "js/fancybox.js"
-    "js/app.js"
     minify
 %}
 
