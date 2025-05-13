@@ -9,11 +9,15 @@
     li {
         padding: 0.2rem 0.7rem;
         margin-bottom: 0.2rem;
-        background: color-mix(in srgb, var(--typographyColor), white 90%);
+        background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
         border-radius: 4px;
     }
 
-    li:has(a){
+    li:has(.c-keyword-list__tickets) {
         background: var(--flagYellow);
+
+        @media (prefers-color-scheme: dark) {
+            background: color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%);
+        }
     }
 }

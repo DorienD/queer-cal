@@ -1,7 +1,9 @@
 %% -*- mode: erlang -*-
 %% Put your dispatch rules here.
 [
-    {home,          [],                     controller_page,     [ {template, "home.tpl"}, {id, page_home} ]},
-    {page,          [ "page", id, slug ],   controller_page,     [ {template, {cat, "page.tpl"}} ]},
-    {page,          [ "page", id ],         controller_page,     [ {template, {cat, "page.tpl"}} ]}
+    {home,       [],                     controller_page,     [ {template, "home.tpl"}, {id, page_home} ]},
+    {page,       [ "page", id, slug ],   controller_page,     [ {template, {cat, "page.tpl"}} ]},
+    {page,       [ "page", id ],         controller_page,     [ {template, {cat, "page.tpl"}} ]},
+
+    {new_event,  [ "new-event" ],  controller_template, [ {template, "page_new_event.tpl"}, {acl, is_auth} ]}
 ].

@@ -69,17 +69,25 @@
     </main>
 
     {% block footer %}
-        {# {% include 'footer/footer.tpl' %} #}
+        {% include 'footer/footer.tpl' %}
     {% endblock %}
 
     {% block admin_edit %}
-        {% if m.acl.is_allowed.use.mod_admin %}
-            {% if id %}
-                <a href="{% url admin_edit_rsc id=id %}" class="c-btn-admin-edit">{_ Admin edit _}</a>
-            {% else %}
-                <a href="{% url admin %}" class="c-btn-admin-edit">{_ Admin _}</a>
-            {% endif %}
-        {% endif %}
+    	{% if m.acl.is_allowed.use.mod_admin or m.acl.is_allowed.insert.member_event %}
+	    	<div class="c-btns-admin">
+		        {% if m.acl.is_allowed.insert.member_event %}
+		            <a href="{% url new_event %}" class="c-btn-add-event -bg{{ theme }}">{% include "icons/icon-plus.tpl" color="var(--typographyColor)" %} {_ Add Event _}</a>
+		        {% endif %}
+
+		        {% if m.acl.is_allowed.use.mod_admin %}
+		            {% if id %}
+		                <a href="{% url admin_edit_rsc id=id %}" class="c-btn-admin-edit">{_ Admin edit _}</a>
+		            {% else %}
+		                <a href="{% url admin %}" class="c-btn-admin-edit">{_ Admin _}</a>
+		            {% endif %}
+		        {% endif %}
+		    </div>
+		{% endif %}
     {% endblock %}
 
     {% include "_js_include.tpl" %}

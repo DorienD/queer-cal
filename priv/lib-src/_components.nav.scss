@@ -6,8 +6,8 @@
     height: 40px;
     padding: 0 2.5%;
     margin-bottom: 2em;
-    background: var(--theme);
-    border-bottom: 3px solid color-mix(in srgb, var(--theme), black 30%);
+    background: light-dark(var(--theme), var(--lightTheme));
+    border-bottom: 3px solid var(--darkTheme);
     text-transform: uppercase;
     font-size: 0.9em;
 
@@ -48,4 +48,9 @@ body.color--flagBrown {
     .c-main-nav {
         color: white;
     }
+}
+
+.c-main-nav__btns {
+    display: flex;
+    gap: 1rem;
 }

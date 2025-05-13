@@ -2,11 +2,17 @@ $mediumBreakpoint: 800px;
 $largeBreakpoint: 1088px;
 $hugeBreakpoint: 1200px;
 
+:root {
+    color-scheme:light dark;
+}
+
 body {
     --primaryFont: "Roboto mono", monospace, sans-serif;
     --bodyFont: var(--primaryFont);
 
     --white: #fff;
+
+    --bodyBg: light-dark(var(--white), #242424);
 
     --flagRed: #FF575B;
     --flagPink: #D99FC8;
@@ -21,14 +27,34 @@ body {
     --flagPurple: #B99FE4;
 
     --primaryColor: var(--theme, var(--flagRed));
-    --typographyColor: #242424;
+
+    --typographyColor: light-dark(#242424, white);
+
     --errorColor: red;
 
     --mainMargin: 4rem;
-}
 
-@include breakpoint($mediumBreakpoint) {
-    :root {
+    --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
+    --darkTheme: color-mix(in srgb, var(--theme), black 30%);    
+
+    &.color--flagBrown {
+        --lightTheme: light-dark(color-mix(in srgb, var(--theme), var(--bodyBg) 90%), color-mix(in srgb, var(--theme), black 20%));
+        --darkTheme: light-dark(color-mix(in srgb, var(--theme), black 30%), color-mix(in srgb, var(--theme), white 20%));
+    }
+
+    &.color--flagBlack {
+        --lightTheme: light-dark(color-mix(in srgb, var(--theme), var(--bodyBg) 90%), color-mix(in srgb, var(--theme), black 30%));
+        --darkTheme: light-dark(color-mix(in srgb, var(--theme), black 30%), color-mix(in srgb, var(--theme), white 70%));
+    }
+
+    @include breakpoint($mediumBreakpoint) {
         --mainMargin: 7rem;
     }
 }
+
+// @media (prefers-color-scheme: dark) {
+//     body.t-edit {
+//         --bodyBg: white;
+//         --typographyColor: #242424;
+//     }
+// }

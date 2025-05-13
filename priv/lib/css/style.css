@@ -307,10 +307,15 @@ template {
   display: none;
 }
 
+:root {
+  color-scheme: light dark;
+}
+
 body {
   --primaryFont: "Roboto mono", monospace, sans-serif;
   --bodyFont: var(--primaryFont);
   --white: #fff;
+  --bodyBg: light-dark(var(--white), #242424);
   --flagRed: #FF575B;
   --flagPink: #D99FC8;
   --flagWhite: white;
@@ -323,20 +328,31 @@ body {
   --flagBlue: #00B0FF;
   --flagPurple: #B99FE4;
   --primaryColor: var(--theme, var(--flagRed));
-  --typographyColor: #242424;
+  --typographyColor: light-dark(#242424, white);
   --errorColor: red;
   --mainMargin: 4rem;
+  --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
+  --darkTheme: color-mix(in srgb, var(--theme), black 30%);
 }
-
+body.color--flagBrown {
+  --lightTheme: light-dark(color-mix(in srgb, var(--theme), var(--bodyBg) 90%), color-mix(in srgb, var(--theme), black 20%));
+  --darkTheme: light-dark(color-mix(in srgb, var(--theme), black 30%), color-mix(in srgb, var(--theme), white 20%));
+}
+body.color--flagBlack {
+  --lightTheme: light-dark(color-mix(in srgb, var(--theme), var(--bodyBg) 90%), color-mix(in srgb, var(--theme), black 30%));
+  --darkTheme: light-dark(color-mix(in srgb, var(--theme), black 30%), color-mix(in srgb, var(--theme), white 70%));
+}
 @media only screen and (min-width: 800px) {
-  :root {
+  body {
     --mainMargin: 7rem;
   }
 }
+
 html {
-  font-size: 10px;
+  height: 100%;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-size: 10px;
 }
 
 *, *:before, *:after {
@@ -401,16 +417,25 @@ html {
 }
 
 body {
-  background: white;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  background: var(--bodyBg);
 }
 
 main {
+  flex: 1 0 auto;
   padding: 0 2.5% 2rem;
 }
 @media only screen and (min-width: 800px) {
   main {
     padding: 0 4rem 4rem;
   }
+}
+
+nav,
+footer {
+  flex-shrink: 0;
 }
 
 #top {
@@ -445,6 +470,17 @@ audio {
   flex-flow: row wrap;
 }
 
+@supports (color-scheme: light dark) {
+  label[hidden] {
+    display: block;
+  }
+  html:has([value=light]:checked) {
+    color-scheme: light;
+  }
+  html:has([value=dark]:checked) {
+    color-scheme: dark;
+  }
+}
 body {
   color: var(--typographyColor);
   font-family: var(--bodyFont);
@@ -461,6 +497,7 @@ body {
 a {
   color: currentColor;
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 a:hover, a:active, a:focus, a:focus:active {
   color: currentColor;
@@ -551,7 +588,7 @@ h4 {
 
 .c-summary:not(h1, h2, h3) {
   max-width: 70ch;
-  margin: 0 0 2em;
+  margin: 2em 0;
   font-size: 1.2em;
   text-wrap: balance;
   font-weight: bold;
@@ -576,7 +613,7 @@ h4 {
   text-wrap: balance;
 }
 .c-body-text a:not(.c-btn):not(.btn) {
-  color: color-mix(in srgb, var(--theme), black 30%);
+  color: var(--darkTheme);
   text-decoration: underline;
 }
 .c-body-text a:not(.c-btn):not(.btn):hover, .c-body-text a:not(.c-btn):not(.btn):active, .c-body-text a:not(.c-btn):not(.btn):focus, .c-body-text a:not(.c-btn):not(.btn):focus:active {
@@ -640,6 +677,7 @@ form input[type=file].form-control,
 form input[type=file] {
   width: 100%;
   height: 4.5rem;
+  padding: 0 1rem;
   border: 2px solid var(--typographyColor);
   font-family: inherit;
   font-size: inherit;
@@ -647,23 +685,18 @@ form input[type=file] {
 form .form-control {
   margin-bottom: 1em;
 }
-form input[type=password],
-form input[type=email],
-form input[type=text] {
-  padding: 0 1rem;
-}
 form fieldset {
   padding: 0;
 }
 form textarea.form-control,
 form textarea {
+  padding: 0.7rem 1rem;
   height: auto;
   border: 2px solid var(--typographyColor);
+  font-size: inherit;
 }
 form label {
   font-family: var(--primaryFont);
-  font-size: 1.3em;
-  letter-spacing: 0.02em;
 }
 form select.form-control,
 form select {
@@ -673,6 +706,23 @@ form select {
 }
 form .picture-preview {
   display: none;
+}
+form input[type=date].form-control,
+form input[type=date],
+form input[type=time].form-control,
+form input[type=time] {
+  display: inline-flex;
+  align-items: center;
+  height: 4.5rem;
+  font-size: inherit;
+}
+
+body input.form-control:not([type=date]):not([type=time]):focus {
+  padding: 0 1rem;
+}
+
+body textarea.form-control:focus {
+  padding: 0.7rem 1rem;
 }
 
 @media only screen and (min-width: 800px) {
@@ -745,6 +795,10 @@ form .picture-preview {
   height: 4rem;
   margin-left: auto;
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 .c-btn, .btn {
@@ -821,32 +875,6 @@ form .picture-preview {
   left: 8px;
 }
 
-.c-btn-big {
-  font-size: 3rem;
-  padding: 1em 0 0.8em;
-}
-@media only screen and (min-width: 800px) {
-  .c-btn-big {
-    font-size: 4rem;
-  }
-}
-
-.c-btn-keyword {
-  display: inline-flex;
-  align-items: center;
-  min-height: 4rem;
-  padding: 0.5rem 1rem;
-  font-size: 0.9em;
-  line-height: 1;
-  font-family: var(--quoteFont);
-  text-transform: lowercase;
-  text-decoration: none;
-  border: 1px solid black;
-}
-.c-btn-keyword.-tickets {
-  background: var(--primaryColor);
-}
-
 .c-btn-primary, .btn-primary {
   background: var(--primaryColor);
   color: #fff;
@@ -855,11 +883,6 @@ form .picture-preview {
   text-decoration: none;
   color: var(--primaryColor);
   border-color: var(--primaryColor);
-}
-
-.c-btn-download svg {
-  width: auto;
-  height: auto;
 }
 
 .c-btn-text {
@@ -881,81 +904,92 @@ form .picture-preview {
   transform: rotate(-180deg);
 }
 
-.c-btn-arrow {
-  display: inline-flex;
-  align-items: center;
-  padding: 0;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.c-btn-arrow:before {
-  content: "";
-  width: 2rem;
-  height: 1.3rem;
-  margin-right: 1.5rem;
-  background: url("/lib/images/arrow-right.svg");
-}
-
-.c-btn--scroll {
-  align-items: center;
-  gap: 1rem;
-  padding: 0.4rem 1rem 0 1.5rem;
-  min-height: 4rem;
-  background: black;
-  font-size: 1.2em;
-  line-height: 1;
-}
-.c-btn--scroll svg {
-  width: 1.6rem;
-  height: 1.6rem;
-}
-.c-btn--scroll:hover, .c-btn--scroll:active, .c-btn--scroll:focus, .c-btn--scroll:focus:active {
-  background: black;
-  color: white;
-  border-color: white;
-}
-
 .c-btn-admin-edit {
   padding: 1rem 2rem;
+  background: #ccc;
+  color: black;
+  border: 2px solid #666;
+  text-decoration: none;
+}
+.c-btn-admin-edit:hover {
+  text-decoration: none;
+  color: black;
+  background: #eee;
+}
+
+.c-btns-admin {
+  display: flex;
+  gap: 1rem;
   position: fixed;
   bottom: 2rem;
   right: 2rem;
   z-index: 900;
-  background: #FFBF00;
 }
 
-.c-btn-cover:before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 20;
-  background: transparent;
-}
-.c-btn-cover:hover, .c-btn-cover:active, .c-btn-cover:focus, .c-btn-cover:focus:active {
+.c-btn-add-event {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: var(--theme);
+  border: 2px solid var(--darkTheme);
   text-decoration: none;
 }
+.c-btn-add-event svg {
+  width: 16px;
+}
+.c-btn-add-event:hover {
+  background: color-mix(in srgb, var(--theme), black 15%);
+}
 
-button {
-  cursor: pointer;
+body.color--flagBlack .c-btn-add-event,
+body.color--flagBrown .c-btn-add-event {
+  color: white;
+}
+body.color--flagBlack .c-btn-add-event path,
+body.color--flagBrown .c-btn-add-event path {
+  fill: white;
 }
 
 .c-btn-agenda {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
   text-decoration: none;
   opacity: 0.8;
+  color: var(--typographyColor);
 }
 .c-btn-agenda svg {
   height: 1.6rem;
 }
 .c-btn-agenda path {
-  fill: color-mix(in srgb, var(--theme), black 30%);
+  fill: var(--darkTheme);
   transition: fill 0.3s;
 }
-.c-btn-agenda:hover path {
+.c-btn-agenda:hover, .c-btn-agenda:active, .c-btn-agenda:focus, .c-btn-agenda:focus:active {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--typographyColor);
+}
+.c-btn-agenda:hover path, .c-btn-agenda:active path, .c-btn-agenda:focus path, .c-btn-agenda:focus:active path {
   fill: color-mix(in srgb, var(--theme), black 50%);
+}
+@media (prefers-color-scheme: dark) {
+  .c-btn-agenda:hover path, .c-btn-agenda:active path, .c-btn-agenda:focus path, .c-btn-agenda:focus:active path {
+    fill: color-mix(in srgb, var(--theme), white 50%);
+  }
+}
+
+.c-btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2em;
+  margin: 0 0 2em;
+  font-size: 0.8em;
+}
+.c-btn-back svg {
+  width: 0.5lh;
+  height: 0.5lh;
 }
 
 .c-calendar {
@@ -979,9 +1013,9 @@ button {
   padding: 0 0.2em;
   position: relative;
   left: -0.2em;
-  background: color-mix(in srgb, var(--theme), white 90%);
-  border-bottom: 3px solid color-mix(in srgb, var(--theme), black 30%);
-  color: color-mix(in srgb, var(--theme), black 30%);
+  background: var(--lightTheme);
+  border-bottom: 3px solid var(--darkTheme);
+  color: var(--darkTheme);
 }
 
 .c-calendar-item {
@@ -995,7 +1029,7 @@ button {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: color-mix(in srgb, var(--theme), black 30%);
+  background: var(--darkTheme);
   opacity: 0.4;
 }
 .c-calendar-item h3 {
@@ -1014,27 +1048,39 @@ button {
   gap: 0.5em;
   align-items: center;
   font-weight: bold;
-  color: color-mix(in srgb, var(--theme), black 30%);
+  color: var(--darkTheme);
 }
 .c-calendar-item time span:after {
   content: "";
   width: 2px;
   height: 0.7lh;
-  background: color-mix(in srgb, var(--theme), black 30%);
+  background: var(--darkTheme);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .c-calendar-item,
+  .c-calendar__divider {
+    transform: translateY(30px);
+    transform-origin: left bottom;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: 50px 30%;
+  }
+  @keyframes fade-in {
+    to {
+      transform: translateY(0);
+    }
+  }
+}
 .c-calendar-item__title a {
   position: relative;
   text-decoration: none;
 }
-.c-calendar-item__title a:after {
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='var(--typographyColor)' d='M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112v320c0 44.2 35.8 80 80 80h320c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v112c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h112c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z'/%3E%3C/svg%3E");
-  width: 25px;
-  height: 25px;
+.c-calendar-item__title a svg {
   position: absolute;
-  top: -7px;
-  right: -23px;
-  transform: scale(0.5);
+  top: 0px;
+  right: -12px;
+  fill: var(--typographyColor);
 }
 .c-calendar-item__title a:before {
   content: "";
@@ -1043,8 +1089,8 @@ button {
   position: absolute;
   bottom: -1px;
   left: 0;
-  background: color-mix(in srgb, var(--theme), black 30%);
-  transition: width 0.3s;
+  background: var(--darkTheme);
+  transition: width 0.2s ease-out;
 }
 .c-calendar-item__title a:hover {
   text-decoration: none;
@@ -1057,168 +1103,154 @@ button {
   margin: 0 0 0.5em;
 }
 
-.c-footer {
-  padding: 3rem 0 0;
-  margin: var(--mainMargin) 0 0;
-  position: relative;
-  background: var(--lilac);
-  color: #000;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+[popover=auto] {
+  inset: unset;
+  margin: 0;
+  position: absolute;
+  bottom: calc(anchor(top) + 20px);
+  justify-self: anchor-center;
+  padding: 8px;
+  border-radius: 6px;
+  background: var(--lightTheme);
+  box-shadow: 1px 1px 3px #999;
+  border: none;
 }
 
-.c-footer__bottom {
-  padding: 1rem 0;
-  margin: var(--mainMargin) 0 0 0;
-  background: hsl(var(--lilacHS), calc(var(--lilacL) - 7%));
+.c-share-cal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: none;
+  border: 1px solid transparent;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--darkTheme);
+}
+.c-share-cal-btn:before {
+  content: "";
+  width: 2px;
+  height: 0.7lh;
+  background: var(--darkTheme);
+}
+.c-share-cal-btn svg {
+  height: 1.6rem;
+}
+.c-share-cal-btn .icon-bookmark__fill {
+  fill: transparent;
+}
+.c-share-cal-btn .icon-bookmark__stroke {
+  fill: var(--darkTheme);
+}
+.c-share-cal-btn:hover, .c-share-cal-btn:active, .c-share-cal-btn:focus, .c-share-cal-btn:focus:active {
+  text-decoration: none;
+}
+
+.c-share-cal-btn:has(+ .c-share-cal:popover-open) {
+  text-decoration: none;
+}
+.c-share-cal-btn:has(+ .c-share-cal:popover-open) .icon-bookmark__fill {
+  fill: var(--darkTheme);
+}
+
+.c-share-cal {
   font-size: 0.8em;
 }
 
-.c-footer__logo {
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
-  width: 14.5rem;
-  margin-bottom: 2rem;
-  grid-column: 1/4;
-  grid-row: 1/2;
-}
-.c-footer__logo img {
-  display: block;
-  width: 10rem;
-  height: auto;
-}
-
-.c-footer__text {
-  grid-column: 1/4;
-  grid-row: 3;
-}
-
-@media only screen and (min-width: 800px) {
-  .c-footer__grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 5rem 5rem auto auto;
-    row-gap: 1rem;
-  }
-}
-
-.c-footer__nav {
+.c-share-cal__content {
   padding: 0;
   margin: 0;
   list-style-type: "";
-  grid-column: 5/12;
-  grid-row: 3;
-  margin-bottom: 2rem;
-  font-size: 1.3em;
-  text-transform: uppercase;
-  font-family: var(--primaryFont);
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+  align-items: start;
 }
-.c-footer__nav a {
+
+.c-calendar-item__details {
+  margin-top: 0.3em;
+}
+.c-calendar-item__details:open summary {
+  padding-left: calc(1lh + 0.5em);
+  background: var(--lightTheme);
   text-decoration: none;
 }
-.c-footer__nav a:hover {
+.c-calendar-item__details:open summary:before {
+  left: 0.5em;
+}
+.c-calendar-item__details summary {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.2em 1em 0.2em 1lh;
+  position: relative;
+  list-style: none;
+  cursor: pointer;
   text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: padding 0.3s;
 }
-.c-footer__nav li {
-  margin-bottom: 0.8rem;
+.c-calendar-item__details summary:hover {
+  text-decoration: none;
 }
-@media only screen and (min-width: 800px) {
-  .c-footer__nav {
-    display: flex;
-    gap: 2rem;
-    font-size: 1.8em;
-    margin-left: auto;
-    grid-row: 2;
-  }
-}
-
-.c-footer__newsletter {
-  max-width: 40rem;
-  margin-bottom: 2rem;
-}
-.c-footer__newsletter label {
-  margin-bottom: 1rem;
-  font-family: var(--primaryFont);
-  text-transform: uppercase;
-  font-size: 1.3em;
-}
-.c-footer__newsletter .c-btn, .c-footer__newsletter .btn {
-  flex-shrink: 0;
-  width: 4.5rem;
-  height: 4.5rem;
-  min-height: 4.5rem;
-  padding: 0;
-}
-.c-footer__newsletter .c-btn:hover, .c-footer__newsletter .btn:hover, .c-footer__newsletter .c-btn:active, .c-footer__newsletter .btn:active, .c-footer__newsletter .c-btn:focus, .c-footer__newsletter .btn:focus, .c-footer__newsletter .c-btn:focus:active {
-  background: var(--magenta);
-  border-color: var(--magenta);
-}
-.c-footer__newsletter input {
-  width: 100%;
-}
-.c-footer__newsletter p {
+.c-calendar-item__details summary:before {
+  content: "i";
   display: flex;
   align-items: center;
-  margin: 0;
-}
-.c-footer__newsletter svg {
-  width: 20px;
-  height: 20px;
-}
-@media only screen and (min-width: 800px) {
-  .c-footer__newsletter {
-    max-width: none;
-    grid-column: 8/12;
-    grid-row: 3;
-    text-align: right;
-  }
-  .c-footer__newsletter label {
-    font-size: 1.8em;
-  }
-}
-
-.c-footer__socials {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 0;
-  margin: 0;
-  list-style-type: "";
-  margin: 3rem 0;
-  grid-column: 12/-5;
-  grid-row: 1;
-}
-.c-footer__socials a {
-  display: flex;
   justify-content: center;
+  width: 1lh;
+  height: 1lh;
+  position: absolute;
+  left: 0;
+  color: white;
+  background: var(--darkTheme);
+  font-size: 80%;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: left 0.3s;
+}
+
+.c-calendar-item__details__content {
+  max-width: 70ch;
+  padding: 1em;
+  background: var(--lightTheme);
+}
+
+.c-footer {
+  display: flex;
   align-items: center;
-  width: 5rem;
-  height: 5rem;
-  transition: background 0.3s;
-}
-.c-footer__socials a:hover {
-  background: white;
-}
-.c-footer__socials svg {
-  width: 3.6rem;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 2.5%;
+  margin-top: 4rem;
+  position: relative;
+  background: light-dark(var(--theme), var(--lightTheme));
+  border-top: 3px solid var(--darkTheme);
+  line-height: 1;
 }
 @media only screen and (min-width: 800px) {
-  .c-footer__socials {
-    margin-left: auto;
+  .c-footer {
+    padding: 0 4rem;
   }
 }
 
-.c-footer__socials__facebook:hover path {
-  fill: #1877F2;
+body.color--flagBlack .c-footer,
+body.color--flagBrown .c-footer {
+  color: white;
 }
 
-.c-footer__socials__linkedin:hover path {
-  fill: #0077B5;
+.c-footer__mode {
+  display: flex;
+  gap: 1rem;
 }
-
-.c-footer__socials__instagram:hover path {
-  fill: #E1306C;
+.c-footer__mode label {
+  cursor: pointer;
+}
+.c-footer__mode input[type=radio] {
+  appearance: none;
+}
+.c-footer__mode label:has(input:checked) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .c-keyword-list {
@@ -1234,11 +1266,16 @@ button {
 .c-keyword-list li {
   padding: 0.2rem 0.7rem;
   margin-bottom: 0.2rem;
-  background: color-mix(in srgb, var(--typographyColor), white 90%);
+  background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
   border-radius: 4px;
 }
-.c-keyword-list li:has(a) {
+.c-keyword-list li:has(.c-keyword-list__tickets) {
   background: var(--flagYellow);
+}
+@media (prefers-color-scheme: dark) {
+  .c-keyword-list li:has(.c-keyword-list__tickets) {
+    background: color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%);
+  }
 }
 
 .c-main-nav {
@@ -1249,8 +1286,8 @@ button {
   height: 40px;
   padding: 0 2.5%;
   margin-bottom: 2em;
-  background: var(--theme);
-  border-bottom: 3px solid color-mix(in srgb, var(--theme), black 30%);
+  background: light-dark(var(--theme), var(--lightTheme));
+  border-bottom: 3px solid var(--darkTheme);
   text-transform: uppercase;
   font-size: 0.9em;
 }
@@ -1289,6 +1326,59 @@ button {
 body.color--flagBlack .c-main-nav,
 body.color--flagBrown .c-main-nav {
   color: white;
+}
+
+.c-main-nav__btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.t-edit {
+  padding: 3em 0;
+  color: var(--typographyColor);
+  font-family: var(--bodyFont);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+.t-edit h2 {
+  font-size: 1.4em;
+}
+
+#editcol {
+  max-width: 1200px !important;
+}
+
+@media only screen and (min-width: 1088px) {
+  .edit-container {
+    display: flex;
+    gap: 4rem;
+  }
+}
+
+.edit-container__content {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1088px) {
+  .edit-container__sidebar {
+    flex-shrink: 0;
+    width: 30%;
+  }
+}
+
+.modal-footer .btn {
+  min-height: 0px;
+}
+
+.if-has-error {
+  padding: 0.5em;
+  border: 2px solid var(--flagRed);
+  background: color-mix(in srgb, var(--flagRed), white 70%);
+}
+
+.t-logon label {
+  font-size: 1.3em;
 }
 
 .c-block.-u-align-start .o-grid,

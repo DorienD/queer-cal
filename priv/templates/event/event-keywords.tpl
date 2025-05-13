@@ -5,7 +5,7 @@
         {% endfor %}
 
         {% if id.tickets %}
-            <li><a href="{{ id.tickets }}">Tickets</a></li>
+            <li><a href="{{ id.tickets }}" class="c-keyword-list__tickets">Tickets</a></li>
         {% endif %}
     </ul>
 {% endif %}

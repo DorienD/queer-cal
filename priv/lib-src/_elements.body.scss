@@ -1,7 +1,8 @@
 html {
-    font-size: 10px;
+    height: 100%;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    font-size: 10px;
 }
 
 *, *:before, *:after {
@@ -68,24 +69,24 @@ html {
 }
 
 body {
-    background: white;
-
-    // &:before {
-    //     content: '';
-    //     display: block;
-    //     width: 100%;
-    //     height: 2em;
-    //     background: var(--theme);
-    //     border-bottom: 3px solid color-mix(in srgb, var(--theme), black 30%);
-    // }
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    background: var(--bodyBg);
 }
 
 main {
+    flex: 1 0 auto;
     padding: 0 2.5% 2rem;
     
     @include breakpoint($mediumBreakpoint) {
         padding: 0 4rem 4rem;
     }
+}
+
+nav,
+footer {
+    flex-shrink: 0;
 }
 
 #top {
@@ -117,4 +118,20 @@ audio {
 
 .cookie-consent__upper__controls {
     flex-flow: row wrap;
+}
+
+// Light/Dark mode
+
+@supports (color-scheme:light dark) {
+  label[hidden] {
+    display:block;
+  }
+  
+  html:has([value="light"]:checked ) {
+    color-scheme: light;
+  } 
+
+  html:has([value="dark"]:checked ) {
+    color-scheme: dark;
+  } 
 }

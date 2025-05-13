@@ -39,6 +39,16 @@
                             {% include "event/event-date.tpl" id=r %}
                             {% include "event/event-location.tpl" id=r %}
                             {% include "event/event-keywords.tpl" id=r %}
+                            
+
+                            {% if r.summary %}
+                                <details class="c-calendar-item__details">
+                                    <summary>Description</summary>
+                                    <div class="c-calendar-item__details__content">
+                                        {{ r.summary }}
+                                    </div>
+                                </details>
+                            {% endif %}
                         </article>
                     </li>
                 {% if forloop.last %}

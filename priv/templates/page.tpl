@@ -19,9 +19,5 @@
         {% endblock %}
     </article>
 
-    {% block page_blocks %}
-        {% include "blocks/blocks.tpl" %}
-    {% endblock %}
-
     {% block below_body %}{% endblock %}
 {% endblock %}

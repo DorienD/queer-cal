@@ -4,6 +4,12 @@
     "cotonic/cotonic.js"
     "js/apps/zotonic-wired.js"
     "js/apps/z.widgetmanager.js"
+    "bootstrap/js/bootstrap.min.js"
+    "js/modules/z.live.js"
+    "js/modules/z.notice.js"
+    "js/modules/z.tooltip.js"
+    "js/modules/z.dialog.js"
+    "js/modules/livevalidation-1.3.js"
     minify
 %}
 

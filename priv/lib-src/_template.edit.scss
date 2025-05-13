@@ -1,0 +1,46 @@
+.t-edit {
+    padding: 3em 0;
+    color: var(--typographyColor);
+    font-family: var(--bodyFont);
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+
+    h2 {
+        font-size: 1.4em;
+    }
+}
+
+#editcol {
+    max-width: 1200px !important;
+}
+
+.edit-container {
+    @include breakpoint($largeBreakpoint) {
+        display: flex;
+        gap: 4rem;
+    }
+}
+
+.edit-container__content {
+    width: 100%;
+}
+
+.edit-container__sidebar {
+    @include breakpoint($largeBreakpoint) {
+        flex-shrink: 0;
+        width: 30%;
+    }
+}
+
+.modal-footer {
+    .btn {
+        min-height: 0px;
+    }
+}
+
+.if-has-error {
+    padding: 0.5em;
+    border: 2px solid var(--flagRed);
+    background: color-mix(in srgb, var(--flagRed), white 70%);
+}

@@ -1,0 +1,18 @@
+/* Error: Can't find stylesheet to import.
+ *     ,
+ * 103 | @import "bootstrap-sass-3.4.1/assets/stylesheets/bootstrap/variables";
+ *     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *     '
+ *   z-settings.scss 103:9     @import
+ *   tinymce-zotonic.scss 4:9  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a     \2577 \a 103 \2502  @import \"bootstrap-sass-3.4.1/assets/stylesheets/bootstrap/variables\";\a     \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a     \2575 \a   z-settings.scss 103:9     @import\a   tinymce-zotonic.scss 4:9  root stylesheet";
+}

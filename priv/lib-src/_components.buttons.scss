@@ -1,3 +1,7 @@
+button {
+    cursor: pointer;
+}
+
 .c-btn {
     display: inline-flex;
     align-items: center;
@@ -79,32 +83,6 @@
     }
 }
 
-.c-btn-big {
-    font-size: 3rem;
-    padding: 1em 0 0.8em;
-
-    @include breakpoint($mediumBreakpoint) {
-        font-size: 4rem;
-    }
-}
-
-.c-btn-keyword {
-    display: inline-flex;
-    align-items: center;
-    min-height: 4rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.9em;
-    line-height: 1;
-    font-family: var(--quoteFont);
-    text-transform: lowercase;
-    text-decoration: none;
-    border: 1px solid black;
-
-    &.-tickets {
-        background: var(--primaryColor);
-    }
-}
-
 .c-btn-primary {
     background: var(--primaryColor);
     color: #fff;
@@ -116,11 +94,12 @@
     }
 }
 
-.c-btn-download {
-    svg {
-        width: auto;
-        height: auto;
-    }
+.btn-primary {
+    @extend .c-btn-primary;
+}
+
+.btn {
+    @extend .c-btn;
 }
 
 .c-btn-text {
@@ -149,98 +128,101 @@
     }
 }
 
-.c-btn-arrow {
-    display: inline-flex;
-    align-items: center;
-    padding: 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-
-    &:before {
-        content: '';
-        width: 2rem;
-        height: 1.3rem;
-        margin-right: 1.5rem;
-        background: url('/lib/images/arrow-right.svg')
-    }
-}
-
-.c-btn--scroll {
-    align-items: center;
-    gap: 1rem;
-    padding: 0.4rem 1rem 0 1.5rem;
-    min-height: 4rem;
-    background: black;
-    font-size: 1.2em;
-    line-height: 1;
-
-    svg {
-        width: 1.6rem;
-        height: 1.6rem;
-    }
-
-    @include setInteractive {
-        background: black;
-        color: white;
-        border-color: white;
-    }
-}
-
 .c-btn-admin-edit {
-    padding: 1rem 2rem;
+    padding: 1rem 2rem; 
+    background: #ccc;
+    color: black;
+    border: 2px solid #666;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+        color: black;
+        background: #eee;
+    }
+}
+
+.c-btns-admin {
+    display: flex;
+    gap: 1rem;
     position: fixed;
     bottom: 2rem;
     right: 2rem;
     z-index: 900;
-    background: #FFBF00;
 }
 
-.c-btn-cover {
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 20;
-        background: transparent;
+.c-btn-add-event {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: var(--theme);
+    border: 2px solid var(--darkTheme);
+    text-decoration: none;
+
+    svg {
+        width: 16px;
     }
 
-    @include setInteractive {
-        text-decoration: none;
+    &:hover {
+        background: color-mix(in srgb, var(--theme), black 15%);
     }
 }
 
-.btn-primary {
-    @extend .c-btn-primary;
-}
+body.color--flagBlack,
+body.color--flagBrown {
+    .c-btn-add-event {
+        color: white;
 
-.btn {
-    @extend .c-btn;
-}
-
-button {
-    cursor: pointer;
+        path {
+            fill: white;
+        }
+    }
 }
 
 .c-btn-agenda {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
     text-decoration: none;
     opacity: 0.8;
+    color: var(--typographyColor);
     
     svg {
         height: 1.6rem;
     }
 
     path {
-        fill: color-mix(in srgb, var(--theme), black 30%);
+        fill: var(--darkTheme);
         transition: fill 0.3s;
     }
 
-    &:hover {
+    @include setInteractive {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        color: var(--typographyColor);
+
         path {
             fill: color-mix(in srgb, var(--theme), black 50%);
-        }   
+        }
+
+        @media (prefers-color-scheme: dark) {
+            path {
+                fill: color-mix(in srgb, var(--theme), white 50%);
+            }
+        }
+    }
+}
+
+.c-btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2em;
+    margin: 0 0 2em;
+    font-size: 0.8em;
+
+    svg {
+        width: 0.5lh;
+        height: 0.5lh;
     }
 }

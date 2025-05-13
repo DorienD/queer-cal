@@ -11,6 +11,7 @@ form {
     input[type="file"] {
         width: 100%;
         height: 4.5rem;
+        padding: 0 1rem;
         border: 2px solid var(--typographyColor);
         font-family: inherit;
         font-size: inherit;
@@ -20,26 +21,20 @@ form {
         margin-bottom: 1em;
     }
 
-    input[type="password"],
-    input[type="email"],
-    input[type="text"] {
-        padding: 0 1rem;
-    }
-
     fieldset {
         padding: 0;
     }
 
     textarea.form-control,
     textarea {
+        padding: 0.7rem 1rem;
         height: auto;
         border: 2px solid var(--typographyColor);
+        font-size: inherit;
     }
 
     label {
         font-family: var(--primaryFont);
-        font-size: 1.3em;
-        letter-spacing: 0.02em;
     }
 
     select.form-control,
@@ -52,4 +47,22 @@ form {
     .picture-preview {
         display: none;
     }
+
+    input[type="date"].form-control,
+    input[type="date"],
+    input[type="time"].form-control,
+    input[type="time"] {
+        display: inline-flex;
+        align-items: center;
+        height: 4.5rem;
+        font-size: inherit;
+    }
+}
+
+body input.form-control:not([type="date"]):not([type="time"]):focus {
+    padding: 0 1rem;
+}
+
+body textarea.form-control:focus {
+    padding: 0.7rem 1rem;
 }

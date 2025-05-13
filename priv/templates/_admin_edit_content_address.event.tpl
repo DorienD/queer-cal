@@ -3,7 +3,9 @@
 {# Show the edit fields to edit the name of a member event #}
 
 {% block widget_title %}
-{_ Address _}
+    {% if q.z_delegate != "mod_admin_frontend" %}
+        {_ Address _}
+    {% endif %}
 <div class="widget-header-tools"></div>
 {% endblock %}
 
@@ -11,94 +13,104 @@
 {% block widget_id %}content-address{% endblock %}
 
 {% block widget_content %}
+    {# {% debug %} #}
+
+    {% if q.z_delegate == "mod_admin_frontend" %}
+        <p class="help-block" {% if not id.tz or id.tz == m.req.timezone %}style="display:none"{% endif %}>
+            <i class="fa fa-exclamation-triangle"></i>
+            {_ Showing dates in _}: <b class="rsc-timezone">{{ id.tz|escape }}</b>
+        </p>
+
+        <div class="date-range">
+            <fieldset>
+                <div class="checkbox">
+                    <label>
+                        <input name="date_is_all_day" id="{{ #all_day }}" type="checkbox" {% if id.date_is_all_day %}checked{% endif %}> {_ All day event _}
+                    </label>
+                </div>
+
+                {% javascript %}
+                    $("#{{ #all_day }}").on('change', function() {
+                        var $times = $(this).closest('.date-range').find("input[type='time']");
+                        if ($(this).is(":checked"))
+                            $times.fadeOut("fast").val('');
+                        else
+                            $times.fadeIn("fast");
+                    });
+                {% endjavascript %}
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label class="control-label">{_ From _}</label>
+                        <div>
+                            {% include "_edit_date.tpl" date=id.date_start name="date_start" is_end=0 date_is_all_day=id.date_is_all_day is_editable=id.is_editable timezone=id.tz %}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="control-label">{_ Till _}</label>
+                        <div>
+                            {% include "_edit_date.tpl" date=id.date_end name="date_end" is_end=1 date_is_all_day=id.date_is_all_day  is_editable=id.is_editable timezone=id.tz %}
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <hr>
+    {% endif %}
+
     <div class="row">
         <div class="col-lg-6 col-md-6">
-            <div class="form-group label-floating">
-                    <input class="form-control" id="phone" type="text" name="phone" inputmode="tel" value="{{ id.phone }}" placeholder="{_ Telephone _}">
-                <label class="control-label" for="phone">{_ Telephone _}</label>
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6">
-            <div class="form-group label-floating">
-                <input class="form-control" id="website" type="text" name="website" inputmode="url" value="{{ id.website }}" placeholder="{_ Website _} {_ (public) _}">
+            <div class="form-group">
                 <label class="control-label" for="website">{_ Website _}</label>
+                <input class="form-control" id="website" type="text" name="website" inputmode="url" value="{{ id.website }}">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+                <label class="control-label" for="tickets">{_ Ticket link _}</label>
+                <input class="form-control" id="tickets" type="text" name="tickets" inputmode="url" value="{{ id.tickets }}">
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-6 col-md-6">
-            <div class="form-group label-floating">
-                <input class="form-control" id="youtube" type="text" name="youtube" inputmode="url" value="{{ id.youtube }}" placeholder="{_ Youtube _}">
-                <label class="control-label" for="youtube">{_ Youtube _} </label>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-6 col-md-6">
-            <div class="form-group label-floating">
-                <input class="form-control" id="facebook" type="text" name="facebook" inputmode="url" value="{{ id.facebook }}" placeholder="{_ Facebook _}">
+            <div class="form-group">
                 <label class="control-label" for="facebook">{_ Facebook _}</label>
+                <input class="form-control" id="facebook" type="text" name="facebook" inputmode="url" value="{{ id.facebook }}">
             </div>
         </div>
         <div class="col-lg-6 col-md-6">
-            <div class="form-group label-floating">
-                <input class="form-control" id="instagram" type="text" name="instagram" inputmode="url" value="{{ id.instagram }}" placeholder="{_ Instagram _}">
+            <div class="form-group">
                 <label class="control-label" for="instagram">{_ Instagram _}</label>
+                <input class="form-control" id="instagram" type="text" name="instagram" inputmode="url" value="{{ id.instagram }}">
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-6 col-md-6">
-            <div class="form-group label-floating">
-                <input class="form-control" id="tickets" type="text" name="tickets" inputmode="url" value="{{ id.tickets }}" placeholder="{_ Tickets _}">
-                <label class="control-label" for="tickets">{_ Tickets _}</label>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            {% include "_admin_edit_content_address_email.tpl" %}
-        </div>
-    </div>
-    <br>
-    <div class="form-group">
-        <div class="widget-section-header">{_ Address _}</div>
-    </div>
+
+    <hr>
 
     <input type="hidden" name="address_country" value="nl">
 
-    {# <div class="form-group label-floating">
-        {% if m.modules.active.mod_l10n %}
-            <select class="form-control" id="address_country" name="address_country">
-                <option value=""></option>
-                {% optional include "_l10n_country_options.tpl" country=id.address_country %}
-            </select>
-        {% else %}
-            <input class="form-control" id="address_country" type="text" name="address_country" value="{{ id.address_country }}" placeholder="{_ Country _}">
-        {% endif %}
-        <label class="control-label" for="address_country">{_ Country _}</label>
-    </div> #}
-
     <div id="visit_address">
-        <div class="form-group label-floating">
-            <input class="form-control" id="address_title" type="text" name="address_title" value="{{ id.address_title }}" placeholder="{_ Title of venue _}">
+        <div class="form-group">
             <label class="control-label" for="address_title">{_ Title of the venue/location _}</label>
+            <input class="form-control" id="address_title" type="text" name="address_title" value="{{ id.address_title }}">
         </div>
 
-        <div class="form-group label-floating">
-            <input class="form-control" id="address_street_1" type="text" name="address_street_1" value="{{ id.address_street_1 }}" placeholder="{_ Street Line 1 _}">
+        <div class="form-group">
             <label class="control-label" for="address_street_1">{_ Street Line 1 _}</label>
+            <input class="form-control" id="address_street_1" type="text" name="address_street_1" value="{{ id.address_street_1 }}">
         </div>
 
         <div class="row">
-            <div class="form-group col-lg-6 col-md-6 label-floating">
-                <input class="form-control" id="address_city" type="text" name="address_city" value="{{ id.address_city }}" placeholder="{_ City _}">
+            <div class="form-group col-lg-6 col-md-6">
                 <label class="control-label" for="address_city">{_ City _}</label>
+                <input class="form-control" id="address_city" type="text" name="address_city" value="{{ id.address_city }}">
             </div>
 
-            <div class="form-group col-lg-6 col-md-6 label-floating">
-                <input class="form-control" id="address_postcode" type="text" name="address_postcode" value="{{ id.address_postcode }}" placeholder="{_ Postcode _}">
+            <div class="form-group col-lg-6 col-md-6">
                 <label class="control-label" for="address_postcode">{_ Postcode _}</label>
+                <input class="form-control" id="address_postcode" type="text" name="address_postcode" value="{{ id.address_postcode }}">
             </div>
         </div>
     </div>

@@ -5,11 +5,17 @@ The Queer calendar a 'complete' agenda with the queer events, for now only focus
 ## Roadmap
 
 - MVP make something
+- Add darkmode
 - Make it multilingual
 - Manual adding of events
 - Add filters based on keyword and date?
 - Option to register an account and add your own events
 - Create some sort of scraper so we can add a url and make an event (with the meta data from the url). Could be cool if it would also work from an instagram url. 
+- Paid newsletter
+- All events in your calendar automatic?
+
+
+## Done
 
 
 ## Backend by Zotonic

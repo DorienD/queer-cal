@@ -19,9 +19,9 @@
     padding: 0 0.2em;
     position: relative;
     left: -0.2em;
-    background: color-mix(in srgb, var(--theme), white 90%);
-    border-bottom: 3px solid color-mix(in srgb, var(--theme), black 30%);
-    color: color-mix(in srgb, var(--theme), black 30%);
+    background: var(--lightTheme);
+    border-bottom: 3px solid var(--darkTheme);
+    color: var(--darkTheme);
 }
 
 .c-calendar-item {
@@ -35,7 +35,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        background: color-mix(in srgb, var(--theme), black 30%);
+        background: var(--darkTheme);
         opacity: 0.4;
     }
 
@@ -56,14 +56,31 @@
             gap: 0.5em;
             align-items: center;
             font-weight: bold;
-            color: color-mix(in srgb, var(--theme), black 30%);
+            color: var(--darkTheme);
 
             &:after {
                 content: '';
                 width: 2px;
                 height: 0.7lh;
-                background: color-mix(in srgb, var(--theme), black 30%);
+                background: var(--darkTheme);
             }
+        }
+    }
+}
+
+@media (prefers-reduced-motion: no-preference){
+    .c-calendar-item,
+    .c-calendar__divider {
+        transform: translateY(30px);
+        transform-origin: left bottom;
+        animation: fade-in linear forwards;
+        animation-timeline: view();
+        animation-range: 50px 30%;
+    }
+
+    @keyframes fade-in {
+        to {
+            transform: translateY(0);
         }
     }
 }
@@ -73,14 +90,11 @@
         position: relative;
         text-decoration: none;
 
-        &:after {
-            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='var(--typographyColor)' d='M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112v320c0 44.2 35.8 80 80 80h320c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v112c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h112c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z'/%3E%3C/svg%3E");
-            width: 25px;
-            height: 25px;
+        svg {
             position: absolute;
-            top: -7px;
-            right: -23px;
-            transform: scale(0.5);
+            top: 0px;
+            right: -12px;
+            fill: var(--typographyColor);
         }
 
         &:before {
@@ -90,8 +104,8 @@
             position: absolute;
             bottom: -1px;
             left: 0;
-            background: color-mix(in srgb, var(--theme), black 30%);
-            transition: width 0.3s;
+            background: var(--darkTheme);
+            transition: width 0.2s ease-out;
         }
 
         &:hover {
@@ -106,4 +120,129 @@
 
 .c-calendar-item__address {
     margin: 0 0 0.5em;
+}
+
+[popover="auto"] {
+    inset: unset;
+    // width: 200px;
+    margin: 0;
+    position: absolute;
+    bottom: calc(anchor(top) + 20px);
+    justify-self: anchor-center;
+    padding: 8px;
+    border-radius: 6px;
+    background: var(--lightTheme);
+    box-shadow: 1px 1px 3px #999;
+    border: none;
+}
+
+.c-share-cal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: none;
+    border: 1px solid transparent;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: var(--darkTheme);
+
+    &:before {
+        content: '';
+        width: 2px;
+        height: 0.7lh;
+        background: var(--darkTheme);
+    }
+
+    svg {
+        height: 1.6rem;
+    }
+
+    .icon-bookmark__fill {
+        fill: transparent;
+    }
+
+    .icon-bookmark__stroke {
+        fill: var(--darkTheme);
+    }
+
+    @include setInteractive {
+        text-decoration: none;
+    }
+}
+
+.c-share-cal-btn:has(+ .c-share-cal:popover-open) {
+    text-decoration: none;
+
+    .icon-bookmark__fill {
+        fill: var(--darkTheme);
+    }
+}
+
+.c-share-cal {
+    font-size: 0.8em;
+}
+
+.c-share-cal__content {
+    @include striplist;
+
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+    align-items: start;
+}
+
+.c-calendar-item__details {
+    margin-top: 0.3em;
+
+    &:open {
+        summary {
+            padding-left: calc(1lh + 0.5em);
+            background: var(--lightTheme);
+            text-decoration: none;
+
+            &:before {
+                left: 0.5em;
+            }
+        }
+    }
+
+    summary {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        padding: 0.2em 1em 0.2em 1lh;
+        position: relative;
+        list-style: none;
+        cursor: pointer;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        transition: padding 0.3s;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:before {
+            content: "i";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1lh;
+            height: 1lh;
+            position: absolute;
+            left: 0;
+            color: white;
+            background: var(--darkTheme);
+            font-size: 80%;
+            text-decoration: none;
+            border-radius: 50%;
+            transition: left 0.3s;
+        }
+    }
+}
+
+.c-calendar-item__details__content {
+    max-width: 70ch;
+    padding: 1em;
+    background: var(--lightTheme);
 }
