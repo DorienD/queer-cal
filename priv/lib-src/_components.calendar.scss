@@ -11,6 +11,16 @@
         top: 0;
         z-index: 100;
     }
+
+    @include breakpoint($largeBreakpoint) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+
+        > li:first-child {
+            grid-column: span 2;
+        }
+    }
 }
 
 .c-calendar__divider {

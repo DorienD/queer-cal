@@ -11,6 +11,10 @@
 {% javascript %}
     setLocalStorage();
 
+    console.log("bliep");
+
+    console.log(localStorage.getItem("appearance"));
+
     document.getElementById("appearance").addEventListener('change', function(){
         setLocalStorage();
     });

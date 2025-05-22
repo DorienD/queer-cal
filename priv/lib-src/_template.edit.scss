@@ -1,4 +1,5 @@
 .t-edit {
+    --typographyColor: #242424;
     padding: 3em 0;
     color: var(--typographyColor);
     font-family: var(--bodyFont);
@@ -8,6 +9,21 @@
 
     h2 {
         font-size: 1.4em;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    textarea {
+        border: 2px solid var(--typographyColor);
+    }
+
+    .form-group label.control-label {
+        color: var(--typographyColor);
+    }
+
+    a[id*="subject"] {
+        text-decoration: underline;
     }
 }
 

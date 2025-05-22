@@ -16,10 +16,10 @@ body {
 
     --flagRed: #FF575B;
     --flagPink: #D99FC8;
-    --flagWhite: white;
+    --flagWhite: #FFFFFF;
     --flagLightBlue: #7CCAF2;
     --flagBrown: #5B3A1B;
-    --flagBlack: black;
+    --flagBlack: #000000;
     --flagOrange: #FF8353;
     --flagYellow: #FABA2C;
     --flagGreen: #7AC74D;
@@ -51,10 +51,3 @@ body {
         --mainMargin: 7rem;
     }
 }
-
-// @media (prefers-color-scheme: dark) {
-//     body.t-edit {
-//         --bodyBg: white;
-//         --typographyColor: #242424;
-//     }
-// }

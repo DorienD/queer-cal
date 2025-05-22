@@ -1,10 +1,24 @@
 -module(queercal_fixtures).
 
 -export([
-    datamodel/1
+    datamodel/1,
+    maybe_update_fixtures/1,
+    install_acl_rules/1
 ]).
 
 -include_lib("zotonic_core/include/zotonic.hrl").
+
+maybe_update_fixtures(Context) ->
+    lists:foreach(
+        fun({Name, Cat, _Props}) ->
+            case m_rsc:is_a(Name, Cat, Context) of
+                true ->
+                    ok;
+                false ->
+                    m_rsc:update(Name, #{ <<"category_id">> => Cat }, z_acl:sudo(Context))
+            end
+        end,
+        keywords()).
 
 datamodel(Context) ->
     Env = m_config:get_value(site, environment, Context),
@@ -56,7 +70,8 @@ datamodel(Context) ->
                     {nl, <<"Contact">>}
                 ]}
             }}
-        ] ++ testdata(Env),
+        ] ++ keywords()
+        ++ testdata(Env),
         media = [] ++ testmedia(Env),
         edges = [
         ] 
@@ -98,17 +113,85 @@ testmedia(development) ->
 testmedia(_) ->
     [].
 
-
 testedges(development) ->
     [
         % {project1, hassubject, keyword_closets},
-        % {project1, depiction, media_project_1},
-        % {project1, depiction, media_project_2},
-        % {project1, depiction, media_project_3},
-        % {project1, depiction, media_project_4},
-        % {project1, depiction, media_project_5}
-        
     ];
 testedges(_) ->
     [].
 
+keywords() ->
+    lists:map(
+        fun({En, Nl}) ->
+            Name = binary_to_atom(<<"keyword_", (z_string:to_name(En))/binary>>),
+            {Name, keyword, #{
+                <<"language">> => [ en, nl ],
+                <<"is_published">> => true,
+                <<"title">> => #trans{ tr=[
+                        {en, En},
+                        {nl, Nl}
+                    ]}
+                }
+            }
+        end,
+        keyword_list()).
+
+keyword_list() ->
+    [
+        {<<"Flinta">>, <<"Flinta">>},
+        {<<"Workshop">>, <<"Workshop">>},
+        {<<"Community">>, <<"Community">>},
+        {<<"Dark room">>, <<"Dark room">>},
+        {<<"Party">>, <<"Feest">>},
+        {<<"Demonstration">>, <<"Demonstratie">>},
+        {<<"Community">>, <<"Community">>},
+        {<<"Sober">>, <<"Nuchter">>},
+        {<<"Open mic">>, <<"Open mic">>},
+        {<<"Exhibition">>, <<"Tentoonstelling">>},
+        {<<"Screening">>, <<"Vertoning">>},
+        {<<"Fundraiser">>, <<"Benefiet">>},
+        {<<"Talk">>, <<"Lezing">>},
+        {<<"Political">>, <<"Politiek">>},
+        {<<"Donation-based">>, <<"Op donatiebasis">>},
+        {<<"BIPOC">>, <<"BIPOC">>},
+        {<<"Performance">>, <<"Performance">>},
+        {<<"No phone">>, <<"Geen telefoon">>},
+        {<<"Kink">>, <<"Kink">>},
+        {<<"Drag">>, <<"Drag">>},
+        {<<"Child friendly">>, <<"Kindvriendelijk">>}
+    ].
+
+install_acl_rules(Context) -> 
+    Rules = [
+        {rsc, [
+            {acl_user_group_id, acl_user_group_members},
+            {actions, [view]},
+            {is_owner, true}
+            
+        ]},
+        {rsc, [
+            {acl_user_group_id, acl_user_group_members},
+            {content_group_id, default_content_group},
+            {actions, [view, update, delete, link]},
+            {is_owner, true}
+            
+        ]},
+
+        %% Members can add events
+
+        {rsc, [
+            {acl_user_group_id, acl_user_group_members},
+            {content_group_id, default_content_group},
+            {actions, [insert]},
+            {category_id, event}
+        ]},
+
+
+        %% Modules
+        {module, [
+            {acl_user_group_id, acl_user_group_members},
+            {actions, [use]},
+            {module, mod_admin_frontend}
+        ]}
+    ],
+    m_acl_rule:replace_managed(Rules, queercal, Context).

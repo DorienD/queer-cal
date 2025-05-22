@@ -35,7 +35,8 @@
 % Exports - if exports change then the module is restarted after
 % compilation.
 -export([
-    manage_schema/2
+    manage_schema/2,
+    manage_data/2
     ]).
 
 -include_lib("zotonic_core/include/zotonic.hrl").
@@ -50,3 +51,11 @@ manage_schema(_Version, Context) ->
     mod_translation:language_add(nl, true, Context),
     mod_translation:language_add(en, true, Context),
     queercal_fixtures:datamodel(Context).
+
+%% This function runs after the schema is installed or updated. Runs
+%% after the manage_schame transaction has been committed.
+-spec manage_data( z_module_manager:manage_schema(), z:context() ) -> ok.
+manage_data(_Version, Context) ->
+    queercal_fixtures:install_acl_rules(Context),
+    queercal_fixtures:maybe_update_fixtures(Context).
+

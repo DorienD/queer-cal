@@ -12,7 +12,7 @@
     <!--
 		Website design & development by:
 		Dorien 🖖🌈
-		<https://www.doriendrees.nl
+		<https://www.doriendrees.nl>
 
 		Proudly powered by: Zotonic, the Erlang CMS 
 		<https://www.zotonic.com>
@@ -57,10 +57,6 @@
     {% endblock %}
 
     <main id="main-content">
-    	{# {% block header %}
-	        {% catinclude 'header/header.tpl' id %}
-	    {% endblock %} #}
-
 	    {% block content_area %}
 			{% block content %}
 		        (This is <code>block main</code>)
@@ -73,10 +69,10 @@
     {% endblock %}
 
     {% block admin_edit %}
-    	{% if m.acl.is_allowed.use.mod_admin or m.acl.is_allowed.insert.member_event %}
+    	{% if m.acl.is_allowed.use.mod_admin or m.acl.is_allowed.insert.event %}
 	    	<div class="c-btns-admin">
-		        {% if m.acl.is_allowed.insert.member_event %}
-		            <a href="{% url new_event %}" class="c-btn-add-event -bg{{ theme }}">{% include "icons/icon-plus.tpl" color="var(--typographyColor)" %} {_ Add Event _}</a>
+		        {% if m.acl.is_allowed.insert.event %}
+		            <a href="{% url new_event %}" class="c-btn-add-event -bg{{ theme }}">{% include "icons/icon-plus.tpl" color="#242424" %} {_ Add Event _}</a>
 		        {% endif %}
 
 		        {% if m.acl.is_allowed.use.mod_admin %}

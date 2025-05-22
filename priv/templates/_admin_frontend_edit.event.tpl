@@ -14,7 +14,8 @@
 
             <form id="rscform" method="post" action="postback" class="form do_formdirty">
                 <input type="hidden" name="id" value="{{ id }}" />
-                <input type="hidden" name="is_published" value="{% if id.is_published|is_defined %}{{ id.is_published }}{% else %}0{% endif %}" />
+                <input type="hidden" name="is_published" value="1" />
+                {# <input type="hidden" name="is_published" value="{% if id.is_published|is_defined %}{{ id.is_published }}{% else %}0{% endif %}" /> #}
 
                 {% if id.is_temporary %}
                     <input type="hidden" name="o.author[]" value="{{ m.acl.user.id }}">

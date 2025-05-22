@@ -14,13 +14,13 @@
             </p>
             <fieldset>
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="form-group col-sm-6">
                         <label class="control-label">{_ Start date _} *</label>
                         <div>
                             {% include "_edit_date.tpl" date=id.date_start name="date_start" is_end=0 date_is_all_day=id.date_is_all_day is_editable=id.is_editable timezone=id.tz %}
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="form-group col-sm-6">
                         <label class="control-label">{_ End date _} *</label>
                         <div>
                             {% include "_edit_date.tpl" date=id.date_end name="date_end" is_end=1 date_is_all_day=id.date_is_all_day  is_editable=id.is_editable timezone=id.tz %}
@@ -43,15 +43,10 @@
                 <input class="form-control" id="address_title" type="text" name="address_title" placeholder="{_ eg. De Trut or Club Church _}" value="{{ id.address_title }}">
             </div>
 
-            <div class="form-group">
-                <label class="control-label" for="address_street_1">{_ Street _}</label>
-                <input class="form-control" id="address_street_1" type="text" name="address_street_1" value="{{ id.address_street_1 }}">
-            </div>
-
             <div class="row">
                 <div class="form-group col-md-6">
-                    <label class="control-label" for="address_postcode">{_ Postcode _}</label>
-                    <input class="form-control" id="address_postcode" type="text" name="address_postcode" value="{{ id.address_postcode }}">
+                    <label class="control-label" for="address_street_1">{_ Street _}</label>
+                    <input class="form-control" id="address_street_1" type="text" name="address_street_1" value="{{ id.address_street_1 }}">
                 </div>
                 <div class="form-group col-md-6">
                     <label class="control-label" for="address_city">{_ City _}</label>

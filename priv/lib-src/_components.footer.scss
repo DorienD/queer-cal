@@ -28,6 +28,11 @@ body.color--flagBrown {
 
     label {
         cursor: pointer;
+
+        @include setInteractive {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
     }
 
     input[type="radio"] {

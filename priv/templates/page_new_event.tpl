@@ -1,42 +1,5 @@
 {% extends "page_admin_frontend_edit.tpl" %}
 
-{% block body_class %}t-edit{% endblock %}
-
-{% block navbar %}{% endblock %}
-{% block admin_edit %}{% endblock %}
-
-{% block nav %}
-    <nav class="c-btns-admin">
-        {% if tree_id %}
-            {% block close_button %}
-                {% if id.is_temporary %}
-                    <a href="{% url mx_resource_cleanup id=id %}" class="c-main-nav__btn">{_ Close _}</a>
-                {% else %}
-                    <a href="{{ id.page_url }}" class="c-main-nav__btn">{_ Close _}</a>
-                {% endif %}
-            {% endblock %}
-            <div id="save-buttons" style="display:none" class="c-main-nav__btns">
-        {% else %}
-            {# If its not a temp rsc #}
-            <div id="save-buttons" style="display:none" class="c-main-nav__btns">
-        {% endif %}
-            {# {% button class="c-main-nav__btn c-main-nav__btn-primary" text=_"Save" title=_"Save this page."
-                      action={script script="$('#save_stay').click();"}
-             %} #}
-
-            {% button class="c-btn-add-event -bg{{ theme }}" text=_"Save" title=_"Save and view the page"
-                      action={script script="$('#save_view').click();"}
-            %}
-
-            {% if not tree_id %}
-                <a href="{{ id.page_url }}" class="c-btn-admin-edit -cancel" title="{_ Cancel _}">{_ Cancel _}</a>
-            {% else %}
-                {% button class="c-btn-admin-edit -cancel" text=_"Cancel" title=_"Cancel" action={redirect back} tag="a" %}
-            {% endif %}
-        </div>
-    </nav>
-{% endblock %}
-
 {% block content_area %}
     {% with m.rsc[q.id].id|temporary_rsc:{props category_id='event'} as id %}
         <div class="container">
