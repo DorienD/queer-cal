@@ -1,7 +1,5 @@
 # 🌈 Queer Calendar
 
-![GitHub Repo stars](https://img.shields.io/github/stars/DorienD/queer-cal?style=social)
-![GitHub license](https://img.shields.io/github/license/DorienD/queer-cal)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 ![Made with Zotonic](https://img.shields.io/badge/Made%20with-Zotonic-blue)
 ![Sponsor this project](https://img.shields.io/badge/sponsor-%E2%9D%A4-lightgrey?logo=github&style=social)
