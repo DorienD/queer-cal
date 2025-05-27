@@ -174,9 +174,10 @@ h4 {
 }
 
 blockquote {
-    padding: 0;
-    margin: 2em 0 2em 2em;
+    padding: 0 0 0 2em;
+    margin: 2em 0 2em 0;
     border: none;
+    border-left: 5px solid var(--primaryColor);
     font-size: 1.1em;
     line-height: 1.5;
     color: var(--primaryColor);
@@ -187,10 +188,10 @@ blockquote {
         display: inline;
     }
 
-    &:before,
-    &:after {
-        content:'"'
-    }
+    // &:before,
+    // &:after {
+    //     content:'"'
+    // }
 
     @include breakpoint($mediumBreakpoint) {
         font-size: 1.3em;
