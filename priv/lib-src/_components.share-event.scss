@@ -1,0 +1,73 @@
+.c-share-event-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+    background: none;
+    border: 1px solid transparent;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: var(--darkTheme);
+
+    svg {
+        height: 1.6rem;
+    }
+
+    .icon-bookmark__fill {
+        fill: transparent;
+    }
+
+    .icon-bookmark__stroke {
+        fill: var(--darkTheme);
+    }
+
+    @include setInteractive {
+        text-decoration: none;
+    }
+
+    @include breakpoint(500px) {
+        &:before {
+            content: '';
+            width: 2px;
+            height: 0.7lh;
+            background: var(--darkTheme);
+        }
+    }
+}
+
+.c-share-event-toggle:has(+ .c-share-event:popover-open) {
+    text-decoration: none;
+
+    .icon-bookmark__fill {
+        fill: var(--darkTheme);
+    }
+}
+
+.c-share-event {
+    font-size: 0.8em;
+}
+
+.c-share-event__content {
+    @include striplist;
+
+    display: flex;
+    flex-flow: column wrap;
+    gap: 0.25em;
+    align-items: start;
+}
+
+[popover="auto"] {
+    inset: unset;
+    max-width: 30ch;
+    margin: 0;
+    position: absolute;
+    bottom: calc(anchor(top) + 20px);
+    justify-self: anchor-center;
+    padding: 8px;
+    border-radius: 6px;
+    background: var(--lightTheme);
+    box-shadow: 0px 0px 3px color-mix(in srgb, var(--typographyColor), var(--bodyBg) 50%);
+    border: none;
+    text-align: center;
+    text-transform: none;
+}

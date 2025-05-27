@@ -6,4 +6,6 @@
     {% endif %}
     
     {% menu class="c-main-nav__menu" %}
+
+    {% include "nav/_language-switch.tpl" class="c-main-nav__lang" %}
 </nav>

@@ -1,4 +1,4 @@
-<time datetime="{{ id.date_start|date:"c":"UTC" }}">
+<time datetime="{{ id.date_start|date:"c":"UTC" }}" class="c-calendar-item__date">
     <span>{{ id.date_start|date:"D d":"UTC" }}</span>
     
     {{ id.date_start|date:"H:i":"UTC" }}
@@ -13,5 +13,5 @@
         - {{ id.date_end|date:"H:i":"UTC" }}
     {% endif %}
     
-    {% include "event/share-cal.tpl" %}
+    {% include "event/share-event.tpl" %}
 </time>

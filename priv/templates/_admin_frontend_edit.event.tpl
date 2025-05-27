@@ -123,7 +123,7 @@
                                 type={hasedge id=id minimum=1}
                                 only_on_submit
                     %}
-                    <p class="if-has-error" style="display: none">{_ You must have at least one category. _}</p>
+                    <p class="if-has-error" style="display: none">{_ You must have at least one keyword. _}</p>
                 </div>
 
                 <small>

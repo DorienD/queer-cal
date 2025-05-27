@@ -45,6 +45,7 @@
                                 <details class="c-calendar-item__details">
                                     <summary>Description</summary>
                                     <div class="c-calendar-item__details__content">
+                                        {# TODO: check if there is a summary in dutch and explain #}
                                         {{ r.summary }}
                                     </div>
                                 </details>

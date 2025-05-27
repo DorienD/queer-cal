@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: end;
+    gap: 2rem;
     width: 100%;
     height: 40px;
     padding: 0 2.5%;
@@ -10,15 +11,6 @@
     border-bottom: 3px solid var(--darkTheme);
     text-transform: uppercase;
     font-size: 0.9em;
-
-    ul {
-        @include striplist;
-        display: flex;
-        align-items: center;
-        justify-content: end;
-        gap: 1.5em;
-        height: 100%;
-    }
 
     li {
         position: relative;
@@ -39,6 +31,16 @@
     }
 }
 
+.c-main-nav__menu,
+.c-main-nav__lang {
+    @include striplist;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1.5em;
+    height: 100%;
+}
+
 .c-main-nav__logo {
     margin-right: auto;
 }
@@ -53,4 +55,25 @@ body.color--flagBrown {
 .c-main-nav__btns {
     display: flex;
     gap: 1rem;
+}
+
+.c-main-nav__lang {
+    gap: 1em;
+
+    a {
+        text-decoration: none;
+
+        @include setInteractive {
+            text-decoration: underline;
+        }
+    }
+
+    a.is-active {
+        text-decoration: underline;
+    }
+
+    li:not(:last-child):after {
+        rotate: 10deg;
+        right: -0.5em;
+    }
 }

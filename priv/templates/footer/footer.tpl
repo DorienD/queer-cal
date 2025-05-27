@@ -5,7 +5,8 @@
         <label hidden for="dark"><input type="radio" value="dark" name="color-scheme" id="dark">dark</label>
         <label hidden for="system"><input type="radio" value="system" name="color-scheme" id="system">system</label>
     </form>
-    <a href="#top" class="c-btn-top"><span>{_ Back to top _}</span></a>
+    <a href="https://github.com/DorienD/queer-cal" class="c-footer__github">Github</a>
+    <a href="#top" class="c-footer__top"><span>{_ Back to top _}</span></a>
 </footer>
 
 {% javascript %}

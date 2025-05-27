@@ -144,7 +144,6 @@ keyword_list() ->
         {<<"Dark room">>, <<"Dark room">>},
         {<<"Party">>, <<"Feest">>},
         {<<"Demonstration">>, <<"Demonstratie">>},
-        {<<"Community">>, <<"Community">>},
         {<<"Sober">>, <<"Nuchter">>},
         {<<"Open mic">>, <<"Open mic">>},
         {<<"Exhibition">>, <<"Tentoonstelling">>},

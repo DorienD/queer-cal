@@ -94,38 +94,13 @@ button {
     }
 }
 
-.btn-primary {
+.btn-primary,
+.btn-success {
     @extend .c-btn-primary;
 }
 
 .btn {
     @extend .c-btn;
-}
-
-.c-btn-text {
-    display: inline-flex;
-    align-items: center;
-    padding: 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-
-    svg {
-        margin-right: 1.5rem;
-    }
-
-    &.-icon-after {
-        svg {
-            margin-right: 0;
-            margin-left: 0.7rem;
-        }
-    }
-
-    &.-rotate-arrow {
-        svg {
-            transform: rotate(-180deg);
-        }
-    }
 }
 
 .c-btn-admin-edit {
@@ -181,7 +156,7 @@ body.color--flagBrown {
     }
 }
 
-.c-btn-agenda {
+.c-btn-share-event {
     display: inline-flex;
     align-items: center;
     gap: 1rem;

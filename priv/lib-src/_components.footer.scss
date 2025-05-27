@@ -1,16 +1,18 @@
 .c-footer {
     display: flex;
+    flex-flow: row wrap;
     align-items: center;
-    justify-content: space-between;
-    height: 40px;
-    padding: 0 2.5%;
-    margin-top: 4rem;
+    gap: 1em;
+    padding: 1em 2.5%;
+    margin-top: var(--mainMargin);
     position: relative;
     background: light-dark(var(--theme), var(--lightTheme));
     border-top: 3px solid var(--darkTheme);
     line-height: 1;
+    font-size: 0.9em;
 
     @include breakpoint($mediumBreakpoint) {
+        height: 4rem;
         padding: 0 4rem;
     }
 }
@@ -23,6 +25,7 @@ body.color--flagBrown {
 }
 
 .c-footer__mode {
+    width: 100%;
     display: flex;
     gap: 1rem;
 
@@ -43,4 +46,17 @@ body.color--flagBrown {
         text-decoration: underline;
         text-underline-offset: 3px;
     }
+
+    @include breakpoint($mediumBreakpoint) {
+        width: auto;
+        margin-right: auto;
+    }
+}
+
+.c-footer__top {
+
+}
+
+.c-footer__github {
+    // margin-left: auto;
 }

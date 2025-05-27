@@ -89,8 +89,16 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label class="control-label" for="tickets">{_ Ticket link _} ({_ This will add a ticket button. _})</label>
-                    <input class="form-control" id="tickets" type="text" name="tickets" inputmode="url" value="{{ id.tickets }}">
+                    <label class="control-label" for="ticket_link">{_ Ticket link _} ({_ This will add a ticket button. _})</label>
+                    <input class="form-control" id="ticket_link" type="text" name="ticket_link" inputmode="url" value="{{ id.ticket_link }}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="control-label" for="signup_link">{_ Sign up link _} ({_ This will add a sign up button. _})</label>
+                    <input class="form-control" id="signup_link" type="text" name="signup_link" inputmode="url" value="{{ id.signup_link }}">
                 </div>
             </div>
         </div>
