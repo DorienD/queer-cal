@@ -667,6 +667,12 @@ blockquote p {
   }
 }
 
+body.color--flagBlack blockquote,
+body.color--flagBrown blockquote {
+  border-color: light-dark(var(--primaryColor), white);
+  color: light-dark(var(--primaryColor), white);
+}
+
 form .form-control {
   margin-bottom: 1em;
   color: var(--typographyColor);

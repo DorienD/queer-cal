@@ -188,12 +188,15 @@ blockquote {
         display: inline;
     }
 
-    // &:before,
-    // &:after {
-    //     content:'"'
-    // }
-
     @include breakpoint($mediumBreakpoint) {
         font-size: 1.3em;
+    }
+}
+
+body.color--flagBlack,
+body.color--flagBrown {
+    blockquote {
+        border-color: light-dark(var(--primaryColor), white);
+        color: light-dark(var(--primaryColor), white);
     }
 }
