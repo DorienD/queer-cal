@@ -620,6 +620,9 @@ h4 {
 .c-body-text a:not(.c-btn):not(.btn):hover, .c-body-text a:not(.c-btn):not(.btn):active, .c-body-text a:not(.c-btn):not(.btn):focus, .c-body-text a:not(.c-btn):not(.btn):focus:active {
   text-decoration: none;
 }
+.c-body-text p {
+  margin-bottom: 1.5em;
+}
 .c-body-text ul, .c-body-text ol {
   padding-left: 1em;
   margin-left: 0;
