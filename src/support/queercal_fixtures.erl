@@ -138,7 +138,7 @@ keywords() ->
 
 keyword_list() ->
     [
-        {<<"Flinta">>, <<"Flinta">>},
+        {<<"FLINTA">>, <<"FLINTA">>},
         {<<"Workshop">>, <<"Workshop">>},
         {<<"Community">>, <<"Community">>},
         {<<"Dark room">>, <<"Dark room">>},
