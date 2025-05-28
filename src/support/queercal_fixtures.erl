@@ -38,7 +38,14 @@ datamodel(Context) ->
                     {en, <<"Location">>},
                     {nl, <<"Lokatie">>}
                 ]}
-            }, [{event,location}]}
+            }, [{event,location}]},
+            {hasorganisation, #{
+                <<"language">> => [ en, nl ],
+                <<"title">> => #trans{ tr = [
+                    {en, <<"Organisation">>},
+                    {nl, <<"Organisatie">>}
+                ]}
+            }, [{event,organization}]}
         ],
         resources = [
             % {overview_events, query, #{

@@ -60,7 +60,7 @@
     align-items: center;
     flex-flow: row wrap;
     gap: 0.5em;
-    margin: 0 0 0.5em;
+    margin: 0 0 1em;
     text-transform: uppercase;
 
     span {
@@ -76,6 +76,10 @@
             height: 0.7lh;
             background: var(--darkTheme);
         }
+    }
+
+    @include breakpoint($mediumBreakpoint) {
+        margin-bottom: 0.5em;
     }
 }
 
@@ -130,11 +134,11 @@
 }
 
 .c-calendar-item__address {
-    margin: 0 0 0.5em;
+    margin: 0 0 1em;
 }
 
 .c-calendar-item__details {
-    margin-top: 0.3em;
+    margin-top: 1em;
 
     &:open {
         summary {
@@ -180,6 +184,10 @@
             border-radius: 50%;
             transition: left 0.3s;
         }
+    }
+
+    @include breakpoint($mediumBreakpoint) {
+        margin-top: 0.5em;
     }
 }
 

@@ -97,6 +97,11 @@
 
     <div id="visit_address">
         <div class="form-group">
+            <label class="control-label" for="org_title">{_ Organisation name _} ({_ Not required _}</label>
+            <input class="form-control" id="org_title" type="text" name="org_title" value="{{ id.org_title }}">
+        </div>
+
+        <div class="form-group">
             <label class="control-label" for="address_title">{_ Title of the venue/location _}</label>
             <input class="form-control" id="address_title" type="text" name="address_title" value="{{ id.address_title }}">
         </div>
