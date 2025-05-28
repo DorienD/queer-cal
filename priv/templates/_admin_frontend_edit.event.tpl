@@ -97,6 +97,7 @@
                 <p class="helper-text">
                     {_ You can add multiple keywords if needed. _}
                 </p>
+                <br>
 
                 {% live template="_admin_edit_content_page_connections_list.tpl"
                     topic={object id=id predicate="subject"}
@@ -126,10 +127,38 @@
                     <p class="if-has-error" style="display: none">{_ You must have at least one keyword. _}</p>
                 </div>
 
-                <small>
-                    {_ Missing a keyword? Please send them to _} <a href="mailto:event@queer-kalender.nl">event@queer-kalender.nl</a>.
-                </small>
+                <p>
+                    <small>{_ Missing a keyword? Please send them to _} <a href="mailto:event@queer-kalender.nl">event@queer-kalender.nl</a>.</small>
+                </p>
+            </div>
+        </div>
+
+        <div class="widget">
+            <div class="widget-content">
+                <h4>{_ Known location _}</h4>
+
+                <p>
+                    {_ Some locations are already in the system, if you can't find the location add the address in the form. _}
+                </p>
                 <br>
+
+                {% live template="_admin_edit_content_page_connections_list.tpl"
+                    topic={object id=id predicate="haslocation"}
+                    id=id
+                    predicate="haslocation"|as_atom
+                    button_label=button_label
+                    button_class=button_class
+                    dialog_title_add=dialog_title_add
+                    callback=callback
+                    action=action
+                    nocatselect
+                    cat=m.rsc.location.id
+                    content_group=content_group
+                    unlink_action=unlink_action
+                    undo_message_id="unlink-undo-message"
+                    list_id=list_id
+                    tabs_enabled=["find"]
+                %}
                 <br>
             </div>
         </div>

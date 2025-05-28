@@ -16,7 +16,8 @@
     input[type="text"],
     input[type="date"],
     input[type="time"],
-    textarea {
+    textarea,
+    textarea.form-control {
         border: 2px solid var(--typographyColor);
     }
 
@@ -63,8 +64,6 @@
     background: color-mix(in srgb, var(--flagRed), white 70%);
 }
 
-// This doesn't work, also not really needed but hard to 
-// get out of html so hide with css for now
-.do_listfilter {
+.form-control[name="find_cg"] {
     display: none;
 }

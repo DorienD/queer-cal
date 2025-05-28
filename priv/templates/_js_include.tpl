@@ -9,6 +9,7 @@
     "js/modules/z.notice.js"
     "js/modules/z.tooltip.js"
     "js/modules/z.dialog.js"
+    "js/modules/z.listfilter.js"
     "js/modules/livevalidation-1.3.js"
     minify
 %}

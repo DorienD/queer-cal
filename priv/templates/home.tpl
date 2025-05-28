@@ -35,7 +35,7 @@
                             <h3 class="c-calendar-item__title">
                                 {% include "event/event-title.tpl" id=r %}
                                 {% if r.is_editable %}
-                                    <a href="{% url admin_frontend_edit id=id %}" class="c-calender-item__edit">
+                                    <a href="{% url admin_frontend_edit id=r %}" class="c-calender-item__edit">
                                         - {_ Edit _}
                                     </a>
                                 {% endif %}

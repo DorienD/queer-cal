@@ -719,6 +719,7 @@ form input[type=time] {
   align-items: center;
   height: 4.5rem;
   font-size: inherit;
+  padding: 0 1rem;
 }
 
 body input.form-control:not([type=date]):not([type=time]):focus {
@@ -1123,6 +1124,8 @@ body.color--flagBrown .c-btn-add-event path {
 }
 
 .c-calender-item__edit {
+  display: inline-flex;
+  margin-left: 1em;
   font-size: 0.8em;
 }
 
@@ -1380,7 +1383,8 @@ body.color--flagBrown .c-main-nav {
 .t-edit input[type=text],
 .t-edit input[type=date],
 .t-edit input[type=time],
-.t-edit textarea {
+.t-edit textarea,
+.t-edit textarea.form-control {
   border: 2px solid var(--typographyColor);
 }
 .t-edit .form-group label.control-label {
@@ -1422,7 +1426,7 @@ body.color--flagBrown .c-main-nav {
   background: color-mix(in srgb, var(--flagRed), white 70%);
 }
 
-.do_listfilter {
+.form-control[name=find_cg] {
   display: none;
 }
 
