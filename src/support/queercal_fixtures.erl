@@ -165,7 +165,8 @@ keyword_list() ->
         {<<"Kink">>, <<"Kink">>},
         {<<"Drag">>, <<"Drag">>},
         {<<"Child friendly">>, <<"Kindvriendelijk">>},
-        {<<"Free">>, <<"Gratis">>}
+        {<<"Free">>, <<"Gratis">>},
+        {<<"Networking">>, <<"Netwerken">>}
     ].
 
 install_acl_rules(Context) -> 

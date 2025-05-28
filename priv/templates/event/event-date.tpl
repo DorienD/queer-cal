@@ -4,7 +4,7 @@
             {{ id.date_start|date:"D d":"UTC" }}
             {# Als dezelfde maand dan toon alleen dag anders toon ook maand #}
             {% if id.date_start|date:"m" == id.date_end|date:"m" %}
-                {% if id.date_start|date:"d" != id.date_end|date:"d" %}
+                {% if id.date_start|date:"d":"UTC" != id.date_end|date:"d":"UTC" %}
                     - {{ id.date_end|date:"d":"UTC" }}
                 {% endif %}
             {% else %}
