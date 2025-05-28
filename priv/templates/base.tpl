@@ -1,3 +1,5 @@
+{% with ["--flagRed", "--flagPink", "--flagLightBlue", "--flagBrown", "--flagBlack", "--flagOrange", "--flagYellow", "--flagGreen", "--flagBlue", "--flagPurple"] as colors %}
+{% with colors|random as theme %}
 <!DOCTYPE html>
 <html lang="{{ z_language|default:"en"|escape }}" class="environment-{{ m.site.environment }}">
 <head>
@@ -28,6 +30,30 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="/lib/images/apple-touch-icon.png" />
 	<meta name="apple-mobile-web-app-title" content="Queer Cal" />
 	<link rel="manifest" href="/lib/images/site.webmanifest" />
+	
+	<meta name="theme-color" content="
+		{% if theme == "--flagRed" %}
+			#FF575B
+		{% elseif theme == "--flagPink" %}
+			#CF54A6
+		{% elseif theme == "--flagLightBlue" %}
+			#018CD3
+		{% elseif theme == "--flagBrown" %}
+			#5B3A1B
+		{% elseif theme == "--flagBlack" %}
+			#000000
+		{% elseif theme == "--flagOrange" %}
+			#FF4E09
+		{% elseif theme == "--flagYellow" %}
+			#BF870B
+		{% elseif theme == "--flagGreen" %}
+			#419711
+		{% elseif theme == "--flagBlue" %}
+			#018CD3
+		{% elseif theme == "--flagPurple" %}
+			#884BED
+		{% endif %}
+	">
 
 	{% all include "_html_head.tpl" %}
 
@@ -44,8 +70,6 @@
 
 	{% block html_head_extra %}{% endblock %}
 </head>
-{% with ["--flagRed", "--flagPink", "--flagLightBlue", "--flagBrown", "--flagBlack", "--flagOrange", "--flagYellow", "--flagGreen", "--flagBlue", "--flagPurple"] as colors %}
-{% with colors|random as theme %}
 <body class="{% block body_class %}page-{{ id.name }}{% endblock %} {% for cat in id.is_a %}cat-{{ cat }} {% endfor %} color{{ theme }}" style="--theme: var({{ theme }}) " {% block body_attrs %}{% endblock %} data-cotonic-pathname-search="{% cotonic_pathname_search %}">
 	<div id="top"></div>
 	{% block skip_link %}
@@ -94,6 +118,6 @@
 
 	{% script %}
 </body>
-{% endwith %}
-{% endwith %}
 </html>
+{% endwith %}
+{% endwith %}

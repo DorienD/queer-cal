@@ -50,4 +50,9 @@ body {
     @include breakpoint($mediumBreakpoint) {
         --mainMargin: 7rem;
     }
+
+    dialog::backdrop {
+        background: var(--darkTheme, rgba(0, 0, 0, 0.5));
+        opacity: 0.3;
+    }
 }

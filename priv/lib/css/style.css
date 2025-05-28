@@ -347,6 +347,10 @@ body.color--flagBlack {
     --mainMargin: 7rem;
   }
 }
+body dialog::backdrop {
+  background: var(--darkTheme, rgba(0, 0, 0, 0.5));
+  opacity: 0.3;
+}
 
 html {
   height: 100%;
