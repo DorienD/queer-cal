@@ -3,7 +3,9 @@
     
     {{ id.date_start|date:"H:i":"UTC" }}
 
-    {% if
+    {% if id.date_start|date:"H":"UTC" == id.date_end|date:"H":"UTC" %}
+        {# Only a start time, don't show end time #}
+    {% elseif
         (((id.date_start|add_day)|date:"dm":"UTC" == id.date_end|date:"dm":"UTC") 
             and id.date_end|date:"H" < 9)
         or
