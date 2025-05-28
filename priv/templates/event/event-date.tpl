@@ -2,8 +2,13 @@
     {% if id.date_is_all_day %}
         <span>
             {{ id.date_start|date:"D d":"UTC" }}
-            {% if id.date_start|date:"d" != id.date_end|date:"d" %}
-                - {{ id.date_end|date:"d":"UTC" }}
+            {# Als dezelfde maand dan toon alleen dag anders toon ook maand #}
+            {% if id.date_start|date:"m" == id.date_end|date:"m" %}
+                {% if id.date_start|date:"d" != id.date_end|date:"d" %}
+                    - {{ id.date_end|date:"d":"UTC" }}
+                {% endif %}
+            {% else %}
+                - {{ id.date_end|date:"d b":"UTC" }}
             {% endif %}
         </span>
     {% else %}
