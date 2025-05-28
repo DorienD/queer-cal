@@ -16,6 +16,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
         gap: 2em;
+        align-items: stretch;
 
         > li:first-child {
             grid-column: 1 / -1;
@@ -35,6 +36,7 @@
 }
 
 .c-calendar-item {
+    height: 100%;
     padding: 0 0 1em;
     position: relative;
 
@@ -138,64 +140,23 @@
 }
 
 .c-calendar-item__details {
-    margin-top: 1em;
-
-    &:open {
-        summary {
-            padding-left: calc(1lh + 0.5em);
-            background: var(--lightTheme);
-            text-decoration: none;
-
-            &:before {
-                left: 0.5em;
-            }
-        }
-    }
-
-    summary {
-        display: flex;
-        align-items: center;
-        width: fit-content;
-        padding: 0.2em 1em 0.2em 1lh;
-        position: relative;
-        list-style: none;
-        cursor: pointer;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-        transition: padding 0.3s;
-
-        &:hover {
-            text-decoration: none;
-        }
-
-        &:before {
-            content: "i";
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 1lh;
-            height: 1lh;
-            position: absolute;
-            left: 0;
-            color: white;
-            background: var(--darkTheme);
-            font-size: 80%;
-            text-decoration: none;
-            border-radius: 50%;
-            transition: left 0.3s;
-        }
-    }
-
-    @include breakpoint($mediumBreakpoint) {
-        margin-top: 0.5em;
-    }
-}
-
-.c-calendar-item__details__content {
+    width: 90%;
     max-width: 70ch;
     padding: 1em;
     background: var(--lightTheme);
-    font-size: 0.9em;
+    border: 3px solid var(--darkTheme); 
+
+    h3 {
+        color: var(--darkTheme);
+    }
+}
+
+.c-calendar-item__details-close {
+    padding: 0;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .c-calender-item__edit {

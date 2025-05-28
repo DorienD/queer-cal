@@ -46,15 +46,18 @@
                             {% include "event/event-keywords.tpl" id=r %}
                             
 
-                            {% if r.summary %}
-                                <details class="c-calendar-item__details">
-                                    <summary>Description</summary>
+                            {# {% if r.summary %}
+                                <dialog id="details-{{ r.id }}" class="c-calendar-item__details">
                                     <div class="c-calendar-item__details__content">
-                                        {# TODO: check if there is a summary in dutch and explain #}
-                                        {{ r.summary }}
+                                        <h3>{_ Description _}</h3>
+                                        
+                                        <p>{{ r.summary }}</p>
+
+                                        <button class="c-calendar-item__details-close">Close</button>
                                     </div>
-                                </details>
-                            {% endif %}
+                                </dialog>
+                                <button class="c-calendar-item__details-toggle" data-dialog="details-{{ r.id }}">{_ Description _}</button>
+                            {% endif %} #}
                         </article>
                     </li>
                 {% if forloop.last %}
@@ -62,4 +65,8 @@
                 {% endif %}
         {% endfor %}
     {% endwith %}
+
+    {% javascript %}
+        
+    {% endjavascript %}
 {% endblock %}

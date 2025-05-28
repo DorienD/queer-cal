@@ -1,5 +1,21 @@
-{% if id.o.subject or id.ticket_link or id.signup_link %}
+{% if id.o.subject or id.ticket_link or id.signup_link or id.summary %}
+    {% if r.summary %}
+        <dialog id="details-{{ r.id }}" class="c-calendar-item__details">
+            <div class="c-calendar-item__details__content">
+                <h3>{_ Description _}</h3>
+                
+                <p>{{ r.summary }}</p>
+
+                <button class="c-calendar-item__details-close">Close</button>
+            </div>
+        </dialog>
+    {% endif %}
     <ul class="c-keyword-list">
+        {% if r.summary %}
+            <li>
+                <button class="c-calendar-item__details-toggle c-keyword-list__item -desc" data-dialog="details-{{ r.id }}">{_ Description _}</button>
+            </li>
+        {% endif %}
         {% for keyword in id.o.subject %}
             <li>
                 {% if keyword.summary %}

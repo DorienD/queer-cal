@@ -969,6 +969,7 @@ body.color--flagBrown .c-btn-add-event path {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     gap: 2em;
+    align-items: stretch;
   }
   .c-calendar > li:first-child {
     grid-column: 1/-1;
@@ -987,6 +988,7 @@ body.color--flagBrown .c-btn-add-event path {
 }
 
 .c-calendar-item {
+  height: 100%;
   padding: 0 0 1em;
   position: relative;
 }
@@ -1079,58 +1081,22 @@ body.color--flagBrown .c-btn-add-event path {
 }
 
 .c-calendar-item__details {
-  margin-top: 1em;
-}
-.c-calendar-item__details:open summary {
-  padding-left: calc(1lh + 0.5em);
-  background: var(--lightTheme);
-  text-decoration: none;
-}
-.c-calendar-item__details:open summary:before {
-  left: 0.5em;
-}
-.c-calendar-item__details summary {
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  padding: 0.2em 1em 0.2em 1lh;
-  position: relative;
-  list-style: none;
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: padding 0.3s;
-}
-.c-calendar-item__details summary:hover {
-  text-decoration: none;
-}
-.c-calendar-item__details summary:before {
-  content: "i";
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 1lh;
-  height: 1lh;
-  position: absolute;
-  left: 0;
-  color: white;
-  background: var(--darkTheme);
-  font-size: 80%;
-  text-decoration: none;
-  border-radius: 50%;
-  transition: left 0.3s;
-}
-@media only screen and (min-width: 800px) {
-  .c-calendar-item__details {
-    margin-top: 0.5em;
-  }
-}
-
-.c-calendar-item__details__content {
+  width: 90%;
   max-width: 70ch;
   padding: 1em;
   background: var(--lightTheme);
-  font-size: 0.9em;
+  border: 3px solid var(--darkTheme);
+}
+.c-calendar-item__details h3 {
+  color: var(--darkTheme);
+}
+
+.c-calendar-item__details-close {
+  padding: 0;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .c-calender-item__edit {
@@ -1218,7 +1184,38 @@ body.color--flagBrown .c-footer {
 .c-keyword-list__item.-signup {
   background: light-dark(var(--flagPurple), color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%));
   border: 1px solid light-dark(var(--flagPurple), color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%));
-  background: var(--flagPurple);
+}
+.c-keyword-list__item.-desc {
+  display: inline-flex;
+  gap: 0.4em;
+  padding: 0.2rem 0.7rem 0.2rem 0.4rem;
+  position: relative;
+  background: light-dark(var(--lightTheme), color-mix(in srgb, var(--lightTheme), var(--bodyBg) 30%));
+  border: 1px solid light-dark(var(--darkTheme), var(--lightTheme));
+}
+.c-keyword-list__item.-desc:before {
+  content: "i";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2lh;
+  height: 1.2lh;
+  color: white;
+  background: var(--darkTheme);
+  font-size: 80%;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: left 0.3s;
+}
+.c-keyword-list__item.-desc:hover, .c-keyword-list__item.-desc:active, .c-keyword-list__item.-desc:focus, .c-keyword-list__item.-desc:focus:active {
+  background: light-dark(color-mix(in srgb, var(--darkTheme), var(--bodyBg) 30%), var(--darkTheme));
+}
+.c-keyword-list__item.-desc:hover:before, .c-keyword-list__item.-desc:active:before, .c-keyword-list__item.-desc:focus:before, .c-keyword-list__item.-desc:focus:active:before {
+  background: light-dark(var(--darkTheme), var(--lightTheme));
+}
+
+body.color--flagBlack .c-keyword-list__item.-desc:hover, body.color--flagBlack .c-keyword-list__item.-desc:active, body.color--flagBlack .c-keyword-list__item.-desc:focus, body.color--flagBlack .c-keyword-list__item.-desc:focus:active {
+  color: light-dark(white, black);
 }
 
 button.c-keyword-list__item {

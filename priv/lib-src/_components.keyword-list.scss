@@ -25,7 +25,45 @@
     &.-signup {
         background: light-dark(var(--flagPurple), color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%));
         border: 1px solid light-dark(var(--flagPurple), color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%));
-        background: var(--flagPurple);
+    }
+
+    &.-desc {
+        display: inline-flex;
+        gap: 0.4em;
+        padding: 0.2rem 0.7rem 0.2rem 0.4rem;
+        position: relative;
+
+        background: light-dark(var(--lightTheme), color-mix(in srgb, var(--lightTheme), var(--bodyBg) 30%));
+        border: 1px solid light-dark(var(--darkTheme), var(--lightTheme));
+
+        &:before {
+            content: "i";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.2lh;
+            height: 1.2lh;
+            color: white;
+            background: var(--darkTheme);
+            font-size: 80%;
+            text-decoration: none;
+            border-radius: 50%;
+            transition: left 0.3s;
+        }
+
+        @include setInteractive {
+            background: light-dark(color-mix(in srgb, var(--darkTheme), var(--bodyBg) 30%), var(--darkTheme));
+
+            &:before {
+                background: light-dark(var(--darkTheme), var(--lightTheme));
+            }
+        }
+    }
+}
+
+body.color--flagBlack .c-keyword-list__item.-desc {
+    @include setInteractive {
+        color: light-dark(white, black);
     }
 }
 

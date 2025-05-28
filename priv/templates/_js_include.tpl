@@ -11,6 +11,7 @@
     "js/modules/z.dialog.js"
     "js/modules/z.listfilter.js"
     "js/modules/livevalidation-1.3.js"
+    "js/app.js"
     minify
 %}
 
