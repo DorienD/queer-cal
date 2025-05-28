@@ -169,7 +169,8 @@ keyword_list() ->
         {<<"Networking">>, <<"Netwerken">>},
         {<<"Open air">>, <<"Openlucht">>},
         {<<"Festival">>, <<"Festival">>},
-        {<<"Trans">>, <<"Trans">>}
+        {<<"Trans">>, <<"Trans">>},
+        {<<"Family">>, <<"Familie">>}
     ].
 
 install_acl_rules(Context) -> 
