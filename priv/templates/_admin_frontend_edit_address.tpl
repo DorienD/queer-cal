@@ -1,10 +1,5 @@
 <div class="widget">
     <div class="widget-content">
-        {# <p class="help-block" {% if not id.tz or id.tz == m.req.timezone %}style="display:none"{% endif %}>
-            <i class="fa fa-exclamation-triangle"></i>
-            {_ Showing dates in _}: <b class="rsc-timezone">{{ id.tz|escape }}</b>
-        </p> #}
-
         <div class="date-range">
             <h2 class="h3">
                 {_ Date & time _}
@@ -13,6 +8,21 @@
                 {_ The end date must be in the future relative to the start date.  _}
             </p>
             <fieldset>
+                <div class="checkbox">
+                    <label>
+                        <input name="date_is_all_day" id="{{ #all_day }}" type="checkbox" {% if id.date_is_all_day %}checked{% endif %}> {_ All day event _}
+                    </label>
+                </div>
+
+                {% javascript %}
+                    $("#{{ #all_day }}").on('change', function() {
+                        var $times = $(this).closest('.date-range').find("input[type='time']");
+                        if ($(this).is(":checked"))
+                            $times.fadeOut("fast").val('');
+                        else
+                            $times.fadeIn("fast");
+                    });
+                {% endjavascript %}
                 <div class="row">
                     <div class="form-group col-sm-6">
                         <label class="control-label">{_ Start date _} *</label>
@@ -28,6 +38,10 @@
                     </div>
                 </div>
             </fieldset>
+            <p class="help-block" {% if not id.tz or id.tz == m.req.timezone %}style="display:none"{% endif %}>
+                <i class="fa fa-exclamation-triangle"></i>
+                {_ Showing dates in _}: <b class="rsc-timezone">{{ id.tz|escape }}</b>
+            </p>
         </div>
 
         <hr>
