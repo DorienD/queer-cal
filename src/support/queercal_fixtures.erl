@@ -170,7 +170,9 @@ keyword_list() ->
         {<<"Open air">>, <<"Openlucht">>},
         {<<"Festival">>, <<"Festival">>},
         {<<"Trans">>, <<"Trans">>},
-        {<<"Family">>, <<"Familie">>}
+        {<<"Family">>, <<"Familie">>},
+        {<<"Voku">>, <<"Voku">>},
+        {<<"Queer">>, <<"Queer">>}
     ].
 
 install_acl_rules(Context) -> 
