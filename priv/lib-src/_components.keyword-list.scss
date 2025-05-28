@@ -32,6 +32,7 @@
         gap: 0.4em;
         padding: 0.2rem 0.7rem 0.2rem 0.4rem;
         position: relative;
+        color: var(--darkTheme);
 
         background: light-dark(var(--lightTheme), color-mix(in srgb, var(--lightTheme), var(--bodyBg) 30%));
         border: 1px solid light-dark(var(--darkTheme), var(--lightTheme));
@@ -53,6 +54,7 @@
 
         @include setInteractive {
             background: light-dark(color-mix(in srgb, var(--darkTheme), var(--bodyBg) 30%), var(--darkTheme));
+            color: var(--lightTheme);
 
             &:before {
                 background: light-dark(var(--darkTheme), var(--lightTheme));
@@ -61,7 +63,8 @@
     }
 }
 
-body.color--flagBlack .c-keyword-list__item.-desc {
+body.color--flagBlack .c-keyword-list__item.-desc,
+body.color--flagBrown .c-keyword-list__item.-desc {
     @include setInteractive {
         color: light-dark(white, black);
     }

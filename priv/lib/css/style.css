@@ -1194,6 +1194,7 @@ body.color--flagBrown .c-footer {
   gap: 0.4em;
   padding: 0.2rem 0.7rem 0.2rem 0.4rem;
   position: relative;
+  color: var(--darkTheme);
   background: light-dark(var(--lightTheme), color-mix(in srgb, var(--lightTheme), var(--bodyBg) 30%));
   border: 1px solid light-dark(var(--darkTheme), var(--lightTheme));
 }
@@ -1213,12 +1214,17 @@ body.color--flagBrown .c-footer {
 }
 .c-keyword-list__item.-desc:hover, .c-keyword-list__item.-desc:active, .c-keyword-list__item.-desc:focus, .c-keyword-list__item.-desc:focus:active {
   background: light-dark(color-mix(in srgb, var(--darkTheme), var(--bodyBg) 30%), var(--darkTheme));
+  color: var(--lightTheme);
 }
 .c-keyword-list__item.-desc:hover:before, .c-keyword-list__item.-desc:active:before, .c-keyword-list__item.-desc:focus:before, .c-keyword-list__item.-desc:focus:active:before {
   background: light-dark(var(--darkTheme), var(--lightTheme));
 }
 
-body.color--flagBlack .c-keyword-list__item.-desc:hover, body.color--flagBlack .c-keyword-list__item.-desc:active, body.color--flagBlack .c-keyword-list__item.-desc:focus, body.color--flagBlack .c-keyword-list__item.-desc:focus:active {
+body.color--flagBlack .c-keyword-list__item.-desc:hover, body.color--flagBlack .c-keyword-list__item.-desc:active, body.color--flagBlack .c-keyword-list__item.-desc:focus, body.color--flagBlack .c-keyword-list__item.-desc:focus:active,
+body.color--flagBrown .c-keyword-list__item.-desc:hover,
+body.color--flagBrown .c-keyword-list__item.-desc:active,
+body.color--flagBrown .c-keyword-list__item.-desc:focus,
+body.color--flagBrown .c-keyword-list__item.-desc:focus:active {
   color: light-dark(white, black);
 }
 
