@@ -27,6 +27,7 @@ Queer Calendar is a grassroots initiative to centralize LGBTQIA+ event listings 
 - [ ] Add glossary explaining keywords
 - [ ] Community event submission - allow users to add events
 - [ ] Add filtering by tags, keywords, and date
+- [ ] Expand to other cities, think of a good UX
 - [ ] Build an event scraper(?) for auto-imports (e.g. from Instagram posts)
 - [ ] Integrate with a, possibly paid, newsletter system
 - [ ] Allow sync with personal calendars (Google/iCal/ICS — user-controlled)
@@ -35,14 +36,14 @@ Queer Calendar is a grassroots initiative to centralize LGBTQIA+ event listings 
 
 ## ✅ Done So Far
 
-- [x] Project structure
-- [x] Initial frontend styling and layout
-- [x] Made open source for community collaboration
-- [x] Add dark mode
-- [x] Finalize MVP
-- [x] Implement multilingual support
+- [x] Deployed first live version 🥳
 - [x] Add popovers for keywords with explanations
-- [x] Deployed first live version
+- [x] Implement multilingual support
+- [x] Finalize MVP
+- [x] Add dark mode
+- [x] Made open source for community collaboration
+- [x] Initial frontend styling and layout
+- [x] Project structure
 
 ---
 
