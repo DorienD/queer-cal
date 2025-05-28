@@ -1122,6 +1122,10 @@ body.color--flagBrown .c-btn-add-event path {
   font-size: 0.9em;
 }
 
+.c-calender-item__edit {
+  font-size: 0.8em;
+}
+
 .c-footer {
   display: flex;
   flex-flow: row wrap;
@@ -1193,22 +1197,16 @@ body.color--flagBrown .c-footer {
   border: none;
   line-height: 1.4;
   text-underline-offset: 1px;
+  border: 1px solid color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
 }
 .c-keyword-list__item.-tickets {
-  background: var(--flagYellow);
-}
-@media (prefers-color-scheme: dark) {
-  .c-keyword-list__item.-tickets {
-    background: color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%);
-  }
+  background: light-dark(var(--flagYellow), color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%));
+  border: 1px solid light-dark(var(--flagYellow), color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%));
 }
 .c-keyword-list__item.-signup {
+  background: light-dark(var(--flagPurple), color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%));
+  border: 1px solid light-dark(var(--flagPurple), color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%));
   background: var(--flagPurple);
-}
-@media (prefers-color-scheme: dark) {
-  .c-keyword-list__item.-signup {
-    background: color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%);
-  }
 }
 
 button.c-keyword-list__item {

@@ -16,21 +16,17 @@
     border: none;
     line-height: 1.4;
     text-underline-offset: 1px;
+    border: 1px solid color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
 
     &.-tickets {
-        background: var(--flagYellow);
-
-        @media (prefers-color-scheme: dark) {
-            background: color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%);
-        }
+        background: light-dark(var(--flagYellow), color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%));
+        border: 1px solid light-dark(var(--flagYellow), color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%));
     }
 
     &.-signup {
+        background: light-dark(var(--flagPurple), color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%));
+        border: 1px solid light-dark(var(--flagPurple), color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%));
         background: var(--flagPurple);
-
-        @media (prefers-color-scheme: dark) {
-            background: color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%);
-        }
     }
 }
 
