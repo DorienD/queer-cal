@@ -35,7 +35,7 @@
         color: var(--darkTheme);
 
         background: light-dark(var(--lightTheme), color-mix(in srgb, var(--lightTheme), var(--bodyBg) 30%));
-        border: 1px solid light-dark(var(--darkTheme), var(--lightTheme));
+        border: 1px solid var(--darkTheme);
 
         &:before {
             content: "i";
