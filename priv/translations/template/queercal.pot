@@ -1,0 +1,442 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# NB: Consider using poEdit <http://poedit.sourceforge.net>
+#
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:84
+msgid ""
+"A link will be added around the title of the event. The website link will "
+"have priority over Facebook or Instagram."
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/base.tpl:75
+msgid ""
+"Add Event"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/event/share-event.tpl:7./_build/default/lib/queercal/priv/templates/event/share-event.tpl:7
+msgid ""
+"Add to Google calendar"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/event/share-event.tpl:9./_build/default/lib/queercal/priv/templates/event/share-event.tpl:9
+msgid ""
+"Add to Microsoft agenda"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/event/share-event.tpl:2
+msgid ""
+"Add to calendar"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/event/share-event.tpl:11./_build/default/lib/queercal/priv/templates/event/share-event.tpl:11
+msgid ""
+"Add to iCalendar"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:7
+msgid ""
+"Address"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/base.tpl:82
+msgid ""
+"Admin"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/base.tpl:80
+msgid ""
+"Admin edit"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:28./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:13
+msgid ""
+"All day event"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/page.event.tpl:7
+msgid ""
+"All events"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/footer/footer.tpl:3
+msgid ""
+"Appearance:"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/footer/footer.tpl:9
+msgid ""
+"Back to top"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/event/event-location.tpl:6
+msgid ""
+"By"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/page_admin_frontend_edit.tpl:20./_build/default/lib/queercal/priv/templates/page_admin_frontend_edit.tpl:22./_build/default/lib/queercal/priv/templates/page_admin_frontend_edit.tpl:24
+msgid ""
+"Cancel"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:116./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:71
+msgid ""
+"City"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:25
+msgid ""
+"Content"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:5
+msgid ""
+"Date & time"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/page.event.tpl:34
+msgid ""
+"Description only provided in Dutch"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/page.event.tpl:28
+msgid ""
+"Description only provided in English"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/home.tpl:39./_build/default/lib/queercal/priv/templates/page.event.tpl:13
+msgid ""
+"Edit"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:34
+msgid ""
+"End date"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_basics_form.event.tpl:4
+msgid ""
+"Event"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:82
+msgid ""
+"Facebook"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:97
+msgid ""
+"Facebook link"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:43
+msgid ""
+"From"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:88
+msgid ""
+"Instagram"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:103
+msgid ""
+"Instagram link"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:95
+msgid ""
+"Keywords"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:138
+msgid ""
+"Known location"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:168
+msgid ""
+"Known organisation"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:28./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:49
+msgid ""
+"Language"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:81
+msgid ""
+"Links"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/page_admin_frontend_edit.tpl:39./_build/default/lib/queercal/priv/templates/page_admin_frontend_edit.tpl:47./_build/default/lib/queercal/priv/templates/page_new_event.tpl:12./_build/default/lib/queercal/priv/templates/page_new_event.tpl:20
+msgid ""
+"Loading ..."
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:52
+msgid ""
+"Location"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:131
+msgid ""
+"Missing a keyword? Please send them to"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:80
+msgid ""
+"No page"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:100./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:56
+msgid ""
+"Not required"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:100./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:56
+msgid ""
+"Organisation name"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:121
+msgid ""
+"Postcode"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:36
+msgid ""
+"Required field"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:67./_build/default/lib/queercal/priv/templates/page_admin_frontend_edit.tpl:14
+msgid ""
+"Save"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:70
+msgid ""
+"Save &amp; view"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/page_admin_frontend_edit.tpl:15
+msgid ""
+"Save and view the page"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:70
+msgid ""
+"Save and view the page."
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:67
+msgid ""
+"Save this page."
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:21./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:43
+msgid ""
+"Showing dates in"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:23
+msgid ""
+"Sign up"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:68./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:119
+msgid ""
+"Sign up link"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:141
+msgid ""
+"Some locations are already in the system, if you can't find the location "
+"add the address in the form."
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:171
+msgid ""
+"Some organisations are already in the system, if you can't find the "
+"organisation add the title in the form."
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:28
+msgid ""
+"Start date"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:67
+msgid ""
+"Street"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:110
+msgid ""
+"Street Line 1"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_basics_form.event.tpl:21./_build/default/lib/queercal/priv/templates/_admin_edit_basics_form.event.tpl:25
+msgid ""
+"Summary"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:8
+msgid ""
+"The end date must be in the future relative to the start date."
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:82
+msgid ""
+"The page might have been deleted."
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:68./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:119
+msgid ""
+"This will add a sign up button."
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:111
+msgid ""
+"This will add a ticket button."
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:74./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:111
+msgid ""
+"Ticket link"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:20
+msgid ""
+"Tickets"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:49
+msgid ""
+"Till"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_basics_form.event.tpl:8./_build/default/lib/queercal/priv/templates/_admin_edit_basics_form.event.tpl:12
+msgid ""
+"Title"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:105./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:61
+msgid ""
+"Title of the venue/location"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:72
+msgid ""
+"View"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:72
+msgid ""
+"View this page."
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:64./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:89
+msgid ""
+"Website"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:98
+msgid ""
+"You can add multiple keywords if needed."
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:127
+msgid ""
+"You must have at least one keyword."
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:62
+msgid ""
+"eg. De Trut or Club Church"
+msgstr ""
+""

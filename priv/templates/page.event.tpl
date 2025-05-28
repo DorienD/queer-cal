@@ -20,22 +20,18 @@
         {% include "event/event-location.tpl" %}
 
         {% block body %}
-            {# {% print id.language %}
-
-            {% print m.translation %} #}
-
             {% if id.summary %}
                 <p class="c-summary">{{ id.summary }}</p>
             {% else %}
                 {% if z_language == "nl" %}
                     {% if id.summary|translation:"en" %}
-                        <p class="c-summary"><i>{_ Description only provided in English, use the language switch _}</i></p>
+                        <p class="c-summary"><i>{_ Description only provided in English _}</i></p>
                     {% endif %}
                 {% endif %}
 
                 {% if z_language == "en" %}
                     {% if id.summary|translation:"nl" %}
-                        <p class="c-summary"><i>{_ Description only provided in Dutch, use the language switch _}</i></p>
+                        <p class="c-summary"><i>{_ Description only provided in Dutch _}</i></p>
                     {% endif %}
                 {% endif %}
             {% endif %}

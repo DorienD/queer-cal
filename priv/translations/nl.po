@@ -9,252 +9,305 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2025-05-28 18:24+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_media.tpl:60
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:84
 msgid ""
-"100% width of screen auto height of the image"
+"A link will be added around the title of the event. The website link will "
+"have priority over Facebook or Instagram."
 msgstr ""
-""
+"Een link wordt toegevoegd om de titel. De website link heeft prioriteit "
+"over de Facebook of Instagram link."
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_media.tpl:57
-msgid ""
-"70% of the screen"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/base.tpl:75
+msgid "Add Event"
+msgstr "Voeg event toe"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_media.tpl:52
-msgid ""
-"A video will take a aspect-ratio of 2/1 always."
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/event/share-event.tpl:7./_build/default/lib/queercal/priv/templates/event/share-event.tpl:7
+msgid "Add to Google calendar"
+msgstr "Voeg toe aan Google agenda"
 
-#: ./_build/default/lib/studio33k/priv/templates/base.tpl:74
-msgid ""
-"Admin"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/event/share-event.tpl:9./_build/default/lib/queercal/priv/templates/event/share-event.tpl:9
+msgid "Add to Microsoft agenda"
+msgstr "Voeg toe aan Microsoft agenda"
 
-#: ./_build/default/lib/studio33k/priv/templates/base.tpl:72
-msgid ""
-"Admin edit"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/event/share-event.tpl:2
+msgid "Add to calendar"
+msgstr "Voeg toe agenda"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_text.tpl:4
-msgid ""
-"Block"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/event/share-event.tpl:11./_build/default/lib/queercal/priv/templates/event/share-event.tpl:11
+msgid "Add to iCalendar"
+msgstr "Voeg toe aan iCalendar"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_text_media.tpl:41
-msgid ""
-"Button text"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:7
+msgid "Address"
+msgstr "Adres"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_media.tpl:23./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_media.tpl:39./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_text_media.tpl:67
-msgid ""
-"Connect media"
+#: _build/default/lib/queercal/priv/templates/base.tpl:82
+msgid "Admin"
 msgstr ""
-""
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_text_media.tpl:89
-msgid ""
-"Connect page"
+#: _build/default/lib/queercal/priv/templates/base.tpl:80
+msgid "Admin edit"
 msgstr ""
-""
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_media.tpl:11
-msgid ""
-"Connecting 1 image will display a large page filling image. Connecting 2 "
-"will display them next to eachother."
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:28./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:13
+msgid "All day event"
+msgstr "Hele dag"
 
-#: ./_build/default/lib/studio33k/priv/templates/footer/footer.tpl:28
-msgid ""
-"E-mail"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/page.event.tpl:7
+msgid "All events"
+msgstr "Alle evenementen"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_fancy_media.tpl:24./_build/default/lib/studio33k/priv/templates/blocks/_fancy_media.tpl:27./_build/default/lib/studio33k/priv/templates/blocks/_fancy_media.tpl:31
-msgid ""
-"Enlarge media"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/footer/footer.tpl:3
+msgid "Appearance:"
+msgstr "Thema:"
 
-#: ./_build/default/lib/studio33k/priv/templates/page.news.tpl:29
-msgid ""
-"Gallery"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/footer/footer.tpl:9
+msgid "Back to top"
+msgstr "Terug naar boven"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_media.tpl:50
-msgid ""
-"Height"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/event/event-location.tpl:6
+msgid "By"
+msgstr "Door"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_text_media.tpl:81
-msgid ""
-"Link"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/page_admin_frontend_edit.tpl:20./_build/default/lib/queercal/priv/templates/page_admin_frontend_edit.tpl:22./_build/default/lib/queercal/priv/templates/page_admin_frontend_edit.tpl:24
+msgid "Cancel"
+msgstr "Annuleren"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_media.tpl:5./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_text_media.tpl:59./_build/default/lib/studio33k/src/studio33k.erl:52
-msgid ""
-"Media"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:116./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:71
+msgid "City"
+msgstr "Stad"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_text_media.tpl:4
-msgid ""
-"Media + text"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:25
+msgid "Content"
+msgstr "Content"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_media.tpl:16
-msgid ""
-"Media 1"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:5
+msgid "Date & time"
+msgstr "Datum en tijd"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_media.tpl:32
-msgid ""
-"Media 2"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/page.event.tpl:34
+msgid "Description only provided in Dutch"
+msgstr "Details alleen in het Nederlands"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_text_media.tpl:104
-msgid ""
-"Media left"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/page.event.tpl:28
+msgid "Description only provided in English"
+msgstr "Details alleen in het Engels"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_text_media.tpl:107
-msgid ""
-"Media right"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/home.tpl:39./_build/default/lib/queercal/priv/templates/page.event.tpl:13
+msgid "Edit"
+msgstr "Bewerk"
 
-#: ./_build/default/lib/studio33k/priv/templates/page.news.tpl:8
-msgid ""
-"News"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:34
+msgid "End date"
+msgstr "Eind datum"
 
-#: ./_build/default/lib/studio33k/priv/templates/footer/footer.tpl:25
-msgid ""
-"Newsletter"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_edit_basics_form.event.tpl:4
+msgid "Event"
+msgstr "Evenement"
 
-#: ./_build/default/lib/studio33k/priv/templates/pager/_pager.tpl:10
-msgid ""
-"Next page"
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:82
+msgid "Facebook"
 msgstr ""
-""
 
-#: ./_build/default/lib/studio33k/priv/templates/cards/list.tpl:6
-msgid ""
-"No results"
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:97
+msgid "Facebook link"
 msgstr ""
-""
 
-#: ./_build/default/lib/studio33k/src/studio33k.erl:50
-msgid ""
-"Page blocks"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:43
+msgid "From"
+msgstr "Van"
 
-#: ./_build/default/lib/studio33k/priv/templates/pager/_pager.tpl:2
-msgid ""
-"Previous page"
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:88
+msgid "Instagram"
 msgstr ""
-""
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_block_view_text_media.tpl:23
-msgid ""
-"Read more"
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:103
+msgid "Instagram link"
 msgstr ""
-""
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_media.tpl:25./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_media.tpl:41./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_text_media.tpl:71./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_text_media.tpl:93
-msgid ""
-"Remove"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:95
+msgid "Keywords"
+msgstr "Trefwoorden"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_text_media.tpl:102
-msgid ""
-"Show as"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:138
+msgid "Known location"
+msgstr "Bekende lokatie"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_media.tpl:54
-msgid ""
-"Standard"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:168
+msgid "Known organisation"
+msgstr "Bekende organisatie"
 
-#: ./_build/default/lib/studio33k/priv/templates/footer/footer.tpl:30
-msgid ""
-"Subscribe"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:28./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:49
+msgid "Language"
+msgstr "Taal"
 
-#: ./_build/default/lib/studio33k/src/studio33k.erl:53
-msgid ""
-"Text"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:81
+msgid "Links"
+msgstr "Links"
 
-#: ./_build/default/lib/studio33k/src/studio33k.erl:51
-msgid ""
-"Text and media"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/page_admin_frontend_edit.tpl:39./_build/default/lib/queercal/priv/templates/page_admin_frontend_edit.tpl:47./_build/default/lib/queercal/priv/templates/page_new_event.tpl:12./_build/default/lib/queercal/priv/templates/page_new_event.tpl:20
+msgid "Loading ..."
+msgstr "Laden …."
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_text.tpl:31
-msgid ""
-"Text left"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:52
+msgid "Location"
+msgstr "Lokatie"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_text.tpl:46
-msgid ""
-"Text right"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:131
+msgid "Missing a keyword? Please send them to"
+msgstr "Mis je een trefwoord? Stuur ze op naar"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_media.tpl:51
-msgid ""
-"The height setting is only an option when using a single image."
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:80
+msgid "No page"
+msgstr "Geen pagina"
 
-#: ./_build/default/lib/studio33k/priv/templates/keywords/keyword-list-card.tpl:7
-msgid ""
-"Tickets"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:100./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:56
+msgid "Not required"
+msgstr "Niet verplicht"
 
-#: ./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_text.tpl:17./_build/default/lib/studio33k/priv/templates/blocks/_admin_edit_block_li_text_media.tpl:15
-msgid ""
-"Title"
-msgstr ""
-""
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:100./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:56
+msgid "Organisation name"
+msgstr "Organisatie naam"
 
-#: ./_build/default/lib/studio33k/priv/templates/cards/card.tpl:13
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:121
+msgid "Postcode"
+msgstr "Postcode"
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:36
+msgid "Required field"
+msgstr "Verplicht veld"
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:67./_build/default/lib/queercal/priv/templates/page_admin_frontend_edit.tpl:14
+msgid "Save"
+msgstr "Opslaan"
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:70
+msgid "Save &amp; view"
+msgstr "Opslaan & bekijken"
+
+#: _build/default/lib/queercal/priv/templates/page_admin_frontend_edit.tpl:15
+msgid "Save and view the page"
+msgstr "Opslaan & bekijken"
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:70
+msgid "Save and view the page."
+msgstr "Opslaan & bekijken."
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:67
+msgid "Save this page."
+msgstr "Sla deze pagina op."
+
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:21./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:43
+msgid "Showing dates in"
+msgstr "Datums zijn in"
+
+#: _build/default/lib/queercal/priv/templates/event/event-keywords.tpl:23
+msgid "Sign up"
+msgstr "Aanmelden"
+
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:68./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:119
+msgid "Sign up link"
+msgstr "Aanmelding"
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:141
 msgid ""
-"Unpublished"
+"Some locations are already in the system, if you can't find the location "
+"add the address in the form."
 msgstr ""
-""
+"Sommige locaties zijn al bekend in het systeem, als je de lokatie niet "
+"kunt vinden vul dan het formulier in."
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:171
+msgid ""
+"Some organisations are already in the system, if you can't find the "
+"organisation add the title in the form."
+msgstr ""
+"Sommige organisaties zijn al bekend in het systeem, als je de organisatie "
+"niet kunt vinden vul dan het formulier in."
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:28
+msgid "Start date"
+msgstr "Startdatum"
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:67
+msgid "Street"
+msgstr "Straat"
+
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:110
+msgid "Street Line 1"
+msgstr "Straat"
+
+#: _build/default/lib/queercal/priv/templates/_admin_edit_basics_form.event.tpl:21./_build/default/lib/queercal/priv/templates/_admin_edit_basics_form.event.tpl:25
+msgid "Summary"
+msgstr "Omschrijving"
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:8
+msgid "The end date must be in the future relative to the start date."
+msgstr "De einddatum moet in de toekomst liggen relatief aan de startdatum."
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:82
+msgid "The page might have been deleted."
+msgstr "Deze pagina zou wel eens verwijderd kunnen zijn."
+
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:68./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:119
+msgid "This will add a sign up button."
+msgstr "Dit zal een aanmeld button toevoegen."
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:111
+msgid "This will add a ticket button."
+msgstr "Dit zal een ticket button toevoegen."
+
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:74./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:111
+msgid "Ticket link"
+msgstr "Ticket link"
+
+#: _build/default/lib/queercal/priv/templates/event/event-keywords.tpl:20
+msgid "Tickets"
+msgstr "Tickets"
+
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:49
+msgid "Till"
+msgstr "Tot"
+
+#: _build/default/lib/queercal/priv/templates/_admin_edit_basics_form.event.tpl:8./_build/default/lib/queercal/priv/templates/_admin_edit_basics_form.event.tpl:12
+msgid "Title"
+msgstr "Titel"
+
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:105./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:61
+msgid "Title of the venue/location"
+msgstr "Titel van de lokatie"
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:72
+msgid "View"
+msgstr "Bekijk"
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:72
+msgid "View this page."
+msgstr "Bekijk deze pagina."
+
+#: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:64./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:89
+msgid "Website"
+msgstr "Website"
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:98
+msgid "You can add multiple keywords if needed."
+msgstr "Je kunt meerdere trefwoorden toevoegen."
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:127
+msgid "You must have at least one keyword."
+msgstr "Je moet ten minste één trefwoord toevoegen."
+
+#: _build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:62
+msgid "eg. De Trut or Club Church"
+msgstr "bijv. De Trut of Club Church"
