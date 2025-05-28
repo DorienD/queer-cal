@@ -651,6 +651,11 @@ h4 {
   margin-top: 1em;
 }
 
+sup {
+  top: -0.7em;
+  left: -0.5em;
+}
+
 blockquote {
   padding: 0 0 0 2em;
   margin: 2em 0 2em 0;
@@ -1058,9 +1063,6 @@ body.color--flagBrown .c-btn-add-event path {
   text-decoration: none;
 }
 .c-calendar-item__title a svg {
-  position: absolute;
-  top: 0px;
-  right: -12px;
   fill: var(--typographyColor);
 }
 .c-calendar-item__title a:before {
