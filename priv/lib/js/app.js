@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const toggleButtons = document.querySelectorAll('.c-calendar-item__details-toggle');
+    const filterBox = document.getElementById('j-filter-keyword');
 
     toggleButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -32,6 +33,16 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    if (filterBox) {
+        filterBox.addEventListener('change', function () {
+            const selectedValue = this.value;
+            
+            if (selectedValue) {
+                window.location.href = "?qhasobject="+selectedValue;
+            }
+        });
+    }
 });
 
 setLocalStorage();

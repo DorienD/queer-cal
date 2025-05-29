@@ -1,0 +1,45 @@
+.c-filters {
+    margin-bottom: 2em;
+
+    @include breakpoint($mediumBreakpoint) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+.c-filters__keywords {
+    margin: 2em 0 0;
+
+    @include breakpoint($mediumBreakpoint) {
+        margin: 0;
+    }
+}
+
+.c-btn-filter-submit {
+    display: none;
+}
+
+.c-filters__keywords {
+    width: fit-content;
+    position: relative;
+
+    select {
+        // background: white;
+        appearance: none;
+    }
+
+    &:after {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 19px;
+        right: 10px;
+        border-top: 10px solid var(--darkTheme);
+        border-bottom: 10px solid transparent;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+    }
+}
