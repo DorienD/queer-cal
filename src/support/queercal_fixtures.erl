@@ -172,7 +172,8 @@ keyword_list() ->
         {<<"Trans">>, <<"Trans">>},
         {<<"Family">>, <<"Familie">>},
         {<<"Voku">>, <<"Voku">>},
-        {<<"Queer">>, <<"Queer">>}
+        {<<"Queer">>, <<"Queer">>},
+        {<<"Sports">>, <<"Sport">>}
     ].
 
 install_acl_rules(Context) -> 
