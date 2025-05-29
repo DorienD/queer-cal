@@ -14,8 +14,9 @@
         cat: "event",
         qargs: true,
         unfinished: true,
-        sort: "rsc.pivot_date_start"
-        is_findable: true
+        sort: "rsc.pivot_date_start",
+        is_findable: true,
+        pagelen: 1000000
     }
     as result %}
     

@@ -1090,7 +1090,7 @@ body.color--flagBrown .c-btn-add-event path {
   width: 90%;
   max-width: 70ch;
   padding: 1em;
-  background: var(--lightTheme);
+  background: white;
   border: 3px solid var(--darkTheme);
 }
 .c-calendar-item__details h3 {
