@@ -1,4 +1,5 @@
 .c-footer {
+    --_backTopWidth: 5rem;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -11,9 +12,17 @@
     line-height: 1;
     font-size: 0.9em;
 
+    @media (hover: none) {
+        padding: 1em calc(2.5% + var(--_backTopWidth)) 1em 2.5%;
+    }
+
     @include breakpoint($mediumBreakpoint) {
         height: 4rem;
         padding: 0 4rem;
+
+        @media (hover: none) {
+            padding: 0 calc(4rem + var(--_backTopWidth)) 0 4rem;
+        }
     }
 }
 
@@ -53,10 +62,30 @@ body.color--flagBrown {
     }
 }
 
-.c-footer__top {
+@media (hover: none) {
+    .c-footer__top {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-between;
+        width: var(--_backTopWidth);
+        height: var(--_backTopWidth);
+        padding: 0.2em 0;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 100;
+        background: var(--lightTheme);
+        border: 2px solid var(--darkTheme);
+        font-size: 9px;
+        line-height: 1.4;
+        text-decoration: none;
+        text-align: center;
 
+        svg {
+            display: block;
+            rotate: 90deg;
+        }
+    }
 }
 
-.c-footer__github {
-    // margin-left: auto;
-}

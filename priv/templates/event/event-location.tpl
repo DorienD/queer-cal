@@ -17,3 +17,6 @@
     </address>
 {% endwith %}
 {% endwith %}
+
+
+{% if location.title|default:id.address_title as loc_title %}{{ loc_title|replace:[" ", "+"] }}{% if location.address_street_1|default:id.address_street_1 or location.address_city|default:id.address_city %}, {% endif %}{% endif %}{% if location.address_street_1|default:id.address_street_1 %}{{ location.address_street_1|default:id.address_street_1|replace:[" ", "+"] }}{% if location.address_city|default:id.address_city %}, {% endif %}{% endif %}{% if location.address_city|default:id.address_city %}{{ location.address_city|default:id.address_city|replace:[" ", "+"] }}{% endif %}
