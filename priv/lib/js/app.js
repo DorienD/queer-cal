@@ -23,13 +23,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 dialog.addEventListener('click', closeOnOutsideClick);
 
                 // Close on close button click
-                const closeButton = dialog.querySelector('.c-calendar-item__details-close');
-              
-                if (closeButton) {
-                    closeButton.addEventListener('click', () => {
-                        dialog.close();
-                    }, { once: true }); // Only add once per open
-                }
+                const closeButtons = dialog.querySelectorAll('.c-calendar-item__details-close');
+
+                closeButtons.forEach(closeButton => {
+                  closeButton.addEventListener('click', () => {
+                    dialog.close();
+                  }, { once: true }); // Add once per open
+                });
             }
         });
     });

@@ -998,7 +998,7 @@ body.color--flagBrown .c-btn-add-event path {
   padding: 0 0 1em;
   position: relative;
 }
-.c-calendar-item:after {
+.c-calendar-item::after {
   content: "";
   width: 100%;
   height: 2px;
@@ -1102,6 +1102,37 @@ body.color--flagBrown .c-btn-add-event path {
   text-decoration: underline;
   text-underline-offset: 3px;
   color: light-dark(white, #242424);
+}
+.c-calendar-item__details-close:hover, .c-calendar-item__details-close:active, .c-calendar-item__details-close:focus, .c-calendar-item__details-close:focus:active {
+  text-decoration: none;
+}
+
+.c-calendar-item__details-close.-top {
+  width: 4.5rem;
+  height: 4.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: scale 0.3s ease-out;
+}
+.c-calendar-item__details-close.-top::before, .c-calendar-item__details-close.-top::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 50%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  background: #242424;
+  border-radius: 2px;
+  rotate: 45deg;
+  transform-origin: center center;
+}
+.c-calendar-item__details-close.-top::after {
+  rotate: -45deg;
+}
+.c-calendar-item__details-close.-top:hover {
+  scale: 0.9;
 }
 
 .c-calender-item__edit {

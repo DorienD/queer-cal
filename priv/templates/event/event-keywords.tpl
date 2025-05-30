@@ -2,6 +2,7 @@
     {% if r.summary %}
         <dialog id="details-{{ r.id }}" class="c-calendar-item__details">
             <div class="c-calendar-item__details__content">
+                <button class="c-calendar-item__details-close -top"><span class="sr-only">Close</span></button>
                 <h3>{_ Description _}</h3>
                 
                 <p>{{ r.summary }}</p>
