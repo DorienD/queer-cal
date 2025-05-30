@@ -719,6 +719,7 @@ form select {
   height: 4.5rem;
   padding: 0 3rem 0 1.5rem;
   border: 2px solid var(--darkTheme);
+  color: var(--typographyColor);
 }
 form input[type=date].form-control,
 form input[type=date],
