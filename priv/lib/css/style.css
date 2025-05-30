@@ -1249,6 +1249,10 @@ body.color--flagBrown .c-footer {
   }
 }
 
+.c-footer__top svg {
+  display: none;
+}
+
 @media (hover: none) {
   .c-footer__top {
     display: flex;
