@@ -1089,6 +1089,7 @@ body.color--flagBrown .c-btn-add-event path {
   padding: 1em;
   background: white;
   border: 3px solid var(--darkTheme);
+  color: light-dark(white, #242424);
 }
 .c-calendar-item__details h3 {
   color: var(--darkTheme);
