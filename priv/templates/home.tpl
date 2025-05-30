@@ -28,6 +28,7 @@
             </p>
 
             <form action="/" class="c-filters__keywords">
+                <label for="j-filter-keyword" class="sr-only">{_ Filter _}</label>
                 <select id="j-filter-keyword" name="qhasobject">
                     <option value=" ">{_ Filter on a keyword _}</option>
                     {% for r in  m.search.query::%{
