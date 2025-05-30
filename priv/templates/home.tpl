@@ -18,7 +18,6 @@
         pagelen: 1000000
     }
     as result %}
-    {# {% debug %} #}
         <div class="c-filters">
             <p class="c-filters__months">
                 Go to: 
@@ -28,7 +27,7 @@
                 <a href="#{{ (now|add_month:4|date:"F")|slugify }}">{{ now|add_month:4|date:"F" }}</a>
             </p>
 
-            <form action="/" post class="c-filters__keywords">
+            <form action="/" class="c-filters__keywords">
                 <select id="j-filter-keyword" name="qhasobject">
                     <option value=" ">{_ Filter on a keyword _}</option>
                     {% for r in  m.search.query::%{
