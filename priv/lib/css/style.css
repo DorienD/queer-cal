@@ -1101,7 +1101,7 @@ body.color--flagBrown .c-btn-add-event path {
   border: none;
   text-decoration: underline;
   text-underline-offset: 3px;
-  color: light-dark(white, #242424);
+  color: #242424;
 }
 .c-calendar-item__details-close:hover, .c-calendar-item__details-close:active, .c-calendar-item__details-close:focus, .c-calendar-item__details-close:focus:active {
   text-decoration: none;

@@ -155,7 +155,7 @@
     border: none;
     text-decoration: underline;
     text-underline-offset: 3px;
-    color: light-dark(white, #242424);
+    color: #242424;
 
     @include setInteractive {
         text-decoration: none;
