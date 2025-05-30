@@ -110,6 +110,8 @@
 		{% endif %}
     {% endblock %}
 
+    <script data-goatcounter="https://queercal.goatcounter.com/count" async src="//gc.zgo.at/count.js" nonce="{{ m.req.csp_nonce }}"></script>
+    
     {% include "_js_include.tpl" %}
 
 	{% all include "_html_body.tpl" %}

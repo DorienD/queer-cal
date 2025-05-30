@@ -1101,6 +1101,7 @@ body.color--flagBrown .c-btn-add-event path {
   border: none;
   text-decoration: underline;
   text-underline-offset: 3px;
+  color: light-dark(white, #242424);
 }
 
 .c-calender-item__edit {
@@ -1412,7 +1413,7 @@ body.color--flagBrown .c-main-nav {
   align-items: start;
 }
 
-[popover=auto] {
+[popover] {
   inset: unset;
   max-width: 40ch;
   margin: 0;
