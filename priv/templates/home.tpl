@@ -24,7 +24,6 @@
                 Go to: 
                 <a href="#{{ (now|date:"F")|slugify }}">{{ now|date:"F" }}</a>
                 <a href="#{{ (now|add_month|date:"F")|slugify }}">{{ now|add_month|date:"F" }}</a>
-                <a href="#{{ (now|add_month:2|date:"F")|slugify }}">{{ now|add_month:2|date:"F" }}</a>
                 <a href="#{{ (now|add_month:3|date:"F")|slugify }}">{{ now|add_month:3|date:"F" }}</a>
                 <a href="#{{ (now|add_month:4|date:"F")|slugify }}">{{ now|add_month:4|date:"F" }}</a>
             </p>

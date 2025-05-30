@@ -1413,7 +1413,7 @@ body.color--flagBrown .c-main-nav {
 
 [popover=auto] {
   inset: unset;
-  max-width: 30ch;
+  max-width: 40ch;
   margin: 0;
   position: absolute;
   bottom: calc(anchor(top) + 20px);
