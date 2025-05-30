@@ -43,6 +43,40 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    // Footer
+
+    const backToTop = document.querySelector('.c-footer__top');
+    let lastScroll = 0;
+    let ticking = false;
+    const threshold = 10;
+
+    function onScroll() {
+        const currentScroll = window.pageYOffset;
+
+        if (Math.abs(currentScroll - lastScroll) <= threshold) {
+            ticking = false;
+            return;
+        }
+
+        if (currentScroll > lastScroll) {
+            // Scrolling down
+            backToTop.classList.add('-hidden');
+        } else {
+            // Scrolling up
+            backToTop.classList.remove('-hidden');
+        }
+
+        lastScroll = currentScroll;
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(onScroll);
+            ticking = true;
+        }
+    });
 });
 
 setLocalStorage();

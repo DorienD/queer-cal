@@ -1,3 +1,6 @@
 {% with color|default:"#ffffff" as color %}
-<svg viewBox="0 0 8 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"{% if width %} width="{{ width }}"{% endif %}{% if height %} height="{{ height }}"{% endif %}><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Desktop-—-Default-page" transform="translate(-115.000000, -160.000000)" stroke="{{ color }}" stroke-width="1.5"><g id="Group-2-Copy" transform="translate(116.000000, 160.000000)"><polyline id="Path" transform="translate(6.000000, 6.656854) rotate(-135.000000) translate(-6.000000, -6.656854) " points="2 2.65685425 2 2.65685425 10 2.65685425 10 10.6568542"></polyline></g></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"{% if width %} width="{{ width }}"{% endif %}{% if height %} height="{{ height }}"{% endif %} fill="{{ color }}">
+<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+  <path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/>
+</svg>
 {% endwith %}

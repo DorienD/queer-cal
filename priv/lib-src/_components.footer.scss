@@ -65,6 +65,7 @@ body.color--flagBrown {
 .c-footer__top {
     svg {
         display: none;
+        fill: var(--typographyColor);
     }
 }
 
@@ -87,10 +88,16 @@ body.color--flagBrown {
         line-height: 1.4;
         text-decoration: none;
         text-align: center;
+        color: var(--typographyColor);
+        transform: translateY(0);
+        transition: transform 0.3s ease-out;
+
+        &.-hidden {
+            transform: translateY(100%);
+        }
 
         svg {
             display: block;
-            rotate: 90deg;
         }
     }
 }

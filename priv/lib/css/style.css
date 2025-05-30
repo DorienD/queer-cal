@@ -1251,6 +1251,7 @@ body.color--flagBrown .c-footer {
 
 .c-footer__top svg {
   display: none;
+  fill: var(--typographyColor);
 }
 
 @media (hover: none) {
@@ -1272,10 +1273,15 @@ body.color--flagBrown .c-footer {
     line-height: 1.4;
     text-decoration: none;
     text-align: center;
+    color: var(--typographyColor);
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
+  }
+  .c-footer__top.-hidden {
+    transform: translateY(100%);
   }
   .c-footer__top svg {
     display: block;
-    rotate: 90deg;
   }
 }
 .c-keyword-list {
