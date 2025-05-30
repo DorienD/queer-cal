@@ -1,5 +1,5 @@
 <div class="c-calendar-item__date">
-    <time time datetime="{{ id.date_start|date:"c":"UTC" }}">
+    <time datetime="{{ id.date_start|date:"c":"UTC" }}">
         {% if id.date_is_all_day %}
             {# All day event #}
             <span>
