@@ -1084,10 +1084,6 @@ body.color--flagBrown .c-btn-add-event path {
   margin: 0 0 1em;
 }
 
-.c-calendar-item__details-toggle {
-  color: var(--typographyColor);
-}
-
 .c-calendar-item__details {
   width: 90%;
   max-width: 70ch;
@@ -1357,6 +1353,7 @@ body.color--flagBrown .c-keyword-list__item.-desc:focus:active {
 }
 
 button.c-keyword-list__item {
+  color: var(--typographyColor);
   border: 1px solid color-mix(in srgb, var(--typographyColor), var(--bodyBg) 70%);
 }
 button.c-keyword-list__item:hover {

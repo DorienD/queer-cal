@@ -71,6 +71,7 @@ body.color--flagBrown .c-keyword-list__item.-desc {
 }
 
 button.c-keyword-list__item {
+    color: var(--typographyColor);
     border: 1px solid color-mix(in srgb, var(--typographyColor), var(--bodyBg) 70%);
 
     &:hover {
