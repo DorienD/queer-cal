@@ -1084,6 +1084,10 @@ body.color--flagBrown .c-btn-add-event path {
   margin: 0 0 1em;
 }
 
+.c-calendar-item__details-toggle {
+  color: var(--typographyColor);
+}
+
 .c-calendar-item__details {
   width: 90%;
   max-width: 70ch;

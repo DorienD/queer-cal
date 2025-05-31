@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Filter on keywords
+
     if (filterBox) {
         filterBox.addEventListener('change', function () {
             const selectedValue = this.value;
@@ -44,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Footer
+    // Back to top display logic
 
     const backToTop = document.querySelector('.c-footer__top');
     let lastScroll = 0;
