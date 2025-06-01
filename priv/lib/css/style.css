@@ -956,6 +956,8 @@ body.color--flagBrown .c-btn-add-event path {
 .c-btn-back svg {
   width: 0.5lh;
   height: 0.5lh;
+  fill: var(--typographyColor);
+  rotate: -90deg;
 }
 
 .c-calendar {

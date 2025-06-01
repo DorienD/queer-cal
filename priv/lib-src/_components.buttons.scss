@@ -197,5 +197,8 @@ body.color--flagBrown {
     svg {
         width: 0.5lh;
         height: 0.5lh;
+
+        fill: var(--typographyColor);
+        rotate: -90deg;
     }
 }
