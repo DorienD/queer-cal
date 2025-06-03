@@ -175,7 +175,8 @@ keyword_list() ->
         {<<"Queer">>, <<"Queer">>},
         {<<"Sports">>, <<"Sport">>},
         {<<"Celebration">>, <<"Viering">>},
-        {<<"Love">>, <<"Liefde">>}
+        {<<"Love">>, <<"Liefde">>},
+        {<<"Fems & thems">>, <<"Fems & thems">>}
     ].
 
 install_acl_rules(Context) -> 
