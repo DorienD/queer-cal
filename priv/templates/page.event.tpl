@@ -15,7 +15,7 @@
             {% endif %}
         </h1>
 
-        {% include "event/event-date.tpl" %}
+        {% include "event/event-date.tpl" details_page %}
 
         {% include "event/event-location.tpl" %}
 
@@ -40,11 +40,11 @@
 
             {# {{ id.summary|translation:"en" }} #}
 
-                                            {# {% if r.summary %}
-                                                <p>{{ r.summary }}</p>
-                                            {% elseif z_language != "nl" and m.translation.has[r, "nl"].summary %}
-                                                <p><em>Summary is only available in Dutch.</em></p>
-                                            {% endif %} #}
+                {# {% if r.summary %}
+                    <p>{{ r.summary }}</p>
+                {% elseif z_language != "nl" and m.translation.has[r, "nl"].summary %}
+                    <p><em>Summary is only available in Dutch.</em></p>
+                {% endif %} #}
             {# {% if id.summary %}
                 <p class="c-summary">{{ id.summary }}</p>
             {% endif %}

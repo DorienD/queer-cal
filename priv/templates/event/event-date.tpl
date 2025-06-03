@@ -3,7 +3,11 @@
         {% if id.date_is_all_day %}
             {# All day event #}
             <span>
-                {{ id.date_start|date:"D d":"UTC" }}
+                {% if details_page %}
+                    {{ id.date_start|date:"D d F":"UTC" }}
+                {% else %}
+                    {{ id.date_start|date:"D d":"UTC" }}
+                {% endif %}
                 {# If the same month, only display day else also display month #}
                 {% if id.date_start|date:"m" == id.date_end|date:"m" %}
                     {% if id.date_start|date:"d":"UTC" != id.date_end|date:"d":"UTC" %}
@@ -15,20 +19,33 @@
             </span>
         {% else %}
             {# Event with time #}
-            <span>{{ id.date_start|date:"D d":"UTC" }}</span>
+            {% if details_page %}
+                <span>{{ id.date_start|date:"D d F":"UTC" }}</span>
+            {% else %}
+                <span>{{ id.date_start|date:"D d":"UTC" }}</span>
+            {% endif %}
             
             {{ id.date_start|date:"H:i":"UTC" }}
 
             {% if id.date_start|date:"H":"UTC" == id.date_end|date:"H":"UTC" %}
-                {# Only a start time, don't display end time #}
+                {# Same time → Don't display end time #}
             {% elseif
-                (((id.date_start|add_day)|date:"dm":"UTC" == id.date_end|date:"dm":"UTC") 
-                    and id.date_end|date:"H" < 9)
+              ((id.date_end|date:"dm":"UTC" == id.date_start|date:"dm":"UTC")
                 or
-                id.date_end|date:"dm":"UTC" == id.date_start|date:"dm":"UTC" %}
-                {# If event ends before next day 9AM only display time #}
-                {# If same date only display the end time #}
+                ((id.date_start|add_day)|date:"dm":"UTC" == id.date_end|date:"dm":"UTC"
+                  and id.date_end|date:"H" < 9))
+            %}
+                {# End date same day or next day before 9 AM → Only display time #}
                 - {{ id.date_end|date:"H:i":"UTC" }}
+            {% else %}
+                {# Else  #}
+                {% if details_page %}
+                    - <span>{{ id.date_end|date:"D d F":"UTC" }}</span>
+                {% else %}
+                    - <span>{{ id.date_end|date:"D d":"UTC" }}</span>
+                {% endif %}
+
+              {{ id.date_end|date:"H:i":"UTC" }}
             {% endif %}
         {% endif %}
     </time>
