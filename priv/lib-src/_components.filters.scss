@@ -9,24 +9,42 @@
     }
 }
 
-.c-filters__keywords {
-    margin: 2em 0 0;
-
-    @include breakpoint($mediumBreakpoint) {
-        margin: 0;
-    }
-}
-
 .c-btn-filter-submit {
     display: none;
 }
 
 .c-filters__keywords {
-    width: fit-content;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin: 2em 0 0;
+
+    label {
+        width: 100%;
+    }
+
+    @include breakpoint($mediumBreakpoint) {
+        width: fit-content;
+        flex-flow: row nowrap;
+        margin: 0;
+
+        label {
+            width: auto;
+        }
+    }
+}
+
+.c-filters__keywords__list {
+    width: calc(100% - 5.5rem);
     position: relative;
 
     select {
+        width: 100%;
         appearance: none;
+        background: var(--lightTheme);
+        color: light-dark(var(--darkTheme), var(--typographyColor));
     }
 
     &:after {
@@ -40,5 +58,30 @@
         border-bottom: 10px solid transparent;
         border-left: 7px solid transparent;
         border-right: 7px solid transparent;
+        pointer-events: none;
+    }
+
+    @include breakpoint($mediumBreakpoint) {
+        width: fit-content;
+    }
+}
+
+.c-filters__keywords__remove {
+    color: light-dark(var(--darkTheme), var(--typographyColor));
+    transition: background 0.3s ease-out, color 0.3s ease-out;
+
+    svg {
+        rotate: 45deg;
+        fill: light-dark(var(--darkTheme), var(--typographyColor));
+        transition: fill 0.3s ease-out;
+    }
+
+    @include setInteractive {
+        background: var(--darkTheme);
+        color: light-dark(var(--lightTheme), white);
+
+        svg {
+            fill: light-dark(var(--lightTheme), var(--typographyColor));
+        }
     }
 }

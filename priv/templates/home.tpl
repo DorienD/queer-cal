@@ -28,19 +28,32 @@
             </p>
 
             <form action="/" class="c-filters__keywords">
-                <label for="j-filter-keyword" class="sr-only">{_ Filter _}</label>
-                <select id="j-filter-keyword" name="qhasobject">
-                    <option value=" ">{_ Filter on a keyword _}</option>
-                    {% for r in  m.search.query::%{
-                        cat: "keyword",
-                        sort: "rsc.pivot_title",
-                        is_findable: true,
-                        pagelen: 1000000
-                    }%}
-                        <option value="{{ r.id }}" {% if q.qhasobject == r.id %}selected{% endif  %}>{{ r.title }}</option>
-                    {% endfor %}
-                </select>
+                {% if q.qhasobject %}
+                    <label for="j-filter-keyword">{_ You've filtered on _}</label>
+                {% else %}
+                    <label for="j-filter-keyword" class="sr-only">{_ Filter _}</label>
+                {% endif %}
+                <div class="c-filters__keywords__list">
+                    <select id="j-filter-keyword" name="qhasobject">
+                        {% if q.qhasobject %}
+                            <option value=" ">{_ Remove filter _}</option>
+                        {% else %}
+                            <option value=" ">{_ Filter on a keyword _}</option>
+                        {% endif %}
+                        {% for r in  m.search.query::%{
+                            cat: "keyword",
+                            sort: "rsc.pivot_title",
+                            is_findable: true,
+                            pagelen: 1000000
+                        }%}
+                            <option value="{{ r.id }}" {% if q.qhasobject == r.id %}selected{% endif  %}>{{ r.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
                 <button type="submit" id="j-filter-submit" class="c-btn c-btn-filter-submit">{_ Apply filter _}</button>
+                {% if q.qhasobject %}
+                    <a href="{% url home %}" class="c-filters__keywords__remove c-btn-square">{% include "icons/icon-plus.tpl" color="var(--typographyColor)" %}<span>{_ reset _}</span></a>
+                {% endif %}
             </form>
         </div>
         {% for r in result %}
@@ -74,7 +87,7 @@
                 </ol>
                 {% endif %}
         {% empty %}
-            {_ No events 🥺, know something? Mail it to: _} <a href="mailto:events@queer-kalender.nl">events@queer-kalender.nl</a>
+            <p class="c-calendar__empty">{_ No events 🥺, know something? Mail it to: _} <a href="mailto:events@queer-kalender.nl">events@queer-kalender.nl</a></p>
         {% endfor %}
     {% endwith %}
 

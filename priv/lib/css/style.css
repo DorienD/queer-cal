@@ -960,6 +960,23 @@ body.color--flagBrown .c-btn-add-event path {
   rotate: -90deg;
 }
 
+.c-btn-square {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 4.5rem;
+  height: 4.5rem;
+  padding: 0.2em 0;
+  background: var(--lightTheme);
+  border: 2px solid var(--darkTheme);
+  font-size: 9px;
+  line-height: 1.4;
+  text-decoration: none;
+  text-align: center;
+  color: var(--typographyColor);
+}
+
 .c-calendar {
   padding: 0;
   margin: 0;
@@ -1145,6 +1162,12 @@ body.color--flagBrown .c-btn-add-event path {
   font-size: 0.8em;
 }
 
+.c-calendar__empty {
+  padding: 1em;
+  background: var(--lightTheme);
+  color: light-dark(var(--darkTheme), var(--typographyColor));
+}
+
 .c-filters {
   margin-bottom: 2em;
 }
@@ -1157,27 +1180,43 @@ body.color--flagBrown .c-btn-add-event path {
   }
 }
 
-.c-filters__keywords {
-  margin: 2em 0 0;
-}
-@media only screen and (min-width: 800px) {
-  .c-filters__keywords {
-    margin: 0;
-  }
-}
-
 .c-btn-filter-submit {
   display: none;
 }
 
 .c-filters__keywords {
-  width: fit-content;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin: 2em 0 0;
+}
+.c-filters__keywords label {
+  width: 100%;
+}
+@media only screen and (min-width: 800px) {
+  .c-filters__keywords {
+    width: fit-content;
+    flex-flow: row nowrap;
+    margin: 0;
+  }
+  .c-filters__keywords label {
+    width: auto;
+  }
+}
+
+.c-filters__keywords__list {
+  width: calc(100% - 5.5rem);
   position: relative;
 }
-.c-filters__keywords select {
+.c-filters__keywords__list select {
+  width: 100%;
   appearance: none;
+  background: var(--lightTheme);
+  color: light-dark(var(--darkTheme), var(--typographyColor));
 }
-.c-filters__keywords:after {
+.c-filters__keywords__list:after {
   content: "";
   width: 0;
   height: 0;
@@ -1188,6 +1227,29 @@ body.color--flagBrown .c-btn-add-event path {
   border-bottom: 10px solid transparent;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
+  pointer-events: none;
+}
+@media only screen and (min-width: 800px) {
+  .c-filters__keywords__list {
+    width: fit-content;
+  }
+}
+
+.c-filters__keywords__remove {
+  color: light-dark(var(--darkTheme), var(--typographyColor));
+  transition: background 0.3s ease-out, color 0.3s ease-out;
+}
+.c-filters__keywords__remove svg {
+  rotate: 45deg;
+  fill: light-dark(var(--darkTheme), var(--typographyColor));
+  transition: fill 0.3s ease-out;
+}
+.c-filters__keywords__remove:hover, .c-filters__keywords__remove:active, .c-filters__keywords__remove:focus, .c-filters__keywords__remove:focus:active {
+  background: var(--darkTheme);
+  color: light-dark(var(--lightTheme), white);
+}
+.c-filters__keywords__remove:hover svg, .c-filters__keywords__remove:active svg, .c-filters__keywords__remove:focus svg, .c-filters__keywords__remove:focus:active svg {
+  fill: light-dark(var(--lightTheme), var(--typographyColor));
 }
 
 .c-footer {
@@ -1305,16 +1367,31 @@ body.color--flagBrown .c-footer {
   border-radius: 4px;
   border: none;
   line-height: 1.4;
+  text-decoration: none;
   text-underline-offset: 1px;
   border: 1px solid color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
 }
+.c-keyword-list__item:hover, .c-keyword-list__item:active, .c-keyword-list__item:focus, .c-keyword-list__item:focus:active {
+  border-color: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 80%);
+  background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 80%);
+}
 .c-keyword-list__item.-tickets {
-  background: light-dark(var(--flagYellow), color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%));
+  background: light-dark(var(--flagYellow), color-mix(in srgb, var(--flagYellow), var(--bodyBg) 68%));
   border: 1px solid light-dark(var(--flagYellow), color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%));
+  text-decoration: underline;
+}
+.c-keyword-list__item.-tickets:hover, .c-keyword-list__item.-tickets:active, .c-keyword-list__item.-tickets:focus, .c-keyword-list__item.-tickets:focus:active {
+  text-decoration: none;
+  background: color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%);
 }
 .c-keyword-list__item.-signup {
-  background: light-dark(var(--flagPurple), color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%));
+  background: light-dark(var(--flagPurple), color-mix(in srgb, var(--flagPurple), var(--bodyBg) 61%));
   border: 1px solid light-dark(var(--flagPurple), color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%));
+  text-decoration: underline;
+}
+.c-keyword-list__item.-signup:hover, .c-keyword-list__item.-signup:active, .c-keyword-list__item.-signup:focus, .c-keyword-list__item.-signup:focus:active {
+  text-decoration: none;
+  background: color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%);
 }
 .c-keyword-list__item.-desc {
   display: inline-flex;

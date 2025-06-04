@@ -200,3 +200,9 @@
     margin-left: 1em;
     font-size: 0.8em;
 }
+
+.c-calendar__empty {
+    padding: 1em;
+    background: var(--lightTheme);
+    color: light-dark(var(--darkTheme), var(--typographyColor));
+}

@@ -202,3 +202,28 @@ body.color--flagBrown {
         rotate: -90deg;
     }
 }
+
+.c-btn-square {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 4.5rem;
+    height: 4.5rem;
+    padding: 0.2em 0;
+    background: var(--lightTheme);
+    border: 2px solid var(--darkTheme);
+    font-size: 9px;
+    line-height: 1.4;
+    text-decoration: none;
+    text-align: center;
+    color: var(--typographyColor);
+
+    // &.-hidden {
+    //     transform: translateY(100%);
+    // }
+
+    // svg {
+    //     display: block;
+    // }
+}

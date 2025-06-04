@@ -35,7 +35,7 @@ body {
     --mainMargin: 4rem;
 
     --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
-    --darkTheme: color-mix(in srgb, var(--theme), black 30%);    
+    --darkTheme: color-mix(in srgb, var(--theme), black 30%);
 
     &.color--flagBrown {
         --lightTheme: light-dark(color-mix(in srgb, var(--theme), var(--bodyBg) 90%), color-mix(in srgb, var(--theme), black 20%));
