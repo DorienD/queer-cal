@@ -1199,7 +1199,7 @@ body.color--flagBrown .c-btn-add-event path {
   .c-filters__keywords {
     width: fit-content;
     flex-flow: row nowrap;
-    margin: 0;
+    margin: 0 0 0 auto;
   }
   .c-filters__keywords label {
     width: auto;

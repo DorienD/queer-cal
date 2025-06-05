@@ -19,14 +19,16 @@
     }
     as result %}
         <div class="c-filters">
-            <p class="c-filters__months">
-                Go to: 
-                {% for r in result %}
-                    {% if result[forloop.counter -1].id.date_start|date:"m" != r.date_start|date:"m" %}
-                        <a href="#{{ r.date_start|date:"F"|slugify }}">{{ r.date_start|date:"F" }}</a>
-                    {% endif %}
-                {% endfor %}
-            </p>
+            {% if result %}
+                <p class="c-filters__months">
+                    Go to: 
+                    {% for r in result %}
+                        {% if result[forloop.counter -1].id.date_start|date:"m" != r.date_start|date:"m" %}
+                            <a href="#{{ r.date_start|date:"F"|slugify }}">{{ r.date_start|date:"F" }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </p>
+            {% endif %}
 
             <form action="/" class="c-filters__keywords">
                 {% if q.qhasobject %}
