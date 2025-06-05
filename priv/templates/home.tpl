@@ -21,10 +21,11 @@
         <div class="c-filters">
             <p class="c-filters__months">
                 Go to: 
-                <a href="#{{ (now|date:"F")|slugify }}">{{ now|date:"F" }}</a>
-                <a href="#{{ (now|add_month|date:"F")|slugify }}">{{ now|add_month|date:"F" }}</a>
-                <a href="#{{ (now|add_month:3|date:"F")|slugify }}">{{ now|add_month:3|date:"F" }}</a>
-                <a href="#{{ (now|add_month:4|date:"F")|slugify }}">{{ now|add_month:4|date:"F" }}</a>
+                {% for r in result %}
+                    {% if result[forloop.counter -1].id.date_start|date:"m" != r.date_start|date:"m" %}
+                        <a href="#{{ r.date_start|date:"F"|slugify }}">{{ r.date_start|date:"F" }}</a>
+                    {% endif %}
+                {% endfor %}
             </p>
 
             <form action="/" class="c-filters__keywords">

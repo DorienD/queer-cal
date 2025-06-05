@@ -1097,7 +1097,7 @@ body.color--flagBrown .c-btn-add-event path {
   text-decoration: none;
 }
 .c-calendar-item__title a:hover:before {
-  width: 110%;
+  width: calc(100% + 1rem);
 }
 
 .c-calendar-item__address {
