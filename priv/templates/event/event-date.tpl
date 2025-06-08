@@ -5,6 +5,8 @@
             <span>
                 {% if details_page %}
                     {{ id.date_start|date:"D d F":"UTC" }}
+                {% elseif id.date_start|date:"d-m-F" == now|date:"d-m-F" %}
+                    <span>{_ Today _}</span>
                 {% else %}
                     {{ id.date_start|date:"D d":"UTC" }}
                 {% endif %}
@@ -21,6 +23,8 @@
             {# Event with time #}
             {% if details_page %}
                 <span>{{ id.date_start|date:"D d F":"UTC" }}</span>
+            {% elseif id.date_start|date:"d-m-F" == now|date:"d-m-F" %}
+                <span>{_ Today _}</span>
             {% else %}
                 <span>{{ id.date_start|date:"D d":"UTC" }}</span>
             {% endif %}
@@ -38,7 +42,7 @@
                 {# End date same day or next day before 9 AM → Only display time #}
                 - {{ id.date_end|date:"H:i":"UTC" }}
             {% else %}
-                {# Else  #}
+                {# Else #}
                 {% if details_page %}
                     - <span>{{ id.date_end|date:"D d F":"UTC" }}</span>
                 {% else %}

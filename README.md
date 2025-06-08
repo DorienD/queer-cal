@@ -24,6 +24,7 @@ Queer Calendar is a grassroots initiative to centralize LGBTQIA+ event listings 
 
 ## 🚀 Roadmap
 
+- [ ] Refactor to logical properties
 - [ ] Add glossary explaining keywords
 - [ ] Community event submission - allow users to add events
 - [ ] Add filtering by date
