@@ -24,15 +24,49 @@
     }
 }
 
+
+body .c-calendar:last-of-type .c-calendar__divider__next {
+    display: none;
+}
+
 .c-calendar__divider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: calc(100% + 0.2em);
     margin: 0 0 0.5em;
-    padding: 0 0.2em;
+    padding: 0 0.5em 0 0.2em;
     position: relative;
     left: -0.2em;
     background: var(--lightTheme);
     border-bottom: 3px solid var(--darkTheme);
     color: var(--darkTheme);
+
+    h2 {
+        margin: 0;
+    }
+}
+
+.c-calendar__divider__next {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9em;
+
+    &:after {
+        content: '';
+        width: 0.6em;
+        height: 0.6em;
+        border-bottom: 2px solid var(--darkTheme);
+        border-right: 2px solid var(--darkTheme);
+        rotate: 45deg;
+    }
+
+    svg {
+        width: 16px;
+        height: 16px;
+        fill: var(--darkTheme);
+    }
 }
 
 .c-calendar-item {

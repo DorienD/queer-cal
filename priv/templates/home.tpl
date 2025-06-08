@@ -66,8 +66,10 @@
                 {% endif %}
 
                 <ol class="c-calendar">
-                    <li>
-                        <h2 id="{{ (r.date_start|date:"F")|slugify }}" class="c-calendar__divider">{{ r.date_start|date:"F" }}</h2>
+                    <li class="c-calendar__divider">
+                        <h2 id="{{ (r.date_start|date:"F")|slugify }}">{{ r.date_start|date:"F" }}</h2>
+
+                        <a href="#{{ (r.date_start|add_month|date:"F")|slugify }}" class="c-calendar__divider__next">{_ Next month _}</a>
                     </li>
             {% endif %}
                     <li>
