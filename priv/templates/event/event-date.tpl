@@ -5,7 +5,7 @@
             <span>
                 {% if details_page %}
                     {{ id.date_start|date:"D d F":"UTC" }}
-                {% elseif id.date_start|date:"d-m-F" == now|date:"d-m-F" %}
+                {% elseif id.date_start|date:"d-m-F":"UTC" == now|date:"d-m-F":"UTC" %}
                     <span>{_ Today _}</span>
                 {% else %}
                     {{ id.date_start|date:"D d":"UTC" }}
@@ -23,7 +23,7 @@
             {# Event with time #}
             {% if details_page %}
                 <span>{{ id.date_start|date:"D d F":"UTC" }}</span>
-            {% elseif id.date_start|date:"d-m-F" == now|date:"d-m-F" %}
+            {% elseif id.date_start|date:"d-m-F":"UTC" == now|date:"d-m-F":"UTC" %}
                 <span>{_ Today _}</span>
             {% else %}
                 <span>{{ id.date_start|date:"D d":"UTC" }}</span>
