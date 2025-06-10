@@ -205,8 +205,12 @@ install_acl_rules(Context) ->
             {category_id, event}
         ]},
 
-
         %% Modules
+        {module, [
+            {acl_user_group_id, acl_user_group_anonymous},
+            {actions, [use]},
+            {module, mod_export}
+        ]},
         {module, [
             {acl_user_group_id, acl_user_group_members},
             {actions, [use]},
