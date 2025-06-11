@@ -1,3 +1,7 @@
+.c-calendar-listing {
+    margin-top: var(--mainMargin);
+}
+
 .c-calendar {
     @include striplist;
 
@@ -24,7 +28,6 @@
     }
 }
 
-
 body .c-calendar:last-of-type .c-calendar__divider__next {
     display: none;
 }
@@ -42,8 +45,16 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
     border-bottom: 3px solid var(--darkTheme);
     color: var(--darkTheme);
 
+    container-type: scroll-state;
+
     h2 {
         margin: 0;
+    }
+
+    @container scroll-state(stuck: top) {
+        .c-calendar__divider__next {
+            opacity: 1;
+        }
     }
 }
 
@@ -52,6 +63,11 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
     align-items: center;
     gap: 1rem;
     font-size: 0.9em;
+    transition: opacity 0.3s;
+
+    @supports (container-type: scroll-state) {
+        opacity: 0;    
+    }
 
     &:after {
         content: '';

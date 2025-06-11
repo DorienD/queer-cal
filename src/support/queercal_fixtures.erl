@@ -207,11 +207,6 @@ install_acl_rules(Context) ->
 
         %% Modules
         {module, [
-            {acl_user_group_id, acl_user_group_anonymous},
-            {actions, [use]},
-            {module, mod_export}
-        ]},
-        {module, [
             {acl_user_group_id, acl_user_group_members},
             {actions, [use]},
             {module, mod_admin_frontend}

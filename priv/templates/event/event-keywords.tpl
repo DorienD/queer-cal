@@ -19,18 +19,7 @@
         {% endif %}
         {% for keyword in id.o.subject %}
             <li>
-                {# {% if keyword.summary %}
-                    <button popovertarget="keyword-explan-{{ #keyword }}" popovertargetaction="toggle" class="c-keyword-list__item">
-                        {{ keyword.title }}
-                    </button>
-
-                    <div id="keyword-explan-{{ #keyword }}" popover="auto" class="c-keyword-explan">
-                        {{ keyword.summary }}
-                    </div>
-                {% else %}
-                    <span class="c-keyword-list__item">{{ keyword.title }}</span>
-                {% endif %} #}
-                <a href="?qhasobject={{ keyword.id }}" class="c-keyword-list__item">{{ keyword.title }}</a>
+                <a href="{% url home %}?qhasobject={{ keyword.id }}" class="c-keyword-list__item">{{ keyword.title }}</a>
             </li>
         {% endfor %}
 

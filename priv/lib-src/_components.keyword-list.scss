@@ -18,11 +18,6 @@
     text-underline-offset: 1px;
     border: 1px solid color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
 
-    @include setInteractive {
-        border-color: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 80%);
-        background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 80%);
-    }
-
     &.-tickets {
         background: light-dark(var(--flagYellow), color-mix(in srgb, var(--flagYellow), var(--bodyBg) 68%));
         border: 1px solid light-dark(var(--flagYellow), color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%));
@@ -78,6 +73,13 @@
                 background: light-dark(var(--darkTheme), var(--lightTheme));
             }
         }
+    }
+}
+
+a.c-keyword-list__item {
+    @include setInteractive {
+        border-color: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 80%);
+        background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 80%);
     }
 }
 

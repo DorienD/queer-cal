@@ -60,8 +60,8 @@
 
 .if-has-error {
     padding: 0.5em;
-    border: 2px solid var(--flagRed);
-    background: color-mix(in srgb, var(--flagRed), white 70%);
+    border: 2px solid var(--flagRedHsl);
+    background: color-mix(in srgb, var(--flagRedHsl), white 70%);
 }
 
 .form-control[name="find_cg"] {

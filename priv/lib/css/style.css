@@ -327,6 +327,39 @@ body {
   --flagGreen: #7AC74D;
   --flagBlue: #00B0FF;
   --flagPurple: #B99FE4;
+  --flagRedL: 67%;
+  --flagRedHsl: hsl(359, 100%, var(--flagRedL));
+  --flagPinkL: 73.73%;
+  --flagPinkHsl: hsl(317.59, 43.28%, var(--flagPinkL));
+  --flagWhiteL: 100%;
+  --flagWhiteHsl: hsl(0, 0%, var(--flagWhiteL));
+  --flagLightBlueL: 71.76%;
+  --flagLightBlueHsl: hsl(200.34, 81.94%, var(--flagLightBlueL));
+  --flagBrownL: 23.51%;
+  --flagBrownHsl: hsl(28.71, 48.8%, var(--flagBrownL));
+  --flagBlackL: 0%;
+  --flagBlackHsl: hsl(0, 0%, var(--flagBlackL));
+  --flagOrangeL: 66.27%;
+  --flagOrangeHsl: hsl(16.74, 100%, var(--flagOrangeL));
+  --flagYellowL: 57.65%;
+  --flagYellowHsl: hsl(41.36, 95.39%, var(--flagYellowL));
+  --flagGreenL: 54.12%;
+  --flagGreenHsl: hsl(97.87, 52.14%, var(--flagGreenL));
+  --flagBlueL: 50%;
+  --flagBlueHsl: hsl(198.59, 100%, var(--flagBlueL));
+  --flagPurpleL: 75.88%;
+  --flagPurpleHsl: hsl(262.61, 56.1%, var(--flagPurpleL));
+  --flagRedOklch: oklch(0.69 0.2 22.99);
+  --flagPinkOklch: oklch(0.77 0.09 337.58);
+  --flagWhiteOklch: oklch(1 0 0);
+  --flagLightBlueOklch: oklch(0.8 0.1 232.03);
+  --flagBrownOklch: oklch(0.38 0.06 61.92);
+  --flagBlackOklch: oklch(0 0 0);
+  --flagOrangeOklch: oklch(0.74 0.16 41.16);
+  --flagYellowOklch: oklch(0.74 0.16 41.16);
+  --flagGreenOklch: oklch(0.75 0.17 135.71);
+  --flagBlueOklch: oklch(0.72 0.16 239.3);
+  --flagPurpleOklch: oklch(0.75 0.1 301.32);
   --primaryColor: var(--theme, var(--flagRed));
   --typographyColor: light-dark(#242424, white);
   --errorColor: red;
@@ -977,6 +1010,10 @@ body.color--flagBrown .c-btn-add-event path {
   color: var(--typographyColor);
 }
 
+.c-calendar-listing {
+  margin-top: var(--mainMargin);
+}
+
 .c-calendar {
   padding: 0;
   margin: 0;
@@ -1019,9 +1056,15 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   background: var(--lightTheme);
   border-bottom: 3px solid var(--darkTheme);
   color: var(--darkTheme);
+  container-type: scroll-state;
 }
 .c-calendar__divider h2 {
   margin: 0;
+}
+@container scroll-state(stuck: top) {
+  .c-calendar__divider .c-calendar__divider__next {
+    opacity: 1;
+  }
 }
 
 .c-calendar__divider__next {
@@ -1029,6 +1072,12 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   align-items: center;
   gap: 1rem;
   font-size: 0.9em;
+  transition: opacity 0.3s;
+}
+@supports (container-type: scroll-state) {
+  .c-calendar__divider__next {
+    opacity: 0;
+  }
 }
 .c-calendar__divider__next:after {
   content: "";
@@ -1401,10 +1450,6 @@ body.color--flagBrown .c-footer {
   text-underline-offset: 1px;
   border: 1px solid color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
 }
-.c-keyword-list__item:hover, .c-keyword-list__item:active, .c-keyword-list__item:focus, .c-keyword-list__item:focus:active {
-  border-color: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 80%);
-  background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 80%);
-}
 .c-keyword-list__item.-tickets {
   background: light-dark(var(--flagYellow), color-mix(in srgb, var(--flagYellow), var(--bodyBg) 68%));
   border: 1px solid light-dark(var(--flagYellow), color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%));
@@ -1452,6 +1497,11 @@ body.color--flagBrown .c-footer {
 }
 .c-keyword-list__item.-desc:hover:before, .c-keyword-list__item.-desc:active:before, .c-keyword-list__item.-desc:focus:before, .c-keyword-list__item.-desc:focus:active:before {
   background: light-dark(var(--darkTheme), var(--lightTheme));
+}
+
+a.c-keyword-list__item:hover, a.c-keyword-list__item:active, a.c-keyword-list__item:focus, a.c-keyword-list__item:focus:active {
+  border-color: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 80%);
+  background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 80%);
 }
 
 body.color--flagBlack .c-keyword-list__item.-desc:hover, body.color--flagBlack .c-keyword-list__item.-desc:active, body.color--flagBlack .c-keyword-list__item.-desc:focus, body.color--flagBlack .c-keyword-list__item.-desc:focus:active,
@@ -1673,8 +1723,8 @@ body.color--flagBrown .c-main-nav {
 
 .if-has-error {
   padding: 0.5em;
-  border: 2px solid var(--flagRed);
-  background: color-mix(in srgb, var(--flagRed), white 70%);
+  border: 2px solid var(--flagRedHsl);
+  background: color-mix(in srgb, var(--flagRedHsl), white 70%);
 }
 
 .form-control[name=find_cg] {

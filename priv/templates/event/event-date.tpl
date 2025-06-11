@@ -3,8 +3,8 @@
         {% if id.date_is_all_day %}
             {# All day event #}
             <span>
-                {% if details_page %}
-                    {{ id.date_start|date:"D d F":"UTC" }}
+                {% if full_date %}
+                    {{ id.date_start|date:"d-m-Y":"UTC" }}
                 {% elseif id.date_start|date:"d-m-F":"UTC" == now|date:"d-m-F":"UTC" %}
                     <span>{_ Today _}</span>
                 {% else %}
@@ -21,8 +21,8 @@
             </span>
         {% else %}
             {# Event with time #}
-            {% if details_page %}
-                <span>{{ id.date_start|date:"D d F":"UTC" }}</span>
+            {% if full_date %}
+                <span>{{ id.date_start|date:"d-m-Y":"UTC" }}</span>
             {% elseif id.date_start|date:"d-m-F":"UTC" == now|date:"d-m-F":"UTC" %}
                 <span>{_ Today _}</span>
             {% else %}
@@ -43,8 +43,8 @@
                 - {{ id.date_end|date:"H:i":"UTC" }}
             {% else %}
                 {# Else #}
-                {% if details_page %}
-                    - <span>{{ id.date_end|date:"D d F":"UTC" }}</span>
+                {% if full_date %}
+                    - <span>{{ id.date_start|date:"d-m-Y":"UTC" }}</span>
                 {% else %}
                     - <span>{{ id.date_end|date:"D d":"UTC" }}</span>
                 {% endif %}
@@ -54,5 +54,5 @@
         {% endif %}
     </time>
     
-    {% include "event/share-event.tpl" %}
+    {% include "event/_share-event.tpl" %}
 </div>

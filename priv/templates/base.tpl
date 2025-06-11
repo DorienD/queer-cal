@@ -32,25 +32,25 @@
 	<link rel="manifest" href="/lib/images/site.webmanifest" />
 	
 	<meta name="theme-color" content="
-		{% if theme == "--flagRed" %}
+		{% if theme == "--flagRedOklch" %}
 			#FF575B
-		{% elseif theme == "--flagPink" %}
+		{% elseif theme == "--flagPinkOklch" %}
 			#CF54A6
-		{% elseif theme == "--flagLightBlue" %}
+		{% elseif theme == "--flagLightBlueOklch" %}
 			#018CD3
-		{% elseif theme == "--flagBrown" %}
+		{% elseif theme == "--flagBrownOklch" %}
 			#5B3A1B
-		{% elseif theme == "--flagBlack" %}
+		{% elseif theme == "--flagBlackOklch" %}
 			#000000
-		{% elseif theme == "--flagOrange" %}
+		{% elseif theme == "--flagOrangeOklch" %}
 			#FF4E09
-		{% elseif theme == "--flagYellow" %}
+		{% elseif theme == "--flagYellowOklch" %}
 			#BF870B
-		{% elseif theme == "--flagGreen" %}
+		{% elseif theme == "--flagGreenOklch" %}
 			#419711
-		{% elseif theme == "--flagBlue" %}
+		{% elseif theme == "--flagBlueOklch" %}
 			#018CD3
-		{% elseif theme == "--flagPurple" %}
+		{% elseif theme == "--flagPurpleOklch" %}
 			#884BED
 		{% endif %}
 	">

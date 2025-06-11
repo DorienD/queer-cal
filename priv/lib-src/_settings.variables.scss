@@ -26,6 +26,41 @@ body {
     --flagBlue: #00B0FF;
     --flagPurple: #B99FE4;
 
+    --flagRedL: 67%;
+    --flagRedHsl: hsl(359, 100%, var(--flagRedL));
+    --flagPinkL: 73.73%;
+    --flagPinkHsl: hsl(317.59, 43.28%, var(--flagPinkL));
+    --flagWhiteL: 100%;
+    --flagWhiteHsl: hsl(0, 0%,  var(--flagWhiteL));
+    --flagLightBlueL: 71.76%;
+    --flagLightBlueHsl: hsl(200.34, 81.94%, var(--flagLightBlueL));
+    --flagBrownL: 23.51%;
+    --flagBrownHsl: hsl(28.71, 48.8%, var(--flagBrownL));
+    --flagBlackL: 0%;
+    --flagBlackHsl: hsl(0, 0%, var(--flagBlackL));
+    --flagOrangeL: 66.27%;
+    --flagOrangeHsl: hsl(16.74, 100%, var(--flagOrangeL));
+    --flagYellowL: 57.65%;
+    --flagYellowHsl: hsl(41.36, 95.39%, var(--flagYellowL));
+    --flagGreenL: 54.12%;
+    --flagGreenHsl: hsl(97.87, 52.14%, var(--flagGreenL));
+    --flagBlueL: 50%;
+    --flagBlueHsl: hsl(198.59, 100%, var(--flagBlueL));
+    --flagPurpleL: 75.88%;
+    --flagPurpleHsl: hsl(262.61, 56.1%, var(--flagPurpleL));
+
+    --flagRedOklch: oklch(0.69 0.2 22.99);
+    --flagPinkOklch: oklch(0.77 0.09 337.58);
+    --flagWhiteOklch: oklch(1 0 0);
+    --flagLightBlueOklch: oklch(0.8 0.1 232.03);
+    --flagBrownOklch: oklch(0.38 0.06 61.92);
+    --flagBlackOklch: oklch(0 0 0);
+    --flagOrangeOklch: oklch(0.74 0.16 41.16);
+    --flagYellowOklch: oklch(0.74 0.16 41.16);
+    --flagGreenOklch: oklch(0.75 0.17 135.71);
+    --flagBlueOklch: oklch(0.72 0.16 239.3);
+    --flagPurpleOklch: oklch(0.75 0.1 301.32);
+
     --primaryColor: var(--theme, var(--flagRed));
 
     --typographyColor: light-dark(#242424, white);
