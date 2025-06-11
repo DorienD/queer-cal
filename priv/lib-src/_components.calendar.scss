@@ -136,8 +136,7 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
 }
 
 @media (prefers-reduced-motion: no-preference){
-    .c-calendar-item,
-    .c-calendar__divider {
+    .c-calendar-item {
         transform: translateY(30px);
         transform-origin: left bottom;
         animation: fade-in linear forwards;
