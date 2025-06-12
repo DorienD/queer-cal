@@ -26,7 +26,12 @@
             {% elseif id.date_start|date:"d-m-F":"UTC" == now|date:"d-m-F":"UTC" %}
                 <span>{_ Today _}</span>
             {% else %}
-                <span>{{ id.date_start|date:"D d":"UTC" }}</span>
+                {% if id.date_start|date:"m" != id.date_end|date:"m" %}
+                    {# If date end is in a different month #}
+                    <span>{{ id.date_start|date:"D d b":"UTC" }}</span>
+                {% else %}
+                    <span>{{ id.date_start|date:"D d":"UTC" }}</span>
+                {% endif %}
             {% endif %}
             
             {{ id.date_start|date:"H:i":"UTC" }}
