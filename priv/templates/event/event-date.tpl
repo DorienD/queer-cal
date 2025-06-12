@@ -4,19 +4,19 @@
             {# All day event #}
             <span>
                 {% if full_date %}
-                    {{ id.date_start|date:"d-m-Y":"UTC" }}
+                    {{ id.date_start|date:"d-m-Y":"UTC" }} - {{ id.date_end|date:"d-m-Y":"UTC" }}
                 {% elseif id.date_start|date:"d-m-F":"UTC" == now|date:"d-m-F":"UTC" %}
                     <span>{_ Today _}</span>
                 {% else %}
                     {{ id.date_start|date:"D d":"UTC" }}
-                {% endif %}
-                {# If the same month, only display day else also display month #}
-                {% if id.date_start|date:"m" == id.date_end|date:"m" %}
-                    {% if id.date_start|date:"d":"UTC" != id.date_end|date:"d":"UTC" %}
-                        - {{ id.date_end|date:"d":"UTC" }}
+                    {# If the same month, only display day else also display month #}
+                    {% if id.date_start|date:"m" == id.date_end|date:"m" %}
+                        {% if id.date_start|date:"d":"UTC" != id.date_end|date:"d":"UTC" %}
+                            - {{ id.date_end|date:"d":"UTC" }}
+                        {% endif %}
+                    {% else %}
+                        - {{ id.date_end|date:"d b":"UTC" }}
                     {% endif %}
-                {% else %}
-                    - {{ id.date_end|date:"d b":"UTC" }}
                 {% endif %}
             </span>
         {% else %}
@@ -44,9 +44,14 @@
             {% else %}
                 {# Else #}
                 {% if full_date %}
-                    - <span>{{ id.date_start|date:"d-m-Y":"UTC" }}</span>
+                    - <span>{{ id.date_end|date:"d-m-Y":"UTC" }}</span>
                 {% else %}
-                    - <span>{{ id.date_end|date:"D d":"UTC" }}</span>
+                    {% if id.date_start|date:"m" != id.date_end|date:"m" %}
+                        {# If date end is in a different month #}
+                        - <span>{{ id.date_end|date:"D d b":"UTC" }}</span>
+                    {% else %}
+                        - <span>{{ id.date_end|date:"D d":"UTC" }}</span>
+                    {% endif %}
                 {% endif %}
 
               {{ id.date_end|date:"H:i":"UTC" }}

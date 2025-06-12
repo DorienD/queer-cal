@@ -15,7 +15,7 @@
             {% endif %}
         </h1>
 
-        {% include "event/event-date.tpl" show_end_date %}
+        {% include "event/event-date.tpl" full_date %}
 
         {% include "event/event-location.tpl" %}
 
