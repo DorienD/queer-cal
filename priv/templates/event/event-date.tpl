@@ -27,7 +27,7 @@
                 <span>{_ Today _}</span>
             {% else %}
                 {% if id.date_start|date:"m" != id.date_end|date:"m" %}
-                    {# If date end is in a different month #}
+                    {# If date end is in a different month, display month #}
                     <span>{{ id.date_start|date:"D d b":"UTC" }}</span>
                 {% else %}
                     <span>{{ id.date_start|date:"D d":"UTC" }}</span>
@@ -52,7 +52,7 @@
                     - <span>{{ id.date_end|date:"d-m-Y":"UTC" }}</span>
                 {% else %}
                     {% if id.date_start|date:"m" != id.date_end|date:"m" %}
-                        {# If date end is in a different month #}
+                        {# If date end is in a different month, display month #}
                         - <span>{{ id.date_end|date:"D d b":"UTC" }}</span>
                     {% else %}
                         - <span>{{ id.date_end|date:"D d":"UTC" }}</span>
