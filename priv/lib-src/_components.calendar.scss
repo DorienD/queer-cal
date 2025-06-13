@@ -67,28 +67,25 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
 
 .c-calendar__divider__next {
     display: flex;
+    flex-flow: column;
     align-items: center;
-    gap: 1rem;
-    font-size: 0.9em;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    padding-right: 0.5em;
+    font-size: 9px;
+    line-height: 1.4;
     transition: opacity 0.3s;
 
     @supports (container-type: scroll-state) {
-        opacity: 0;    
-    }
-
-    &:after {
-        content: '';
-        width: 0.6em;
-        height: 0.6em;
-        border-bottom: 2px solid var(--darkTheme);
-        border-right: 2px solid var(--darkTheme);
-        rotate: 45deg;
+        opacity: 1;
     }
 
     svg {
         width: 16px;
         height: 16px;
         fill: var(--darkTheme);
+        rotate: 180deg;
     }
 }
 
@@ -258,6 +255,8 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
 }
 
 .c-calendar__empty {
+    width: fit-content;
+    max-width: 70ch;
     padding: 1em;
     background: var(--lightTheme);
     color: light-dark(var(--darkTheme), var(--typographyColor));
