@@ -1,13 +1,13 @@
 {% with id.date_start, id.date_end as dtstart, dtend %}
 {% if dtstart %}
 BEGIN:VEVENT
-CREATED:{{ id.created|date:"Ymd\\THis":"UTC" }}
-LAST-MODIFIED:{{ id.modified|date:"Ymd\\THis":"UTC" }}
+CREATED:{{ id.created|date:"Ymd\\THis" }}
+LAST-MODIFIED:{{ id.modified|date:"Ymd\\THis" }}
 UID:{{ id.uri|escape_ical }}{% if id.date_is_all_day %}
-DTSTART;VALUE=DATE:{{ dtstart|date:"Ymd":"UTC" }}
-DTEND;VALUE=DATE:{{ dtend|date:"Ymd":"UTC" }}{% else %}
-DTSTART:{{ dtstart|date:"Ymd\\THis":"UTC" }}
-DTEND:{{ dtend|date:"Ymd\\THis":"UTC" }}{% endif %}
+DTSTART;VALUE=DATE:{{ dtstart|date:"Ymd" }}
+DTEND;VALUE=DATE:{{ dtend|date:"Ymd" }}{% else %}
+DTSTART:{{ dtstart|date:"Ymd\\THis" }}
+DTEND:{{ dtend|date:"Ymd\\THis" }}{% endif %}
 TRANSP:OPAQUE
 SUMMARY:{{ id.title|unescape|escape_ical }}
 DESCRIPTION:{{ id|summary|striptags|unescape|escape_ical }}

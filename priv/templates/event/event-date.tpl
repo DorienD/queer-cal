@@ -1,74 +1,82 @@
+{% with 
+    id.date_start,
+    id.date_end
+    as
+    date_start,  
+    date_end 
+%}
 <div class="c-calendar-item__date">
-    <time datetime="{{ id.date_start|date:"c":"UTC" }}">
+    <time datetime="{{ date_start|date:"c" }}">
         {% if id.date_is_all_day %}
             {# All day event #}
             <span>
                 {% if full_date %}
-                    {{ id.date_start|date:"d-m-Y":"UTC" }} - {{ id.date_end|date:"d-m-Y":"UTC" }}
-                {% elseif id.date_start|date:"d-m-F":"UTC" == now|date:"d-m-F":"UTC" %}
+                    {{ date_start|date:"d-m-Y" }} - {{ date_end|date:"d-m-Y" }}
+                {% elseif date_start|date:"d-m-F" == now|date:"d-m-F" %}
                     <span>{_ Today _}</span>
                 {% else %}
-                    {% if id.date_start|date:"m" != id.date_end|date:"m" %}
+                    {% if date_start|date:"m" != date_end|date:"m" %}
                         {# Date end in a different month → display month #}
-                        {{ id.date_start|date:"D d b":"UTC" }}
+                        {{ date_start|date:"D d b" }}
                     {% else %}
-                        {{ id.date_start|date:"D d":"UTC" }}
+                        {{ date_start|date:"D d" }}
                     {% endif %}
                     
                     {# Same month → only display day else also display month #}
-                    {% if id.date_start|date:"m" == id.date_end|date:"m" %}
-                        {% if id.date_start|date:"d":"UTC" != id.date_end|date:"d":"UTC" %}
-                            - {{ id.date_end|date:"d":"UTC" }}
+                    {% if date_start|date:"m" == date_end|date:"m" %}
+                        {% if date_start|date:"d" != date_end|date:"d" %}
+                            - {{ date_end|date:"d" }}
                         {% endif %}
                     {% else %}
-                        - {{ id.date_end|date:"d b":"UTC" }}
+                        - {{ date_end|date:"d b" }}
                     {% endif %}
                 {% endif %}
             </span>
         {% else %}
             {# Event with time #}
             {% if full_date %}
-                <span>{{ id.date_start|date:"d-m-Y":"UTC" }}</span>
-            {% elseif id.date_start|date:"d-m-F":"UTC" == now|date:"d-m-F":"UTC" %}
+                <span>{{ date_start|date:"d-m-Y" }}</span>
+            {% elseif date_start|date:"d-m-F" == now|date:"d-m-F" %}
                 <span>{_ Today _}</span>
             {% else %}
-                {% if id.date_start|date:"m" != id.date_end|date:"m" %}
+                {% if date_start|date:"m" != date_end|date:"m" %}
                     {# If date end is in a different month, display month #}
-                    <span>{{ id.date_start|date:"D d b":"UTC" }}</span>
+                    <span>{{ date_start|date:"D d b" }}</span>
                 {% else %}
-                    <span>{{ id.date_start|date:"D d":"UTC" }}</span>
+                    <span>{{ date_start|date:"D d" }}</span>
                 {% endif %}
             {% endif %}
             
-            {{ id.date_start|date:"H:i":"UTC" }}
+            {{ date_start|date:"H:i" }}
 
-            {% if id.date_start|date:"H":"UTC" == id.date_end|date:"H":"UTC" %}
+            {% if date_start|date:"H" == date_end|date:"H" %}
                 {# Same time → Don't display end time #}
             {% elseif
-              ((id.date_end|date:"dm":"UTC" == id.date_start|date:"dm":"UTC")
+              ((date_end|date:"dm" == date_start|date:"dm")
                 or
-                ((id.date_start|add_day)|date:"dm":"UTC" == id.date_end|date:"dm":"UTC"
-                  and id.date_end|date:"H" < 9))
+                ((date_start|add_day)|date:"dm" == date_end|date:"dm"
+                  and date_end|date:"H" < 9))
             %}
                 {# End date same day or next day before 9 AM → Only display time #}
-                - {{ id.date_end|date:"H:i":"UTC" }}
+                - {{ date_end|date:"H:i" }}
             {% else %}
                 {# Else #}
                 {% if full_date %}
-                    - <span>{{ id.date_end|date:"d-m-Y":"UTC" }}</span>
+                    - <span>{{ date_end|date:"d-m-Y" }}</span>
                 {% else %}
-                    {% if id.date_start|date:"m" != id.date_end|date:"m" %}
+                    {% if date_start|date:"m" != date_end|date:"m" %}
                         {# Date end in a different month → display month #}
-                        - <span>{{ id.date_end|date:"D d b":"UTC" }}</span>
+                        - <span>{{ date_end|date:"D d b" }}</span>
                     {% else %}
-                        - <span>{{ id.date_end|date:"D d":"UTC" }}</span>
+                        - <span>{{ date_end|date:"D d" }}</span>
                     {% endif %}
                 {% endif %}
 
-              {{ id.date_end|date:"H:i":"UTC" }}
+              {{ date_end|date:"H:i" }}
             {% endif %}
         {% endif %}
     </time>
     
     {% include "event/_share-event.tpl" %}
 </div>
+{% endwith %}
