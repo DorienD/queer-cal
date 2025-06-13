@@ -1061,6 +1061,12 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
 .c-calendar__divider h2 {
   margin: 0;
 }
+.c-calendar__divider sup {
+  left: -1em;
+  top: -1.3em;
+  font-size: 0.42em;
+  letter-spacing: -0.1em;
+}
 @container scroll-state(stuck: top) {
   .c-calendar__divider .c-calendar__divider__next {
     opacity: 1;

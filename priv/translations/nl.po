@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2025-05-28 18:24+0200\n"
+"PO-Revision-Date: 2025-06-13 12:19+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -25,26 +25,26 @@ msgid ""
 "A link will be added around the title of the event. The website link will "
 "have priority over Facebook or Instagram."
 msgstr ""
-"Een link wordt toegevoegd om de titel. De website link heeft prioriteit "
-"over de Facebook of Instagram link."
+"Een link wordt toegevoegd om de titel. De website link heeft prioriteit over "
+"de Facebook of Instagram link."
 
-#: _build/default/lib/queercal/priv/templates/base.tpl:75
+#: _build/default/lib/queercal/priv/templates/base.tpl:99
 msgid "Add Event"
 msgstr "Voeg event toe"
 
-#: _build/default/lib/queercal/priv/templates/event/share-event.tpl:7./_build/default/lib/queercal/priv/templates/event/share-event.tpl:7
+#: _build/default/lib/queercal/priv/templates/event/_share-event.tpl:8./_build/default/lib/queercal/priv/templates/event/_share-event.tpl:8
 msgid "Add to Google calendar"
 msgstr "Voeg toe aan Google agenda"
 
-#: _build/default/lib/queercal/priv/templates/event/share-event.tpl:9./_build/default/lib/queercal/priv/templates/event/share-event.tpl:9
+#: _build/default/lib/queercal/priv/templates/event/_share-event.tpl:10./_build/default/lib/queercal/priv/templates/event/_share-event.tpl:10
 msgid "Add to Microsoft agenda"
 msgstr "Voeg toe aan Microsoft agenda"
 
-#: _build/default/lib/queercal/priv/templates/event/share-event.tpl:2
+#: _build/default/lib/queercal/priv/templates/event/_share-event.tpl:3
 msgid "Add to calendar"
 msgstr "Voeg toe agenda"
 
-#: _build/default/lib/queercal/priv/templates/event/share-event.tpl:11./_build/default/lib/queercal/priv/templates/event/share-event.tpl:11
+#: _build/default/lib/queercal/priv/templates/event/_share-event.tpl:12./_build/default/lib/queercal/priv/templates/event/_share-event.tpl:12
 msgid "Add to iCalendar"
 msgstr "Voeg toe aan iCalendar"
 
@@ -52,11 +52,11 @@ msgstr "Voeg toe aan iCalendar"
 msgid "Address"
 msgstr "Adres"
 
-#: _build/default/lib/queercal/priv/templates/base.tpl:82
+#: _build/default/lib/queercal/priv/templates/base.tpl:106
 msgid "Admin"
 msgstr ""
 
-#: _build/default/lib/queercal/priv/templates/base.tpl:80
+#: _build/default/lib/queercal/priv/templates/base.tpl:104
 msgid "Admin edit"
 msgstr ""
 
@@ -64,13 +64,29 @@ msgstr ""
 msgid "All day event"
 msgstr "Hele dag"
 
-#: _build/default/lib/queercal/priv/templates/page.event.tpl:7
+#: _build/default/lib/queercal/priv/templates/page.event.tpl:7./_build/default/lib/queercal/priv/templates/page.tpl:7
 msgid "All events"
 msgstr "Alle evenementen"
+
+#: _build/default/lib/queercal/priv/templates/page.organization.tpl:5
+msgid "All events from"
+msgstr "Alle evenementen van"
+
+#: _build/default/lib/queercal/priv/templates/page.location.tpl:5
+msgid "All events in"
+msgstr "Alle evenementen in"
+
+#: _build/default/lib/queercal/priv/templates/page.keyword.tpl:5
+msgid "All events with"
+msgstr "Alle evenementen met"
 
 #: _build/default/lib/queercal/priv/templates/footer/footer.tpl:3
 msgid "Appearance:"
 msgstr "Thema:"
+
+#: _build/default/lib/queercal/priv/templates/event/_filters.tpl:36
+msgid "Apply filter"
+msgstr "Filter Toepassen"
 
 #: _build/default/lib/queercal/priv/templates/footer/footer.tpl:9
 msgid "Back to top"
@@ -96,6 +112,10 @@ msgstr "Content"
 msgid "Date & time"
 msgstr "Datum en tijd"
 
+#: _build/default/lib/queercal/priv/templates/event/event-keywords.tpl:6./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:17
+msgid "Description"
+msgstr "Beschrijving"
+
 #: _build/default/lib/queercal/priv/templates/page.event.tpl:34
 msgid "Description only provided in Dutch"
 msgstr "Details alleen in het Nederlands"
@@ -104,7 +124,7 @@ msgstr "Details alleen in het Nederlands"
 msgid "Description only provided in English"
 msgstr "Details alleen in het Engels"
 
-#: _build/default/lib/queercal/priv/templates/home.tpl:39./_build/default/lib/queercal/priv/templates/page.event.tpl:13
+#: _build/default/lib/queercal/priv/templates/page.event.tpl:13./_build/default/lib/queercal/priv/templates/page.keyword.tpl:24./_build/default/lib/queercal/priv/templates/page.location.tpl:24./_build/default/lib/queercal/priv/templates/page.organization.tpl:24./_build/default/lib/queercal/priv/templates/cards/card.event.tpl:6
 msgid "Edit"
 msgstr "Bewerk"
 
@@ -123,6 +143,14 @@ msgstr ""
 #: _build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:97
 msgid "Facebook link"
 msgstr ""
+
+#: _build/default/lib/queercal/priv/templates/event/_filters.tpl:17
+msgid "Filter"
+msgstr "Filter"
+
+#: _build/default/lib/queercal/priv/templates/event/_filters.tpl:24
+msgid "Filter on a keyword"
+msgstr "Filter op een trefwoord"
 
 #: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:43
 msgid "From"
@@ -168,6 +196,14 @@ msgstr "Lokatie"
 msgid "Missing a keyword? Please send them to"
 msgstr "Mis je een trefwoord? Stuur ze op naar"
 
+#: _build/default/lib/queercal/priv/templates/home.tpl:92./_build/default/lib/queercal/priv/templates/event/_list.tpl:6
+msgid "Next month"
+msgstr "Volgende maand"
+
+#: _build/default/lib/queercal/priv/templates/home.tpl:103./_build/default/lib/queercal/priv/templates/page.keyword.tpl:36./_build/default/lib/queercal/priv/templates/page.location.tpl:36./_build/default/lib/queercal/priv/templates/page.organization.tpl:36./_build/default/lib/queercal/priv/templates/event/_list.tpl:15
+msgid "No events 🥺, know something? Mail it to:"
+msgstr "Geen evenementen 🥺, weet je iets? Mail het naar:"
+
 #: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:80
 msgid "No page"
 msgstr "Geen pagina"
@@ -183,6 +219,10 @@ msgstr "Organisatie naam"
 #: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:121
 msgid "Postcode"
 msgstr "Postcode"
+
+#: _build/default/lib/queercal/priv/templates/event/_filters.tpl:22
+msgid "Remove filter"
+msgstr "Verwijder filter"
 
 #: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:36
 msgid "Required field"
@@ -212,7 +252,7 @@ msgstr "Sla deze pagina op."
 msgid "Showing dates in"
 msgstr "Datums zijn in"
 
-#: _build/default/lib/queercal/priv/templates/event/event-keywords.tpl:23
+#: _build/default/lib/queercal/priv/templates/event/event-keywords.tpl:30
 msgid "Sign up"
 msgstr "Aanmelden"
 
@@ -222,11 +262,11 @@ msgstr "Aanmelding"
 
 #: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:141
 msgid ""
-"Some locations are already in the system, if you can't find the location "
-"add the address in the form."
+"Some locations are already in the system, if you can't find the location add "
+"the address in the form."
 msgstr ""
-"Sommige locaties zijn al bekend in het systeem, als je de lokatie niet "
-"kunt vinden vul dan het formulier in."
+"Sommige locaties zijn al bekend in het systeem, als je de lokatie niet kunt "
+"vinden vul dan het formulier in."
 
 #: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:171
 msgid ""
@@ -272,7 +312,7 @@ msgstr "Dit zal een ticket button toevoegen."
 msgid "Ticket link"
 msgstr "Ticket link"
 
-#: _build/default/lib/queercal/priv/templates/event/event-keywords.tpl:20
+#: _build/default/lib/queercal/priv/templates/event/event-keywords.tpl:27
 msgid "Tickets"
 msgstr "Tickets"
 
@@ -287,6 +327,10 @@ msgstr "Titel"
 #: _build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:105./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:61
 msgid "Title of the venue/location"
 msgstr "Titel van de lokatie"
+
+#: _build/default/lib/queercal/priv/templates/event/event-date.tpl:9./_build/default/lib/queercal/priv/templates/event/event-date.tpl:33
+msgid "Today"
+msgstr "Vandaag"
 
 #: _build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:72
 msgid "View"
@@ -308,6 +352,18 @@ msgstr "Je kunt meerdere trefwoorden toevoegen."
 msgid "You must have at least one keyword."
 msgstr "Je moet ten minste één trefwoord toevoegen."
 
+#: _build/default/lib/queercal/priv/templates/event/_filters.tpl:15
+msgid "You've filtered on"
+msgstr "Je hebt gefilterd op"
+
+#: _build/default/lib/queercal/priv/templates/home.tpl:90
+msgid "approximately"
+msgstr "om en nabij"
+
 #: _build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:62
 msgid "eg. De Trut or Club Church"
 msgstr "bijv. De Trut of Club Church"
+
+#: _build/default/lib/queercal/priv/templates/event/_filters.tpl:38
+msgid "reset"
+msgstr "reset"

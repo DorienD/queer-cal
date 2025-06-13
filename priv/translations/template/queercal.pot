@@ -25,31 +25,31 @@ msgid ""
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/base.tpl:75
+#: ./_build/default/lib/queercal/priv/templates/base.tpl:99
 msgid ""
 "Add Event"
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/event/share-event.tpl:7./_build/default/lib/queercal/priv/templates/event/share-event.tpl:7
+#: ./_build/default/lib/queercal/priv/templates/event/_share-event.tpl:8./_build/default/lib/queercal/priv/templates/event/_share-event.tpl:8
 msgid ""
 "Add to Google calendar"
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/event/share-event.tpl:9./_build/default/lib/queercal/priv/templates/event/share-event.tpl:9
+#: ./_build/default/lib/queercal/priv/templates/event/_share-event.tpl:10./_build/default/lib/queercal/priv/templates/event/_share-event.tpl:10
 msgid ""
 "Add to Microsoft agenda"
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/event/share-event.tpl:2
+#: ./_build/default/lib/queercal/priv/templates/event/_share-event.tpl:3
 msgid ""
 "Add to calendar"
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/event/share-event.tpl:11./_build/default/lib/queercal/priv/templates/event/share-event.tpl:11
+#: ./_build/default/lib/queercal/priv/templates/event/_share-event.tpl:12./_build/default/lib/queercal/priv/templates/event/_share-event.tpl:12
 msgid ""
 "Add to iCalendar"
 msgstr ""
@@ -61,13 +61,13 @@ msgid ""
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/base.tpl:82
+#: ./_build/default/lib/queercal/priv/templates/base.tpl:106
 msgid ""
 "Admin"
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/base.tpl:80
+#: ./_build/default/lib/queercal/priv/templates/base.tpl:104
 msgid ""
 "Admin edit"
 msgstr ""
@@ -79,15 +79,39 @@ msgid ""
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/page.event.tpl:7
+#: ./_build/default/lib/queercal/priv/templates/page.event.tpl:7./_build/default/lib/queercal/priv/templates/page.tpl:7
 msgid ""
 "All events"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/page.organization.tpl:5
+msgid ""
+"All events from"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/page.location.tpl:5
+msgid ""
+"All events in"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/page.keyword.tpl:5
+msgid ""
+"All events with"
 msgstr ""
 ""
 
 #: ./_build/default/lib/queercal/priv/templates/footer/footer.tpl:3
 msgid ""
 "Appearance:"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:36
+msgid ""
+"Apply filter"
 msgstr ""
 ""
 
@@ -127,6 +151,12 @@ msgid ""
 msgstr ""
 ""
 
+#: ./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:6./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:17
+msgid ""
+"Description"
+msgstr ""
+""
+
 #: ./_build/default/lib/queercal/priv/templates/page.event.tpl:34
 msgid ""
 "Description only provided in Dutch"
@@ -139,7 +169,7 @@ msgid ""
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/home.tpl:39./_build/default/lib/queercal/priv/templates/page.event.tpl:13
+#: ./_build/default/lib/queercal/priv/templates/page.event.tpl:13./_build/default/lib/queercal/priv/templates/page.keyword.tpl:24./_build/default/lib/queercal/priv/templates/page.location.tpl:24./_build/default/lib/queercal/priv/templates/page.organization.tpl:24./_build/default/lib/queercal/priv/templates/cards/card.event.tpl:6
 msgid ""
 "Edit"
 msgstr ""
@@ -166,6 +196,18 @@ msgstr ""
 #: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:97
 msgid ""
 "Facebook link"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:17
+msgid ""
+"Filter"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:24
+msgid ""
+"Filter on a keyword"
 msgstr ""
 ""
 
@@ -235,6 +277,18 @@ msgid ""
 msgstr ""
 ""
 
+#: ./_build/default/lib/queercal/priv/templates/home.tpl:92./_build/default/lib/queercal/priv/templates/event/_list.tpl:6
+msgid ""
+"Next month"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/home.tpl:103./_build/default/lib/queercal/priv/templates/page.keyword.tpl:36./_build/default/lib/queercal/priv/templates/page.location.tpl:36./_build/default/lib/queercal/priv/templates/page.organization.tpl:36./_build/default/lib/queercal/priv/templates/event/_list.tpl:15
+msgid ""
+"No events 🥺, know something? Mail it to:"
+msgstr ""
+""
+
 #: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:80
 msgid ""
 "No page"
@@ -256,6 +310,12 @@ msgstr ""
 #: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:121
 msgid ""
 "Postcode"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:22
+msgid ""
+"Remove filter"
 msgstr ""
 ""
 
@@ -301,7 +361,7 @@ msgid ""
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:23
+#: ./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:30
 msgid ""
 "Sign up"
 msgstr ""
@@ -381,7 +441,7 @@ msgid ""
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:20
+#: ./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:27
 msgid ""
 "Tickets"
 msgstr ""
@@ -402,6 +462,12 @@ msgstr ""
 #: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:105./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:61
 msgid ""
 "Title of the venue/location"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/event/event-date.tpl:9./_build/default/lib/queercal/priv/templates/event/event-date.tpl:33
+msgid ""
+"Today"
 msgstr ""
 ""
 
@@ -435,8 +501,26 @@ msgid ""
 msgstr ""
 ""
 
+#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:15
+msgid ""
+"You've filtered on"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/home.tpl:90
+msgid ""
+"approximately"
+msgstr ""
+""
+
 #: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:62
 msgid ""
 "eg. De Trut or Club Church"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:38
+msgid ""
+"reset"
 msgstr ""
 ""

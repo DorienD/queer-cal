@@ -9,13 +9,13 @@
                     <span>{_ Today _}</span>
                 {% else %}
                     {% if id.date_start|date:"m" != id.date_end|date:"m" %}
-                        {# If date end is in a different month, display month #}
+                        {# Date end in a different month → display month #}
                         {{ id.date_start|date:"D d b":"UTC" }}
                     {% else %}
                         {{ id.date_start|date:"D d":"UTC" }}
                     {% endif %}
                     
-                    {# If the same month, only display day else also display month #}
+                    {# Same month → only display day else also display month #}
                     {% if id.date_start|date:"m" == id.date_end|date:"m" %}
                         {% if id.date_start|date:"d":"UTC" != id.date_end|date:"d":"UTC" %}
                             - {{ id.date_end|date:"d":"UTC" }}
@@ -58,7 +58,7 @@
                     - <span>{{ id.date_end|date:"d-m-Y":"UTC" }}</span>
                 {% else %}
                     {% if id.date_start|date:"m" != id.date_end|date:"m" %}
-                        {# If date end is in a different month, display month #}
+                        {# Date end in a different month → display month #}
                         - <span>{{ id.date_end|date:"D d b":"UTC" }}</span>
                     {% else %}
                         - <span>{{ id.date_end|date:"D d":"UTC" }}</span>
