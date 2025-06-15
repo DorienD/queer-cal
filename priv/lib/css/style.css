@@ -1723,12 +1723,6 @@ body.color--flagBrown .c-main-nav {
   text-transform: none;
 }
 
-@supports not (anchor-name: --popover) {
-  .c-share-event,
-  .c-share-event-toggle {
-    display: none;
-  }
-}
 .t-edit {
   --typographyColor: #242424;
   padding: 3em 0;
