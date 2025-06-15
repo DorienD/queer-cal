@@ -93,6 +93,8 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
     height: 100%;
     padding: 0 0 1em;
     position: relative;
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
 
     &::after {
         content: '';
@@ -108,6 +110,10 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
     h3 {
         margin: 0 0 0.5em;
         font-size: 1.2em;
+    }
+
+    @starting-style {
+        opacity: 0;
     }
 }
 

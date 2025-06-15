@@ -71,3 +71,10 @@
     text-align: center;
     text-transform: none;
 }
+
+@supports not (anchor-name: --popover) {
+    .c-share-event,
+    .c-share-event-toggle {
+        display: none;
+    }
+}

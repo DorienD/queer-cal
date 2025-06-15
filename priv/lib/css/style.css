@@ -364,8 +364,14 @@ body {
   --typographyColor: light-dark(#242424, white);
   --errorColor: red;
   --mainMargin: 4rem;
-  --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
-  --darkTheme: color-mix(in srgb, var(--theme), black 30%);
+  --lightTheme: #FFEEEF;
+  --darkTheme: #B23D40;
+}
+@supports (color: color-mix(in srgb, red, white)) {
+  body {
+    --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
+    --darkTheme: color-mix(in srgb, var(--theme), black 30%);
+  }
 }
 body.color--flagBrown {
   --lightTheme: light-dark(color-mix(in srgb, var(--theme), var(--bodyBg) 90%), color-mix(in srgb, var(--theme), black 20%));
@@ -1101,6 +1107,8 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   height: 100%;
   padding: 0 0 1em;
   position: relative;
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
 }
 .c-calendar-item::after {
   content: "";
@@ -1115,6 +1123,11 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
 .c-calendar-item h3 {
   margin: 0 0 0.5em;
   font-size: 1.2em;
+}
+@starting-style {
+  .c-calendar-item {
+    opacity: 0;
+  }
 }
 
 .c-calendar-item__date {
@@ -1447,35 +1460,65 @@ body.color--flagBrown .c-footer {
   display: inline-flex;
   padding: 0.2rem 0.7rem;
   margin-bottom: 0.2rem;
-  background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
+  background: #ccc;
   border-radius: 4px;
   border: none;
   line-height: 1.4;
   text-decoration: none;
   text-underline-offset: 1px;
-  border: 1px solid color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
+  border: 1px solid #666;
+}
+@supports (color: color-mix(in srgb, red, white)) {
+  .c-keyword-list__item {
+    background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
+    border: 1px solid color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
+  }
 }
 .c-keyword-list__item.-tickets {
-  background: light-dark(var(--flagYellow), color-mix(in srgb, var(--flagYellow), var(--bodyBg) 68%));
-  border: 1px solid light-dark(var(--flagYellow), color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%));
+  background: var(--flagYellow);
+  border: 1px solid var(--flagYellow);
   text-decoration: underline;
+}
+@supports (color: light-dark(black, white)) {
+  .c-keyword-list__item.-tickets {
+    background: light-dark(var(--flagYellow), color-mix(in srgb, var(--flagYellow), var(--bodyBg) 68%));
+    border: 1px solid light-dark(var(--flagYellow), color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%));
+  }
 }
 .c-keyword-list__item.-tickets:hover, .c-keyword-list__item.-tickets:active, .c-keyword-list__item.-tickets:focus, .c-keyword-list__item.-tickets:focus:active {
   text-decoration: none;
-  background: color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%);
+  background: #FEF8EA;
+}
+@supports (color: color-mix(in srgb, red, white)) {
+  .c-keyword-list__item.-tickets:hover, .c-keyword-list__item.-tickets:active, .c-keyword-list__item.-tickets:focus, .c-keyword-list__item.-tickets:focus:active {
+    background: color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%);
+  }
 }
 .c-keyword-list__item.-signup {
-  background: light-dark(var(--flagPurple), color-mix(in srgb, var(--flagPurple), var(--bodyBg) 61%));
-  border: 1px solid light-dark(var(--flagPurple), color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%));
+  background: var(--flagPurple);
+  border: 1px solid var(--flagPurple);
   text-decoration: underline;
+}
+@supports (color: light-dark(black, white)) {
+  .c-keyword-list__item.-signup {
+    background: light-dark(var(--flagPurple), color-mix(in srgb, var(--flagPurple), var(--bodyBg) 61%));
+    border: 1px solid light-dark(var(--flagPurple), color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%));
+  }
 }
 .c-keyword-list__item.-signup:hover, .c-keyword-list__item.-signup:active, .c-keyword-list__item.-signup:focus, .c-keyword-list__item.-signup:focus:active {
   text-decoration: none;
-  background: color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%);
+  background: #F9F5FD;
+}
+@supports (color: color-mix(in srgb, red, white)) {
+  .c-keyword-list__item.-signup:hover, .c-keyword-list__item.-signup:active, .c-keyword-list__item.-signup:focus, .c-keyword-list__item.-signup:focus:active {
+    background: color-mix(in srgb, var(--flagPurple), var(--bodyBg) 30%);
+  }
 }
 .c-keyword-list__item.-desc {
   display: inline-flex;
+  align-items: center;
   gap: 0.4em;
+  flex-shrink: 0;
   padding: 0.2rem 0.7rem 0.2rem 0.4rem;
   position: relative;
   color: var(--darkTheme);
@@ -1487,7 +1530,9 @@ body.color--flagBrown .c-footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 10px;
   width: 1.2lh;
+  height: 10px;
   height: 1.2lh;
   color: white;
   background: var(--darkTheme);
@@ -1538,10 +1583,15 @@ button.c-keyword-list__item:hover {
   height: 40px;
   padding: 0 2.5%;
   margin-bottom: 2em;
-  background: light-dark(var(--theme), var(--lightTheme));
+  background: var(--flagRed);
   border-bottom: 3px solid var(--darkTheme);
   text-transform: uppercase;
   font-size: 0.9em;
+}
+@supports (color: light-dark(black, white)) {
+  .c-main-nav {
+    background: light-dark(var(--theme), var(--lightTheme));
+  }
 }
 .c-main-nav li {
   position: relative;
@@ -1673,6 +1723,12 @@ body.color--flagBrown .c-main-nav {
   text-transform: none;
 }
 
+@supports not (anchor-name: --popover) {
+  .c-share-event,
+  .c-share-event-toggle {
+    display: none;
+  }
+}
 .t-edit {
   --typographyColor: #242424;
   padding: 3em 0;

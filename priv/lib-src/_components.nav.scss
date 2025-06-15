@@ -7,7 +7,10 @@
     height: 40px;
     padding: 0 2.5%;
     margin-bottom: 2em;
-    background: light-dark(var(--theme), var(--lightTheme));
+    background: var(--flagRed);
+    @supports (color: light-dark(black, white)) {
+        background: light-dark(var(--theme), var(--lightTheme));
+    }
     border-bottom: 3px solid var(--darkTheme);
     text-transform: uppercase;
     font-size: 0.9em;
