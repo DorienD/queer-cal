@@ -3,8 +3,11 @@
         <dialog id="details-{{ r.id }}" class="c-calendar-item__details">
             <div class="c-calendar-item__details__content">
                 <button class="c-calendar-item__details-close -top"><span class="sr-only">Close</span></button>
-                <h3>{_ Description _}</h3>
+                <h3>{{ r.title }}</h3>
                 
+                {% include "event/event-date.tpl" hide_share_event full_date %}
+                {% include "event/event-location.tpl" %}
+
                 <p>{{ r.summary }}</p>
 
                 <button class="c-calendar-item__details-close">Close</button>

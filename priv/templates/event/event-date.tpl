@@ -77,6 +77,8 @@
         {% endif %}
     </time>
     
-    {% include "event/_share-event.tpl" %}
+    {% if not hide_share_event %}
+        {% include "event/_share-event.tpl" %}
+    {% endif %}
 </div>
 {% endwith %}
