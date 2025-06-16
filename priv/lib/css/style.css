@@ -401,6 +401,7 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit;
+  outline-color: #32a1ce;
 }
 
 @view-transition {
@@ -1404,6 +1405,11 @@ body.color--flagBrown .c-footer {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+.c-footer__mode label:has(input:focus),
+.c-footer__mode label:has(input:focus-within),
+.c-footer__mode label:has(input:focus-visible) {
+  outline: 1px solid #32a1ce;
+}
 @media only screen and (min-width: 800px) {
   .c-footer__mode {
     width: auto;
@@ -1723,6 +1729,12 @@ body.color--flagBrown .c-main-nav {
   text-transform: none;
 }
 
+@supports not (color: color-mix(in srgb, red, white)) {
+  .c-share-event,
+  .c-share-event-toggle {
+    display: none;
+  }
+}
 .t-edit {
   --typographyColor: #242424;
   padding: 3em 0;

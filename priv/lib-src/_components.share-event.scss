@@ -72,9 +72,10 @@
     text-transform: none;
 }
 
-// @supports not (anchor-name: --popover) {
-//     .c-share-event,
-//     .c-share-event-toggle {
-//         display: none;
-//     }
-// }
+@supports not (color: color-mix(in srgb, red, white)) {
+    // A check for older browsers, that won't have access to the popover api
+    .c-share-event,
+    .c-share-event-toggle {
+        display: none;
+    }
+}

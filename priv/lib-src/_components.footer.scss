@@ -56,6 +56,12 @@ body.color--flagBrown {
         text-underline-offset: 3px;
     }
 
+    label:has(input:focus),
+    label:has(input:focus-within),
+    label:has(input:focus-visible) {
+        outline: 1px solid #32a1ce;
+    }
+
     @include breakpoint($mediumBreakpoint) {
         width: auto;
         margin-right: auto;
