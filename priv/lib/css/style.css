@@ -394,9 +394,13 @@ body dialog::backdrop {
 html {
   height: 100%;
   box-sizing: border-box;
-  scroll-behavior: smooth;
   font-size: 10px;
   color-scheme: light dark;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 *, *:before, *:after {
