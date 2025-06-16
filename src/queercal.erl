@@ -1,6 +1,6 @@
 %% @author Dorien Drees <dorien.drees@gmail.com> & Marc Worrell <marc@worrell.nl>
 %% @copyright 2024
-%% @doc Main datamodel and code for Studio 33K
+%% @doc Main datamodel and code for Queer Calendar
 
 -module(queercal).
 -author("Dorien").
