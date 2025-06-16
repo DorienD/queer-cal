@@ -75,6 +75,7 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
     padding-right: 0.5em;
     font-size: 9px;
     line-height: 1.4;
+    text-transform: lowercase;
     transition: opacity 0.3s;
 
     @supports (container-type: scroll-state) {
