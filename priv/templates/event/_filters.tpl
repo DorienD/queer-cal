@@ -2,6 +2,7 @@
     {% if result %}
         <p class="c-filters__months">
             Go to: 
+            
             {% for r in result %}
                 {% if result[forloop.counter -1].id.date_start|date:"m" != r.date_start|date:"m" %}
                     <a href="#{{ r.date_start|date:"F"|slugify }}">{{ r.date_start|date:"F" }}</a>
@@ -16,6 +17,7 @@
         {% else %}
             <label for="j-filter-keyword" class="sr-only">{_ Filter _}</label>
         {% endif %}
+        
         <div class="c-filters__keywords__list">
             <select id="j-filter-keyword" name="qhasobject">
                 {% if q.qhasobject %}
@@ -23,17 +25,19 @@
                 {% else %}
                     <option value=" ">{_ Filter on a keyword _}</option>
                 {% endif %}
-                {% for r in  m.search.query::%{
+
+                {% for r in m.search.query::%{
                     cat: "keyword",
-                    sort: "rsc.pivot_title",
                     is_findable: true,
-                    pagelen: 1000000
-                }%}
+                    pagelen: 200}|sort:['title', 'asc']
+                %}
                     <option value="{{ r.id }}" {% if q.qhasobject == r.id %}selected{% endif  %}>{{ r.title }}</option>
                 {% endfor %}
             </select>
         </div>
+        
         <button type="submit" id="j-filter-submit" class="c-btn c-btn-filter-submit">{_ Apply filter _}</button>
+        
         {% if q.qhasobject %}
             <a href="{% url home %}" class="c-filters__keywords__remove c-btn-square">{% include "icons/icon-plus.tpl" color="var(--typographyColor)" %}<span>{_ reset _}</span></a>
         {% endif %}
