@@ -54,6 +54,17 @@ Queer Calendar is a grassroots initiative to centralize LGBTQIA+ event listings 
 - [Zotonic](https://zotonic.com) – semantic web framework powering the backend
 - HTML,CSS, JS – custom-styled frontend
 
+Datamodel:
+
+```mermaid
+graph TD
+
+    E[Event] --> | haslocation | L[Location]
+    E --> | hasorganisation | O[Organisation]
+    E --> | subject | K[Keyword]
+
+```
+
 ---
 
 ## 🤝 Contributing
