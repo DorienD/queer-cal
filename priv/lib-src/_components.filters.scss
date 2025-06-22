@@ -71,6 +71,10 @@
     transition: background 0.3s ease-out, color 0.3s ease-out;
 
     svg {
+        @supports not (rotate: 45deg) {
+            transform: rotate(45deg);
+        }
+        
         rotate: 45deg;
         fill: light-dark(var(--darkTheme), var(--typographyColor));
         transition: fill 0.3s ease-out;

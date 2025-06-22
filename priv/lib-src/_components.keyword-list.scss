@@ -129,3 +129,10 @@ button.c-keyword-list__item {
 .c-keyword-list__item:has(+ .c-keyword-explan:popover-open) {
     background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 70%);
 }
+
+@supports not (inset: 0) {
+    // Supports query for checking if gap works
+    .c-keyword-list__item {
+        margin-right: 0.5rem;
+    } 
+}

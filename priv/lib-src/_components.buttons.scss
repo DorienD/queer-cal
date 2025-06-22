@@ -197,8 +197,10 @@ body.color--flagBrown {
     svg {
         width: 0.5lh;
         height: 0.5lh;
-
         fill: var(--typographyColor);
+        @supports not (rotate: 45deg) {
+            transform: rotate(-90deg);
+        }
         rotate: -90deg;
     }
 }
@@ -218,12 +220,4 @@ body.color--flagBrown {
     text-decoration: none;
     text-align: center;
     color: var(--typographyColor);
-
-    // &.-hidden {
-    //     transform: translateY(100%);
-    // }
-
-    // svg {
-    //     display: block;
-    // }
 }

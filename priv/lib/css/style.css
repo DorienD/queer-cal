@@ -408,8 +408,10 @@ html {
   outline-color: #32a1ce;
 }
 
-@view-transition {
-  navigation: auto;
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
 }
 .visually-hidden {
   position: absolute !important;
@@ -1003,6 +1005,11 @@ body.color--flagBrown .c-btn-add-event path {
   fill: var(--typographyColor);
   rotate: -90deg;
 }
+@supports not (rotate: 45deg) {
+  .c-btn-back svg {
+    transform: rotate(-90deg);
+  }
+}
 
 .c-btn-square {
   display: flex;
@@ -1028,6 +1035,7 @@ body.color--flagBrown .c-btn-add-event path {
 .c-calendar {
   padding: 0;
   margin: 0;
+  list-style-type: none;
   list-style-type: "";
   display: flex;
   flex-flow: column;
@@ -1108,6 +1116,11 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   fill: var(--darkTheme);
   rotate: 180deg;
 }
+@supports not (rotate: 45deg) {
+  .c-calendar__divider__next svg {
+    transform: rotate(180deg);
+  }
+}
 
 .c-calendar-item {
   height: 100%;
@@ -1136,6 +1149,11 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   }
 }
 
+@supports not (inset: 0) {
+  .c-calendar-item {
+    margin-bottom: 1em;
+  }
+}
 .c-calendar-item__date {
   display: flex;
   align-items: center;
@@ -1205,58 +1223,68 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   margin: 0 0 1em;
 }
 
-.c-calendar-item__details {
-  width: 90%;
-  max-width: 70ch;
-  padding: 1em;
-  background: white;
-  border: 3px solid var(--darkTheme);
-  color: #242424;
+@supports (display: dialog) {
+  .c-calendar-item__details {
+    width: 90%;
+    max-width: 70ch;
+    padding: 1em;
+    background: white;
+    border: 3px solid var(--darkTheme);
+    color: #242424;
+  }
+  .c-calendar-item__details h3 {
+    color: var(--darkTheme);
+  }
+  .c-calendar-item__details-close {
+    padding: 0;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: #242424;
+  }
+  .c-calendar-item__details-close:hover, .c-calendar-item__details-close:active, .c-calendar-item__details-close:focus, .c-calendar-item__details-close:focus:active {
+    text-decoration: none;
+  }
+  .c-calendar-item__details-close.-top {
+    width: 4.5rem;
+    height: 4.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: scale 0.3s ease-out;
+  }
+  .c-calendar-item__details-close.-top::before, .c-calendar-item__details-close.-top::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 50%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    background: #242424;
+    border-radius: 2px;
+    rotate: 45deg;
+    transform-origin: center center;
+  }
+  @supports not (rotate: 45deg) {
+    .c-calendar-item__details-close.-top::before, .c-calendar-item__details-close.-top::after {
+      transform: rotate(45deg);
+    }
+  }
+  .c-calendar-item__details-close.-top::after {
+    transform: rotate(-45deg);
+    rotate: -45deg;
+  }
+  .c-calendar-item__details-close.-top:hover {
+    scale: 0.9;
+  }
 }
-.c-calendar-item__details h3 {
-  color: var(--darkTheme);
+@supports not (display: dialog) {
+  .c-calendar-item__details-close {
+    display: none;
+  }
 }
-
-.c-calendar-item__details-close {
-  padding: 0;
-  background: none;
-  border: none;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  color: #242424;
-}
-.c-calendar-item__details-close:hover, .c-calendar-item__details-close:active, .c-calendar-item__details-close:focus, .c-calendar-item__details-close:focus:active {
-  text-decoration: none;
-}
-
-.c-calendar-item__details-close.-top {
-  width: 4.5rem;
-  height: 4.5rem;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transition: scale 0.3s ease-out;
-}
-.c-calendar-item__details-close.-top::before, .c-calendar-item__details-close.-top::after {
-  content: "";
-  display: block;
-  width: 2px;
-  height: 50%;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  background: #242424;
-  border-radius: 2px;
-  rotate: 45deg;
-  transform-origin: center center;
-}
-.c-calendar-item__details-close.-top::after {
-  rotate: -45deg;
-}
-.c-calendar-item__details-close.-top:hover {
-  scale: 0.9;
-}
-
 .c-calender-item__edit {
   display: inline-flex;
   margin-left: 1em;
@@ -1346,6 +1374,11 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   rotate: 45deg;
   fill: light-dark(var(--darkTheme), var(--typographyColor));
   transition: fill 0.3s ease-out;
+}
+@supports not (rotate: 45deg) {
+  .c-filters__keywords__remove svg {
+    transform: rotate(45deg);
+  }
 }
 .c-filters__keywords__remove:hover, .c-filters__keywords__remove:active, .c-filters__keywords__remove:focus, .c-filters__keywords__remove:focus:active {
   background: var(--darkTheme);
@@ -1460,6 +1493,7 @@ body.color--flagBrown .c-footer {
 .c-keyword-list {
   padding: 0;
   margin: 0;
+  list-style-type: none;
   list-style-type: "";
   display: flex;
   flex-flow: row wrap;
@@ -1585,6 +1619,11 @@ button.c-keyword-list__item:hover {
   background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 70%);
 }
 
+@supports not (inset: 0) {
+  .c-keyword-list__item {
+    margin-right: 0.5rem;
+  }
+}
 .c-main-nav {
   display: flex;
   align-items: center;
@@ -1610,10 +1649,12 @@ button.c-keyword-list__item:hover {
 .c-main-nav li:not(:last-child):after {
   content: "";
   width: 0.08em;
+  height: 1em;
   height: 0.8lh;
   background: currentColor;
   position: absolute;
   right: -0.75em;
+  top: 4px;
   top: 0.15lh;
 }
 @media only screen and (min-width: 800px) {
@@ -1626,6 +1667,7 @@ button.c-keyword-list__item:hover {
 .c-main-nav__lang {
   padding: 0;
   margin: 0;
+  list-style-type: none;
   list-style-type: "";
   display: flex;
   align-items: center;
@@ -1664,7 +1706,21 @@ body.color--flagBrown .c-main-nav {
   rotate: 10deg;
   right: -0.5em;
 }
+@supports not (rotate: 45deg) {
+  .c-main-nav__lang li:not(:last-child):after {
+    transform: rotate(10deg);
+  }
+}
 
+@supports not (inset: 0) {
+  .c-main-nav__menu {
+    margin-right: 2rem;
+  }
+  .c-main-nav__menu li + li,
+  .c-main-nav__lang li + li {
+    margin-left: 1.5em;
+  }
+}
 .c-share-event-toggle {
   display: inline-flex;
   align-items: center;
@@ -1711,6 +1767,7 @@ body.color--flagBrown .c-main-nav {
 .c-share-event__content {
   padding: 0;
   margin: 0;
+  list-style-type: none;
   list-style-type: "";
   display: flex;
   flex-flow: column wrap;

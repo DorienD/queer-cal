@@ -22,10 +22,12 @@
     li:not(:last-child):after {
         content: '';
         width: 0.08em;
+        height: 1em;
         height: 0.8lh;
         background: currentColor;
         position: absolute;
         right: -0.75em;
+        top: 4px;
         top: 0.15lh;
     }
 
@@ -76,7 +78,22 @@ body.color--flagBrown {
     }
 
     li:not(:last-child):after {
+        @supports not (rotate: 45deg) {
+            transform: rotate(10deg);
+        }
         rotate: 10deg;
         right: -0.5em;
     }
+}
+
+@supports not (inset: 0) {
+    // Supports query for checking if gap works
+    .c-main-nav__menu {
+        margin-right: 2rem;
+    }
+
+    .c-main-nav__menu li + li,
+    .c-main-nav__lang li + li {
+        margin-left: 1.5em;
+    } 
 }

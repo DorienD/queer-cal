@@ -86,6 +86,9 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
         width: 16px;
         height: 16px;
         fill: var(--darkTheme);
+        @supports not (rotate: 45deg) {
+            transform: rotate(180deg);
+        }
         rotate: 180deg;
     }
 }
@@ -116,6 +119,13 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
     @starting-style {
         opacity: 0;
     }
+}
+
+@supports not (inset: 0) {
+    // Supports query for checking if gap works
+    .c-calendar-item {
+        margin-bottom: 1em;
+    } 
 }
 
 .c-calendar-item__date {
@@ -196,62 +206,75 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
     margin: 0 0 1em;
 }
 
-.c-calendar-item__details {
-    width: 90%;
-    max-width: 70ch;
-    padding: 1em;
-    background: white;
-    border: 3px solid var(--darkTheme); 
-    color: #242424;
+@supports (display: dialog) {
+    .c-calendar-item__details {
+        width: 90%;
+        max-width: 70ch;
+        padding: 1em;
+        background: white;
+        border: 3px solid var(--darkTheme); 
+        color: #242424;
 
-    h3 {
-        color: var(--darkTheme);
+        h3 {
+            color: var(--darkTheme);
+        }
     }
-}
 
-.c-calendar-item__details-close {
-    padding: 0;
-    background: none;
-    border: none;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    color: #242424;
 
-    @include setInteractive {
-        text-decoration: none;
+    .c-calendar-item__details-close {
+        padding: 0;
+        background: none;
+        border: none;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        color: #242424;
+
+        @include setInteractive {
+            text-decoration: none;
+        }
     }
-}
 
-.c-calendar-item__details-close.-top {
-    width: 4.5rem;
-    height: 4.5rem;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transition: scale 0.3s ease-out;
-
-    &::before,
-    &::after {
-        content: '';
-        display: block;
-        width: 2px;
-        height: 50%;
+    .c-calendar-item__details-close.-top {
+        width: 4.5rem;
+        height: 4.5rem;
         position: absolute;
-        top: 30%;
-        left: 50%;
-        background: #242424;
-        border-radius: 2px;
-        rotate: 45deg;
-        transform-origin: center center;
-        
-    }
+        top: 0;
+        right: 0;
+        transition: scale 0.3s ease-out;
 
-    &::after {
-        rotate: -45deg;
-    }
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            width: 2px;
+            height: 50%;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            background: #242424;
+            border-radius: 2px;
+            @supports not (rotate: 45deg) {
+                transform: rotate(45deg);
+            }
+            rotate: 45deg;
+            transform-origin: center center;
+            
+        }
 
-    &:hover {
-        scale: 0.9;
+        &::after {
+            transform: rotate(-45deg);
+            rotate: -45deg;
+        }
+
+        &:hover {
+            scale: 0.9;
+        }
+    }
+}
+
+@supports not (display: dialog) {
+    .c-calendar-item__details-close {
+        display: none;
     }
 }
 

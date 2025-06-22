@@ -90,7 +90,7 @@ msgstr "Filter Toepassen"
 
 #: _build/default/lib/queercal/priv/templates/footer/footer.tpl:9
 msgid "Back to top"
-msgstr "Terug naar boven"
+msgstr "Terug omhoog"
 
 #: _build/default/lib/queercal/priv/templates/event/event-location.tpl:6
 msgid "By"
