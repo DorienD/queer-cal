@@ -1,4 +1,4 @@
-<ol class="c-calendar">
+<ol class="c-list">
     {% for r in result %}
         <li>
             {% catinclude "cards/card.tpl" r %}

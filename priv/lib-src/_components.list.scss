@@ -1,0 +1,15 @@
+.c-list {
+    @include striplist;
+
+    display: flex;
+    flex-flow: column;
+    gap: 1em;
+    margin-bottom: 2em;
+
+    @include breakpoint($largeBreakpoint) {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        gap: 2em;
+        align-items: stretch;
+    }
+}

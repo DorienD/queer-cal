@@ -1,24 +1,6 @@
-{% extends "base.tpl" %}
+{% extends "page.tpl" %}
 
-{% block header %}
-    {% catinclude 'header/header-small.tpl' id %}
-{% endblock %}
-
-{% block content %}
-    <article class="o-page-content">
-        <h1>{{ id.title }}</h1>
-        
-        {% if id.summary %}
-            <p class="summary">{{ id.summary }}</p>
-        {% endif %}
-
-        <div class="body-text">
-            {{ id.body|show_media }}
-        </div>
-        
-        {% block below_body %}{% endblock %}
-    </article>
-
+{% block below_body %}
     {% with m.search[{query 
             query_id=id 
             qargs

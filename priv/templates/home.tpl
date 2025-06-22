@@ -44,7 +44,6 @@
                         <a href="#{{ (r.date_start|add_month|date:"F")|slugify }}" class="c-calendar__divider__next" title="{_ Next month _}">
                             {% include "icons/icon-caret-left.tpl" %}
                             {_ Next _}
-                            {# <span class="sr-only">{_ Next month _}</span> #}
                         </a>
                     </li>
                     {% endwith %}
@@ -62,7 +61,7 @@
                         {_ You filtered on _} <strong class="c-keyword-list__item">{{ q.qhasobject.title }}</strong>. {_ But sadly there are no events 🥺, know something? Mail it to: _} <a href="mailto:events@queer-kalender.nl">events@queer-kalender.nl</a>.<br><br> <a href="{% url home %}">{_ Start with a fresh overview of all the events _}</a>
                     </p>
                 {% else %}
-                    {% include "event/_empty.tpl" %}
+                    {% include "cards/_empty-calendar.tpl" %}
                 {% endif %}
             </div>
         {% endfor %}

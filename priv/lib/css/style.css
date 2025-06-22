@@ -1632,6 +1632,25 @@ button.c-keyword-list__item:hover {
     margin-right: 0.5rem;
   }
 }
+.c-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  list-style-type: "";
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+@media only screen and (min-width: 1088px) {
+  .c-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 2em;
+    align-items: stretch;
+  }
+}
+
 .c-main-nav {
   display: flex;
   align-items: center;
