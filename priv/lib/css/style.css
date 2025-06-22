@@ -1223,7 +1223,7 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   margin: 0 0 1em;
 }
 
-@supports (display: dialog) {
+@supports (color: color-mix(in srgb, red, white)) {
   .c-calendar-item__details {
     width: 90%;
     max-width: 70ch;
@@ -1273,8 +1273,12 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
     }
   }
   .c-calendar-item__details-close.-top::after {
-    transform: rotate(-45deg);
     rotate: -45deg;
+  }
+  @supports not (rotate: 45deg) {
+    .c-calendar-item__details-close.-top::after {
+      transform: rotate(-45deg);
+    }
   }
   .c-calendar-item__details-close.-top:hover {
     scale: 0.9;
