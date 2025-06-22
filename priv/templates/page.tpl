@@ -8,13 +8,15 @@
 
         <h1>{{ id.title }}</h1>
 
+        {% include "event/event-keywords.tpl" %}
+
         {% if id.website %}
             <address>
                 {% if id.address_street_1 %}
                     {{ id.address_street_1 }}<br>
                 {% endif %}
                 {% if id.address_city %}
-                    {{ id.address_city }}<br><br>
+                    {{ id.address_city }}<br>
                 {% endif %}
                 <a href="https://www.homomonument.nl/">website {% include "icons/icon-external.tpl" width="13px" height="13px" color="var(--typographyColor)" %}</a>
             </address>

@@ -6,6 +6,10 @@
     font-size: 0.7em;
 }
 
+.c-keyword-list + address {
+    margin-top: 1em;
+}
+
 .c-keyword-list__item {
     display: inline-flex;
     padding: 0.2rem 0.7rem;

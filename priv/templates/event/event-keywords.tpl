@@ -1,4 +1,4 @@
-{% if id.o.subject or id.ticket_link or id.signup_link or id.summary %}
+{% if (id.o.subject or id.ticket_link or id.signup_link or id.summary) and id.o.subject %}
     {% if r.summary %}
         <dialog id="details-{{ r.id }}" class="c-calendar-item__details">
             <div class="c-calendar-item__details__content">
@@ -22,7 +22,7 @@
         {% endif %}
         {% for keyword in id.o.subject %}
             <li>
-                <a href="{% url home %}?qhasobject={{ keyword.id }}" class="c-keyword-list__item">{{ keyword.title }}</a>
+                <a href="{% url home %}?qhasobject={{ keyword.id }}" class="c-keyword-list__item" title="{_ Filter on _} {{ keyword.title|lower }}">{{ keyword.title }}</a>
             </li>
         {% endfor %}
 
