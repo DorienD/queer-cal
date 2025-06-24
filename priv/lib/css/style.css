@@ -367,7 +367,7 @@ body {
   --lightTheme: color-mix(in srgb, #FF575B, white 90%);
   --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
 }
-@media (prefers-dark-interface) {
+@media (prefers-color-scheme: dark) {
   body {
     --lightTheme: color-mix(in srgb, #FF575B, #242424 90%);
     --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
