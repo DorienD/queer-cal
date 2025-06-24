@@ -1081,20 +1081,12 @@ body.color--flagBrown .c-btn-add-event path {
   gap: 1em;
   margin-bottom: 2em;
 }
-.c-calendar > li:first-child {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
 @media only screen and (min-width: 1088px) {
   .c-calendar {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     gap: 2em;
     align-items: stretch;
-  }
-  .c-calendar > li:first-child {
-    grid-column: 1/-1;
   }
 }
 
@@ -1110,7 +1102,10 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   margin: 0 0 0.5em;
   padding: 0 0.5em 0 0.2em;
   position: relative;
+  position: sticky;
+  top: 0;
   left: -0.2em;
+  z-index: 100;
   background: var(--lightTheme);
   border-bottom: 3px solid var(--darkTheme);
   color: var(--darkTheme);
@@ -1128,6 +1123,11 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
 @container scroll-state(stuck: top) {
   .c-calendar__divider .c-calendar__divider__next {
     opacity: 1;
+  }
+}
+@media only screen and (min-width: 1088px) {
+  .c-calendar__divider {
+    grid-column: 1/-1;
   }
 }
 

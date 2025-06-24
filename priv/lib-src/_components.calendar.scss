@@ -10,21 +10,11 @@
     gap: 1em;
     margin-bottom: 2em;
 
-    > li:first-child {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-    }
-
     @include breakpoint($largeBreakpoint) {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
         gap: 2em;
         align-items: stretch;
-
-        > li:first-child {
-            grid-column: 1 / -1;
-        }
     }
 }
 
@@ -40,7 +30,10 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
     margin: 0 0 0.5em;
     padding: 0 0.5em 0 0.2em;
     position: relative;
+    position: sticky;
+    top: 0;
     left: -0.2em;
+    z-index: 100;
     background: var(--lightTheme);
     border-bottom: 3px solid var(--darkTheme);
     color: var(--darkTheme);
@@ -62,6 +55,10 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
         .c-calendar__divider__next {
             opacity: 1;
         }
+    }
+
+    @include breakpoint($largeBreakpoint) {
+        grid-column: 1 / -1;
     }
 }
 
