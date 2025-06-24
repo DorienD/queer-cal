@@ -37,6 +37,8 @@
 }
 
 .c-filters__date {
+    position: relative;
+    
     label {
         display: block;
         font-size: 0.825em;
@@ -50,6 +52,14 @@
         &::-webkit-calendar-picker-indicator {
             cursor: inherit;
             color: inherit;
+        }
+    }
+
+    @include breakpoint($mediumBreakpoint) {
+        label {
+            position: absolute;
+            top: 0;
+            transform: translateY(-100%);
         }
     }
 }
