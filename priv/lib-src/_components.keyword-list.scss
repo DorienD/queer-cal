@@ -22,6 +22,10 @@
     text-underline-offset: 1px;
     border: 1px solid #666;
 
+    @media (prefers-color-scheme: dark) {
+        background: color-mix(in srgb, #242424, #242424 90%);
+    }
+
     @supports (text-wrap: balance) {
         background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
         border: 1px solid color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
