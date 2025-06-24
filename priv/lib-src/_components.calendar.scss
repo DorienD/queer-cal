@@ -131,6 +131,10 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
     }
 }
 
+.c-calendar__first {
+    scroll-margin-top: 100px;
+}
+
 @supports not (inset: 0) {
     // Supports query for checking if gap works
     .c-calendar-item {

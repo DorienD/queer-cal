@@ -41,7 +41,7 @@
                     <li class="c-calendar__divider">
                         <h2 id="{{ (r.date_start|date:"F")|slugify }}">{{ r.date_start|date:"F" }} <sup title="{_ approximately _}">({{ this_month|length }})</sup></h2>
 
-                        <a href="#{{ (r.date_start|sub_month|date:"F")|slugify }}" class="c-calendar__divider__nav -prev" title="{_ Previous month _}">
+                        <a href="#first-{{ (r.date_start|sub_month|date:"F")|slugify }}" class="c-calendar__divider__nav -prev" title="{_ Previous month _}">
                             {% include "icons/icon-caret-left.tpl" %}
                             {_ Previous _}
                         </a>
@@ -53,7 +53,11 @@
                     </li>
                     {% endwith %}
             {% endif %}
-                    <li>
+                    {% if result[forloop.counter -1].id.date_start|date:"m" != r.date_start|date:"m" %}
+                    <li id="first-{{ r.date_start|date:"F"|slugify }}" class="c-calendar__first">
+                    {% else %}
+                        <li>
+                    {% endif %}
                         {% catinclude "cards/card.tpl" r %}
                     </li>
                 {% if forloop.last %}
