@@ -49,6 +49,12 @@
     }
 }
 
+@supports not (color: color-mix(in srgb, red, white)) {
+    .c-filters__date {
+        display: none;
+    }
+}
+
 .c-filters__keywords {
     width: calc(100% - 5.5rem);
     position: relative;

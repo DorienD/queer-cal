@@ -364,13 +364,25 @@ body {
   --typographyColor: light-dark(#242424, white);
   --errorColor: red;
   --mainMargin: 4rem;
-  --lightTheme: color-mix(in srgb, #FF575B, white 90%);
-  --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
+  --lightTheme: #ffeeef;
+  --darkTheme: #be474b;
+}
+@supports (color: color-mix(in srgb, red, white)) {
+  body {
+    --lightTheme: color-mix(in srgb, #FF575B, white 90%);
+    --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
+  }
 }
 @media (prefers-color-scheme: dark) {
   body {
-    --lightTheme: color-mix(in srgb, #FF575B, #242424 90%);
-    --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
+    --lightTheme: #39292a;
+    --darkTheme: #be474a;
+  }
+  @supports (color: color-mix(in srgb, red, white)) {
+    body {
+      --lightTheme: color-mix(in srgb, #FF575B, #242424 90%);
+      --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
+    }
   }
   @supports (text-wrap: balance) {
     body {
@@ -403,6 +415,11 @@ body dialog::backdrop {
   opacity: 0.3;
 }
 
+@supports (color: light-dark(black, white)) {
+  body {
+    border: 10px solid blue;
+  }
+}
 html {
   height: 100%;
   box-sizing: border-box;
@@ -1367,6 +1384,11 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   color: inherit;
 }
 
+@supports not (color: color-mix(in srgb, red, white)) {
+  .c-filters__date {
+    display: none;
+  }
+}
 .c-filters__keywords {
   width: calc(100% - 5.5rem);
   position: relative;
@@ -1480,6 +1502,11 @@ body.color--flagBrown .c-footer {
   }
 }
 
+@supports not (color: light-dark(black, white)) {
+  .c-footer__mode {
+    display: none;
+  }
+}
 .c-footer__top svg {
   display: none;
   fill: var(--typographyColor);
@@ -1534,6 +1561,7 @@ body.color--flagBrown .c-footer {
   display: inline-flex;
   padding: 0.2rem 0.7rem;
   margin-bottom: 0.2rem;
+  background: #ccc;
   background: color-mix(in srgb, #242424, white 90%);
   border-radius: 4px;
   border: none;

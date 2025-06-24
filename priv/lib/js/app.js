@@ -87,22 +87,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-setLocalStorage();
-
-document.getElementById("appearance").addEventListener('change', function(){
+if (CSS.supports('color', 'light-dark(black, white)')){
     setLocalStorage();
-});
 
-function setLocalStorage(){
-    if(localStorage.getItem("appearance")) {
-        document.getElementById(localStorage.getItem("appearance")).checked;
-    } else {
-        localStorage.setItem("appearance", "system");
-    }
+    document.getElementById("appearance").addEventListener('change', function(){
+        setLocalStorage();
+    });
 
-    if(document.querySelector('input[name="color-scheme"]:checked')) {
-        localStorage.setItem("appearance", document.querySelector('input[name="color-scheme"]:checked').value);
-    }
+    function setLocalStorage(){
+        if(localStorage.getItem("appearance")) {
+            document.getElementById(localStorage.getItem("appearance")).checked;
+        } else {
+            localStorage.setItem("appearance", "system");
+        }
 
-    document.getElementById(localStorage.getItem("appearance")).checked = true;
-} 
+        if(document.querySelector('input[name="color-scheme"]:checked')) {
+            localStorage.setItem("appearance", document.querySelector('input[name="color-scheme"]:checked').value);
+        }
+
+        document.getElementById(localStorage.getItem("appearance")).checked = true;
+    } 
+}

@@ -19,7 +19,7 @@
         {% endif %}
 
         <div class="c-filters__date">
-            <input type="date" id="j-filter-date" name="qongoing_on" min="{{ now|date:"Y-m-d" }}" value="{{ q.qongoing_on }}">
+            <input type="date" id="j-filter-date" name="qongoing_on" min="{{ now|date:"Y-m-d" }}" value="{{ q.qongoing_on|default:"0-0-0" }}">
         </div>
         
         <div class="c-filters__keywords">

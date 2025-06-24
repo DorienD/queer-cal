@@ -69,12 +69,22 @@ body {
 
     --mainMargin: 4rem;
 
-    --lightTheme: color-mix(in srgb, #FF575B, white 90%);
-    --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
+    --lightTheme: #ffeeef;
+    --darkTheme: #be474b;
+
+    @supports (color: color-mix(in srgb, red, white)) {
+        --lightTheme: color-mix(in srgb, #FF575B, white 90%);
+        --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
+    }
 
     @media (prefers-color-scheme: dark) {
-        --lightTheme: color-mix(in srgb, #FF575B, #242424 90%);
-        --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
+        --lightTheme: #39292a;
+        --darkTheme: #be474a;
+
+        @supports (color: color-mix(in srgb, red, white)) {
+            --lightTheme: color-mix(in srgb, #FF575B, #242424 90%);
+            --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
+        }
 
         @supports (text-wrap: balance) {
             --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
@@ -104,5 +114,11 @@ body {
     dialog::backdrop {
         background: var(--darkTheme, rgba(0, 0, 0, 0.5));
         opacity: 0.3;
+    }
+}
+
+@supports (color: light-dark(black, white)) {
+    body {
+        border: 10px solid blue;
     }
 }

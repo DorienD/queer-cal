@@ -68,6 +68,12 @@ body.color--flagBrown {
     }
 }
 
+@supports not (color: light-dark(black, white)) {
+    .c-footer__mode {
+        display: none;
+    }
+}
+
 .c-footer__top {
     svg {
         display: none;
