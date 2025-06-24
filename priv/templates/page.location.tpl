@@ -14,7 +14,7 @@
         <div class="c-calendar-listing">
             <h2>{_ Upcoming events in _} {{ id.title }}</h2>
 
-            {% include "cards/calendar.tpl" %}
+            {% include "cards/calendar.tpl" full_date %}
         </div>
     {% endif %}
 
@@ -31,7 +31,7 @@
     <div class="c-calendar-listing">
         <h2>{_ Past events in _} {{ id.title }}</h2>
         
-        {% include "cards/calendar.tpl" %}
+        {% include "cards/calendar.tpl" full_date %}
     </div>
     {% endif %}
 {% endblock %}

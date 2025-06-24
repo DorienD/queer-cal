@@ -13,7 +13,7 @@
             pagelen: 1000000
         }
         as result %}
-            {% include "cards/calendar.tpl" %}
+            {% include "cards/calendar.tpl" full_date %}
         {% endwith %}
     </div>
 {% endblock %}
