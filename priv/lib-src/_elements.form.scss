@@ -17,13 +17,25 @@ form {
     input[type="email"],
     input[type="file"].form-control,
     input[type="file"],
-    input[type="date"] {
-        width: 100%;
+    input[type="date"]{
         height: 4.5rem;
         padding: 0 1rem;
+        background: var(--bodyBg);
         border: 2px solid var(--darkTheme);
         color: var(--typographyColor);
-        background: var(--bodyBg);
+    }
+
+    input[type="text"].form-control,
+    input[type="text"],
+    input[type="search"].form-control,
+    input[type="search"],
+    input[type="password"].form-control,
+    input[type="password"],
+    input[type="email"].form-control,
+    input[type="email"],
+    input[type="file"].form-control,
+    input[type="file"]{ 
+        width: 100%;
     }
 
     textarea.form-control,

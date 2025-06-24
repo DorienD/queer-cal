@@ -770,12 +770,23 @@ form input[type=email],
 form input[type=file].form-control,
 form input[type=file],
 form input[type=date] {
-  width: 100%;
   height: 4.5rem;
   padding: 0 1rem;
+  background: var(--bodyBg);
   border: 2px solid var(--darkTheme);
   color: var(--typographyColor);
-  background: var(--bodyBg);
+}
+form input[type=text].form-control,
+form input[type=text],
+form input[type=search].form-control,
+form input[type=search],
+form input[type=password].form-control,
+form input[type=password],
+form input[type=email].form-control,
+form input[type=email],
+form input[type=file].form-control,
+form input[type=file] {
+  width: 100%;
 }
 form textarea.form-control,
 form textarea {
@@ -1889,6 +1900,8 @@ body.color--flagBrown .c-main-nav {
 }
 .t-edit {
   --typographyColor: #242424;
+  --lightTheme: #242424;
+  --darkTheme: #242424;
   padding: 3em 0;
   color: var(--typographyColor);
   font-family: var(--bodyFont);
