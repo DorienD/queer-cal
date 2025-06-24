@@ -18,7 +18,7 @@
                 {% if id.address_city %}
                     {{ id.address_city }}<br>
                 {% endif %}
-                <a href="https://www.homomonument.nl/">website {% include "icons/icon-external.tpl" width="13px" height="13px" color="var(--typographyColor)" %}</a>
+                <a href="{{ id.website }}">website {% include "icons/icon-external.tpl" width="13px" height="13px" color="var(--typographyColor)" %}</a>
             </address>
         {% endif %}
 
