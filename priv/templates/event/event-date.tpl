@@ -25,7 +25,7 @@
                     {# Same month → only display day else also display month #}
                     {% if date_start|date:"m" == date_end|date:"m" %}
                         {% if date_start|date:"d" != date_end|date:"d" %}
-                            - {{ date_end|date:"d" }}
+                            - {{ date_end|date:"d":"UTC" }}
                         {% endif %}
                     {% else %}
                         - {{ date_end|date:"d b" }}
