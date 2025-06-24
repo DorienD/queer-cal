@@ -136,18 +136,21 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
     margin: 0 0 1em;
     text-transform: uppercase;
 
-    span {
+    span:not(.c-calendar-item__date__time) {
         display: inline-flex;
         gap: 0.5em;
         align-items: center;
         font-weight: bold;
         color: var(--darkTheme);
 
-        &:after {
-            content: '';
-            width: 2px;
-            height: 0.7lh;
-            background: var(--darkTheme);
+        &:has(+ .c-calendar-item__date__time) {
+            &:after {
+                content: '';
+                width: 2px;
+                height: 1em;
+                height: 0.7lh;
+                background: var(--darkTheme);
+            }
         }
     }
 

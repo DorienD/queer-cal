@@ -1201,16 +1201,17 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   margin: 0 0 1em;
   text-transform: uppercase;
 }
-.c-calendar-item__date span {
+.c-calendar-item__date span:not(.c-calendar-item__date__time) {
   display: inline-flex;
   gap: 0.5em;
   align-items: center;
   font-weight: bold;
   color: var(--darkTheme);
 }
-.c-calendar-item__date span:after {
+.c-calendar-item__date span:not(.c-calendar-item__date__time):has(+ .c-calendar-item__date__time):after {
   content: "";
   width: 2px;
+  height: 1em;
   height: 0.7lh;
   background: var(--darkTheme);
 }

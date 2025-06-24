@@ -47,7 +47,7 @@
                 {% endif %}
             {% endif %}
             
-            {{ date_start|date:"H:i" }}
+            <span class="c-calendar-item__date__time">{{ date_start|date:"H:i" }}</span>
 
             {% if date_start|date:"H" == date_end|date:"H" %}
                 {# Same time → Don't display end time #}
@@ -58,7 +58,7 @@
                   and date_end|date:"H" < 9))
             %}
                 {# End date same day or next day before 9 AM → Only display time #}
-                - {{ date_end|date:"H:i" }}
+                - <span class="c-calendar-item__date__time">{{ date_end|date:"H:i" }}</span>
             {% else %}
                 {# Else #}
                 {% if full_date %}
@@ -72,7 +72,7 @@
                     {% endif %}
                 {% endif %}
 
-              {{ date_end|date:"H:i" }}
+              <span class="c-calendar-item__date__time">{{ date_end|date:"H:i" }}</span>
             {% endif %}
         {% endif %}
     </time>
