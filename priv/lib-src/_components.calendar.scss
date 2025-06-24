@@ -18,7 +18,8 @@
     }
 }
 
-body .c-calendar:last-of-type .c-calendar__divider__next {
+body .c-calendar:first-of-type .c-calendar__divider__nav.-prev,
+body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
     display: none;
 }
 
@@ -26,6 +27,7 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1em;
     width: calc(100% + 0.2em);
     margin: 0 0 0.5em;
     padding: 0 0.5em 0 0.2em;
@@ -62,7 +64,7 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
     }
 }
 
-.c-calendar__divider__next {
+.c-calendar__divider__nav {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -74,6 +76,10 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
     line-height: 1.4;
     text-transform: lowercase;
     transition: opacity 0.3s;
+
+    &:has(+ .c-calendar__divider__nav) {
+        margin-left: auto;
+    }
 
     @supports (container-type: scroll-state) {
         opacity: 1;
@@ -87,6 +93,13 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
             transform: rotate(180deg);
         }
         rotate: 180deg;
+    }
+
+    &.-prev svg {
+        @supports not (rotate: 45deg) {
+            transform: rotate(0deg);
+        }
+        rotate: 0deg;
     }
 }
 

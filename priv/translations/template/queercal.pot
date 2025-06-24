@@ -91,12 +91,6 @@ msgid ""
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/page.location.tpl:5
-msgid ""
-"All events in"
-msgstr ""
-""
-
 #: ./_build/default/lib/queercal/priv/templates/page.keyword.tpl:5
 msgid ""
 "All events with"
@@ -109,7 +103,7 @@ msgid ""
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:36
+#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:44
 msgid ""
 "Apply filter"
 msgstr ""
@@ -118,6 +112,12 @@ msgstr ""
 #: ./_build/default/lib/queercal/priv/templates/footer/footer.tpl:9
 msgid ""
 "Back to top"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/cards/_empty-calendar.tpl:5
+msgid ""
+"But sadly there are no events 🥺, know something? Mail it to:"
 msgstr ""
 ""
 
@@ -145,13 +145,19 @@ msgid ""
 msgstr ""
 ""
 
+#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:22
+msgid ""
+"Date"
+msgstr ""
+""
+
 #: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:5
 msgid ""
 "Date & time"
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:6./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:17
+#: ./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:20
 msgid ""
 "Description"
 msgstr ""
@@ -169,7 +175,7 @@ msgid ""
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/page.event.tpl:13./_build/default/lib/queercal/priv/templates/page.keyword.tpl:24./_build/default/lib/queercal/priv/templates/page.location.tpl:24./_build/default/lib/queercal/priv/templates/page.organization.tpl:24./_build/default/lib/queercal/priv/templates/cards/card.event.tpl:6
+#: ./_build/default/lib/queercal/priv/templates/page.event.tpl:13./_build/default/lib/queercal/priv/templates/cards/card.event.tpl:6
 msgid ""
 "Edit"
 msgstr ""
@@ -199,13 +205,19 @@ msgid ""
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:17
+#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:18
 msgid ""
 "Filter"
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:24
+#: ./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:25
+msgid ""
+"Filter on"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:31
 msgid ""
 "Filter on a keyword"
 msgstr ""
@@ -277,15 +289,15 @@ msgid ""
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/home.tpl:92./_build/default/lib/queercal/priv/templates/event/_list.tpl:6
+#: ./_build/default/lib/queercal/priv/templates/home.tpl:51
 msgid ""
-"Next month"
+"Next"
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/home.tpl:103./_build/default/lib/queercal/priv/templates/page.keyword.tpl:36./_build/default/lib/queercal/priv/templates/page.location.tpl:36./_build/default/lib/queercal/priv/templates/page.organization.tpl:36./_build/default/lib/queercal/priv/templates/event/_list.tpl:15
+#: ./_build/default/lib/queercal/priv/templates/home.tpl:49
 msgid ""
-"No events 🥺, know something? Mail it to:"
+"Next month"
 msgstr ""
 ""
 
@@ -307,13 +319,31 @@ msgid ""
 msgstr ""
 ""
 
+#: ./_build/default/lib/queercal/priv/templates/page.location.tpl:32
+msgid ""
+"Past events in"
+msgstr ""
+""
+
 #: ./_build/default/lib/queercal/priv/templates/_admin_edit_content_address.event.tpl:121
 msgid ""
 "Postcode"
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:22
+#: ./_build/default/lib/queercal/priv/templates/home.tpl:46
+msgid ""
+"Previous"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/home.tpl:44
+msgid ""
+"Previous month"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:29
 msgid ""
 "Remove filter"
 msgstr ""
@@ -361,7 +391,7 @@ msgid ""
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:30
+#: ./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:33
 msgid ""
 "Sign up"
 msgstr ""
@@ -390,6 +420,12 @@ msgstr ""
 #: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit_address.tpl:28
 msgid ""
 "Start date"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/cards/_empty-calendar.tpl:5
+msgid ""
+"Start with a fresh overview of all the events"
 msgstr ""
 ""
 
@@ -441,7 +477,7 @@ msgid ""
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:27
+#: ./_build/default/lib/queercal/priv/templates/event/event-keywords.tpl:30
 msgid ""
 "Tickets"
 msgstr ""
@@ -465,9 +501,15 @@ msgid ""
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/event/event-date.tpl:9./_build/default/lib/queercal/priv/templates/event/event-date.tpl:33
+#: ./_build/default/lib/queercal/priv/templates/event/event-date.tpl:16./_build/default/lib/queercal/priv/templates/event/event-date.tpl:40
 msgid ""
 "Today"
+msgstr ""
+""
+
+#: ./_build/default/lib/queercal/priv/templates/page.location.tpl:15
+msgid ""
+"Upcoming events in"
 msgstr ""
 ""
 
@@ -495,19 +537,25 @@ msgid ""
 msgstr ""
 ""
 
+#: ./_build/default/lib/queercal/priv/templates/cards/_empty-calendar.tpl:4
+msgid ""
+"You filtered on"
+msgstr ""
+""
+
 #: ./_build/default/lib/queercal/priv/templates/_admin_frontend_edit.event.tpl:127
 msgid ""
 "You must have at least one keyword."
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:15
+#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:16
 msgid ""
 "You've filtered on"
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/home.tpl:90
+#: ./_build/default/lib/queercal/priv/templates/home.tpl:42
 msgid ""
 "approximately"
 msgstr ""
@@ -519,7 +567,7 @@ msgid ""
 msgstr ""
 ""
 
-#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:38
+#: ./_build/default/lib/queercal/priv/templates/event/_filters.tpl:47
 msgid ""
 "reset"
 msgstr ""
