@@ -55,15 +55,7 @@
                 </ol>
                 {% endif %}
         {% empty %}
-            <div class="c-calendar__empty">
-                {% if q.qhasobject %}
-                    <p>
-                        {_ You filtered on _} <strong class="c-keyword-list__item">{{ q.qhasobject.title }}</strong>. {_ But sadly there are no events 🥺, know something? Mail it to: _} <a href="mailto:events@queer-kalender.nl">events@queer-kalender.nl</a>.<br><br> <a href="{% url home %}">{_ Start with a fresh overview of all the events _}</a>
-                    </p>
-                {% else %}
-                    {% include "cards/_empty-calendar.tpl" %}
-                {% endif %}
-            </div>
+            {% include "cards/_empty-calendar.tpl" %}
         {% endfor %}
     {% endwith %}
 {% endblock %}

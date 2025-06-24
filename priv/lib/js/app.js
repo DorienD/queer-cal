@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const toggleButtons = document.querySelectorAll('.c-calendar-item__details-toggle');
-    const filterBox = document.getElementById('j-filter-keyword');
+    const filterForm = document.getElementById('j-filters');
 
     toggleButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -34,17 +34,23 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Filter on keywords
+    // Filter calendar
 
-    if (filterBox) {
-        filterBox.addEventListener('change', function () {
-            const selectedValue = this.value;
-            
-            if (selectedValue) {
-                window.location.href = "?qhasobject="+selectedValue;
+    filterForm.addEventListener('change', function (evt) {
+        evt.preventDefault();
+
+        const data = new FormData(this);
+        const params = new URLSearchParams();
+
+        for (const [key, value] of data) {
+            if (value.trim() !== "") {
+                params.set(key, value);
             }
-        });
-    }
+        }
+
+        const newUrl = `${window.location.pathname}?${params.toString()}`;
+        window.location.href = newUrl;
+    });
 
     // Back to top display logic
 

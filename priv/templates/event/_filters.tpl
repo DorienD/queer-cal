@@ -11,14 +11,18 @@
         </p>
     {% endif %}
 
-    <form action="/" class="c-filters__keywords">
-        {% if q.qhasobject %}
+    <form action="/" id="j-filters" class="c-filters__options">
+        {% if q.qhasobject or q.qongoing_on %}
             <label for="j-filter-keyword">{_ You've filtered on _}</label>
         {% else %}
             <label for="j-filter-keyword" class="sr-only">{_ Filter _}</label>
         {% endif %}
+
+        <div class="c-filters__date">
+            <input type="date" id="j-filter-date" name="qongoing_on" min="{{ now|date:"Y-m-d" }}" value="{{ q.qongoing_on }}">
+        </div>
         
-        <div class="c-filters__keywords__list">
+        <div class="c-filters__keywords">
             <select id="j-filter-keyword" name="qhasobject">
                 {% if q.qhasobject %}
                     <option value=" ">{_ Remove filter _}</option>
@@ -38,8 +42,8 @@
         
         <button type="submit" id="j-filter-submit" class="c-btn c-btn-filter-submit">{_ Apply filter _}</button>
         
-        {% if q.qhasobject %}
-            <a href="{% url home %}" class="c-filters__keywords__remove c-btn-square">{% include "icons/icon-plus.tpl" color="var(--typographyColor)" %}<span>{_ reset _}</span></a>
+        {% if q.qhasobject or q.qongoing_on %}
+            <a href="{% url home %}" class="c-filters__remove c-btn-square">{% include "icons/icon-plus.tpl" color="var(--typographyColor)" %}<span>{_ reset _}</span></a>
         {% endif %}
     </form>
 </div>

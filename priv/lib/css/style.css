@@ -1401,14 +1401,9 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   transition: background 0.3s ease-out, color 0.3s ease-out;
 }
 .c-filters__remove svg {
-  rotate: 45deg;
+  transform: rotate(45deg);
   fill: light-dark(var(--darkTheme), var(--typographyColor));
   transition: fill 0.3s ease-out;
-}
-@supports not (rotate: 45deg) {
-  .c-filters__remove svg {
-    transform: rotate(45deg);
-  }
 }
 .c-filters__remove:hover, .c-filters__remove:active, .c-filters__remove:focus, .c-filters__remove:focus:active {
   background: var(--darkTheme);
