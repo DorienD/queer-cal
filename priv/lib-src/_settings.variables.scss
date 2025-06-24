@@ -72,17 +72,15 @@ body {
     --lightTheme: color-mix(in srgb, #FF575B, white 90%);
     --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
 
-    // &.-system,
-    // &.-dark {
-    //     --lightTheme: color-mix(in srgb, #FF575B, #242424 90%);
-    //     --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
+    @media (prefers-dark-interface) { 
+        --lightTheme: color-mix(in srgb, #FF575B, #242424 90%);
+        --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
 
-    //     @supports (text-wrap: balance) {
-    //         // Not so dry but need to for PE reasons
-    //         --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
-    //         --darkTheme: color-mix(in srgb, var(--theme), #242424 30%);
-    //     }
-    // }
+        @supports (text-wrap: balance) {
+            --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
+            --darkTheme: color-mix(in srgb, var(--theme), #242424 30%);
+        }
+    }
 
     @supports (text-wrap: balance) {
         --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
