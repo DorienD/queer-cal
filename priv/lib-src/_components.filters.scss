@@ -49,7 +49,7 @@
     }
 }
 
-@supports not (color: color-mix(in srgb, red, white)) {
+@supports not (text-wrap: balance) {
     .c-filters__date {
         display: none;
     }

@@ -1379,7 +1379,7 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   color: inherit;
 }
 
-@supports not (color: color-mix(in srgb, red, white)) {
+@supports not (text-wrap: balance) {
   .c-filters__date {
     display: none;
   }
