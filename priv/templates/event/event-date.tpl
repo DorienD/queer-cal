@@ -11,7 +11,7 @@
             {# All day event #}
             <span>
                 {% if full_date %}
-                    {{ date_start|date:"d-m-Y" }} - {{ date_end|date:"d-m-Y" }}
+                    {{ date_start|date:"d-m-Y" }} - {{ date_end|date:"d-m-Y":"UTC" }}
                 {% elseif date_start|date:"d-m-F" == now|date:"d-m-F" %}
                     <span>{_ Today _}</span>
                 {% else %}
