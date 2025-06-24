@@ -37,6 +37,11 @@
 }
 
 .c-filters__date {
+    label {
+        display: block;
+        font-size: 0.825em;
+    }
+
     input[type="date"] {
         background: var(--lightTheme);
         cursor: pointer;
@@ -46,12 +51,6 @@
             cursor: inherit;
             color: inherit;
         }
-    }
-}
-
-@supports not (text-wrap: balance) {
-    .c-filters__date {
-        display: none;
     }
 }
 

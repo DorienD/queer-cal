@@ -1369,6 +1369,10 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   }
 }
 
+.c-filters__date label {
+  display: block;
+  font-size: 0.825em;
+}
 .c-filters__date input[type=date] {
   background: var(--lightTheme);
   cursor: pointer;
@@ -1379,11 +1383,6 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   color: inherit;
 }
 
-@supports not (text-wrap: balance) {
-  .c-filters__date {
-    display: none;
-  }
-}
 .c-filters__keywords {
   width: calc(100% - 5.5rem);
   position: relative;
