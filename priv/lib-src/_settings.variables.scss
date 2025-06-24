@@ -116,9 +116,3 @@ body {
         opacity: 0.3;
     }
 }
-
-@supports (color: light-dark(black, white)) {
-    body {
-        border: 10px solid blue;
-    }
-}

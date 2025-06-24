@@ -415,11 +415,6 @@ body dialog::backdrop {
   opacity: 0.3;
 }
 
-@supports (color: light-dark(black, white)) {
-  body {
-    border: 10px solid blue;
-  }
-}
 html {
   height: 100%;
   box-sizing: border-box;
