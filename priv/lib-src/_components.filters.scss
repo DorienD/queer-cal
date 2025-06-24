@@ -13,7 +13,7 @@
     display: none;
 }
 
-.c-filters__keywords {
+.c-filters__options {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -36,7 +36,20 @@
     }
 }
 
-.c-filters__keywords__list {
+.c-filters__date {
+    input[type="date"] {
+        background: var(--lightTheme);
+        cursor: pointer;
+        color: light-dark(var(--darkTheme), var(--typographyColor));
+
+        &::-webkit-calendar-picker-indicator {
+            cursor: inherit;
+            color: inherit;
+        }
+    }
+}
+
+.c-filters__keywords {
     width: calc(100% - 5.5rem);
     position: relative;
 
@@ -66,7 +79,7 @@
     }
 }
 
-.c-filters__keywords__remove {
+.c-filters__remove {
     color: light-dark(var(--darkTheme), var(--typographyColor));
     transition: background 0.3s ease-out, color 0.3s ease-out;
 

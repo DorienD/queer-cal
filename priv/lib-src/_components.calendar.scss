@@ -274,7 +274,7 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
     }
 }
 
-@supports not (display: dialog) {
+@supports not (color: color-mix(in srgb, red, white)) {
     .c-calendar-item__details-close {
         display: none;
     }

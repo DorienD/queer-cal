@@ -16,10 +16,14 @@ form {
     input[type="email"].form-control,
     input[type="email"],
     input[type="file"].form-control,
-    input[type="file"] {
+    input[type="file"],
+    input[type="date"] {
         width: 100%;
         height: 4.5rem;
         padding: 0 1rem;
+        border: 2px solid var(--darkTheme);
+        color: var(--typographyColor);
+        background: var(--bodyBg);
     }
 
     textarea.form-control,

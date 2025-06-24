@@ -69,23 +69,34 @@ body {
 
     --mainMargin: 4rem;
 
-    --lightTheme: #FFEEEF;
-    --darkTheme: #B23D40;
+    --lightTheme: color-mix(in srgb, #FF575B, white 90%);
+    --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
 
-    @supports (color: color-mix(in srgb, red, white)) {    
+    // &.-system,
+    // &.-dark {
+    //     --lightTheme: color-mix(in srgb, #FF575B, #242424 90%);
+    //     --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
+
+    //     @supports (text-wrap: balance) {
+    //         // Not so dry but need to for PE reasons
+    //         --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
+    //         --darkTheme: color-mix(in srgb, var(--theme), #242424 30%);
+    //     }
+    // }
+
+    @supports (text-wrap: balance) {
         --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
-        --darkTheme: color-mix(in srgb, var(--theme), black 30%);
+        --darkTheme: color-mix(in srgb, var(--theme), #242424 30%);
     }
     
-
     &.color--flagBrown {
-        --lightTheme: light-dark(color-mix(in srgb, var(--theme), var(--bodyBg) 90%), color-mix(in srgb, var(--theme), black 20%));
-        --darkTheme: light-dark(color-mix(in srgb, var(--theme), black 30%), color-mix(in srgb, var(--theme), white 20%));
+        --lightTheme: light-dark(color-mix(in srgb, var(--theme), var(--bodyBg) 90%), color-mix(in srgb, var(--theme), #242424 20%));
+        --darkTheme: light-dark(color-mix(in srgb, var(--theme), #242424 30%), color-mix(in srgb, var(--theme), white 20%));
     }
 
     &.color--flagBlack {
-        --lightTheme: light-dark(color-mix(in srgb, var(--theme), var(--bodyBg) 90%), color-mix(in srgb, var(--theme), black 30%));
-        --darkTheme: light-dark(color-mix(in srgb, var(--theme), black 30%), color-mix(in srgb, var(--theme), white 70%));
+        --lightTheme: light-dark(color-mix(in srgb, var(--theme), var(--bodyBg) 90%), color-mix(in srgb, var(--theme), #242424 30%));
+        --darkTheme: light-dark(color-mix(in srgb, var(--theme), #242424 30%), color-mix(in srgb, var(--theme), white 70%));
     }
 
     @include breakpoint($mediumBreakpoint) {

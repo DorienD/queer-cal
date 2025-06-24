@@ -72,7 +72,7 @@
     text-transform: none;
 }
 
-@supports not (color: color-mix(in srgb, red, white)) {
+@supports not (text-wrap: balance) {
     // A check for older browsers, that won't have access to the popover api
     .c-share-event,
     .c-share-event-toggle {

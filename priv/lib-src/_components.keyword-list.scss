@@ -14,7 +14,7 @@
     display: inline-flex;
     padding: 0.2rem 0.7rem;
     margin-bottom: 0.2rem;
-    background: #ccc;
+    background: color-mix(in srgb, #242424, white 90%);
     border-radius: 4px;
     border: none;
     line-height: 1.4;
@@ -22,7 +22,7 @@
     text-underline-offset: 1px;
     border: 1px solid #666;
 
-    @supports (color: color-mix(in srgb, red, white)) {
+    @supports (text-wrap: balance) {
         background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
         border: 1px solid color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
     }
@@ -41,7 +41,7 @@
             text-decoration: none;
             background: #FEF8EA;
             
-            @supports (color: color-mix(in srgb, red, white)) {
+            @supports (text-wrap: balance) {
                 background: color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%);
             }
         }
@@ -139,4 +139,10 @@ button.c-keyword-list__item {
     .c-keyword-list__item {
         margin-right: 0.5rem;
     } 
+}
+
+@supports not (color: color-mix(in srgb, red, white)) {
+    .c-keyword-list__item.-desc {
+        display: none;
+    }
 }

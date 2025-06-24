@@ -364,22 +364,22 @@ body {
   --typographyColor: light-dark(#242424, white);
   --errorColor: red;
   --mainMargin: 4rem;
-  --lightTheme: #FFEEEF;
-  --darkTheme: #B23D40;
+  --lightTheme: color-mix(in srgb, #FF575B, white 90%);
+  --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
 }
-@supports (color: color-mix(in srgb, red, white)) {
+@supports (text-wrap: balance) {
   body {
     --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
-    --darkTheme: color-mix(in srgb, var(--theme), black 30%);
+    --darkTheme: color-mix(in srgb, var(--theme), #242424 30%);
   }
 }
 body.color--flagBrown {
-  --lightTheme: light-dark(color-mix(in srgb, var(--theme), var(--bodyBg) 90%), color-mix(in srgb, var(--theme), black 20%));
-  --darkTheme: light-dark(color-mix(in srgb, var(--theme), black 30%), color-mix(in srgb, var(--theme), white 20%));
+  --lightTheme: light-dark(color-mix(in srgb, var(--theme), var(--bodyBg) 90%), color-mix(in srgb, var(--theme), #242424 20%));
+  --darkTheme: light-dark(color-mix(in srgb, var(--theme), #242424 30%), color-mix(in srgb, var(--theme), white 20%));
 }
 body.color--flagBlack {
-  --lightTheme: light-dark(color-mix(in srgb, var(--theme), var(--bodyBg) 90%), color-mix(in srgb, var(--theme), black 30%));
-  --darkTheme: light-dark(color-mix(in srgb, var(--theme), black 30%), color-mix(in srgb, var(--theme), white 70%));
+  --lightTheme: light-dark(color-mix(in srgb, var(--theme), var(--bodyBg) 90%), color-mix(in srgb, var(--theme), #242424 30%));
+  --darkTheme: light-dark(color-mix(in srgb, var(--theme), #242424 30%), color-mix(in srgb, var(--theme), white 70%));
 }
 @media only screen and (min-width: 800px) {
   body {
@@ -744,10 +744,14 @@ form input[type=password],
 form input[type=email].form-control,
 form input[type=email],
 form input[type=file].form-control,
-form input[type=file] {
+form input[type=file],
+form input[type=date] {
   width: 100%;
   height: 4.5rem;
   padding: 0 1rem;
+  border: 2px solid var(--darkTheme);
+  color: var(--typographyColor);
+  background: var(--bodyBg);
 }
 form textarea.form-control,
 form textarea {
@@ -1284,7 +1288,7 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
     scale: 0.9;
   }
 }
-@supports not (display: dialog) {
+@supports not (color: color-mix(in srgb, red, white)) {
   .c-calendar-item__details-close {
     display: none;
   }
@@ -1319,7 +1323,7 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   display: none;
 }
 
-.c-filters__keywords {
+.c-filters__options {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -1327,31 +1331,41 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   width: 100%;
   margin: 2em 0 0;
 }
-.c-filters__keywords label {
+.c-filters__options label {
   width: 100%;
 }
 @media only screen and (min-width: 800px) {
-  .c-filters__keywords {
+  .c-filters__options {
     width: fit-content;
     flex-flow: row nowrap;
     margin: 0 0 0 auto;
   }
-  .c-filters__keywords label {
+  .c-filters__options label {
     width: auto;
   }
 }
 
-.c-filters__keywords__list {
+.c-filters__date input[type=date] {
+  background: var(--lightTheme);
+  cursor: pointer;
+  color: light-dark(var(--darkTheme), var(--typographyColor));
+}
+.c-filters__date input[type=date]::-webkit-calendar-picker-indicator {
+  cursor: inherit;
+  color: inherit;
+}
+
+.c-filters__keywords {
   width: calc(100% - 5.5rem);
   position: relative;
 }
-.c-filters__keywords__list select {
+.c-filters__keywords select {
   width: 100%;
   appearance: none;
   background: var(--lightTheme);
   color: light-dark(var(--darkTheme), var(--typographyColor));
 }
-.c-filters__keywords__list:after {
+.c-filters__keywords:after {
   content: "";
   width: 0;
   height: 0;
@@ -1365,30 +1379,30 @@ body .c-calendar:last-of-type .c-calendar__divider__next {
   pointer-events: none;
 }
 @media only screen and (min-width: 800px) {
-  .c-filters__keywords__list {
+  .c-filters__keywords {
     width: fit-content;
   }
 }
 
-.c-filters__keywords__remove {
+.c-filters__remove {
   color: light-dark(var(--darkTheme), var(--typographyColor));
   transition: background 0.3s ease-out, color 0.3s ease-out;
 }
-.c-filters__keywords__remove svg {
+.c-filters__remove svg {
   rotate: 45deg;
   fill: light-dark(var(--darkTheme), var(--typographyColor));
   transition: fill 0.3s ease-out;
 }
 @supports not (rotate: 45deg) {
-  .c-filters__keywords__remove svg {
+  .c-filters__remove svg {
     transform: rotate(45deg);
   }
 }
-.c-filters__keywords__remove:hover, .c-filters__keywords__remove:active, .c-filters__keywords__remove:focus, .c-filters__keywords__remove:focus:active {
+.c-filters__remove:hover, .c-filters__remove:active, .c-filters__remove:focus, .c-filters__remove:focus:active {
   background: var(--darkTheme);
   color: light-dark(var(--lightTheme), white);
 }
-.c-filters__keywords__remove:hover svg, .c-filters__keywords__remove:active svg, .c-filters__keywords__remove:focus svg, .c-filters__keywords__remove:focus:active svg {
+.c-filters__remove:hover svg, .c-filters__remove:active svg, .c-filters__remove:focus svg, .c-filters__remove:focus:active svg {
   fill: light-dark(var(--lightTheme), var(--typographyColor));
 }
 
@@ -1513,7 +1527,7 @@ body.color--flagBrown .c-footer {
   display: inline-flex;
   padding: 0.2rem 0.7rem;
   margin-bottom: 0.2rem;
-  background: #ccc;
+  background: color-mix(in srgb, #242424, white 90%);
   border-radius: 4px;
   border: none;
   line-height: 1.4;
@@ -1521,7 +1535,7 @@ body.color--flagBrown .c-footer {
   text-underline-offset: 1px;
   border: 1px solid #666;
 }
-@supports (color: color-mix(in srgb, red, white)) {
+@supports (text-wrap: balance) {
   .c-keyword-list__item {
     background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
     border: 1px solid color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
@@ -1542,7 +1556,7 @@ body.color--flagBrown .c-footer {
   text-decoration: none;
   background: #FEF8EA;
 }
-@supports (color: color-mix(in srgb, red, white)) {
+@supports (text-wrap: balance) {
   .c-keyword-list__item.-tickets:hover, .c-keyword-list__item.-tickets:active, .c-keyword-list__item.-tickets:focus, .c-keyword-list__item.-tickets:focus:active {
     background: color-mix(in srgb, var(--flagYellow), var(--bodyBg) 30%);
   }
@@ -1630,6 +1644,11 @@ button.c-keyword-list__item:hover {
 @supports not (inset: 0) {
   .c-keyword-list__item {
     margin-right: 0.5rem;
+  }
+}
+@supports not (color: color-mix(in srgb, red, white)) {
+  .c-keyword-list__item.-desc {
+    display: none;
   }
 }
 .c-list {
@@ -1818,7 +1837,7 @@ body.color--flagBrown .c-main-nav {
   text-transform: none;
 }
 
-@supports not (color: color-mix(in srgb, red, white)) {
+@supports not (text-wrap: balance) {
   .c-share-event,
   .c-share-event-toggle {
     display: none;
