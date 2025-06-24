@@ -29,7 +29,9 @@
 	<link rel="shortcut icon" href="/lib/images/favicon.ico" />
 	<link rel="apple-touch-icon" sizes="180x180" href="/lib/images/apple-touch-icon.png" />
 	<meta name="apple-mobile-web-app-title" content="Queer Cal" />
+
 	<link rel="manifest" href="/lib/images/site.webmanifest" />
+	<meta name="theme-color" content="#319197">
 	
 	<meta name="theme-color" content="
 		{% if theme == "--flagRedOklch" %}
