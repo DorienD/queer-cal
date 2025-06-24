@@ -4,7 +4,7 @@
     {% if m.search.query::%{
             cat: "event",
             qargs: true,
-            sort: "-rsc.pivot_date_start",
+            sort: "rsc.pivot_date_start",
             is_findable: true,
             upcoming: true,
             hasobject: id,
