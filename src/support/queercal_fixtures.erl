@@ -70,12 +70,6 @@ datamodel(Context) ->
                 <<"title">> => #trans{ tr = [
                     {nl, <<"Over ons">>}
                 ]}
-            }},
-            {page_contact, text, #{
-                <<"language">> => [ nl ],
-                <<"title">> => #trans{ tr = [
-                    {nl, <<"Contact">>}
-                ]}
             }}
         ] ++ keywords()
         ++ testdata(Env),

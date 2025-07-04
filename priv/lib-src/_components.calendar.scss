@@ -89,17 +89,11 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
         width: 16px;
         height: 16px;
         fill: var(--darkTheme);
-        @supports not (rotate: 45deg) {
-            transform: rotate(180deg);
-        }
-        rotate: 180deg;
+        transform: rotate(180deg);
     }
 
     &.-prev svg {
-        @supports not (rotate: 45deg) {
-            transform: rotate(0deg);
-        }
-        rotate: 0deg;
+        transform: rotate(0deg);
     }
 }
 
@@ -270,19 +264,13 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
             left: 50%;
             background: #242424;
             border-radius: 2px;
-            @supports not (rotate: 45deg) {
-                transform: rotate(45deg);
-            }
-            rotate: 45deg;
+            transform: rotate(45deg);
             transform-origin: center center;
             
         }
 
         &::after {
-            @supports not (rotate: 45deg) {
-                transform: rotate(-45deg);
-            }
-            rotate: -45deg;
+            transform: rotate(-45deg);
         }
 
         &:hover {

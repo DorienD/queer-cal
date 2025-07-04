@@ -198,10 +198,7 @@ body.color--flagBrown {
         width: 0.5lh;
         height: 0.5lh;
         fill: var(--typographyColor);
-        @supports not (rotate: 45deg) {
-            transform: rotate(-90deg);
-        }
-        rotate: -90deg;
+        transform: rotate(-90deg);
     }
 }
 

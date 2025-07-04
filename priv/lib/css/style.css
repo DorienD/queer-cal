@@ -1042,12 +1042,7 @@ body.color--flagBrown .c-btn-add-event path {
   width: 0.5lh;
   height: 0.5lh;
   fill: var(--typographyColor);
-  rotate: -90deg;
-}
-@supports not (rotate: 45deg) {
-  .c-btn-back svg {
-    transform: rotate(-90deg);
-  }
+  transform: rotate(-90deg);
 }
 
 .c-btn-square {
@@ -1158,20 +1153,10 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
   width: 16px;
   height: 16px;
   fill: var(--darkTheme);
-  rotate: 180deg;
-}
-@supports not (rotate: 45deg) {
-  .c-calendar__divider__nav svg {
-    transform: rotate(180deg);
-  }
+  transform: rotate(180deg);
 }
 .c-calendar__divider__nav.-prev svg {
-  rotate: 0deg;
-}
-@supports not (rotate: 45deg) {
-  .c-calendar__divider__nav.-prev svg {
-    transform: rotate(0deg);
-  }
+  transform: rotate(0deg);
 }
 
 .c-calendar-item {
@@ -1321,21 +1306,11 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
     left: 50%;
     background: #242424;
     border-radius: 2px;
-    rotate: 45deg;
+    transform: rotate(45deg);
     transform-origin: center center;
   }
-  @supports not (rotate: 45deg) {
-    .c-calendar-item__details-close.-top::before, .c-calendar-item__details-close.-top::after {
-      transform: rotate(45deg);
-    }
-  }
   .c-calendar-item__details-close.-top::after {
-    rotate: -45deg;
-  }
-  @supports not (rotate: 45deg) {
-    .c-calendar-item__details-close.-top::after {
-      transform: rotate(-45deg);
-    }
+    transform: rotate(-45deg);
   }
   .c-calendar-item__details-close.-top:hover {
     scale: 0.9;
@@ -1822,13 +1797,8 @@ body.color--flagBrown .c-main-nav {
   text-decoration: underline;
 }
 .c-main-nav__lang li:not(:last-child):after {
-  rotate: 10deg;
+  transform: rotate(10deg);
   right: -0.5em;
-}
-@supports not (rotate: 45deg) {
-  .c-main-nav__lang li:not(:last-child):after {
-    transform: rotate(10deg);
-  }
 }
 
 @supports not (inset: 0) {

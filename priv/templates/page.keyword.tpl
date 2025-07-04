@@ -2,7 +2,7 @@
 
 {% block below_body %}
     <div class="c-calendar-listing">
-        <h2>{_ All events with _} <span class="c-keyword-list__item">{{ id.title }}</span></h2>
+        <h2>{_ All events with the _} <span class="c-keyword-list__item">{{ id.title }}</span> {_ keyword _}</h2>
         
         {% with m.search.query::%{
             cat: "event",

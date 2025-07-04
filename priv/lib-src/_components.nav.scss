@@ -8,9 +8,11 @@
     padding: 0 2.5%;
     margin-bottom: 2em;
     background: var(--flagRed);
+    
     @supports (color: light-dark(black, white)) {
         background: light-dark(var(--theme), var(--lightTheme));
     }
+    
     border-bottom: 3px solid var(--darkTheme);
     text-transform: uppercase;
     font-size: 0.9em;
@@ -78,10 +80,7 @@ body.color--flagBrown {
     }
 
     li:not(:last-child):after {
-        @supports not (rotate: 45deg) {
-            transform: rotate(10deg);
-        }
-        rotate: 10deg;
+        transform: rotate(10deg);
         right: -0.5em;
     }
 }
