@@ -19,6 +19,10 @@
 
         {% include "event/event-location.tpl" %}
 
+        {% if id.website %}
+            <a href="{{ id.website }}" target="_blank" rel="noopener">{_ Website _} {% include "icons/icon-external.tpl" width="10" height="10" color="var(--typographyColor)" %}</a>
+        {% endif %}
+
         {% block body %}
             {% if id.summary %}
                 <p class="c-summary">{{ id.summary }}</p>
@@ -35,20 +39,6 @@
                     {% endif %}
                 {% endif %}
             {% endif %}
-
-            {# {% print id.summary|translation:"nl" %} #}
-
-            {# {{ id.summary|translation:"en" }} #}
-
-                {# {% if r.summary %}
-                    <p>{{ r.summary }}</p>
-                {% elseif z_language != "nl" and m.translation.has[r, "nl"].summary %}
-                    <p><em>Summary is only available in Dutch.</em></p>
-                {% endif %} #}
-            {# {% if id.summary %}
-                <p class="c-summary">{{ id.summary }}</p>
-            {% endif %}
-             #}
         {% endblock %}
 
         {% include "event/event-keywords.tpl" %}
