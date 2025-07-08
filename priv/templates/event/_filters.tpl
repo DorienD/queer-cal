@@ -12,7 +12,7 @@
     {% endif %}
 
     <form action="/" id="j-filters" class="c-filters__options">
-        {% if q.qhasobject or q.qongoing_on %}
+        {% if q.qhasobject or q.qongoing_date %}
             <label for="j-filter-keyword">{_ You've filtered on _}</label>
         {% else %}
             <label for="j-filter-keyword" class="sr-only">{_ Filter _}</label>
@@ -21,7 +21,7 @@
         <div class="c-filters__date">
             <label for="j-filter-date">{_ Date _}</label>
             
-            <input type="date" id="j-filter-date" name="qongoing_on" min="{{ now|date:"Y-m-d" }}" value="{{ q.qongoing_on|default:"yyyy-MM-dd" }}">
+            <input type="date" id="j-filter-date" name="qongoing_date" min="{{ now|date:"Y-m-d" }}" value="{{ q.qongoing_date|default:"yyyy-MM-dd" }}">
         </div>
         
         <div class="c-filters__keywords">
@@ -44,7 +44,7 @@
         
         <button type="submit" id="j-filter-submit" class="c-btn c-btn-filter-submit">{_ Apply filter _}</button>
         
-        {% if q.qhasobject or q.qongoing_on %}
+        {% if q.qhasobject or q.qongoing_date %}
             <a href="{% url home %}" class="c-filters__remove c-btn-square">{% include "icons/icon-plus.tpl" color="var(--typographyColor)" %}<span>{_ reset _}</span></a>
         {% endif %}
     </form>
