@@ -39,7 +39,7 @@
                     }
                     as this_month %}
                     <li class="c-calendar__divider">
-                        <h2 id="{{ (r.date_start|date:"F")|slugify }}">{{ r.date_start|date:"F" }} {% if this_month > 0 %}<sup title="{_ approximately _}">({{ this_month|length }})</sup>{% endif %}</h2>
+                        <h2 id="{{ (r.date_start|date:"F")|slugify }}">{{ r.date_start|date:"F" }} {% if this_month|length > 0 %}<sup title="{_ approximately _}">({{ this_month|length }})</sup>{% endif %}</h2>
 
                         <a href="#first-{{ (r.date_start|sub_month|date:"F")|slugify }}" class="c-calendar__divider__nav -prev" title="{_ Previous month _}">
                             {% include "icons/icon-caret-left.tpl" %}
