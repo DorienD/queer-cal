@@ -56,7 +56,7 @@
                     {% if result[forloop.counter -1].id.date_start|date:"m" != r.date_start|date:"m" %}
                     <li id="first-{{ r.date_start|date:"F"|slugify }}" class="c-calendar__first {% if r.is_featured %} -featured{% endif %}">
                     {% else %}
-                        <li>
+                        <li{% if r.is_featured %} class="-featured"{% endif %}>
                     {% endif %}
                         {% catinclude "cards/card.tpl" r %}
                     </li>
