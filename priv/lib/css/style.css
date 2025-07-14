@@ -1183,6 +1183,9 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
 .c-calendar-item.-featured {
   font-size: 1.4em;
 }
+.c-calendar-item.-featured h3 {
+  font-size: 1.5em;
+}
 @starting-style {
   .c-calendar-item {
     opacity: 0;
