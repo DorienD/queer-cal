@@ -120,8 +120,24 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
         font-size: 1.2em;
     }
 
+    &.-featured {
+        font-size: 1.2em;
+    }
+
     @starting-style {
         opacity: 0;
+    }
+}
+
+.c-calendar li.-featured {
+    grid-column: -1/1;
+    padding-top: 1em;
+    background: var(--lightTheme);
+    text-align: center;
+
+    .c-calendar-item__date,
+    .c-keyword-list {
+        justify-content: center;
     }
 }
 

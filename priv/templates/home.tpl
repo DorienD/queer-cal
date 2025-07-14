@@ -54,7 +54,7 @@
                     {% endwith %}
             {% endif %}
                     {% if result[forloop.counter -1].id.date_start|date:"m" != r.date_start|date:"m" %}
-                    <li id="first-{{ r.date_start|date:"F"|slugify }}" class="c-calendar__first">
+                    <li id="first-{{ r.date_start|date:"F"|slugify }}" class="c-calendar__first {% if r.is_featured %} -featured{% endif %}">
                     {% else %}
                         <li>
                     {% endif %}

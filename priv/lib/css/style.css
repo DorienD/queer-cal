@@ -1180,10 +1180,24 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
   margin: 0 0 0.5em;
   font-size: 1.2em;
 }
+.c-calendar-item.-featured {
+  font-size: 1.2em;
+}
 @starting-style {
   .c-calendar-item {
     opacity: 0;
   }
+}
+
+.c-calendar li.-featured {
+  grid-column: -1/1;
+  padding-top: 1em;
+  background: var(--lightTheme);
+  text-align: center;
+}
+.c-calendar li.-featured .c-calendar-item__date,
+.c-calendar li.-featured .c-keyword-list {
+  justify-content: center;
 }
 
 .c-calendar__first {
@@ -1863,6 +1877,9 @@ body.color--flagBrown .c-main-nav {
   gap: 0.25em;
   align-items: start;
 }
+.c-share-event__content .c-btn-share-event {
+  padding-top: 0.2em;
+}
 
 [popover] {
   inset: unset;
@@ -1886,6 +1903,20 @@ body.color--flagBrown .c-main-nav {
     display: none;
   }
 }
+.c-share-event__divider {
+  width: 100%;
+  text-align: left;
+}
+.c-share-event__divider:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-bottom: 0.2em;
+  border-top: 1px solid var(--darkTheme);
+  opacity: 0.3;
+}
+
 .t-edit {
   --typographyColor: #242424;
   --lightTheme: #242424;

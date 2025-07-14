@@ -42,7 +42,7 @@ msgstr "Voeg toe aan Microsoft agenda"
 
 #: _build/default/lib/queercal/priv/templates/event/_share-event.tpl:3
 msgid "Add to calendar"
-msgstr "Voeg toe agenda"
+msgstr "Voeg toe aan agenda"
 
 #: _build/default/lib/queercal/priv/templates/event/_share-event.tpl:12./_build/default/lib/queercal/priv/templates/event/_share-event.tpl:12
 msgid "Add to iCalendar"
