@@ -1839,7 +1839,7 @@ body.color--flagBrown .c-main-nav {
   color: var(--darkTheme);
 }
 .c-share-event-toggle svg {
-  height: 1.6rem;
+  height: 1em;
 }
 .c-share-event-toggle .icon-bookmark__fill {
   fill: transparent;

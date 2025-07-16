@@ -43,7 +43,7 @@
                     {# If date end is in a different month, display month #}
                     <span>{{ date_start|date:"D d b" }}</span>
                 {% else %}
-                    <span>{{ date_start|date:"D d" }}</span>
+                    <span>{{ date_start|date:"D d b" }}</span>
                 {% endif %}
             {% endif %}
             

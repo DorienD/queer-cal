@@ -36,21 +36,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Filter calendar
 
-    filterForm.addEventListener('change', function (evt) {
-        evt.preventDefault();
+    if(filterForm){
+        filterForm.addEventListener('change', function (evt) {
+            evt.preventDefault();
 
-        const data = new FormData(this);
-        const params = new URLSearchParams();
+            const data = new FormData(this);
+            const params = new URLSearchParams();
 
-        for (const [key, value] of data) {
-            if (value.trim() !== "") {
-                params.set(key, value);
+            for (const [key, value] of data) {
+                if (value.trim() !== "") {
+                    params.set(key, value);
+                }
             }
-        }
 
-        const newUrl = `${window.location.pathname}?${params.toString()}`;
-        window.location.href = newUrl;
-    });
+            const newUrl = `${window.location.pathname}?${params.toString()}`;
+            window.location.href = newUrl;
+        });
+    }
 
     // Back to top display logic
 
@@ -83,6 +85,24 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!ticking) {
             window.requestAnimationFrame(onScroll);
             ticking = true;
+        }
+    });
+
+    // Share event
+
+    document.querySelectorAll('.js-share').forEach(shareLink => {
+        if (navigator.share) {
+            shareLink.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const title = this.dataset.title || document.title;
+                const url = this.dataset.url || this.href;
+
+                navigator.share({ title, url }).catch(err => {
+                    console.warn('Share failed:', err);
+                    window.location.href = this.href; // fallback to email link
+                });
+          });
         }
     });
 });
