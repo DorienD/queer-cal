@@ -58,7 +58,7 @@
                     {% else %}
                         <li{% if r.is_featured %} class="-featured"{% endif %}>
                     {% endif %}
-                    {% if forloop.counter == 5 %}
+                    {% if forloop.counter == 6 %}
                         {% include "cards/card.support.tpl" %}
                     {% else %}
                         {% catinclude "cards/card.tpl" r %}
