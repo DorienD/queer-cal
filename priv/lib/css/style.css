@@ -942,17 +942,28 @@ button {
 
 .c-btn-primary, .btn-primary,
 .btn-success {
-  background: var(--darkTheme);
-  color: var(--typographyColor);
+  background: var(--primaryColor);
+  color: #242424;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
 }
 .c-btn-primary:hover, .btn-primary:hover,
 .btn-success:hover, .c-btn-primary:active, .btn-primary:active,
 .btn-success:active, .c-btn-primary:focus, .btn-primary:focus,
 .btn-success:focus, .c-btn-primary:focus:active {
   text-decoration: none;
-  color: var(--typographyColor);
+  color: #242424;
   background: var(--primaryColor);
-  border-color: var(--primaryColor);
+  border-color: var(--darkTheme);
+  transform: scale(1.1);
+}
+
+body.color--flagBrown .c-btn-primary, body.color--flagBrown .btn-primary,
+body.color--flagBrown .btn-success,
+body.color--flagBlack .c-btn-primary,
+body.color--flagBlack .btn-primary,
+body.color--flagBlack .btn-success {
+  color: white;
 }
 
 .c-btn-admin-edit {
@@ -1291,6 +1302,7 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
     background: white;
     border: 3px solid var(--darkTheme);
     color: #242424;
+    font-size: 1.8rem;
   }
   .c-calendar-item__details h3 {
     color: var(--darkTheme);

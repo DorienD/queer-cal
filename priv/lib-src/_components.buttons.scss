@@ -81,14 +81,24 @@ button {
 }
 
 .c-btn-primary {
-    background: var(--darkTheme);
-    color: var(--typographyColor);
+    background: var(--primaryColor);
+    color: #242424;
+    font-weight: 500;
+    transition: all 0.3s ease-out;
 
     @include setInteractive {
         text-decoration: none;
-        color: var(--typographyColor);
+        color: #242424;
         background: var(--primaryColor);
-        border-color: var(--primaryColor);
+        border-color: var(--darkTheme);
+        transform: scale(1.1);
+    }
+}
+
+body.color--flagBrown,
+body.color--flagBlack {
+    .c-btn-primary {
+        color: white;
     }
 }
 
