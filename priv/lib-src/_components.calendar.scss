@@ -318,3 +318,12 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
     background: var(--lightTheme);
     color: light-dark(var(--darkTheme), var(--typographyColor));
 }
+
+.c-calendar-item.-support {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background: var(--lightTheme);
+    text-align: center;   
+}

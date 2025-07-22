@@ -81,12 +81,13 @@ button {
 }
 
 .c-btn-primary {
-    background: var(--primaryColor);
-    color: #fff;
+    background: var(--darkTheme);
+    color: var(--typographyColor);
 
     @include setInteractive {
         text-decoration: none;
-        color: var(--primaryColor);
+        color: var(--typographyColor);
+        background: var(--primaryColor);
         border-color: var(--primaryColor);
     }
 }
