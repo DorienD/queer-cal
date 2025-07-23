@@ -36,8 +36,7 @@ a[target="_blank"]:not(.c-btn) {
         display: inline-flex;
         width: 0.5em;
         height: 0.5em;
-        position: relative;
-        right: -2px;
+        transform: translate(50%, 0%);
         mask: url("/lib/images/icon-external.svg") no-repeat 50% 50%;
         background-color: currentColor;
     }
