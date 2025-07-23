@@ -585,12 +585,10 @@ a[href*=vimeo] {
   word-break: break-all;
 }
 
-a[target=_blank]:not(.c-btn):not(.btn),
-a[target=_blank]:has(:has(.c-btn, .btn)) {
+a[target=_blank]:not(.c-btn):not(.btn) {
   display: inline-flex;
 }
-a[target=_blank]:not(.c-btn):not(.btn):after,
-a[target=_blank]:has(:has(.c-btn, .btn)):after {
+a[target=_blank]:not(.c-btn):not(.btn):after {
   content: "";
   display: inline-flex;
   width: 0.5em;
