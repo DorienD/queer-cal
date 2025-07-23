@@ -28,6 +28,21 @@ a[href*="vimeo"] {
     word-break: break-all;
 }
 
+a[target="_blank"]:not(.c-btn) {
+    display: inline-flex;
+
+    &:after {
+        content: '';
+        display: inline-flex;
+        width: 0.5em;
+        height: 0.5em;
+        position: relative;
+        right: -2px;
+        mask: url("/lib/images/icon-external.svg") no-repeat 50% 50%;
+        background-color: currentColor;
+    }
+}
+
 b, strong {
     font-weight: bold;
 }
