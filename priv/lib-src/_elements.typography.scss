@@ -28,7 +28,8 @@ a[href*="vimeo"] {
     word-break: break-all;
 }
 
-a[target="_blank"]:not(.c-btn) {
+a[target="_blank"]:not(.c-btn),
+a[target="_blank"]:has(:has(.c-btn)) {
     display: inline-flex;
 
     &:after {
@@ -39,6 +40,7 @@ a[target="_blank"]:not(.c-btn) {
         transform: translate(50%, 0%);
         mask: url("/lib/images/icon-external.svg") no-repeat 50% 50%;
         background-color: currentColor;
+        background-repeat: no-repeat;
     }
 }
 
