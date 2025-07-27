@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const toggleButtons = document.querySelectorAll('.c-calendar-item__details-toggle');
+    const toggleButtons = document.querySelectorAll('.c-calendar-item__dialog');
     const filterForm = document.getElementById('j-filters');
 
     toggleButtons.forEach(button => {
