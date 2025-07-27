@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2025-07-23 00:41+0200\n"
+"PO-Revision-Date: 2025-07-27 17:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -256,6 +256,10 @@ msgstr "Vorige"
 msgid "Previous month"
 msgstr "Vorige maand"
 
+#: queercal/priv/templates/event/event-keywords.tpl:41
+msgid "Proceed to external ticket sale"
+msgstr "Doorgaan naar externe ticket verkoop"
+
 #: queercal/priv/templates/event/_filters.tpl:30
 msgid "Remove filter"
 msgstr "Verwijder filter"
@@ -294,7 +298,7 @@ msgstr "Deel dit evenement"
 msgid "Showing dates in"
 msgstr "Datums zijn in"
 
-#: queercal/priv/templates/event/event-keywords.tpl:33
+#: queercal/priv/templates/event/event-keywords.tpl:49
 msgid "Sign up"
 msgstr "Aanmelden"
 
@@ -366,7 +370,7 @@ msgstr "Dit zal een ticket button toevoegen."
 msgid "Ticket link"
 msgstr "Ticket link"
 
-#: queercal/priv/templates/event/event-keywords.tpl:30
+#: queercal/priv/templates/event/event-keywords.tpl:31
 msgid "Tickets"
 msgstr "Tickets"
 

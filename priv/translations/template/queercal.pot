@@ -365,6 +365,12 @@ msgid ""
 msgstr ""
 ""
 
+#: queercal/priv/templates/event/event-keywords.tpl:41
+msgid ""
+"Proceed to external ticket sale"
+msgstr ""
+""
+
 #: queercal/priv/templates/event/_filters.tpl:30
 msgid ""
 "Remove filter"
@@ -421,7 +427,7 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/event/event-keywords.tpl:33
+#: queercal/priv/templates/event/event-keywords.tpl:49
 msgid ""
 "Sign up"
 msgstr ""
@@ -517,7 +523,7 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/event/event-keywords.tpl:30
+#: queercal/priv/templates/event/event-keywords.tpl:31
 msgid ""
 "Tickets"
 msgstr ""

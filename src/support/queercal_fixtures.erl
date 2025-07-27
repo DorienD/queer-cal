@@ -76,6 +76,14 @@ datamodel(Context) ->
                 <<"title">> => #trans{ tr = [
                     {nl, <<"Steun Queer Kalender">>}
                 ]}
+            }},
+            {page_ticket_disclaimer, text, #{
+                <<"language">> => [ nl ],
+                <<"title">> => #trans{ tr = [
+                    {nl, <<"Let op!">>},
+                    {en, <<"Heads up!">>}
+                ]},
+                <<"is_unfindable">> => true
             }}
         ] ++ keywords()
         ++ testdata(Env),

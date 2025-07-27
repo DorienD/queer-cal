@@ -38,7 +38,7 @@
                             
                             {{ page.body }}
                             
-                            <a href="{{ id.ticket_link }}" class="c-btn c-btn-primary -icon-external">{_ Proceed to external ticket sale _}</a>
+                            <a href="{{ id.ticket_link }}" rel="noopener" target="_blank" class="c-btn c-btn-tickets -icon-external">{_ Proceed to external ticket sale _}</a>
                         {% endwith %}
                     </div>
                 </dialog>

@@ -8,11 +8,11 @@ button {
     justify-content: center;
     min-height: 4.5rem;
     padding: 0 1.3em;
-    background: var(--typographyColor);
+    background: var(--primaryColor);
     border: 2px solid transparent;
     text-decoration: none;
     font-family: var(--primaryFont);
-    color: #fff;
+    color: #242424;
     line-height: 1;
     cursor: pointer;
     transition: color 0.2s, border 0.2s, background 0.3s ease-out;
@@ -104,6 +104,17 @@ button {
         background: var(--primaryColor);
         border-color: var(--darkTheme);
         transform: scale(1.1);
+    }
+}
+
+.c-btn-tickets {
+    background: transparent;
+    color: #242424;
+    border-color: currentColor;
+
+    @include setInteractive {
+        color: #242424;
+        border-color: var(--primaryColor);
     }
 }
 
