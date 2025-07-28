@@ -1844,7 +1844,13 @@ button.c-keyword-list__item:hover {
 }
 
 .c-main-nav__logo {
+  display: none;
   margin-right: auto;
+}
+@media only screen and (min-width: 600px) {
+  .c-main-nav__logo {
+    display: block;
+  }
 }
 
 body.color--flagBlack .c-main-nav,
