@@ -84,7 +84,15 @@ datamodel(Context) ->
                     {en, <<"Heads up!">>}
                 ]},
                 <<"is_unfindable">> => true
+            }},
+            {page_disclaimer, text, #{
+                <<"language">> => [ nl ],
+                <<"title">> => #trans{ tr = [
+                    {nl, <<"Disclaimer">>},
+                    {en, <<"Disclaimer">>}
+                ]}
             }}
+
         ] ++ keywords()
         ++ testdata(Env),
         media = [] ++ testmedia(Env),
