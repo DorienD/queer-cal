@@ -20,7 +20,7 @@
         {% include "event/event-location.tpl" %}
 
         {% if id.website %}
-            <a href="{{ id.website }}" target="_blank" rel="noopener">{_ Website _} {% include "icons/icon-external.tpl" width="10" height="10" color="var(--typographyColor)" %}</a>
+            <a href="{{ id.website }}" target="_blank" rel="noopener">{_ Website _}</a>
         {% endif %}
 
         {% block body %}
