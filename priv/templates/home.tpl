@@ -58,14 +58,11 @@
                     {% else %}
                         <li{% if r.is_featured %} class="-featured"{% endif %}>
                     {% endif %}
-                    {% if forloop.counter == 6 %}
-                        {% include "cards/card.support.tpl" %}
-                        
                         {% catinclude "cards/card.tpl" r %}
-                    {% else %}
-                        {% catinclude "cards/card.tpl" r %}
-                    {% endif %}
                     </li>
+                    {% if forloop.counter == 6 %}
+                        <li>{% include "cards/card.support.tpl" %}</li>
+                    {% endif %}
                 {% if forloop.last %}
                 </ol>
                 {% endif %}
