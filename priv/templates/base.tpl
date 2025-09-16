@@ -88,6 +88,8 @@
 	    {% endblock %}
     </main>
 
+    {% block above_footer %}{% endblock %}
+
     {% block footer %}
         {% include 'footer/footer.tpl' %}
     {% endblock %}
