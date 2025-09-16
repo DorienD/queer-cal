@@ -133,6 +133,10 @@ body.color--flagBlack {
     @extend .c-btn;
 }
 
+.modal-footer .btn {
+    border-width: 2px;
+}
+
 .c-btn-admin-edit {
     padding: 1rem 2rem; 
     background: #ccc;

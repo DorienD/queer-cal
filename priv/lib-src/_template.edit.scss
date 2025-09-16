@@ -2,7 +2,7 @@
     --typographyColor: #242424;
     --lightTheme: #242424;
     --darkTheme: #242424;
-    padding: 3em 0;
+    padding: 1em 0;
     color: var(--typographyColor);
     font-family: var(--bodyFont);
     font-size: 16px;
@@ -30,6 +30,23 @@
     a[id*="subject"] {
         text-decoration: underline;
     }
+
+    main {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @include breakpoint($mediumBreakpoint) {
+        padding: 3em 0;
+    }
+}
+
+.environment-development body.t-edit, 
+.environment-test body.t-edit, 
+.environment-acceptance body.t-edit, 
+.environment-education body.t-edit, 
+.environment-backup body.t-edit {
+    padding-left: 0;
 }
 
 #editcol {

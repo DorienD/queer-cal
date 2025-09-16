@@ -115,6 +115,7 @@
                     undo_message_id="unlink-undo-message"
                     list_id=list_id
                     tabs_enabled=["find"]
+                    dialog_title_add=_"Add keywords"
                 %}
                 <br>
 
@@ -158,6 +159,7 @@
                     undo_message_id="unlink-undo-message"
                     list_id=list_id
                     tabs_enabled=["find"]
+                    dialog_title_add=_"Connect a location"
                 %}
                 <br>
             </div>
@@ -188,6 +190,7 @@
                     undo_message_id="unlink-undo-message"
                     list_id=list_id
                     tabs_enabled=["find"]
+                    dialog_title_add=_"Connect an organization"
                 %}
                 <br>
             </div>

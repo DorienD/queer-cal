@@ -501,6 +501,7 @@ body {
 main {
   flex: 1 0 auto;
   padding: 0 2.5% 2rem;
+  margin-bottom: var(--mainMargin);
 }
 @media only screen and (min-width: 800px) {
   main {
@@ -585,10 +586,10 @@ a[href*=vimeo] {
   word-break: break-all;
 }
 
-a[target=_blank]:not(.c-btn):not(.btn) {
+a[target=_blank]:not(.c-btn):not(.btn):not(.c-btn-share-event) {
   display: inline-flex;
 }
-a[target=_blank]:not(.c-btn):not(.btn):after {
+a[target=_blank]:not(.c-btn):not(.btn):not(.c-btn-share-event):after {
   content: "";
   display: inline-flex;
   width: 0.5em;
@@ -851,6 +852,8 @@ body textarea.form-control:focus {
 .o-main-container {
   width: 100%;
   max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .z-logon-box {
@@ -996,6 +999,10 @@ body.color--flagBlack .c-btn-primary,
 body.color--flagBlack .btn-primary,
 body.color--flagBlack .btn-success {
   color: white;
+}
+
+.modal-footer .btn {
+  border-width: 2px;
 }
 
 .c-btn-admin-edit {
@@ -1407,6 +1414,18 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
   text-align: center;
 }
 
+.c-calendar-modified {
+  padding: 0 2.5% 0;
+  font-size: 0.9em;
+  opacity: 0.8;
+  color: var(--darkTheme);
+}
+@media only screen and (min-width: 800px) {
+  .c-calendar-modified {
+    padding: 0 4rem 0;
+  }
+}
+
 .c-filters {
   margin-bottom: 2em;
 }
@@ -1522,7 +1541,6 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
   align-items: center;
   gap: 1em;
   padding: 1em 2.5%;
-  margin-top: var(--mainMargin);
   position: relative;
   background: light-dark(var(--theme), var(--lightTheme));
   border-top: 3px solid var(--darkTheme);
@@ -1985,7 +2003,7 @@ body.color--flagBrown .c-main-nav {
   --typographyColor: #242424;
   --lightTheme: #242424;
   --darkTheme: #242424;
-  padding: 3em 0;
+  padding: 1em 0;
   color: var(--typographyColor);
   font-family: var(--bodyFont);
   font-size: 16px;
@@ -2008,6 +2026,23 @@ body.color--flagBrown .c-main-nav {
 }
 .t-edit a[id*=subject] {
   text-decoration: underline;
+}
+.t-edit main {
+  padding-left: 0;
+  padding-right: 0;
+}
+@media only screen and (min-width: 800px) {
+  .t-edit {
+    padding: 3em 0;
+  }
+}
+
+.environment-development body.t-edit,
+.environment-test body.t-edit,
+.environment-acceptance body.t-edit,
+.environment-education body.t-edit,
+.environment-backup body.t-edit {
+  padding-left: 0;
 }
 
 #editcol {

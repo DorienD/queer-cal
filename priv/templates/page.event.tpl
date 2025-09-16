@@ -19,6 +19,8 @@
 
         {% include "event/event-location.tpl" %}
 
+        {% include "event/event-keywords.tpl" %}
+
         {% if id.website %}
             <a href="{{ id.website }}" target="_blank" rel="noopener">{_ Website _}</a>
         {% endif %}
@@ -40,8 +42,6 @@
                 {% endif %}
             {% endif %}
         {% endblock %}
-
-        {% include "event/event-keywords.tpl" %}
     </article>
 
     {% block below_body %}{% endblock %}

@@ -71,3 +71,17 @@
         {% endfor %}
     {% endwith %}
 {% endblock %}
+
+{% block above_footer %}
+    {% with m.search.query::%{
+        cat: "event",
+        sort: "-rsc.modified",
+        is_findable: true,
+        pagelen: 1
+    } as modified
+    %}
+    {% for r in modified %}
+        <p class="c-calendar-modified">{_ Last updated on _} <time datetime="{{ r.modified|date:"c" }}">{{ r.modified|date:"d-m-Y, H:i" }}</p>
+    {% endfor %}
+    {% endwith %}
+{% endblock %}

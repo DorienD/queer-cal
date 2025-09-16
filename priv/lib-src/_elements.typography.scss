@@ -28,7 +28,7 @@ a[href*="vimeo"] {
     word-break: break-all;
 }
 
-a[target="_blank"]:not(.c-btn) {
+a[target="_blank"]:not(.c-btn):not(.c-btn-share-event) {
     display: inline-flex;
 
     &:after {
