@@ -1650,6 +1650,9 @@ body.color--flagBrown .c-footer {
   gap: 0.5rem;
   font-size: 0.7em;
 }
+.c-keyword-list + a {
+  margin-top: 1em;
+}
 
 .c-keyword-list + address {
   margin-top: 1em;
