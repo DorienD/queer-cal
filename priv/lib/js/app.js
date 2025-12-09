@@ -126,5 +126,6 @@ if (CSS.supports('color', 'light-dark(black, white)')){
         }
 
         document.getElementById(localStorage.getItem("appearance")).checked = true;
-    } 
+    }
 }
+

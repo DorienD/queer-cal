@@ -841,6 +841,33 @@ body textarea.form-control:focus {
   padding: 0.7rem 1rem;
 }
 
+.c-custom-checkbox {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+.c-custom-checkbox:before {
+  content: "";
+  display: block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid var(--primaryColor);
+}
+.c-custom-checkbox input[type=checkbox] {
+  opacity: 0;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  left: 0.5em;
+  top: 0.4em;
+}
+.c-custom-checkbox:hover:before, .c-custom-checkbox:active:before, .c-custom-checkbox:focus:before, .c-custom-checkbox:focus:active:before {
+  border-color: var(--darkTheme);
+}
+
 @media only screen and (min-width: 800px) {
   .o-grid {
     display: grid;

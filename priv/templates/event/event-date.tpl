@@ -10,25 +10,33 @@
         {% if id.date_is_all_day %}
             {# All day event #}
             <span>
+
                 {% if full_date %}
                     {{ date_start|date:"d-m-Y" }} - {{ date_end|date:"d-m-Y":"UTC" }}
                 {% elseif date_start|date:"d-m-F" == now|date:"d-m-F" %}
-                    <span>{_ Today _}</span>
+                    {_ Today _}
                 {% else %}
-                    {% if date_start|date:"m" != date_end|date:"m" %}
-                        {# Date end in a different month → display month #}
+
+                    {% if date_start|date:"d-m":"UTC" == date_end|date:"d-m":"UTC" %}
+                        {# All day ends on the same day #}
                         {{ date_start|date:"D d b" }}
                     {% else %}
-                        {{ date_start|date:"D d" }}
-                    {% endif %}
-                    
-                    {# Same month → only display day else also display month #}
-                    {% if date_start|date:"m" == date_end|date:"m" %}
-                        {% if date_start|date:"d" != date_end|date:"d" %}
-                            - {{ date_end|date:"d":"UTC" }}
+                        {# All day ends on a different day #}
+                        {% if date_start|date:"m" != date_end|date:"m" %}
+                            {# Date end in a different month → display month #}
+                            {{ date_start|date:"D d b" }}
+                        {% else %}
+                            {{ date_start|date:"D d" }}
                         {% endif %}
-                    {% else %}
-                        - {{ date_end|date:"d b" }}
+                        
+                        {# Same month → only display day else also display month #}
+                        {% if date_start|date:"m" == date_end|date:"m" %}
+                            {% if date_start|date:"d" != date_end|date:"d" %}
+                                - {{ date_end|date:"d":"UTC" }}
+                            {% endif %}
+                        {% else %}
+                            - {{ date_end|date:"d b" }}
+                        {% endif %}
                     {% endif %}
                 {% endif %}
             </span>

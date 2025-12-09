@@ -80,3 +80,35 @@ body input.form-control:not([type="date"]):not([type="time"]):focus {
 body textarea.form-control:focus {
     padding: 0.7rem 1rem;
 }
+
+.c-custom-checkbox {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 1em;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 1em;
+        height: 1em;
+        border: 2px solid var(--primaryColor);
+    }
+
+    input[type="checkbox"] {
+        opacity: 0;
+        width: 1em;
+        height: 1em;
+        position: absolute;
+        left: .5em;
+        top: .4em;
+    }
+
+    @include setInteractive {
+        &:before {
+            border-color: var(--darkTheme);
+        }
+    }
+}

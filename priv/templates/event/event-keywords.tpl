@@ -38,6 +38,13 @@
                             
                             {{ page.body }}
                             
+                            <form>
+                                <label for="is_hide_disclaimer" class="c-custom-checkbox">
+                                    <input type="checkbox" id="is_hide_disclaimer">
+                                    {_ Hide this disclaimer for a while _}
+                                </label>
+                                
+                            </form>
                             <a href="{{ id.ticket_link }}" rel="noopener" target="_blank" class="c-btn c-btn-tickets -icon-external">{_ Proceed to external ticket sale _}</a>
                         {% endwith %}
                     </div>
