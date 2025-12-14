@@ -25,21 +25,24 @@
         </div>
         
         <div class="c-filters__keywords">
-            <select id="j-filter-keyword" name="qhasobject">
-                {% if q.qhasobject %}
-                    <option value=" ">{_ Remove filter _}</option>
-                {% else %}
-                    <option value=" ">{_ Filter on a keyword _}</option>
-                {% endif %}
+            <label for="j-filter-keyword">{_ Keyword _}</label>
+            <div class="c-custom-select">
+                <select id="j-filter-keyword" name="qhasobject">
+                    {% if q.qhasobject %}
+                        <option value=" ">{_ Remove filter _}</option>
+                    {% else %}
+                        <option value=" ">{_ Filter on a keyword _}</option>
+                    {% endif %}
 
-                {% for r in m.search.query::%{
-                    cat: "keyword",
-                    is_findable: true,
-                    pagelen: 200}|sort:['title', 'asc']
-                %}
-                    <option value="{{ r.id }}" {% if q.qhasobject == r.id %}selected{% endif  %}>{{ r.title }}</option>
-                {% endfor %}
-            </select>
+                    {% for r in m.search.query::%{
+                        cat: "keyword",
+                        is_findable: true,
+                        pagelen: 200}|sort:['title', 'asc']
+                    %}
+                        <option value="{{ r.id }}" {% if q.qhasobject == r.id %}selected{% endif  %}>{{ r.title }}</option>
+                    {% endfor %}
+                </select>
+            </div>
         </div>
         
         <button type="submit" id="j-filter-submit" class="c-btn c-btn-filter-submit">{_ Apply filter _}</button>

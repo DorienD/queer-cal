@@ -1,6 +1,11 @@
 .c-filters {
     margin-bottom: 2em;
 
+    label {
+        display: block;
+        font-size: 0.825em;
+    }
+
     @include breakpoint($mediumBreakpoint) {
         display: flex;
         justify-content: space-between;
@@ -54,17 +59,9 @@
             color: inherit;
         }
     }
-
-    @include breakpoint($mediumBreakpoint) {
-        label {
-            position: absolute;
-            top: 0;
-            transform: translateY(-100%);
-        }
-    }
 }
 
-.c-filters__keywords {
+.c-custom-select {
     width: calc(100% - 5.5rem);
     position: relative;
 
