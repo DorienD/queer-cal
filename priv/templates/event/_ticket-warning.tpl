@@ -38,24 +38,3 @@
         </div>
     </dialog>
 {% endif %}
-
-{# <button class="c-calendar-item__dialog -toggle c-keyword-list__item -tickets" data-dialog="tickets-{{ r.id }}">{_ Tickets _}</button>
-
-<dialog id="tickets-{{ r.id }}" class="c-calendar-item__details">
-    <div class="c-calendar-item__details__content">
-        <button class="c-calendar-item__details-close -top"><span class="sr-only">Close</span></button>
-        {% with m.rsc.page_ticket_disclaimer as page %}
-            <h2>{{ page.title }}</h2>
-            
-            {{ page.body }}
-            
-            <form>
-                <label for="is_hide_disclaimer" class="c-custom-checkbox">
-                    <input type="checkbox" id="is_hide_disclaimer">
-                    {_ Hide this disclaimer for a while _}
-                </label>
-            
-            <a href="{{ id.ticket_link }}" rel="noopener" target="_blank" class="c-btn c-btn-tickets -icon-external">{_ Proceed to external ticket sale _}</a>
-        {% endwith %}
-    </div>
-</dialog> #}
