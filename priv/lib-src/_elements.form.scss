@@ -94,7 +94,7 @@ body textarea.form-control:focus {
         display: block;
         width: 1em;
         height: 1em;
-        border: 2px solid var(--primaryColor);
+        border: 2px solid var(--darkTheme);
     }
 
     input[type="checkbox"] {
@@ -104,6 +104,24 @@ body textarea.form-control:focus {
         position: absolute;
         left: .5em;
         top: .4em;
+    }
+
+    &:has(input[type="checkbox"]:checked) {
+        &:before {
+            background: var(--lightTheme);
+        }
+
+        &:after {
+            content: '';
+            width: 0.3em;
+            height: 0.5em;
+            position: absolute;
+            top: 7px;
+            left: 6px;
+            border-bottom: 2px solid var(--darkTheme);
+            border-right: 2px solid var(--darkTheme);
+            rotate: 45deg;
+        }
     }
 
     @include setInteractive {

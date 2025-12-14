@@ -854,7 +854,7 @@ body textarea.form-control:focus {
   display: block;
   width: 1em;
   height: 1em;
-  border: 2px solid var(--primaryColor);
+  border: 2px solid var(--darkTheme);
 }
 .c-custom-checkbox input[type=checkbox] {
   opacity: 0;
@@ -863,6 +863,20 @@ body textarea.form-control:focus {
   position: absolute;
   left: 0.5em;
   top: 0.4em;
+}
+.c-custom-checkbox:has(input[type=checkbox]:checked):before {
+  background: var(--lightTheme);
+}
+.c-custom-checkbox:has(input[type=checkbox]:checked):after {
+  content: "";
+  width: 0.3em;
+  height: 0.5em;
+  position: absolute;
+  top: 7px;
+  left: 6px;
+  border-bottom: 2px solid var(--darkTheme);
+  border-right: 2px solid var(--darkTheme);
+  rotate: 45deg;
 }
 .c-custom-checkbox:hover:before, .c-custom-checkbox:active:before, .c-custom-checkbox:focus:before, .c-custom-checkbox:focus:active:before {
   border-color: var(--darkTheme);
@@ -1017,7 +1031,7 @@ button {
 }
 .c-btn-tickets:hover, .c-btn-tickets:active, .c-btn-tickets:focus, .c-btn-tickets:focus:active {
   color: #242424;
-  border-color: var(--primaryColor);
+  border-color: var(--darkTheme);
 }
 
 body.color--flagBrown .c-btn-primary, body.color--flagBrown .btn-primary,
@@ -1456,6 +1470,10 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
 .c-filters {
   margin-bottom: 2em;
 }
+.c-filters label {
+  display: block;
+  font-size: 0.825em;
+}
 @media only screen and (min-width: 800px) {
   .c-filters {
     display: flex;
@@ -1507,25 +1525,18 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
   cursor: inherit;
   color: inherit;
 }
-@media only screen and (min-width: 800px) {
-  .c-filters__date label {
-    position: absolute;
-    top: 0;
-    transform: translateY(-100%);
-  }
-}
 
-.c-filters__keywords {
+.c-custom-select {
   width: calc(100% - 5.5rem);
   position: relative;
 }
-.c-filters__keywords select {
+.c-custom-select select {
   width: 100%;
   appearance: none;
   background: var(--lightTheme);
   color: light-dark(var(--darkTheme), var(--typographyColor));
 }
-.c-filters__keywords:after {
+.c-custom-select:after {
   content: "";
   width: 0;
   height: 0;
@@ -1539,7 +1550,7 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
   pointer-events: none;
 }
 @media only screen and (min-width: 800px) {
-  .c-filters__keywords {
+  .c-custom-select {
     width: fit-content;
   }
 }
@@ -2113,4 +2124,50 @@ body.color--flagBrown .c-main-nav {
 
 .t-logon .z-logon-box label {
   font-size: 1.3em;
+}
+
+@media print {
+  @page {
+    size: auto; /* auto is the initial value */
+    margin: 2em; /* this affects the margin in the printer settings */
+  }
+  body {
+    font-size: 16px;
+  }
+  .c-btns-admin,
+  .c-calender-item__edit,
+  .c-share-event-toggle,
+  .c-keyword-list > li:has(.c-keyword-list__item.-tickets),
+  .c-keyword-list > li:has(.c-keyword-list__item.-desc),
+  a[target=_blank]:not(.c-btn):not(.btn):not(.btn):not(.c-btn-share-event):after {
+    display: none;
+  }
+  .c-calendar-item {
+    padding-bottom: 0.2em;
+  }
+  .c-calendar-item h3,
+  .c-calendar-item__title,
+  .c-calendar-item__date,
+  .c-calendar-item__address {
+    margin: 0;
+  }
+  .c-calendar-item h3 {
+    font-size: 1em;
+  }
+  .c-calendar-item__date,
+  .c-calendar-item__address {
+    font-size: 0.9em;
+  }
+  .c-keyword-list {
+    margin-top: 0.5em;
+  }
+  .c-list {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 2em;
+  }
+  .c-list > li {
+    width: 45%;
+    border-bottom: 5px solid var(--darkTheme);
+  }
 }
