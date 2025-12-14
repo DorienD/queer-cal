@@ -25,9 +25,15 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/base.tpl:99
+#: queercal/priv/templates/base.tpl:101
 msgid ""
 "Add Event"
+msgstr ""
+""
+
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:118
+msgid ""
+"Add keywords"
 msgstr ""
 ""
 
@@ -64,13 +70,13 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/base.tpl:106
+#: queercal/priv/templates/base.tpl:108
 msgid ""
 "Admin"
 msgstr ""
 ""
 
-#: queercal/priv/templates/base.tpl:104
+#: queercal/priv/templates/base.tpl:106
 msgid ""
 "Admin edit"
 msgstr ""
@@ -108,13 +114,13 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/event/_filters.tpl:45
+#: queercal/priv/templates/event/_filters.tpl:48
 msgid ""
 "Apply filter"
 msgstr ""
 ""
 
-#: queercal/priv/templates/footer/footer.tpl:9
+#: queercal/priv/templates/footer/footer.tpl:10
 msgid ""
 "Back to top"
 msgstr ""
@@ -140,6 +146,13 @@ msgid ""
 msgstr ""
 ""
 
+#: queercal/priv/templates/_admin_overview_list.event.tpl:26
+#: queercal/priv/templates/_admin_overview_list.event.tpl:102
+msgid ""
+"Category"
+msgstr ""
+""
+
 #: queercal/priv/templates/_admin_edit_content_address.event.tpl:116
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:71
 msgid ""
@@ -147,9 +160,28 @@ msgid ""
 msgstr ""
 ""
 
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:162
+msgid ""
+"Connect a location"
+msgstr ""
+""
+
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:193
+msgid ""
+"Connect an organization"
+msgstr ""
+""
+
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:25
 msgid ""
 "Content"
+msgstr ""
+""
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:32
+#: queercal/priv/templates/_admin_overview_list.event.tpl:111
+msgid ""
+"Created on"
 msgstr ""
 ""
 
@@ -165,19 +197,32 @@ msgid ""
 msgstr ""
 ""
 
+#: queercal/priv/templates/_admin_overview_list.event.tpl:29
+#: queercal/priv/templates/_admin_overview_list.event.tpl:105
+msgid ""
+"Date start"
+msgstr ""
+""
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:89
+msgid ""
+"Delete"
+msgstr ""
+""
+
 #: queercal/priv/templates/event/event-keywords.tpl:20
 msgid ""
 "Description"
 msgstr ""
 ""
 
-#: queercal/priv/templates/page.event.tpl:38
+#: queercal/priv/templates/page.event.tpl:40
 msgid ""
 "Description only provided in Dutch"
 msgstr ""
 ""
 
-#: queercal/priv/templates/page.event.tpl:32
+#: queercal/priv/templates/page.event.tpl:34
 msgid ""
 "Description only provided in English"
 msgstr ""
@@ -226,7 +271,7 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/event/_filters.tpl:32
+#: queercal/priv/templates/event/_filters.tpl:34
 msgid ""
 "Filter on a keyword"
 msgstr ""
@@ -235,6 +280,12 @@ msgstr ""
 #: queercal/priv/templates/_admin_edit_content_address.event.tpl:43
 msgid ""
 "From"
+msgstr ""
+""
+
+#: queercal/priv/templates/event/_ticket-warning.tpl:30
+msgid ""
+"Hide this disclaimer for a while"
 msgstr ""
 ""
 
@@ -250,19 +301,25 @@ msgid ""
 msgstr ""
 ""
 
+#: queercal/priv/templates/event/_filters.tpl:28
+msgid ""
+"Keyword"
+msgstr ""
+""
+
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:95
 msgid ""
 "Keywords"
 msgstr ""
 ""
 
-#: queercal/priv/templates/_admin_frontend_edit.event.tpl:138
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:139
 msgid ""
 "Known location"
 msgstr ""
 ""
 
-#: queercal/priv/templates/_admin_frontend_edit.event.tpl:168
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:170
 msgid ""
 "Known organisation"
 msgstr ""
@@ -272,6 +329,13 @@ msgstr ""
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:49
 msgid ""
 "Language"
+msgstr ""
+""
+
+#: queercal/priv/templates/home.tpl:89
+#: queercal/priv/templates/page.name.page_other_city_events.tpl:85
+msgid ""
+"Last updated on"
 msgstr ""
 ""
 
@@ -296,9 +360,30 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/_admin_frontend_edit.event.tpl:131
+#: queercal/priv/templates/_action_dialog_connect_tab_find_results.tpl:23
+#: queercal/priv/templates/_admin_overview_list.event.tpl:17
+msgid ""
+"Matching id, name, page path or redirection"
+msgstr ""
+""
+
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:132
 msgid ""
 "Missing a keyword? Please send them to"
+msgstr ""
+""
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:38
+#: queercal/priv/templates/_admin_overview_list.event.tpl:117
+msgid ""
+"Modified by"
+msgstr ""
+""
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:35
+#: queercal/priv/templates/_admin_overview_list.event.tpl:114
+msgid ""
+"Modified on"
 msgstr ""
 ""
 
@@ -309,13 +394,15 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/home.tpl:51
+#: queercal/priv/templates/home.tpl:56
+#: queercal/priv/templates/page.name.page_other_city_events.tpl:52
 msgid ""
 "Next"
 msgstr ""
 ""
 
-#: queercal/priv/templates/home.tpl:49
+#: queercal/priv/templates/home.tpl:54
+#: queercal/priv/templates/page.name.page_other_city_events.tpl:50
 msgid ""
 "Next month"
 msgstr ""
@@ -324,6 +411,12 @@ msgstr ""
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:80
 msgid ""
 "No page"
+msgstr ""
+""
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:154
+msgid ""
+"No pages found."
 msgstr ""
 ""
 
@@ -353,25 +446,35 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/home.tpl:46
+#: queercal/priv/templates/home.tpl:51
+#: queercal/priv/templates/page.name.page_other_city_events.tpl:47
 msgid ""
 "Previous"
 msgstr ""
 ""
 
-#: queercal/priv/templates/home.tpl:44
+#: queercal/priv/templates/home.tpl:49
+#: queercal/priv/templates/page.name.page_other_city_events.tpl:45
 msgid ""
 "Previous month"
 msgstr ""
 ""
 
-#: queercal/priv/templates/event/event-keywords.tpl:41
+#: queercal/priv/templates/page.name.page_next_week.tpl:30
+msgid ""
+"Print made by queer-kalender.nl, check de site for the full overview. "
+"Missing something or want to add your event? Mail "
+"events@queer-kalender.nl"
+msgstr ""
+""
+
+#: queercal/priv/templates/event/_ticket-warning.tpl:34
 msgid ""
 "Proceed to external ticket sale"
 msgstr ""
 ""
 
-#: queercal/priv/templates/event/_filters.tpl:30
+#: queercal/priv/templates/event/_filters.tpl:32
 msgid ""
 "Remove filter"
 msgstr ""
@@ -414,6 +517,19 @@ msgid ""
 msgstr ""
 ""
 
+#: queercal/priv/templates/_action_dialog_connect_tab_find_results.tpl:38
+#: queercal/priv/templates/_admin_overview_list.event.tpl:83
+msgid ""
+"Search results"
+msgstr ""
+""
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:86
+msgid ""
+"Selected"
+msgstr ""
+""
+
 #: queercal/priv/templates/event/_share-event.tpl:18
 msgid ""
 "Share this event"
@@ -427,7 +543,7 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/event/event-keywords.tpl:49
+#: queercal/priv/templates/event/event-keywords.tpl:36
 msgid ""
 "Sign up"
 msgstr ""
@@ -440,14 +556,14 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/_admin_frontend_edit.event.tpl:141
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:142
 msgid ""
 "Some locations are already in the system, if you can't find the location "
 "add the address in the form."
 msgstr ""
 ""
 
-#: queercal/priv/templates/_admin_frontend_edit.event.tpl:171
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:173
 msgid ""
 "Some organisations are already in the system, if you can't find the "
 "organisation add the title in the form."
@@ -523,7 +639,8 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/event/event-keywords.tpl:31
+#: queercal/priv/templates/event/_ticket-warning.tpl:6
+#: queercal/priv/templates/event/_ticket-warning.tpl:11
 msgid ""
 "Tickets"
 msgstr ""
@@ -537,6 +654,8 @@ msgstr ""
 
 #: queercal/priv/templates/_admin_edit_basics_form.event.tpl:8
 #: queercal/priv/templates/_admin_edit_basics_form.event.tpl:12
+#: queercal/priv/templates/_admin_overview_list.event.tpl:23
+#: queercal/priv/templates/_admin_overview_list.event.tpl:99
 msgid ""
 "Title"
 msgstr ""
@@ -549,8 +668,8 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/event/event-date.tpl:16
-#: queercal/priv/templates/event/event-date.tpl:40
+#: queercal/priv/templates/event/event-date.tpl:17
+#: queercal/priv/templates/event/event-date.tpl:47
 msgid ""
 "Today"
 msgstr ""
@@ -559,6 +678,12 @@ msgstr ""
 #: queercal/priv/templates/page.location.tpl:15
 msgid ""
 "Upcoming events in"
+msgstr ""
+""
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:88
+msgid ""
+"Update"
 msgstr ""
 ""
 
@@ -576,7 +701,7 @@ msgstr ""
 
 #: queercal/priv/templates/_admin_edit_content_address.event.tpl:64
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:89
-#: queercal/priv/templates/page.event.tpl:23
+#: queercal/priv/templates/page.event.tpl:25
 msgid ""
 "Website"
 msgstr ""
@@ -594,7 +719,7 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/_admin_frontend_edit.event.tpl:127
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:128
 msgid ""
 "You must have at least one keyword."
 msgstr ""
@@ -606,9 +731,27 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/home.tpl:42
+#: queercal/priv/templates/home.tpl:47
+#: queercal/priv/templates/page.name.page_other_city_events.tpl:43
 msgid ""
 "approximately"
+msgstr ""
+""
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:58
+#: queercal/priv/templates/_admin_overview_list.event.tpl:59
+#: queercal/priv/templates/_admin_overview_list.event.tpl:139
+#: queercal/priv/templates/_admin_overview_list.event.tpl:141
+#: queercal/priv/templates/_admin_overview_list.event.tpl:142
+msgid ""
+"d M Y, H:i"
+msgstr ""
+""
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:64
+#: queercal/priv/templates/_admin_overview_list.event.tpl:147
+msgid ""
+"edit"
 msgstr ""
 ""
 
@@ -624,8 +767,15 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/event/_filters.tpl:48
+#: queercal/priv/templates/event/_filters.tpl:51
 msgid ""
 "reset"
+msgstr ""
+""
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:63
+#: queercal/priv/templates/_admin_overview_list.event.tpl:146
+msgid ""
+"view"
 msgstr ""
 ""

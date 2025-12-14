@@ -11,14 +11,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2025-07-27 17:05+0200\n"
+"PO-Revision-Date: 2025-12-14 19:39+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:84
 msgid ""
@@ -28,9 +28,15 @@ msgstr ""
 "Een link wordt toegevoegd om de titel. De website link heeft prioriteit over "
 "de Facebook of Instagram link."
 
-#: queercal/priv/templates/base.tpl:99
+#: queercal/priv/templates/base.tpl:101
 msgid "Add Event"
 msgstr "Voeg event toe"
+
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:118
+#, fuzzy
+#| msgid "keyword"
+msgid "Add keywords"
+msgstr "trefwoorden"
 
 #: queercal/priv/templates/event/_share-event.tpl:8
 msgid "Add to Google calendar"
@@ -52,11 +58,11 @@ msgstr "Voeg toe aan iCalendar"
 msgid "Address"
 msgstr "Adres"
 
-#: queercal/priv/templates/base.tpl:106
+#: queercal/priv/templates/base.tpl:108
 msgid "Admin"
 msgstr ""
 
-#: queercal/priv/templates/base.tpl:104
+#: queercal/priv/templates/base.tpl:106
 msgid "Admin edit"
 msgstr ""
 
@@ -81,11 +87,11 @@ msgstr "Alle evenementen met"
 msgid "Appearance:"
 msgstr "Thema:"
 
-#: queercal/priv/templates/event/_filters.tpl:45
+#: queercal/priv/templates/event/_filters.tpl:48
 msgid "Apply filter"
 msgstr "Filter Toepassen"
 
-#: queercal/priv/templates/footer/footer.tpl:9
+#: queercal/priv/templates/footer/footer.tpl:10
 msgid "Back to top"
 msgstr "Terug omhoog"
 
@@ -103,14 +109,36 @@ msgstr "Door"
 msgid "Cancel"
 msgstr "Annuleren"
 
+#: queercal/priv/templates/_admin_overview_list.event.tpl:26
+#: queercal/priv/templates/_admin_overview_list.event.tpl:102
+msgid "Category"
+msgstr ""
+
 #: queercal/priv/templates/_admin_edit_content_address.event.tpl:116
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:71
 msgid "City"
 msgstr "Stad"
 
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:162
+#, fuzzy
+#| msgid "Known location"
+msgid "Connect a location"
+msgstr "Bekende lokatie"
+
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:193
+#, fuzzy
+#| msgid "Known organisation"
+msgid "Connect an organization"
+msgstr "Bekende organisatie"
+
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:25
 msgid "Content"
 msgstr "Content"
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:32
+#: queercal/priv/templates/_admin_overview_list.event.tpl:111
+msgid "Created on"
+msgstr ""
 
 #: queercal/priv/templates/event/_filters.tpl:22
 msgid "Date"
@@ -120,15 +148,24 @@ msgstr "Datum"
 msgid "Date & time"
 msgstr "Datum en tijd"
 
+#: queercal/priv/templates/_admin_overview_list.event.tpl:29
+#: queercal/priv/templates/_admin_overview_list.event.tpl:105
+msgid "Date start"
+msgstr ""
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:89
+msgid "Delete"
+msgstr ""
+
 #: queercal/priv/templates/event/event-keywords.tpl:20
 msgid "Description"
 msgstr "Beschrijving"
 
-#: queercal/priv/templates/page.event.tpl:38
+#: queercal/priv/templates/page.event.tpl:40
 msgid "Description only provided in Dutch"
 msgstr "Details alleen in het Nederlands"
 
-#: queercal/priv/templates/page.event.tpl:32
+#: queercal/priv/templates/page.event.tpl:34
 msgid "Description only provided in English"
 msgstr "Details alleen in het Engels"
 
@@ -161,13 +198,17 @@ msgstr "Filter"
 msgid "Filter on"
 msgstr "Filter"
 
-#: queercal/priv/templates/event/_filters.tpl:32
+#: queercal/priv/templates/event/_filters.tpl:34
 msgid "Filter on a keyword"
 msgstr "Filter op een trefwoord"
 
 #: queercal/priv/templates/_admin_edit_content_address.event.tpl:43
 msgid "From"
 msgstr "Van"
+
+#: queercal/priv/templates/event/_ticket-warning.tpl:30
+msgid "Hide this disclaimer for a while"
+msgstr "Verberg deze melding for een tijdje"
 
 #: queercal/priv/templates/_admin_edit_content_address.event.tpl:88
 msgid "Instagram"
@@ -177,15 +218,21 @@ msgstr ""
 msgid "Instagram link"
 msgstr ""
 
+#: queercal/priv/templates/event/_filters.tpl:28
+#, fuzzy
+#| msgid "Keywords"
+msgid "Keyword"
+msgstr "Trefwoorden"
+
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:95
 msgid "Keywords"
 msgstr "Trefwoorden"
 
-#: queercal/priv/templates/_admin_frontend_edit.event.tpl:138
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:139
 msgid "Known location"
 msgstr "Bekende lokatie"
 
-#: queercal/priv/templates/_admin_frontend_edit.event.tpl:168
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:170
 msgid "Known organisation"
 msgstr "Bekende organisatie"
 
@@ -193,6 +240,11 @@ msgstr "Bekende organisatie"
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:49
 msgid "Language"
 msgstr "Taal"
+
+#: queercal/priv/templates/home.tpl:89
+#: queercal/priv/templates/page.name.page_other_city_events.tpl:85
+msgid "Last updated on"
+msgstr ""
 
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:81
 msgid "Links"
@@ -209,25 +261,50 @@ msgstr "Laden …."
 msgid "Location"
 msgstr "Lokatie"
 
-#: queercal/priv/templates/_admin_frontend_edit.event.tpl:131
+#: queercal/priv/templates/_action_dialog_connect_tab_find_results.tpl:23
+#: queercal/priv/templates/_admin_overview_list.event.tpl:17
+msgid "Matching id, name, page path or redirection"
+msgstr ""
+
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:132
 msgid "Missing a keyword? Please send them to"
 msgstr "Mis je een trefwoord? Stuur ze op naar"
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:38
+#: queercal/priv/templates/_admin_overview_list.event.tpl:117
+msgid "Modified by"
+msgstr ""
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:35
+#: queercal/priv/templates/_admin_overview_list.event.tpl:114
+#, fuzzy
+#| msgid "You filtered on"
+msgid "Modified on"
+msgstr "Je filtert op"
 
 #: queercal/priv/templates/event/_share-event.tpl:8
 #: queercal/priv/templates/event/_share-event.tpl:9
 msgid "More info"
 msgstr ""
 
-#: queercal/priv/templates/home.tpl:51
+#: queercal/priv/templates/home.tpl:56
+#: queercal/priv/templates/page.name.page_other_city_events.tpl:52
 msgid "Next"
 msgstr "Volgende"
 
-#: queercal/priv/templates/home.tpl:49
+#: queercal/priv/templates/home.tpl:54
+#: queercal/priv/templates/page.name.page_other_city_events.tpl:50
 msgid "Next month"
 msgstr "Volgende maand"
 
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:80
 msgid "No page"
+msgstr "Geen pagina"
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:154
+#, fuzzy
+#| msgid "No page"
+msgid "No pages found."
 msgstr "Geen pagina"
 
 #: queercal/priv/templates/_admin_edit_content_address.event.tpl:100
@@ -248,19 +325,29 @@ msgstr "Eerdere evenementen in"
 msgid "Postcode"
 msgstr "Postcode"
 
-#: queercal/priv/templates/home.tpl:46
+#: queercal/priv/templates/home.tpl:51
+#: queercal/priv/templates/page.name.page_other_city_events.tpl:47
 msgid "Previous"
 msgstr "Vorige"
 
-#: queercal/priv/templates/home.tpl:44
+#: queercal/priv/templates/home.tpl:49
+#: queercal/priv/templates/page.name.page_other_city_events.tpl:45
 msgid "Previous month"
 msgstr "Vorige maand"
 
-#: queercal/priv/templates/event/event-keywords.tpl:41
+#: queercal/priv/templates/page.name.page_next_week.tpl:30
+msgid ""
+"Print made by queer-kalender.nl, check de site for the full overview. "
+"Missing something or want to add your event? Mail events@queer-kalender.nl"
+msgstr ""
+"Print made by queer-kalender.nl, check de site for the full overview. "
+"Missing something or want to add your event? Mail events@queer-kalender.nl"
+
+#: queercal/priv/templates/event/_ticket-warning.tpl:34
 msgid "Proceed to external ticket sale"
 msgstr "Doorgaan naar externe ticket verkoop"
 
-#: queercal/priv/templates/event/_filters.tpl:30
+#: queercal/priv/templates/event/_filters.tpl:32
 msgid "Remove filter"
 msgstr "Verwijder filter"
 
@@ -289,6 +376,15 @@ msgstr "Opslaan & bekijken."
 msgid "Save this page."
 msgstr "Sla deze pagina op."
 
+#: queercal/priv/templates/_action_dialog_connect_tab_find_results.tpl:38
+#: queercal/priv/templates/_admin_overview_list.event.tpl:83
+msgid "Search results"
+msgstr ""
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:86
+msgid "Selected"
+msgstr ""
+
 #: queercal/priv/templates/event/_share-event.tpl:18
 msgid "Share this event"
 msgstr "Deel dit evenement"
@@ -298,7 +394,7 @@ msgstr "Deel dit evenement"
 msgid "Showing dates in"
 msgstr "Datums zijn in"
 
-#: queercal/priv/templates/event/event-keywords.tpl:49
+#: queercal/priv/templates/event/event-keywords.tpl:36
 msgid "Sign up"
 msgstr "Aanmelden"
 
@@ -307,7 +403,7 @@ msgstr "Aanmelden"
 msgid "Sign up link"
 msgstr "Aanmelding"
 
-#: queercal/priv/templates/_admin_frontend_edit.event.tpl:141
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:142
 msgid ""
 "Some locations are already in the system, if you can't find the location add "
 "the address in the form."
@@ -315,7 +411,7 @@ msgstr ""
 "Sommige locaties zijn al bekend in het systeem, als je de lokatie niet kunt "
 "vinden vul dan het formulier in."
 
-#: queercal/priv/templates/_admin_frontend_edit.event.tpl:171
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:173
 msgid ""
 "Some organisations are already in the system, if you can't find the "
 "organisation add the title in the form."
@@ -329,7 +425,7 @@ msgstr "Startdatum"
 
 #: queercal/priv/templates/cards/_empty-calendar.tpl:5
 msgid "Start with a fresh overview of all the events"
-msgstr "Begin met een vers overzicht van alle evenementen."
+msgstr "Begin met een vers overzicht van alle evenementen"
 
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:67
 msgid "Street"
@@ -370,7 +466,8 @@ msgstr "Dit zal een ticket button toevoegen."
 msgid "Ticket link"
 msgstr "Ticket link"
 
-#: queercal/priv/templates/event/event-keywords.tpl:31
+#: queercal/priv/templates/event/_ticket-warning.tpl:6
+#: queercal/priv/templates/event/_ticket-warning.tpl:11
 msgid "Tickets"
 msgstr "Tickets"
 
@@ -380,6 +477,8 @@ msgstr "Tot"
 
 #: queercal/priv/templates/_admin_edit_basics_form.event.tpl:8
 #: queercal/priv/templates/_admin_edit_basics_form.event.tpl:12
+#: queercal/priv/templates/_admin_overview_list.event.tpl:23
+#: queercal/priv/templates/_admin_overview_list.event.tpl:99
 msgid "Title"
 msgstr "Titel"
 
@@ -388,14 +487,18 @@ msgstr "Titel"
 msgid "Title of the venue/location"
 msgstr "Titel van de lokatie"
 
-#: queercal/priv/templates/event/event-date.tpl:16
-#: queercal/priv/templates/event/event-date.tpl:40
+#: queercal/priv/templates/event/event-date.tpl:17
+#: queercal/priv/templates/event/event-date.tpl:47
 msgid "Today"
 msgstr "Vandaag"
 
 #: queercal/priv/templates/page.location.tpl:15
 msgid "Upcoming events in"
 msgstr "Komende evenementen in"
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:88
+msgid "Update"
+msgstr ""
 
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:72
 msgid "View"
@@ -407,7 +510,7 @@ msgstr "Bekijk deze pagina."
 
 #: queercal/priv/templates/_admin_edit_content_address.event.tpl:64
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:89
-#: queercal/priv/templates/page.event.tpl:23
+#: queercal/priv/templates/page.event.tpl:25
 msgid "Website"
 msgstr "Website"
 
@@ -419,7 +522,7 @@ msgstr "Je kunt meerdere trefwoorden toevoegen."
 msgid "You filtered on"
 msgstr "Je filtert op"
 
-#: queercal/priv/templates/_admin_frontend_edit.event.tpl:127
+#: queercal/priv/templates/_admin_frontend_edit.event.tpl:128
 msgid "You must have at least one keyword."
 msgstr "Je moet ten minste één trefwoord toevoegen."
 
@@ -427,9 +530,23 @@ msgstr "Je moet ten minste één trefwoord toevoegen."
 msgid "You've filtered on"
 msgstr "Je hebt gefilterd op"
 
-#: queercal/priv/templates/home.tpl:42
+#: queercal/priv/templates/home.tpl:47
+#: queercal/priv/templates/page.name.page_other_city_events.tpl:43
 msgid "approximately"
 msgstr "om en nabij"
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:58
+#: queercal/priv/templates/_admin_overview_list.event.tpl:59
+#: queercal/priv/templates/_admin_overview_list.event.tpl:139
+#: queercal/priv/templates/_admin_overview_list.event.tpl:141
+#: queercal/priv/templates/_admin_overview_list.event.tpl:142
+msgid "d M Y, H:i"
+msgstr ""
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:64
+#: queercal/priv/templates/_admin_overview_list.event.tpl:147
+msgid "edit"
+msgstr ""
 
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:62
 msgid "eg. De Trut or Club Church"
@@ -439,6 +556,11 @@ msgstr "bijv. De Trut of Club Church"
 msgid "keyword"
 msgstr "trefwoorden"
 
-#: queercal/priv/templates/event/_filters.tpl:48
+#: queercal/priv/templates/event/_filters.tpl:51
 msgid "reset"
 msgstr "reset"
+
+#: queercal/priv/templates/_admin_overview_list.event.tpl:63
+#: queercal/priv/templates/_admin_overview_list.event.tpl:146
+msgid "view"
+msgstr ""
