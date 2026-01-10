@@ -92,6 +92,7 @@
 }
 
 .c-filters__remove {
+    align-self: end;
     color: light-dark(var(--darkTheme), var(--typographyColor));
     transition: background 0.3s ease-out, color 0.3s ease-out;
 
