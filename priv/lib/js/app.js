@@ -37,19 +37,30 @@ document.addEventListener('DOMContentLoaded', function () {
     // Filter calendar
 
     if(filterForm){
+
         filterForm.addEventListener('change', function (evt) {
             evt.preventDefault();
+
+            console.log("change");
 
             const data = new FormData(this);
             const params = new URLSearchParams();
 
+            console.log(data);
+
             for (const [key, value] of data) {
+                console.log(key, value.trim());
                 if (value.trim() !== "") {
                     params.set(key, value);
                 }
             }
 
+            console.log(params.toString());
+
+            console.log(window.location.pathname);
+
             const newUrl = `${window.location.pathname}?${params.toString()}`;
+            console.log(newUrl);
             window.location.href = newUrl;
         });
     }

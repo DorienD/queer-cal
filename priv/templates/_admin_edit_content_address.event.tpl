@@ -1,7 +1,5 @@
 {% extends "admin_edit_widget_std.tpl" %}
 
-{# Show the edit fields to edit the name of a member event #}
-
 {% block widget_title %}
     {% if q.z_delegate != "mod_admin_frontend" %}
         {_ Address _}
@@ -13,8 +11,6 @@
 {% block widget_id %}content-address{% endblock %}
 
 {% block widget_content %}
-    {# {% debug %} #}
-
     {% if q.z_delegate == "mod_admin_frontend" %}
         <p class="help-block" {% if not id.tz or id.tz == m.req.timezone %}style="display:none"{% endif %}>
             <i class="fa fa-exclamation-triangle"></i>

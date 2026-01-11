@@ -24,8 +24,9 @@
             <input type="date" id="j-filter-date" name="qongoing_date" min="{{ now|date:"Y-m-d" }}" value="{{ q.qongoing_date|default:"yyyy-MM-dd" }}">
         </div>
         
-        <div class="c-filters__keywords">
+        <div class="c-filters__select">
             <label for="j-filter-keyword">{_ Keyword _}</label>
+            
             <div class="c-custom-select">
                 <select id="j-filter-keyword" name="qhasobject">
                     {% if q.qhasobject %}
@@ -40,6 +41,22 @@
                         pagelen: 200}|sort:['title', 'asc']
                     %}
                         <option value="{{ r.id }}" {% if q.qhasobject == r.id %}selected{% endif  %}>{{ r.title }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="c-filters__select">
+            <label for="j-filter-city">{_ City _}</label>
+
+            <div class="c-custom-select">
+                <select id="j-filter-city" name="city">
+                    {% for r in total|unique_cities %}
+                        {% if not q.city and r|lower == "amsterdam" %}
+                            <option value="{{ r|lower }}" selected>{{ r }}</option>
+                        {% else %}
+                            <option value="{{ r|lower }}" {% if q.city == r|lower %}selected{% endif %}>{{ r }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
             </div>

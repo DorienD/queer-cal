@@ -9,67 +9,56 @@
         <p class="t-intro">{{ id.summary }}</p>
     {% endif %}
 
-    {% with m.search.query::%{
-        cat: "event",
-        qargs: true,
-        unfinished: true,
-        sort: "rsc.pivot_date_start",
-        is_findable: true,
-        pagelen: 10000
-    }
-    as result %}
-        {% include "event/_filters.tpl" %}
-        
-        {% for r in result %}
-            {% if result[forloop.counter -1].id.date_start|date:"m" != r.date_start|date:"m" %}
-                {# Previous item has different month than current item → display divider #}
-                {% if forloop.counter != 1 %}
-                    </ol>
-                {% endif %}
+    {% if m.site.environment == `production` %}
+        {% with m.search.query::%{
+            cat: "event",
+            unfinished: true,
+            is_findable: true,
+            pagelen: 10000
+        }
+        as total %}
 
-                <ol class="c-calendar">
-                    {% with m.search.query::%{
-                        cat: "event",
-                        qargs: true,
-                        unfinished: true,
-                        date_start_after: r.date_start|sub_day|date:"Y-m-d",
-                        date_end_before: r.date_start|add_month|date:"Y"++"-"++r.date_start|add_month|date:"m"++"-01",
-                        is_findable: true,
-                        pagelen: 1000
-                    }
-                    as this_month %}
-                    <li class="c-calendar__divider">
-                        <h2 id="{{ (r.date_start|date:"F")|slugify }}">{{ r.date_start|date:"F" }} {% if this_month|length > 0 %}<sup title="{_ approximately _}">({{ this_month|length }})</sup>{% endif %}</h2>
+        {% with m.search.query::%{
+            cat: "event",
+            qargs: true,
+            unfinished: true,
+            "pivot:city": q.city|if:q.city:"amsterdam",
+            sort: "rsc.pivot_date_start",
+            is_findable: true,
+            pagelen: 10000
+        }
+        as result %}
 
-                        <a href="#first-{{ (r.date_start|sub_month|date:"F")|slugify }}" class="c-calendar__divider__nav -prev" title="{_ Previous month _}">
-                            {% include "icons/icon-caret-left.tpl" %}
-                            {_ Previous _}
-                        </a>
+            {% include "calendar/_filters.tpl" %}
+            
+            {% include "calendar/calendar.tpl" result=result %}
+        {% endwith %}
+        {% endwith %}
+    {% else %}
+        {# If not production, show all events for easier testing purposes #}
+        {% with m.search.query::%{
+            cat: "event",
+            is_findable: true,
+            pagelen: 10000
+        }
+        as total %}
 
-                        <a href="#{{ (r.date_start|add_month|date:"F")|slugify }}" class="c-calendar__divider__nav -next" title="{_ Next month _}">
-                            {% include "icons/icon-caret-left.tpl" %}
-                            {_ Next _}
-                        </a>
-                    </li>
-                    {% endwith %}
-            {% endif %}
-                    {% if result[forloop.counter -1].id.date_start|date:"m" != r.date_start|date:"m" %}
-                    <li id="first-{{ r.date_start|date:"F"|slugify }}" class="c-calendar__first {% if r.is_featured %} -featured{% endif %}">
-                    {% else %}
-                        <li{% if r.is_featured %} class="-featured"{% endif %}>
-                    {% endif %}
-                        {% catinclude "cards/card.tpl" r %}
-                    </li>
-                    {% if forloop.counter == 6 %}
-                        <li>{% include "cards/card.support.tpl" %}</li>
-                    {% endif %}
-                {% if forloop.last %}
-                </ol>
-                {% endif %}
-        {% empty %}
-            {% include "cards/_empty-calendar.tpl" %}
-        {% endfor %}
-    {% endwith %}
+        {% with m.search.query::%{
+            cat: "event",
+            qargs: true,
+            "pivot:city": q.city|if:q.city:"amsterdam",
+            sort: "rsc.pivot_date_start",
+            is_findable: true,
+            pagelen: 10000
+        }
+        as result %}
+
+            {% include "calendar/_filters.tpl" %}
+            
+            {% include "calendar/calendar.tpl" result=result %}
+        {% endwith %}
+        {% endwith %}
+    {% endif %}
 {% endblock %}
 
 {% block above_footer %}
