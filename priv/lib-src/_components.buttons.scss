@@ -106,6 +106,16 @@ button {
     }
 }
 
+.c-btn-secondary {
+    background: none;
+    color: var(--darkTheme);
+    border-color: var(--darkTheme);
+}
+
+.c-btn-small {
+    font-size: 0.8em;
+}
+
 .c-btn-tickets {
     background: transparent;
     color: #242424;
@@ -113,7 +123,7 @@ button {
 
     @include setInteractive {
         color: #242424;
-        border-color: var(--primaryColor);
+        border-color: var(--darkTheme);
     }
 }
 

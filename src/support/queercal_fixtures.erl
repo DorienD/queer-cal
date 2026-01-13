@@ -91,8 +91,14 @@ datamodel(Context) ->
                     {nl, <<"Disclaimer">>},
                     {en, <<"Disclaimer">>}
                 ]}
+            }},
+            {print_overview, text, #{
+                <<"language">> => [ nl ],
+                <<"title">> => #trans{ tr = [
+                    {nl, <<"Print overview">>},
+                    {en, <<"Print overview">>}
+                ]}
             }}
-
         ] ++ keywords()
         ++ testdata(Env),
         media = [] ++ testmedia(Env),

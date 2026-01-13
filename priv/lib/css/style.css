@@ -1024,6 +1024,16 @@ button {
   border-color: var(--darkTheme);
 }
 
+.c-btn-secondary {
+  background: none;
+  color: var(--darkTheme);
+  border-color: var(--darkTheme);
+}
+
+.c-btn-small {
+  font-size: 0.8em;
+}
+
 .c-btn-tickets {
   background: transparent;
   color: #242424;
@@ -1232,6 +1242,7 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
   line-height: 1.4;
   text-transform: lowercase;
   transition: opacity 0.3s;
+  text-decoration-style: dotted;
 }
 .c-calendar__divider__nav:has(+ .c-calendar__divider__nav) {
   margin-left: auto;
@@ -2138,21 +2149,24 @@ body.color--flagBrown .c-main-nav {
   .c-calender-item__edit,
   .c-share-event-toggle,
   .c-keyword-list > li:has(.c-keyword-list__item.-tickets),
+  .c-keyword-list > li:has(.c-keyword-list__item.-signup),
   .c-keyword-list > li:has(.c-keyword-list__item.-desc),
-  a[target=_blank]:not(.c-btn):not(.btn):not(.btn):not(.c-btn-share-event):after {
+  a[target=_blank]:not(.c-btn):not(.btn):not(.btn):not(.c-btn-share-event):after,
+  .c-calendar-item::after {
     display: none;
   }
   .c-calendar-item {
     padding-bottom: 0.2em;
+    break-inside: avoid;
+    animation-timeline: none;
   }
-  .c-calendar-item h3,
   .c-calendar-item__title,
   .c-calendar-item__date,
   .c-calendar-item__address {
     margin: 0;
   }
   .c-calendar-item h3 {
-    font-size: 1em;
+    margin-bottom: 0.3em;
   }
   .c-calendar-item__date,
   .c-calendar-item__address {
@@ -2165,9 +2179,11 @@ body.color--flagBrown .c-main-nav {
     display: flex;
     flex-flow: row wrap;
     margin-top: 2em;
+    column-gap: 2em;
   }
   .c-list > li {
     width: 45%;
+    padding-bottom: 0.5em;
     border-bottom: 5px solid var(--darkTheme);
   }
 }

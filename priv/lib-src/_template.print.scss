@@ -1,0 +1,60 @@
+@media print {
+    @page {
+        size: auto;   /* auto is the initial value */
+        margin: 2em;  /* this affects the margin in the printer settings */
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    .c-btns-admin,
+    .c-calender-item__edit,
+    .c-share-event-toggle,
+    .c-keyword-list > li:has(.c-keyword-list__item.-tickets),
+    .c-keyword-list > li:has(.c-keyword-list__item.-signup),
+    .c-keyword-list > li:has(.c-keyword-list__item.-desc),
+    a[target=_blank]:not(.c-btn):not(.btn):not(.c-btn-share-event):after,
+    .c-calendar-item::after {
+        display: none;
+    }
+
+    .c-calendar-item {
+        padding-bottom: 0.2em;
+        break-inside: avoid;
+        animation-timeline: none;
+    }
+
+    .c-calendar-item__title,
+    .c-calendar-item__date,
+    .c-calendar-item__address {
+        margin: 0;
+    }
+
+    .c-calendar-item h3 {
+        margin-bottom: 0.3em;
+        // font-size: 1em;
+    }
+
+    .c-calendar-item__date,
+    .c-calendar-item__address {
+        font-size: 0.9em;
+    }
+
+    .c-keyword-list {
+        margin-top: 0.5em;
+    }
+
+    .c-list {
+        display: flex;
+        flex-flow: row wrap;
+        margin-top: 2em;
+        column-gap: 2em;
+
+        > li {
+            width: 45%;
+            padding-bottom: 0.5em;
+            border-bottom: 5px solid var(--darkTheme);
+        }
+    }
+}

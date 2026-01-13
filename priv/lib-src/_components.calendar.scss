@@ -76,6 +76,7 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
     line-height: 1.4;
     text-transform: lowercase;
     transition: opacity 0.3s;
+    text-decoration-style: dotted;
 
     &:has(+ .c-calendar__divider__nav) {
         margin-left: auto;
