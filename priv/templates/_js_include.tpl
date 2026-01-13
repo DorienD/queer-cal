@@ -1,6 +1,7 @@
-{% include "_js_include_jquery.tpl" %}
+{# {% include "_js_include_jquery.tpl" %} #}
 
 {% lib
+    "js/apps/jquery-latest.min.js"
     "cotonic/cotonic.js"
     "js/apps/zotonic-wired.js"
     "js/apps/z.widgetmanager.js"

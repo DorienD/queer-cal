@@ -60,3 +60,41 @@
     </div>
     {% endwith %}
 {% endblock %}
+
+{% block _js_include_extra %}
+    {% lib
+        "js/apps/jquery-ui-latest.min.js"
+        "js/modules/jquery.ui.touch-punch.min.js"
+        "js/modules/jquery.hotkeys.js"
+        "js/modules/z.adminwidget.js"
+        "js/modules/z.tooltip.js"
+        "js/modules/z.feedback.js"
+        "js/modules/z.formreplace.js"
+        "js/modules/z.datepicker.js"
+        "js/modules/z.menuedit.js"
+        "js/modules/z.formdirty.js"
+        "js/modules/jquery.shorten.js"
+        "js/modules/jquery.timepicker.min.js"
+
+        "js/apps/admin-common.js"
+        "js/modules/admin-frontend.js"
+    %}
+    {% lib
+        "js/jquery.ui.nestedSortable.js"
+    %}
+    {% all include "_admin_lib_js.tpl" %}
+
+    {% include "_admin_frontend_editor.tpl"
+              is_editor_include
+              overrides_tpl="_admin_frontend_tinymce_overrides_js.tpl"
+    %}
+
+    {% optional include "_fileuploader_worker.tpl" %}
+
+    {% javascript %}
+        window.z_translations = window.z_translations || {};
+        window.z_translations["Yes, discard changes"] = "{_ Yes, discard changes _}";
+        window.z_translations["There are unsaved changes. Are you sure you want to leave without saving?"]
+            = "{_ There are unsaved changes. Are you sure you want to leave without saving? _}";
+    {% endjavascript %}
+{% endblock %}
