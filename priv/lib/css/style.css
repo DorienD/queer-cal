@@ -2195,16 +2195,32 @@ body.color--flagBrown .c-main-nav {
     padding-bottom: 0.5em;
     border-bottom: 5px solid var(--darkTheme);
   }
-  h1, h2 {
-    text-align: center;
+  h2 {
+    margin-bottom: 0;
   }
-  h2 span {
-    font-size: 0.8em;
+  .p-summary {
+    margin: 0 0 2em;
+    font-size: 1.2em;
   }
   .p-footer {
     padding: 1em;
     position: relative;
     background: var(--lightTheme);
-    text-align: center;
+  }
+  .p-cutouts {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    white-space: nowrap;
+    list-style: none;
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+  .p-cutouts li {
+    border-left: 5px dotted currentColor;
+    border-top: 2px solid currentColor;
+    padding: 2em;
+  }
+  .p-cutouts li:first-child {
+    border-right: 5px dotted currentColor;
   }
 }

@@ -7,13 +7,12 @@
     <h1>Queer-kalender.nl</h1>
 
     <h2>
-        What's on this week in Amsterdam <br>
-        <span>{{ id.summary }}</span>
+        Upcoming events in Amsterdam<br>
     </h2>
 
-    {# {% if id.summary %}
-        <h3 class="p-summary">{{ id.summary }}</h3>
-    {% endif %} #}
+    {% if id.summary %}
+        <p class="p-summary">{{ id.summary }}</p>
+    {% endif %}
 
     {% with m.search[{query 
             query_id=id 
@@ -32,6 +31,6 @@
 
 {% block footer %}
     <footer class="p-footer">
-        {_ Check the full overview on queer-kalender.nl. Missing something or want to add your event? Mail events@queer-kalender.nl _}.
+        Wanna see everything that’s happening this month (and then some)? Head to queer-kalender.nl. Got something queer to add, or spot a missing event? Mail us at events@queer-kalender.nl
     </footer>
 {% endblock %}
