@@ -2148,6 +2148,9 @@ body.color--flagBrown .c-main-nav {
   main {
     padding: 0;
   }
+  a {
+    text-decoration: none;
+  }
   .c-btns-admin,
   .c-calender-item__edit,
   .c-share-event-toggle,
