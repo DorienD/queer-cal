@@ -2188,10 +2188,10 @@ body.color--flagBrown .c-main-nav {
     display: flex;
     flex-flow: row wrap;
     margin-top: 2em;
-    column-gap: 2em;
+    column-gap: 3em;
   }
   .c-list > li {
-    width: calc(50% - 1em);
+    width: calc(50% - 1.5em);
     padding-bottom: 0.5em;
     border-bottom: 5px solid var(--darkTheme);
   }
