@@ -2140,10 +2140,13 @@ body.color--flagBrown .c-main-nav {
 @media print {
   @page {
     size: auto; /* auto is the initial value */
-    margin: 2em; /* this affects the margin in the printer settings */
+    margin: 3em; /* this affects the margin in the printer settings */
   }
   body {
     font-size: 16px;
+  }
+  main {
+    padding: 0;
   }
   .c-btns-admin,
   .c-calender-item__edit,
@@ -2182,7 +2185,7 @@ body.color--flagBrown .c-main-nav {
     column-gap: 2em;
   }
   .c-list > li {
-    width: 45%;
+    width: calc(50% - 1em);
     padding-bottom: 0.5em;
     border-bottom: 5px solid var(--darkTheme);
   }

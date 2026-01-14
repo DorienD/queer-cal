@@ -28,7 +28,7 @@
 {% endblock %}
 
 {% block footer %}
-    <footer>
-        {_ Print made by queer-kalender.nl, check de site for the full overview. Missing something or want to add your event? Mail events@queer-kalender.nl _}
+    <footer class="p-footer">
+        {_ Print made by queer-kalender.nl, check de site for the full overview. Missing something or want to add your event? Mail events@queer-kalender.nl _}.
     </footer>
 {% endblock %}
