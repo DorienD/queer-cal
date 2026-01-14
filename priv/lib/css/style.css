@@ -2151,6 +2151,9 @@ body.color--flagBrown .c-main-nav {
   a {
     text-decoration: none;
   }
+  a:before {
+    display: none;
+  }
   .c-btns-admin,
   .c-calender-item__edit,
   .c-share-event-toggle,
