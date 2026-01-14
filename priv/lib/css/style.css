@@ -2192,4 +2192,16 @@ body.color--flagBrown .c-main-nav {
     padding-bottom: 0.5em;
     border-bottom: 5px solid var(--darkTheme);
   }
+  h1, h2 {
+    text-align: center;
+  }
+  h2 span {
+    font-size: 0.8em;
+  }
+  .p-footer {
+    padding: 1em;
+    position: relative;
+    background: var(--lightTheme);
+    text-align: center;
+  }
 }

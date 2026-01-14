@@ -6,11 +6,14 @@
 {% block content_area %}
     <h1>Queer-kalender.nl</h1>
 
-    <h2>What's on this week in Amsterdam</h2>
+    <h2>
+        What's on this week in Amsterdam <br>
+        <span>{{ id.summary }}</span>
+    </h2>
 
-    {% if id.summary %}
-        <p>{{ id.summary }}</p>
-    {% endif %}
+    {# {% if id.summary %}
+        <h3 class="p-summary">{{ id.summary }}</h3>
+    {% endif %} #}
 
     {% with m.search[{query 
             query_id=id 
