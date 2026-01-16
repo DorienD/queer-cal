@@ -104,7 +104,9 @@ datamodel(Context) ->
                 <<"title">> => #trans{ tr = [
                     {nl, <<"Hidden agenda export">>},
                     {en, <<"Hidden agenda export">>}
-                ]}
+                ]},
+                <<"is_unfindable">> => true,
+                <<"seo_noindex">> => true
             }}
         ] ++ keywords()
         ++ testdata(Env),
