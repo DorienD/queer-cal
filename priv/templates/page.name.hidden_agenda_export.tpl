@@ -1,3 +1,19 @@
+{% extends "base.tpl" %}
+
+{% block css %}
+
+    <style>
+        body {
+            font-family: monospace;
+        }
+    </style>
+{% endblock %}
+{% block skip_link %}{% endblock %}
+{% block nav %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block admin_edit %}{% endblock %}
+
+{% block content %}
 {% with m.search[{query 
     query_id=id 
     qargs
@@ -34,3 +50,4 @@
     </tbody>
 </table>
 {% endwith %}
+{% endblock %}
