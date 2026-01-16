@@ -98,6 +98,13 @@ datamodel(Context) ->
                     {nl, <<"Print overview">>},
                     {en, <<"Print overview">>}
                 ]}
+            }},
+            {hidden_agenda_export, query, #{
+                <<"language">> => [ nl ],
+                <<"title">> => #trans{ tr = [
+                    {nl, <<"Hidden agenda export">>},
+                    {en, <<"Hidden agenda export">>}
+                ]}
             }}
         ] ++ keywords()
         ++ testdata(Env),
