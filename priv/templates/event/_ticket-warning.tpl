@@ -17,24 +17,22 @@
               <span class="sr-only">Close</span>
             </button>
 
-            {% with m.rsc.page_ticket_disclaimer as page %}
-                <h2>{{ page.title }}</h2>
-                
-                {{ page.body }}
+            <h2>{{ m.rsc.page_ticket_disclaimer.title }}</h2>
 
-                {% wire id="ticket_disclaimer" type="submit" postback={set_skip_ticket_warning ticket_url=id.ticket_link} delegate="queercal_ticket_warning" %}
+            {{ m.rsc.page_ticket_disclaimer.body }}
 
-                <form id="ticket_disclaimer" method="post" action="postback">
-                    <label class="c-custom-checkbox">
-                        <input type="checkbox" id="is_hide_disclaimer" name="is_hide_disclaimer">
-                        {_ Hide this disclaimer for a while _}
-                    </label>
+            {% wire id=#disclaimer type="submit" postback={set_skip_ticket_warning ticket_url=id.ticket_link} delegate="queercal_ticket_warning" %}
 
-                    <button class="c-btn c-btn-tickets -icon-external">
-                        {_ Proceed to external ticket sale _}
-                    </button>
-                </form>
-            {% endwith %}
+            <form id="{{ #disclaimer }}" method="post" action="postback">
+                <label class="c-custom-checkbox">
+                    <input type="checkbox" id="is_hide_disclaimer" name="is_hide_disclaimer">
+                    {_ Hide this disclaimer for a while _}
+                </label>
+
+                <button class="c-btn c-btn-tickets -icon-external">
+                    {_ Proceed to external ticket sale _}
+                </button>
+            </form>
         </div>
     </dialog>
 {% endif %}
