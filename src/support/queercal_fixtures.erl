@@ -107,11 +107,23 @@ datamodel(Context) ->
                 ]},
                 <<"is_unfindable">> => true,
                 <<"seo_noindex">> => true
+            }},
+            {special_pages, collection, #{
+                <<"language">> => [ nl ],
+                <<"title">> => #trans{ tr = [
+                    {nl, <<"Special pages">>},
+                    {en, <<"Special pages">>}
+                ]},
+                <<"is_unfindable">> => true,
+                <<"seo_noindex">> => true
             }}
         ] ++ keywords()
         ++ testdata(Env),
         media = [] ++ testmedia(Env),
         edges = [
+            {special_pages, haspart, page_home},
+            {special_pages, haspart, hidden_agenda_export},
+            {special_pages, haspart, print_overview}
         ] 
         ++ testedges(Env)
     }.
