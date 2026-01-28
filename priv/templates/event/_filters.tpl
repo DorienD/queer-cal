@@ -21,7 +21,7 @@
         <div class="c-filters__date">
             <label for="j-filter-date">{_ Date _}</label>
             
-            <input type="date" id="j-filter-date" name="qongoing_date" min="{{ now|date:"Y-m-d" }}" value="{{ q.qongoing_date|default:"yyyy-MM-dd" }}">
+            <input type="date" id="j-filter-date" name="qongoing_date" min="{{ now|date:"Y-m-d" }}" value="{{ q.qongoing_date }}">
         </div>
         
         <div class="c-filters__keywords">
