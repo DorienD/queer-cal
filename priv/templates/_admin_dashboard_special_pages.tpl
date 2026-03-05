@@ -55,10 +55,4 @@
             {% endfor %}
         </tbody>
     </table> 
-        
-    <div style="margin: 1rem">
-        <a href="{% url keyword_view id=id %}" class="btn btn-default btn-sm">{_ View used/unused keywords _}</a>
-        <a href="{% url dialogue_view id=id %}" class="btn btn-default btn-sm">{_ View dialogues without country _}</a>
-        <a href="{% url custom_export %}" class="btn btn-default btn-sm">{_ Custom exports _}</a>
-    </div>
 {% endblock %}
