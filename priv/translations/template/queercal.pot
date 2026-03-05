@@ -18,6 +18,12 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: queercal/priv/templates/_admin_dashboard_special_pages.tpl:24
+msgid ""
+"<em>Untitled</em>"
+msgstr ""
+""
+
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:84
 msgid ""
 "A link will be added around the title of the event. The website link will "
@@ -146,6 +152,7 @@ msgid ""
 msgstr ""
 ""
 
+#: queercal/priv/templates/_admin_dashboard_special_pages.tpl:12
 #: queercal/priv/templates/_admin_overview_list.event.tpl:26
 #: queercal/priv/templates/_admin_overview_list.event.tpl:102
 msgid ""
@@ -283,12 +290,6 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/event/_ticket-warning.tpl:30
-msgid ""
-"Hide this disclaimer for a while"
-msgstr ""
-""
-
 #: queercal/priv/templates/_admin_edit_content_address.event.tpl:88
 msgid ""
 "Instagram"
@@ -332,8 +333,7 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/home.tpl:89
-#: queercal/priv/templates/page.name.page_other_city_events.tpl:85
+#: queercal/priv/templates/home.tpl:84
 msgid ""
 "Last updated on"
 msgstr ""
@@ -394,15 +394,13 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/home.tpl:56
-#: queercal/priv/templates/page.name.page_other_city_events.tpl:52
+#: queercal/priv/templates/home.tpl:51
 msgid ""
 "Next"
 msgstr ""
 ""
 
-#: queercal/priv/templates/home.tpl:54
-#: queercal/priv/templates/page.name.page_other_city_events.tpl:50
+#: queercal/priv/templates/home.tpl:49
 msgid ""
 "Next month"
 msgstr ""
@@ -446,31 +444,21 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/home.tpl:51
-#: queercal/priv/templates/page.name.page_other_city_events.tpl:47
+#: queercal/priv/templates/home.tpl:46
 msgid ""
 "Previous"
 msgstr ""
 ""
 
-#: queercal/priv/templates/home.tpl:49
-#: queercal/priv/templates/page.name.page_other_city_events.tpl:45
+#: queercal/priv/templates/home.tpl:44
 msgid ""
 "Previous month"
 msgstr ""
 ""
 
-#: queercal/priv/templates/page.name.page_next_week.tpl:30
+#: queercal/priv/templates/_admin_dashboard_special_pages.tpl:4
 msgid ""
-"Print made by queer-kalender.nl, check de site for the full overview. "
-"Missing something or want to add your event? Mail "
-"events@queer-kalender.nl"
-msgstr ""
-""
-
-#: queercal/priv/templates/event/_ticket-warning.tpl:34
-msgid ""
-"Proceed to external ticket sale"
+"Quick access to special pages"
 msgstr ""
 ""
 
@@ -543,7 +531,7 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/event/event-keywords.tpl:36
+#: queercal/priv/templates/event/event-keywords.tpl:41
 msgid ""
 "Sign up"
 msgstr ""
@@ -619,6 +607,12 @@ msgid ""
 msgstr ""
 ""
 
+#: queercal/priv/templates/page_admin_frontend_edit.tpl:98
+msgid ""
+"There are unsaved changes. Are you sure you want to leave without saving?"
+msgstr ""
+""
+
 #: queercal/priv/templates/_admin_edit_content_address.event.tpl:68
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:119
 msgid ""
@@ -639,8 +633,7 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/event/_ticket-warning.tpl:6
-#: queercal/priv/templates/event/_ticket-warning.tpl:11
+#: queercal/priv/templates/event/event-keywords.tpl:35
 msgid ""
 "Tickets"
 msgstr ""
@@ -652,6 +645,7 @@ msgid ""
 msgstr ""
 ""
 
+#: queercal/priv/templates/_admin_dashboard_special_pages.tpl:11
 #: queercal/priv/templates/_admin_edit_basics_form.event.tpl:8
 #: queercal/priv/templates/_admin_edit_basics_form.event.tpl:12
 #: queercal/priv/templates/_admin_overview_list.event.tpl:23
@@ -669,7 +663,7 @@ msgstr ""
 ""
 
 #: queercal/priv/templates/event/event-date.tpl:17
-#: queercal/priv/templates/event/event-date.tpl:47
+#: queercal/priv/templates/event/event-date.tpl:40
 msgid ""
 "Today"
 msgstr ""
@@ -707,6 +701,12 @@ msgid ""
 msgstr ""
 ""
 
+#: queercal/priv/templates/page_admin_frontend_edit.tpl:96
+msgid ""
+"Yes, discard changes"
+msgstr ""
+""
+
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:98
 msgid ""
 "You can add multiple keywords if needed."
@@ -731,8 +731,7 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/home.tpl:47
-#: queercal/priv/templates/page.name.page_other_city_events.tpl:43
+#: queercal/priv/templates/home.tpl:42
 msgid ""
 "approximately"
 msgstr ""
@@ -748,6 +747,8 @@ msgid ""
 msgstr ""
 ""
 
+#: queercal/priv/templates/_admin_dashboard_special_pages.tpl:41
+#: queercal/priv/templates/_admin_dashboard_special_pages.tpl:49
 #: queercal/priv/templates/_admin_overview_list.event.tpl:64
 #: queercal/priv/templates/_admin_overview_list.event.tpl:147
 msgid ""
@@ -773,6 +774,8 @@ msgid ""
 msgstr ""
 ""
 
+#: queercal/priv/templates/_admin_dashboard_special_pages.tpl:40
+#: queercal/priv/templates/_admin_dashboard_special_pages.tpl:48
 #: queercal/priv/templates/_admin_overview_list.event.tpl:63
 #: queercal/priv/templates/_admin_overview_list.event.tpl:146
 msgid ""

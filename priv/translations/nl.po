@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2025-12-14 19:39+0100\n"
+"PO-Revision-Date: 2026-03-05 14:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -19,6 +19,10 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.8\n"
+
+#: queercal/priv/templates/_admin_dashboard_special_pages.tpl:24
+msgid "<em>Untitled</em>"
+msgstr ""
 
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:84
 msgid ""
@@ -33,10 +37,8 @@ msgid "Add Event"
 msgstr "Voeg event toe"
 
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:118
-#, fuzzy
-#| msgid "keyword"
 msgid "Add keywords"
-msgstr "trefwoorden"
+msgstr "Trefwoorden toevoegen"
 
 #: queercal/priv/templates/event/_share-event.tpl:8
 msgid "Add to Google calendar"
@@ -109,6 +111,7 @@ msgstr "Door"
 msgid "Cancel"
 msgstr "Annuleren"
 
+#: queercal/priv/templates/_admin_dashboard_special_pages.tpl:12
 #: queercal/priv/templates/_admin_overview_list.event.tpl:26
 #: queercal/priv/templates/_admin_overview_list.event.tpl:102
 msgid "Category"
@@ -120,16 +123,12 @@ msgid "City"
 msgstr "Stad"
 
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:162
-#, fuzzy
-#| msgid "Known location"
 msgid "Connect a location"
-msgstr "Bekende lokatie"
+msgstr "Verbind een lokatie"
 
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:193
-#, fuzzy
-#| msgid "Known organisation"
 msgid "Connect an organization"
-msgstr "Bekende organisatie"
+msgstr "Verbind een organisatie"
 
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:25
 msgid "Content"
@@ -206,10 +205,6 @@ msgstr "Filter op een trefwoord"
 msgid "From"
 msgstr "Van"
 
-#: queercal/priv/templates/event/_ticket-warning.tpl:30
-msgid "Hide this disclaimer for a while"
-msgstr "Verberg deze melding for een tijdje"
-
 #: queercal/priv/templates/_admin_edit_content_address.event.tpl:88
 msgid "Instagram"
 msgstr ""
@@ -219,10 +214,8 @@ msgid "Instagram link"
 msgstr ""
 
 #: queercal/priv/templates/event/_filters.tpl:28
-#, fuzzy
-#| msgid "Keywords"
 msgid "Keyword"
-msgstr "Trefwoorden"
+msgstr "Trefwoord(en)"
 
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:95
 msgid "Keywords"
@@ -241,10 +234,9 @@ msgstr "Bekende organisatie"
 msgid "Language"
 msgstr "Taal"
 
-#: queercal/priv/templates/home.tpl:89
-#: queercal/priv/templates/page.name.page_other_city_events.tpl:85
+#: queercal/priv/templates/home.tpl:84
 msgid "Last updated on"
-msgstr ""
+msgstr "Laatst bijgewerkt op"
 
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:81
 msgid "Links"
@@ -277,23 +269,19 @@ msgstr ""
 
 #: queercal/priv/templates/_admin_overview_list.event.tpl:35
 #: queercal/priv/templates/_admin_overview_list.event.tpl:114
-#, fuzzy
-#| msgid "You filtered on"
 msgid "Modified on"
-msgstr "Je filtert op"
+msgstr "Bewerkt op"
 
 #: queercal/priv/templates/event/_share-event.tpl:8
 #: queercal/priv/templates/event/_share-event.tpl:9
 msgid "More info"
 msgstr ""
 
-#: queercal/priv/templates/home.tpl:56
-#: queercal/priv/templates/page.name.page_other_city_events.tpl:52
+#: queercal/priv/templates/home.tpl:51
 msgid "Next"
 msgstr "Volgende"
 
-#: queercal/priv/templates/home.tpl:54
-#: queercal/priv/templates/page.name.page_other_city_events.tpl:50
+#: queercal/priv/templates/home.tpl:49
 msgid "Next month"
 msgstr "Volgende maand"
 
@@ -302,10 +290,8 @@ msgid "No page"
 msgstr "Geen pagina"
 
 #: queercal/priv/templates/_admin_overview_list.event.tpl:154
-#, fuzzy
-#| msgid "No page"
 msgid "No pages found."
-msgstr "Geen pagina"
+msgstr "Geen pagina’s gevonden."
 
 #: queercal/priv/templates/_admin_edit_content_address.event.tpl:100
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:56
@@ -325,27 +311,17 @@ msgstr "Eerdere evenementen in"
 msgid "Postcode"
 msgstr "Postcode"
 
-#: queercal/priv/templates/home.tpl:51
-#: queercal/priv/templates/page.name.page_other_city_events.tpl:47
+#: queercal/priv/templates/home.tpl:46
 msgid "Previous"
 msgstr "Vorige"
 
-#: queercal/priv/templates/home.tpl:49
-#: queercal/priv/templates/page.name.page_other_city_events.tpl:45
+#: queercal/priv/templates/home.tpl:44
 msgid "Previous month"
 msgstr "Vorige maand"
 
-#: queercal/priv/templates/page.name.page_next_week.tpl:30
-msgid ""
-"Print made by queer-kalender.nl, check de site for the full overview. "
-"Missing something or want to add your event? Mail events@queer-kalender.nl"
-msgstr ""
-"Print made by queer-kalender.nl, check de site for the full overview. "
-"Missing something or want to add your event? Mail events@queer-kalender.nl"
-
-#: queercal/priv/templates/event/_ticket-warning.tpl:34
-msgid "Proceed to external ticket sale"
-msgstr "Doorgaan naar externe ticket verkoop"
+#: queercal/priv/templates/_admin_dashboard_special_pages.tpl:4
+msgid "Quick access to special pages"
+msgstr "Snelle toegang tot speciale pagina's"
 
 #: queercal/priv/templates/event/_filters.tpl:32
 msgid "Remove filter"
@@ -394,7 +370,7 @@ msgstr "Deel dit evenement"
 msgid "Showing dates in"
 msgstr "Datums zijn in"
 
-#: queercal/priv/templates/event/event-keywords.tpl:36
+#: queercal/priv/templates/event/event-keywords.tpl:41
 msgid "Sign up"
 msgstr "Aanmelden"
 
@@ -452,6 +428,11 @@ msgstr "De einddatum moet in de toekomst liggen relatief aan de startdatum."
 msgid "The page might have been deleted."
 msgstr "Deze pagina zou wel eens verwijderd kunnen zijn."
 
+#: queercal/priv/templates/page_admin_frontend_edit.tpl:98
+msgid ""
+"There are unsaved changes. Are you sure you want to leave without saving?"
+msgstr ""
+
 #: queercal/priv/templates/_admin_edit_content_address.event.tpl:68
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:119
 msgid "This will add a sign up button."
@@ -466,8 +447,7 @@ msgstr "Dit zal een ticket button toevoegen."
 msgid "Ticket link"
 msgstr "Ticket link"
 
-#: queercal/priv/templates/event/_ticket-warning.tpl:6
-#: queercal/priv/templates/event/_ticket-warning.tpl:11
+#: queercal/priv/templates/event/event-keywords.tpl:35
 msgid "Tickets"
 msgstr "Tickets"
 
@@ -475,6 +455,7 @@ msgstr "Tickets"
 msgid "Till"
 msgstr "Tot"
 
+#: queercal/priv/templates/_admin_dashboard_special_pages.tpl:11
 #: queercal/priv/templates/_admin_edit_basics_form.event.tpl:8
 #: queercal/priv/templates/_admin_edit_basics_form.event.tpl:12
 #: queercal/priv/templates/_admin_overview_list.event.tpl:23
@@ -488,7 +469,7 @@ msgid "Title of the venue/location"
 msgstr "Titel van de lokatie"
 
 #: queercal/priv/templates/event/event-date.tpl:17
-#: queercal/priv/templates/event/event-date.tpl:47
+#: queercal/priv/templates/event/event-date.tpl:40
 msgid "Today"
 msgstr "Vandaag"
 
@@ -514,6 +495,10 @@ msgstr "Bekijk deze pagina."
 msgid "Website"
 msgstr "Website"
 
+#: queercal/priv/templates/page_admin_frontend_edit.tpl:96
+msgid "Yes, discard changes"
+msgstr ""
+
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:98
 msgid "You can add multiple keywords if needed."
 msgstr "Je kunt meerdere trefwoorden toevoegen."
@@ -530,8 +515,7 @@ msgstr "Je moet ten minste één trefwoord toevoegen."
 msgid "You've filtered on"
 msgstr "Je hebt gefilterd op"
 
-#: queercal/priv/templates/home.tpl:47
-#: queercal/priv/templates/page.name.page_other_city_events.tpl:43
+#: queercal/priv/templates/home.tpl:42
 msgid "approximately"
 msgstr "om en nabij"
 
@@ -543,6 +527,8 @@ msgstr "om en nabij"
 msgid "d M Y, H:i"
 msgstr ""
 
+#: queercal/priv/templates/_admin_dashboard_special_pages.tpl:41
+#: queercal/priv/templates/_admin_dashboard_special_pages.tpl:49
 #: queercal/priv/templates/_admin_overview_list.event.tpl:64
 #: queercal/priv/templates/_admin_overview_list.event.tpl:147
 msgid "edit"
@@ -560,7 +546,19 @@ msgstr "trefwoorden"
 msgid "reset"
 msgstr "reset"
 
+#: queercal/priv/templates/_admin_dashboard_special_pages.tpl:40
+#: queercal/priv/templates/_admin_dashboard_special_pages.tpl:48
 #: queercal/priv/templates/_admin_overview_list.event.tpl:63
 #: queercal/priv/templates/_admin_overview_list.event.tpl:146
 msgid "view"
 msgstr ""
+
+#~ msgid ""
+#~ "Print made by queer-kalender.nl, check de site for the full overview. "
+#~ "Missing something or want to add your event? Mail events@queer-kalender.nl"
+#~ msgstr ""
+#~ "Print made by queer-kalender.nl, check de site for the full overview. "
+#~ "Missing something or want to add your event? Mail events@queer-kalender.nl"
+
+#~ msgid "Proceed to external ticket sale"
+#~ msgstr "Doorgaan naar externe ticket verkoop"

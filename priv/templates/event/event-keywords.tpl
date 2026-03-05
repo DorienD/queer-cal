@@ -28,10 +28,15 @@
 
         {% if id.ticket_link %}
             <li>
-                {% include "event/_ticket-warning.tpl" %}
+                <a href="{{ id.ticket_link }}"
+                   rel="noopener"
+                   target="_blank"
+                   class="c-keyword-list__item -tickets -icon-external">
+                    {_ Tickets _}
+                </a>
             </li>
-
         {% endif %}
+        
         {% if id.signup_link %}
             <li><a href="{{ id.signup_link }}" class="c-keyword-list__item -signup">{_ Sign up _}</a></li>
         {% endif %}
