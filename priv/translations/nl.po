@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2026-03-05 14:34+0100\n"
+"PO-Revision-Date: 2026-03-05 14:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -552,9 +552,6 @@ msgstr "reset"
 #: queercal/priv/templates/_admin_overview_list.event.tpl:146
 msgid "view"
 msgstr ""
-
-#~ msgid "Hide this disclaimer for a while"
-#~ msgstr "Verberg deze melding for een tijdje"
 
 #~ msgid ""
 #~ "Print made by queer-kalender.nl, check de site for the full overview. "

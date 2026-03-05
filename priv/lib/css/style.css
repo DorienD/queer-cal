@@ -307,10 +307,6 @@ template {
   display: none;
 }
 
-@font-face {
-  font-family: "Ufficio";
-  src: url("/lib/fonts/UfficioMono-400.woff2") format("woff2");
-}
 :root {
   color-scheme: light dark;
 }
