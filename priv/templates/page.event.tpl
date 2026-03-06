@@ -21,7 +21,7 @@
 
         {% include "event/event-keywords.tpl" %}
 
-        {% if id.website %}
+        {% if id.website and (id.website|sanitize_url != "#script-removed") %}
             <a href="{{ id.website }}" target="_blank" rel="noopener">{_ Website _}</a>
         {% endif %}
 

@@ -26,9 +26,9 @@
             </li>
         {% endfor %}
 
-        {% if id.ticket_link %}
+        {% if id.ticket_link and (id.ticket_link|sanitize_url != "#script-removed") %}
             <li>
-                <a href="{{ id.ticket_link }}"
+                <a href="{{ id.ticket_link|sanitize_url }}"
                    rel="noopener"
                    target="_blank"
                    class="c-keyword-list__item -tickets -icon-external">
@@ -37,8 +37,8 @@
             </li>
         {% endif %}
         
-        {% if id.signup_link %}
-            <li><a href="{{ id.signup_link }}" class="c-keyword-list__item -signup">{_ Sign up _}</a></li>
+        {% if id.signup_link and (id.signup_link|sanitize_url != "#script-removed") %}
+            <li><a href="{{ id.signup_link|sanitize_url }}" class="c-keyword-list__item -signup">{_ Sign up _}</a></li>
         {% endif %}
     </ul>
 {% endif %}

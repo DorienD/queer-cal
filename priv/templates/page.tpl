@@ -10,7 +10,7 @@
 
         {% include "event/event-keywords.tpl" %}
 
-        {% if id.website %}
+        {% if or id.address_street_1 or id.address_city or id.website  %}
             <address>
                 {% if id.address_street_1 %}
                     {{ id.address_street_1 }}<br>
@@ -18,7 +18,8 @@
                 {% if id.address_city %}
                     {{ id.address_city }}<br>
                 {% endif %}
-                <a href="{{ id.website }}">website {% include "icons/icon-external.tpl" width="13px" height="13px" color="var(--typographyColor)" %}</a>
+
+                <a href="{{ id.website|sanitize_url }}">website {% include "icons/icon-external.tpl" width="13px" height="13px" color="var(--typographyColor)" %}</a>
             </address>
         {% endif %}
 

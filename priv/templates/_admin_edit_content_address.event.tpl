@@ -76,20 +76,6 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-6 col-md-6">
-            <div class="form-group">
-                <label class="control-label" for="facebook">{_ Facebook _}</label>
-                <input class="form-control" id="facebook" type="text" name="facebook" inputmode="url" value="{{ id.facebook }}">
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6">
-            <div class="form-group">
-                <label class="control-label" for="instagram">{_ Instagram _}</label>
-                <input class="form-control" id="instagram" type="text" name="instagram" inputmode="url" value="{{ id.instagram }}">
-            </div>
-        </div>
-    </div>
 
     <hr>
 
