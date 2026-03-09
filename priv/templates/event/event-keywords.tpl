@@ -31,7 +31,7 @@
 
         {% if id.ticket_url or id.ticket_link  %}
             <li>
-                <a href="{{ id.ticket_url|default:(id.ticket_link|sanitize_url) }}"
+                <a href="{{ id.ticket_url|sanitize_url|default:(id.ticket_link|sanitize_url) }}"
                    rel="noopener"
                    target="_blank"
                    class="c-keyword-list__item -tickets -icon-external">
@@ -42,7 +42,7 @@
 
         {% if id.signup_url or id.signup_link %}
             <li>
-                <a href="{{ id.signup_url|default:(id.signup_link|sanitize_url) }}"
+                <a href="{{ id.signup_url|sanitize_url|default:(id.signup_link|sanitize_url) }}"
                     rel="noopener"
                     target="_blank"
                     class="c-keyword-list__item -signup">
