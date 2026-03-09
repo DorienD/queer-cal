@@ -5,9 +5,9 @@
 {% block content %}
     <article class="o-page-content">
         <a href="{% url home %}" class="c-btn-back">{% include "icons/icon-caret-left.tpl" width="14px" height="14px" %}{_ All events _}</a>
-        
+
         <h1>
-            {{ id.title }} 
+            {{ id.title }}
             {% if id.is_editable %}
                 <a href="{% url admin_frontend_edit id=id %}">
                     - {_ Edit _}
@@ -22,7 +22,7 @@
         {% include "event/event-keywords.tpl" %}
 
         {% if id.website and (id.website|sanitize_url != "#script-removed") %}
-            <a href="{{ id.website }}" target="_blank" rel="noopener">{_ Website _}</a>
+            <a href="{{ id.website|sanitize_url }}" target="_blank" rel="noopener">{_ Website _}</a>
         {% endif %}
 
         {% block body %}

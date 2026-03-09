@@ -10,7 +10,7 @@
 
         {% include "event/event-keywords.tpl" %}
 
-        {% if or id.address_street_1 or id.address_city or id.website  %}
+        {% if id.address_street_1 or id.address_city or id.website  %}
             <address>
                 {% if id.address_street_1 %}
                     {{ id.address_street_1 }}<br>
@@ -27,7 +27,7 @@
             {% if id.summary %}
                 <p class="c-summary">{{ id.summary }}</p>
             {% endif %}
-            
+
             {% if id.body %}
                 <div class="c-body-text">
                     {{ id.body|show_media }}
