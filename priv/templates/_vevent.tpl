@@ -12,7 +12,7 @@ TRANSP:OPAQUE
 SUMMARY:{{ id.title|unescape|escape_ical }}
 DESCRIPTION:{{ id|summary|striptags|unescape|escape_ical }} \n\n Added by Queer Calendar: {{ id.page_url_abs }}
 LOCATION:{% if id.address_title %}{{ id.address_title }}{% endif %}{% if id.address_title %}, {{ id.address_street_1 }}{% endif %}{% if id.address_postcode %}, {{ id.address_postcode }}{% endif %}{% if id.address_city %}, {{ id.address_city }}{% endif %}
-{% if id.website and (id.website|sanitize_url != "#script-removed") %}URL;VALUE=URI:{{ id.website|sanitize_url }}{% endif %}
+{% if id.website %}URL;VALUE=URI:{{ id.website }}{% endif %}
 SEQUENCE:0
 END:VEVENT
 {% endif %}

@@ -1,9 +1,9 @@
-{% with 
+{% with
     id.date_start,
     id.date_end
     as
-    date_start,  
-    date_end 
+    date_start,
+    date_end
 %}
 <div class="c-calendar-item__date">
     <time datetime="{{ date_start|date:"c" }}">
@@ -27,7 +27,7 @@
                         {% else %}
                             {{ date_start|date:"D d" }}
                         {% endif %}
-                        
+
                         - {{ date_end|date:"d b" }}
                     {% endif %}
                 {% endif %}
@@ -46,7 +46,7 @@
                     <span>{{ date_start|date:"D d b" }}</span>
                 {% endif %}
             {% endif %}
-            
+
             <span class="c-calendar-item__date__time">{{ date_start|date:"H:i" }}</span>
 
             {% if date_start|date:"H" == date_end|date:"H" %}
@@ -76,7 +76,7 @@
             {% endif %}
         {% endif %}
     </time>
-    
+
     {% if not hide_share_event %}
         {% include "event/_share-event.tpl" %}
     {% endif %}

@@ -19,7 +19,7 @@
                     {{ id.address_city }}<br>
                 {% endif %}
 
-                <a href="{{ id.website|sanitize_url }}">website {% include "icons/icon-external.tpl" width="13px" height="13px" color="var(--typographyColor)" %}</a>
+                <a href="{{ id.website }}">website {% include "icons/icon-external.tpl" width="13px" height="13px" color="var(--typographyColor)" %}</a>
             </address>
         {% endif %}
 
