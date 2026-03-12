@@ -1499,28 +1499,35 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
 }
 
 .c-filters__options {
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 1rem;
   width: 100%;
   margin: 2em 0 0;
 }
+.c-filters__options:has(.c-filters__remove) {
+  grid-template-columns: repeat(2, 1fr) 4.5rem;
+}
 .c-filters__options label {
   width: 100%;
+  grid-row: 1;
 }
 @media only screen and (min-width: 800px) {
   .c-filters__options {
     width: fit-content;
-    flex-flow: row nowrap;
+    display: flex;
     margin: 0 0 0 auto;
   }
-  .c-filters__options label {
+  .c-filters__options > label:first-child {
     width: auto;
+    position: relative;
+    top: 10px;
   }
 }
 
 .c-filters__date {
+  grid-row: 2;
   position: relative;
 }
 .c-filters__date label {
@@ -1528,6 +1535,7 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
   font-size: 0.825em;
 }
 .c-filters__date input[type=date] {
+  width: 100%;
   background: var(--lightTheme);
   cursor: pointer;
   color: light-dark(var(--darkTheme), var(--typographyColor));
@@ -1537,8 +1545,12 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
   color: inherit;
 }
 
+.c-filters__keywords {
+  grid-row: 2;
+}
+
 .c-custom-select {
-  width: calc(100% - 5.5rem);
+  width: 100%;
   position: relative;
 }
 .c-custom-select select {
@@ -1567,6 +1579,9 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
 }
 
 .c-filters__remove {
+  flex-shrink: 0;
+  grid-row: 2;
+  align-self: end;
   color: light-dark(var(--darkTheme), var(--typographyColor));
   transition: background 0.3s ease-out, color 0.3s ease-out;
 }
