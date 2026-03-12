@@ -65,28 +65,14 @@
                 <input class="form-control" id="website" type="text" name="website" inputmode="url" value="{{ id.website }}">
             </div>
             <div class="form-group">
-                <label class="control-label" for="signup_link">{_ Sign up link _} ({_ This will add a sign up button. _})</label>
-                <input class="form-control" id="signup_link" type="text" name="signup_link" inputmode="url" value="{{ id.signup_link }}">
+                <label class="control-label" for="signup_url">{_ Sign up link _} ({_ This will add a sign up button. _})</label>
+                <input class="form-control" id="signup_url" type="text" name="signup_url" inputmode="url" value="{{ id.signup_url|default:id.signup_link }}">
             </div>
         </div>
         <div class="col-lg-6 col-md-6">
             <div class="form-group">
-                <label class="control-label" for="ticket_link">{_ Ticket link _}</label>
-                <input class="form-control" id="ticket_link" type="text" name="ticket_link" inputmode="url" value="{{ id.ticket_link }}">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-6 col-md-6">
-            <div class="form-group">
-                <label class="control-label" for="facebook">{_ Facebook _}</label>
-                <input class="form-control" id="facebook" type="text" name="facebook" inputmode="url" value="{{ id.facebook }}">
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6">
-            <div class="form-group">
-                <label class="control-label" for="instagram">{_ Instagram _}</label>
-                <input class="form-control" id="instagram" type="text" name="instagram" inputmode="url" value="{{ id.instagram }}">
+                <label class="control-label" for="ticket_url">{_ Ticket link _}</label>
+                <input class="form-control" id="ticket_url" type="text" name="ticket_url" inputmode="url" value="{{ id.ticket_url|default:id.ticket_link }}">
             </div>
         </div>
     </div>

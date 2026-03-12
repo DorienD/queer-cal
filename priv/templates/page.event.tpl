@@ -5,9 +5,10 @@
 {% block content %}
     <article class="o-page-content">
         <a href="{% url home %}" class="c-btn-back">{% include "icons/icon-caret-left.tpl" width="14px" height="14px" %}{_ All events _}</a>
-        
+
         <h1>
-            {{ id.title }} 
+            {{ id.title }}
+            
             {% if id.is_editable %}
                 <a href="{% url admin_frontend_edit id=id %}">
                     - {_ Edit _}
