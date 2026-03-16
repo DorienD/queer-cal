@@ -775,6 +775,7 @@ form input[type=time] {
   font-size: inherit;
   padding: 0 1rem;
   border-radius: 0;
+  appearance: none;
 }
 
 body input.form-control:not([type=date]):not([type=time]):focus {
