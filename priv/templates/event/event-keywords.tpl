@@ -17,7 +17,7 @@
     {% endif %}
 
     <ul class="c-keyword-list">
-        {% if id.summary %}
+        {% if id.summary and not page %}
             <li>
                 <button class="c-calendar-item__dialog c-keyword-list__item -desc" data-dialog="details-{{ id.id }}">{_ Description _}</button>
             </li>

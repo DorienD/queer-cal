@@ -26,7 +26,6 @@
     width: 100%;
     margin: 2em 0 0;
 
-
     &:has(.c-filters__remove) {
         grid-template-columns: repeat(2, 1fr) 4.5rem;
     }
@@ -50,6 +49,8 @@
 }
 
 .c-filters__date {
+    display: flex;
+    flex-flow: column wrap;
     grid-row: 2;
     position: relative;
     
@@ -59,8 +60,10 @@
     }
 
     input[type="date"] {
+        display: block;
+        flex-grow: 1;
         width: 100%;
-        min-width: unset;
+        min-width: 0;
         background: var(--lightTheme);
         cursor: pointer;
         color: light-dark(var(--darkTheme), var(--typographyColor));

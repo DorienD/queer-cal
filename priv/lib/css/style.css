@@ -315,7 +315,7 @@ body {
   --primaryFont: "Roboto mono", monospace, sans-serif;
   --bodyFont: var(--primaryFont);
   --white: #fff;
-  --bodyBg: light-dark(var(--white), #242424);
+  --bodyBg: light-dark(#fff, #242424);
   --flagRed: #FF575B;
   --flagPink: #D99FC8;
   --flagWhite: #FFFFFF;
@@ -327,71 +327,14 @@ body {
   --flagGreen: #7AC74D;
   --flagBlue: #00B0FF;
   --flagPurple: #B99FE4;
-  --flagRedL: 67%;
-  --flagRedHsl: hsl(359, 100%, var(--flagRedL));
-  --flagPinkL: 73.73%;
-  --flagPinkHsl: hsl(317.59, 43.28%, var(--flagPinkL));
-  --flagWhiteL: 100%;
-  --flagWhiteHsl: hsl(0, 0%, var(--flagWhiteL));
-  --flagLightBlueL: 71.76%;
-  --flagLightBlueHsl: hsl(200.34, 81.94%, var(--flagLightBlueL));
-  --flagBrownL: 23.51%;
-  --flagBrownHsl: hsl(28.71, 48.8%, var(--flagBrownL));
-  --flagBlackL: 0%;
-  --flagBlackHsl: hsl(0, 0%, var(--flagBlackL));
-  --flagOrangeL: 66.27%;
-  --flagOrangeHsl: hsl(16.74, 100%, var(--flagOrangeL));
-  --flagYellowL: 57.65%;
-  --flagYellowHsl: hsl(41.36, 95.39%, var(--flagYellowL));
-  --flagGreenL: 54.12%;
-  --flagGreenHsl: hsl(97.87, 52.14%, var(--flagGreenL));
-  --flagBlueL: 50%;
-  --flagBlueHsl: hsl(198.59, 100%, var(--flagBlueL));
-  --flagPurpleL: 75.88%;
-  --flagPurpleHsl: hsl(262.61, 56.1%, var(--flagPurpleL));
-  --flagRedOklch: oklch(0.69 0.2 22.99);
-  --flagPinkOklch: oklch(0.77 0.09 337.58);
-  --flagWhiteOklch: oklch(1 0 0);
-  --flagLightBlueOklch: oklch(0.8 0.1 232.03);
-  --flagBrownOklch: oklch(0.38 0.06 61.92);
-  --flagBlackOklch: oklch(0 0 0);
-  --flagOrangeOklch: oklch(0.74 0.16 41.16);
-  --flagYellowOklch: oklch(0.74 0.16 41.16);
-  --flagGreenOklch: oklch(0.75 0.17 135.71);
-  --flagBlueOklch: oklch(0.72 0.16 239.3);
-  --flagPurpleOklch: oklch(0.75 0.1 301.32);
   --primaryColor: var(--theme, var(--flagRed));
-  --typographyColor: light-dark(#242424, white);
+  --typographyColor: light-dark(#242424, #fff);
   --errorColor: red;
   --mainMargin: 4rem;
   --lightTheme: #ffeeef;
   --darkTheme: #be474b;
 }
 @supports (color: color-mix(in srgb, red, white)) {
-  body {
-    --lightTheme: color-mix(in srgb, #FF575B, white 90%);
-    --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  body {
-    --lightTheme: #39292a;
-    --darkTheme: #be474a;
-  }
-  @supports (color: color-mix(in srgb, red, white)) {
-    body {
-      --lightTheme: color-mix(in srgb, #FF575B, #242424 90%);
-      --darkTheme: color-mix(in srgb, #FF575B, #242424 30%);
-    }
-  }
-  @supports (text-wrap: balance) {
-    body {
-      --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
-      --darkTheme: color-mix(in srgb, var(--theme), #242424 30%);
-    }
-  }
-}
-@supports (text-wrap: balance) {
   body {
     --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
     --darkTheme: color-mix(in srgb, var(--theme), #242424 30%);
@@ -419,7 +362,6 @@ html {
   height: 100%;
   box-sizing: border-box;
   font-size: 10px;
-  color-scheme: light dark;
 }
 @media (prefers-reduced-motion: no-preference) {
   html {
@@ -1529,6 +1471,8 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
 }
 
 .c-filters__date {
+  display: flex;
+  flex-flow: column wrap;
   grid-row: 2;
   position: relative;
 }
@@ -1537,8 +1481,10 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
   font-size: 0.825em;
 }
 .c-filters__date input[type=date] {
+  display: block;
+  flex-grow: 1;
   width: 100%;
-  min-width: unset;
+  min-width: 0;
   background: var(--lightTheme);
   cursor: pointer;
   color: light-dark(var(--darkTheme), var(--typographyColor));
@@ -2143,8 +2089,8 @@ body.color--flagBrown .c-main-nav {
 
 .if-has-error {
   padding: 0.5em;
-  border: 2px solid var(--flagRedHsl);
-  background: color-mix(in srgb, var(--flagRedHsl), white 70%);
+  border: 2px solid var(--flagRed);
+  background: color-mix(in srgb, var(--flagRed), white 70%);
 }
 
 .form-control[name=find_cg] {

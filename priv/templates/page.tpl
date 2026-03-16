@@ -8,7 +8,7 @@
 
         <h1>{{ id.title }}</h1>
 
-        {% include "event/event-keywords.tpl" %}
+        {% include "event/event-keywords.tpl" page %}
 
         {% if id.address_street_1 or id.address_city or id.website  %}
             <address>

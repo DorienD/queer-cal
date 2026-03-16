@@ -20,7 +20,7 @@
 
         {% include "event/event-location.tpl" %}
 
-        {% include "event/event-keywords.tpl" %}
+        {% include "event/event-keywords.tpl" page %}
 
         {% if id.website %}
             <a href="{{ id.website }}" target="_blank" rel="noopener">{_ Website _}</a>
