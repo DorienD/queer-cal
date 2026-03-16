@@ -1472,7 +1472,7 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
 
 .c-filters__date {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: wrap;
   grid-row: 2;
   position: relative;
 }
@@ -1488,10 +1488,16 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
   background: var(--lightTheme);
   cursor: pointer;
   color: light-dark(var(--darkTheme), var(--typographyColor));
+  line-height: 4.5rem;
 }
 .c-filters__date input[type=date]::-webkit-calendar-picker-indicator {
   cursor: inherit;
   color: inherit;
+}
+@media only screen and (min-width: 800px) {
+  .c-filters__date {
+    display: block;
+  }
 }
 
 .c-filters__keywords {

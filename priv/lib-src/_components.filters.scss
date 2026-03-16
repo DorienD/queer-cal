@@ -50,7 +50,7 @@
 
 .c-filters__date {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: wrap;
     grid-row: 2;
     position: relative;
     
@@ -67,11 +67,16 @@
         background: var(--lightTheme);
         cursor: pointer;
         color: light-dark(var(--darkTheme), var(--typographyColor));
+        line-height: 4.5rem;
 
         &::-webkit-calendar-picker-indicator {
             cursor: inherit;
             color: inherit;
         }
+    }
+
+    @include breakpoint($mediumBreakpoint) {
+        display: block;
     }
 }
 
