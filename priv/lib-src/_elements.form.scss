@@ -59,6 +59,7 @@ form {
         border: 2px solid var(--darkTheme);
         color: var(--typographyColor);
         background: var(--bodyBg);
+        border-radius: 0;
     }
 
     input[type="date"].form-control,
@@ -70,6 +71,7 @@ form {
         height: 4.5rem;
         font-size: inherit;
         padding: 0 1rem;
+        border-radius: 0;
     }
 }
 

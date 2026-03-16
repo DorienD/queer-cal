@@ -26,6 +26,7 @@
     width: 100%;
     margin: 2em 0 0;
 
+
     &:has(.c-filters__remove) {
         grid-template-columns: repeat(2, 1fr) 4.5rem;
     }
@@ -59,6 +60,7 @@
 
     input[type="date"] {
         width: 100%;
+        min-width: unset;
         background: var(--lightTheme);
         cursor: pointer;
         color: light-dark(var(--darkTheme), var(--typographyColor));

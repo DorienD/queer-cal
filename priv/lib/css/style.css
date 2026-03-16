@@ -821,6 +821,7 @@ form select {
   border: 2px solid var(--darkTheme);
   color: var(--typographyColor);
   background: var(--bodyBg);
+  border-radius: 0;
 }
 form input[type=date].form-control,
 form input[type=date],
@@ -831,6 +832,7 @@ form input[type=time] {
   height: 4.5rem;
   font-size: inherit;
   padding: 0 1rem;
+  border-radius: 0;
 }
 
 body input.form-control:not([type=date]):not([type=time]):focus {
@@ -1536,6 +1538,7 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
 }
 .c-filters__date input[type=date] {
   width: 100%;
+  min-width: unset;
   background: var(--lightTheme);
   cursor: pointer;
   color: light-dark(var(--darkTheme), var(--typographyColor));
