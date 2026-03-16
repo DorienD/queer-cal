@@ -8,7 +8,7 @@
 
 Queer Calendar is a grassroots initiative to centralize LGBTQIA+ event listings in one inclusive, accessible and privacy friendly web calendar. Whether you're looking for the next party, a workshop, or an activist meetup — this project aims to make it easy to stay connected **without relying on Big Tech & Social media**.
 
-👉 **Live site**: [queer-kalendar.nl](https://queer-kalendar.nl)
+👉 **Live site**: [queer-kalendar.nl](https://queer-kalender.nl/en/)
 
 ---
 
