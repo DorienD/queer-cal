@@ -1829,6 +1829,14 @@ button.c-keyword-list__item:hover {
     gap: 2em;
     align-items: stretch;
   }
+  .c-list li.-featured {
+    grid-column: span 2;
+    text-align: center;
+  }
+  .c-list li.-featured .c-calendar-item__date,
+  .c-list li.-featured .c-keyword-list {
+    justify-content: center;
+  }
 }
 
 .c-main-nav {
@@ -2165,6 +2173,14 @@ body.color--flagBrown .c-main-nav {
     width: calc(50% - 1.5em);
     padding-bottom: 0.5em;
     border-bottom: 5px solid var(--darkTheme);
+  }
+  .c-list > li.-featured {
+    width: 100%;
+    text-align: center;
+  }
+  .c-list > li.-featured .c-calendar-item__date,
+  .c-list > li.-featured .c-keyword-list {
+    justify-content: center;
   }
   h2 {
     margin-bottom: 0;

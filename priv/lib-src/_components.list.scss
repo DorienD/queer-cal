@@ -11,5 +11,16 @@
         grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
         gap: 2em;
         align-items: stretch;
+
+        li.-featured {
+            grid-column: span 2;
+            text-align: center;
+
+            .c-calendar-item__date,
+            .c-keyword-list {
+                justify-content: center;
+            }
+        }
     }
 }
+

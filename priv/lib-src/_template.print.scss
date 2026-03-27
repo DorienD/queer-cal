@@ -68,6 +68,16 @@
             padding-bottom: 0.5em;
             border-bottom: 5px solid var(--darkTheme);
         }
+
+        > li.-featured {
+            width: 100%;
+            text-align: center;
+
+            .c-calendar-item__date,
+            .c-keyword-list {
+                justify-content: center;
+            }
+        }
     }
 
     h2 {
