@@ -17,7 +17,7 @@ Queer Calendar is a grassroots initiative to centralize LGBTQIA+ event listings 
 - 📅 Overview of upcoming events
 - 🌙 Dark mode
 - 🌐 Multilingual support
-- 🔍 Filter by date and keyword (planned)
+- 🔍 Filter by date and keyword
 - 📝 Community event entry (planned)
 
 ---
@@ -27,7 +27,6 @@ Queer Calendar is a grassroots initiative to centralize LGBTQIA+ event listings 
 - [ ] Refactor to logical properties
 - [ ] Add glossary explaining keywords
 - [ ] Community event submission - allow users to add events
-- [ ] Add filtering by date
 - [ ] Expand to other cities, think of a good UX
 - [ ] Build an event scraper(?) for auto-imports (e.g. from Instagram posts)
 - [ ] Integrate with a, possibly paid, newsletter system
@@ -46,6 +45,7 @@ Queer Calendar is a grassroots initiative to centralize LGBTQIA+ event listings 
 - [x] Made open source for community collaboration
 - [x] Initial frontend styling and layout
 - [x] Project structure
+- [x] Add filtering by date
 
 ---
 
@@ -94,7 +94,7 @@ See [`SUPPORT.md`](SUPPORT.md) for more ways to help.
 
 ## 📬 Contact
 
-Questions, ideas, or event tips?  
+Questions, ideas, or event tips?
 → events@queer-kalender.nl
 
 ---

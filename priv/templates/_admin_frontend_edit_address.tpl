@@ -4,9 +4,11 @@
             <h2 class="h3">
                 {_ Date & time _}
             </h2>
+
             <p class="helper-text">
                 {_ The end date must be in the future relative to the start date.  _}
             </p>
+
             <fieldset>
                 <div class="checkbox">
                     <label>
@@ -30,6 +32,7 @@
                             {% include "_edit_date.tpl" date=id.date_start name="date_start" is_end=0 date_is_all_day=id.date_is_all_day is_editable=id.is_editable timezone=id.tz %}
                         </div>
                     </div>
+
                     <div class="form-group col-sm-6">
                         <label class="control-label">{_ End date _} *</label>
                         <div>
@@ -38,6 +41,7 @@
                     </div>
                 </div>
             </fieldset>
+            
             <p class="help-block" {% if not id.tz or id.tz == m.req.timezone %}style="display:none"{% endif %}>
                 <i class="fa fa-exclamation-triangle"></i>
                 {_ Showing dates in _}: <b class="rsc-timezone">{{ id.tz|escape }}</b>
@@ -67,6 +71,7 @@
                     <label class="control-label" for="address_street_1">{_ Street _}</label>
                     <input class="form-control" id="address_street_1" type="text" name="address_street_1" value="{{ id.address_street_1 }}">
                 </div>
+
                 <div class="form-group col-md-6">
                     <label class="control-label" for="address_city">{_ City _}</label>
                     <input class="form-control" id="address_city" type="text" name="address_city" value="{{ id.address_city|default:"Amsterdam" }}">
@@ -90,20 +95,6 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label class="control-label" for="facebook">{_ Facebook link _}</label>
-                    <input class="form-control" id="facebook" type="text" name="facebook" inputmode="url" value="{{ id.facebook }}">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label class="control-label" for="instagram">{_ Instagram link _}</label>
-                    <input class="form-control" id="instagram" type="text" name="instagram" inputmode="url" value="{{ id.instagram }}">
-                </div>
-            </div>
-        </div>
 
         <div class="row">
             <div class="col-md-12">
@@ -113,6 +104,7 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
