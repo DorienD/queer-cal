@@ -755,6 +755,7 @@ form fieldset {
 }
 form label {
   font-family: var(--primaryFont);
+  cursor: pointer;
 }
 form select.form-control,
 form select {
@@ -825,6 +826,50 @@ body textarea.form-control:focus {
 }
 .c-custom-checkbox:hover:before, .c-custom-checkbox:active:before, .c-custom-checkbox:focus:before, .c-custom-checkbox:focus:active:before {
   border-color: var(--darkTheme);
+}
+
+.c-custom-toggle input {
+  opacity: 0;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  left: 0.5em;
+  top: 0.4em;
+}
+.c-custom-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  position: relative;
+}
+.c-custom-toggle span {
+  --_width: 3rem;
+  --_color: var(--typographyColor);
+  display: block;
+  width: calc(var(--_width) * 2);
+  height: var(--_width);
+  background: color-mix(in srgb, var(--_color), white 80%);
+  position: relative;
+  border: 1px solid var(--_color);
+  border-radius: 4.5rem;
+}
+.c-custom-toggle span:after {
+  content: "";
+  width: calc(var(--_width) - 0.5rem);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  background: var(--_color);
+  transition: all 0.3s;
+}
+.c-custom-toggle input:checked + label span {
+  --_color: var(--flagBlue);
+}
+.c-custom-toggle input:checked + label span:after {
+  left: calc(100% - var(--_width));
 }
 
 @media only screen and (min-width: 800px) {
@@ -1111,6 +1156,12 @@ body.color--flagBrown .c-btn-add-event path {
 
 .c-calendar-listing {
   margin-top: var(--mainMargin);
+}
+
+.c-calendar-listing.-archived {
+  --theme: var(--flagBlack);
+  --lightTheme: light-dark(color-mix(in srgb, var(--theme), var(--bodyBg) 90%), color-mix(in srgb, var(--theme), #242424 30%));
+  --darkTheme: light-dark(color-mix(in srgb, var(--theme), #242424 30%), color-mix(in srgb, var(--theme), white 70%));
 }
 
 .c-calendar {
@@ -1937,6 +1988,13 @@ body.color--flagBrown .c-main-nav {
     margin-left: 1.5em;
   }
 }
+.c-notice {
+  width: fit-content;
+  padding: 1em;
+  border: 1px solid var(--darkTheme);
+  background: var(--lightTheme);
+}
+
 .c-share-event-toggle {
   display: inline-flex;
   align-items: center;
@@ -2110,6 +2168,15 @@ body.color--flagBrown .c-main-nav {
 
 .form-control[name=find_cg] {
   display: none;
+}
+
+.recurring-date-edit {
+  display: none;
+  transition: block 0.3s;
+}
+
+.recurring:has(#recurring:checked) + .recurring-date-edit {
+  display: block;
 }
 
 .t-logon .z-logon-box label {

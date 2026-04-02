@@ -11,6 +11,8 @@
 
                 <p>{{ id.summary }}</p>
 
+                {{ id.body }}
+
                 <button class="c-calendar-item__details-close">Close</button>
             </div>
         </dialog>

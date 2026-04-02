@@ -28,7 +28,7 @@
             pagelen: 1000000
         }
         as result %}
-    <div class="c-calendar-listing">
+    <div class="c-calendar-listing -archived">
         <h2>{_ Past events in _} {{ id.title }}</h2>
         
         {% include "cards/calendar.tpl" full_date %}

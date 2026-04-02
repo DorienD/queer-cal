@@ -6,6 +6,12 @@
     <article class="o-page-content">
         <a href="{% url home %}" class="c-btn-back">{% include "icons/icon-caret-left.tpl" width="14px" height="14px" %}{_ All events _}</a>
 
+        {% if id.date_start|in_past %}
+            <p class="c-notice">
+                <strong>{_ This event has passed _}</strong>, <a href="{% url home %}">{_ browse upcoming events _}</a>
+            </p>
+        {% endif %}
+
         <h1>
             {{ id.title }}
             
@@ -42,6 +48,8 @@
                     {% endif %}
                 {% endif %}
             {% endif %}
+
+            {{ id.body }}
         {% endblock %}
     </article>
 

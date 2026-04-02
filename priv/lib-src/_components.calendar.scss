@@ -2,6 +2,12 @@
     margin-top: var(--mainMargin);
 }
 
+.c-calendar-listing.-archived {
+    --theme: var(--flagBlack);
+    --lightTheme: light-dark(color-mix(in srgb, var(--theme), var(--bodyBg) 90%), color-mix(in srgb, var(--theme), #242424 30%));
+    --darkTheme: light-dark(color-mix(in srgb, var(--theme), #242424 30%), color-mix(in srgb, var(--theme), white 70%));
+}
+
 .c-calendar {
     @include striplist;
 
