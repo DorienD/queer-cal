@@ -38,7 +38,11 @@
             <tr>
                 <td>{{ forloop.counter }}</td>
                 <td>{{ r.date_start|date:"Y-m-d" }}</td>
-                <td>{{ r.date_start|date:"H:i" }}</td>
+                <td>
+                    {% if not r.date_is_all_day %}
+                        {{ r.date_start|date:"H:i" }}
+                    {% endif %}
+                </td>
                 <td>{{ r.title }}</td>
                 <td>[{% for keyword in r.o.subject %}"{{ keyword.title }}"{%if not forloop.last %}, {% endif %}{% endfor %}]</td>
                 <td>
