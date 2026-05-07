@@ -755,7 +755,6 @@ form fieldset {
 }
 form label {
   font-family: var(--primaryFont);
-  cursor: pointer;
 }
 form select.form-control,
 form select {
@@ -826,50 +825,6 @@ body textarea.form-control:focus {
 }
 .c-custom-checkbox:hover:before, .c-custom-checkbox:active:before, .c-custom-checkbox:focus:before, .c-custom-checkbox:focus:active:before {
   border-color: var(--darkTheme);
-}
-
-.c-custom-toggle input {
-  opacity: 0;
-  width: 1em;
-  height: 1em;
-  position: absolute;
-  left: 0.5em;
-  top: 0.4em;
-}
-.c-custom-toggle label {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  position: relative;
-}
-.c-custom-toggle span {
-  --_width: 3rem;
-  --_color: var(--typographyColor);
-  display: block;
-  width: calc(var(--_width) * 2);
-  height: var(--_width);
-  background: color-mix(in srgb, var(--_color), white 80%);
-  position: relative;
-  border: 1px solid var(--_color);
-  border-radius: 4.5rem;
-}
-.c-custom-toggle span:after {
-  content: "";
-  width: calc(var(--_width) - 0.5rem);
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 4px;
-  transform: translateY(-50%);
-  background: var(--_color);
-  transition: all 0.3s;
-}
-.c-custom-toggle input:checked + label span {
-  --_color: var(--flagBlue);
-}
-.c-custom-toggle input:checked + label span:after {
-  left: calc(100% - var(--_width));
 }
 
 @media only screen and (min-width: 800px) {
@@ -1152,6 +1107,20 @@ body.color--flagBrown .c-btn-add-event path {
   text-decoration: none;
   text-align: center;
   color: var(--typographyColor);
+}
+
+.c-cover-link:hover, .c-cover-link:active, .c-cover-link:focus, .c-cover-link:focus:active {
+  text-decoration: none;
+}
+.c-cover-link:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  background: transparent;
 }
 
 .c-calendar-listing {
@@ -1454,12 +1423,17 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
 
 .c-calendar-item.-support {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
+  align-content: center;
+  gap: 1em;
   min-height: 9em;
   background: var(--lightTheme);
   text-align: center;
+}
+.c-calendar-item.-support p {
+  width: 100%;
+  margin: 0;
 }
 
 .c-calendar-modified {
@@ -2088,6 +2062,53 @@ body.color--flagBrown .c-main-nav {
   opacity: 0.3;
 }
 
+.c-support {
+  display: flex;
+  gap: 2em;
+  max-width: 70ch;
+  padding: 2em 0;
+}
+
+.c-card-support {
+  --theme: var(--flagBlue);
+  --primaryColor: var(--flagBlue);
+  background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.5em;
+  padding: 1em;
+  position: relative;
+  border-top: 5px solid var(--darkTheme);
+}
+@supports (color: color-mix(in srgb, red, white)) {
+  .c-card-support {
+    --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
+    --darkTheme: color-mix(in srgb, var(--theme), #242424 30%);
+  }
+}
+.c-card-support.-monthly {
+  --theme: var(--flagGreen);
+  --primaryColor: var(--flagGreen);
+}
+@supports (color: color-mix(in srgb, red, white)) {
+  .c-card-support.-monthly {
+    --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
+    --darkTheme: color-mix(in srgb, var(--theme), #242424 30%);
+  }
+}
+.c-card-support p {
+  margin: auto 0 0 0;
+}
+
+.c-card-support__amount {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.c-card-support__amount small {
+  font-size: 0.5em;
+  font-weight: normal;
+}
+
 .t-edit {
   --typographyColor: #242424;
   --lightTheme: #242424;
@@ -2168,15 +2189,6 @@ body.color--flagBrown .c-main-nav {
 
 .form-control[name=find_cg] {
   display: none;
-}
-
-.recurring-date-edit {
-  display: none;
-  transition: block 0.3s;
-}
-
-.recurring:has(#recurring:checked) + .recurring-date-edit {
-  display: block;
 }
 
 .t-logon .z-logon-box label {
