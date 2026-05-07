@@ -8,7 +8,7 @@
 
     <p>
         <a href="{{ m.rsc.page_support.page_url }}">
-           <small> {_ Find out more about what you are supporting. _}</small>
+           {_ Find out more about what you are supporting _}
         </a>
     </p>
 </article>

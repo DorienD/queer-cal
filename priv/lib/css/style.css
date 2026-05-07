@@ -1434,6 +1434,7 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
 .c-calendar-item.-support p {
   width: 100%;
   margin: 0;
+  font-size: 0.825em;
 }
 
 .c-calendar-modified {

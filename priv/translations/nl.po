@@ -436,6 +436,18 @@ msgstr "Eenmalig steunen"
 msgid "Support Queer Calendar"
 msgstr "Steun Queer Kalender"
 
+#: queercal/priv/templates/cards/card.support.tpl:3
+msgid "One time support"
+msgstr "Eenmalig steunen"
+
+#: queercal/priv/templates/cards/card.support.tpl:6
+msgid "Monthly support"
+msgstr "Maandelijks steunen"
+
+#: queercal/priv/templates/cards/card.support.tpl:11
+msgid "Find out more about what you are supporting"
+msgstr "Meer weten over wat je steunt?"
+
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:8
 msgid "The end date must be in the future relative to the start date."
 msgstr "De einddatum moet in de toekomst liggen relatief aan de startdatum."
