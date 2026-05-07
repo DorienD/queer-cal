@@ -313,7 +313,6 @@ template {
 
 body {
   --primaryFont: "Roboto mono", monospace, sans-serif;
-  --bodyFont: var(--primaryFont);
   --white: #fff;
   --bodyBg: light-dark(#fff, #242424);
   --flagRed: #FF575B;
@@ -358,6 +357,18 @@ body dialog::backdrop {
   opacity: 0.3;
 }
 
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("/lib/fonts/OpenDyslexic-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("/lib/fonts/OpenDyslexic-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 html {
   height: 100%;
   box-sizing: border-box;
@@ -501,7 +512,7 @@ audio {
 }
 body {
   color: var(--typographyColor);
-  font-family: var(--bodyFont);
+  font-family: var(--primaryFont);
   font-size: 16px;
   line-height: 1.4;
   font-weight: 400;
@@ -554,7 +565,6 @@ img {
 h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
   margin: 0 0 1em 0;
   font-feature-settings: "lnum";
-  font-family: var(--primaryFont);
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
@@ -606,7 +616,6 @@ h4 {
   font-weight: 400;
 }
 .title-card.-small {
-  font-family: var(--bodyFont);
   font-size: 1.4rem;
   text-transform: none;
 }
@@ -754,7 +763,8 @@ form fieldset {
   padding: 0;
 }
 form label {
-  font-family: var(--primaryFont);
+  font-family: inherit;
+  cursor: pointer;
 }
 form select.form-control,
 form select {
@@ -881,7 +891,6 @@ button {
   background: var(--primaryColor);
   border: 2px solid transparent;
   text-decoration: none;
-  font-family: var(--primaryFont);
   color: #242424;
   line-height: 1;
   cursor: pointer;
@@ -2116,7 +2125,7 @@ body.color--flagBrown .c-main-nav {
   --darkTheme: #242424;
   padding: 1em 0;
   color: var(--typographyColor);
-  font-family: var(--bodyFont);
+  font-family: var(--primaryFont);
   font-size: 16px;
   line-height: 1.4;
   font-weight: 400;

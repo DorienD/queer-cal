@@ -8,7 +8,6 @@ $hugeBreakpoint: 1200px;
 
 body {
     --primaryFont: "Roboto mono", monospace, sans-serif;
-    --bodyFont: var(--primaryFont);
 
     --white: #fff;
 
@@ -60,4 +59,18 @@ body {
         background: var(--darkTheme, rgba(0, 0, 0, 0.5));
         opacity: 0.3;
     }
+}
+
+@font-face {
+    font-family: "OpenDyslexic";
+    src: url("/lib/fonts/OpenDyslexic-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OpenDyslexic";
+    src: url("/lib/fonts/OpenDyslexic-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
 }

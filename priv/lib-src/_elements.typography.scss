@@ -1,10 +1,9 @@
 body {   
     color: var(--typographyColor);
-    font-family: var(--bodyFont);
+    font-family: var(--primaryFont);
     font-size: 16px;
     line-height: 1.4;
     font-weight: 400;
-    // word-spacing: -0.2em;
 
     @include breakpoint($largeBreakpoint) {
         font-size: 18px;
@@ -55,7 +54,6 @@ img {
 h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
     margin: 0 0 1em 0;
     font-feature-settings: "lnum";
-    font-family: var(--primaryFont);
     text-transform: uppercase;
     letter-spacing: 0.03em;
 }
@@ -106,7 +104,6 @@ h4 {
     font-weight: 400;
 
     &.-small {
-        font-family: var(--bodyFont);
         font-size: 1.4rem;
         text-transform: none;
     }
