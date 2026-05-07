@@ -1,4 +1,4 @@
-<article class="c-calendar-item -support -{{ support_type }}">
+<article class="c-calendar-item -support">
     <a href="https://donate.stripe.com/eVq28k3gl4rofcsgkQdfG00" class="c-btn c-btn-primary -icon-external c-btn-support">
         {_ One time support _}
     </a>
