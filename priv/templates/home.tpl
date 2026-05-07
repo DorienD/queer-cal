@@ -60,8 +60,7 @@
                     {% endif %}
                         {% catinclude "cards/card.tpl" r %}
                     </li>
-                    
-                    {% if forloop.counter == 6 %}
+                    {% if forloop.counter == 6 or forloop.counter % 15 == 0 %}
                         <li>{% include "cards/card.support.tpl" %}</li>
                     {% endif %}
                 {% if forloop.last %}

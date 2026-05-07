@@ -50,7 +50,6 @@
                 </td>
             </tr>
         {% endfor %}
-     
     </tbody>
 </table>
 {% endwith %}

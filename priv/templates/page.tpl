@@ -33,6 +33,10 @@
                     {{ id.body|show_media }}
                 </div>
             {% endif %}
+
+            {% block between_body %}{% endblock %}
+
+            {% include "_blocks.tpl" %}
         {% endblock %}
     </article>
 

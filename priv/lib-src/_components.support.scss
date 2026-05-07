@@ -1,0 +1,48 @@
+.c-support {
+    display: flex;
+    gap: 2em;
+    max-width: 70ch;
+    padding: 2em 0;
+}
+
+.c-card-support {
+    --theme: var(--flagBlue);
+    --primaryColor: var(--flagBlue);
+    background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
+
+    @supports (color: color-mix(in srgb, red, white)) {
+        --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
+        --darkTheme: color-mix(in srgb, var(--theme), #242424 30%);
+    }
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.5em;
+    padding: 1em;
+    position: relative;
+    border-top: 5px solid var(--darkTheme);
+
+    &.-monthly {
+        --theme: var(--flagGreen);
+        --primaryColor: var(--flagGreen);
+
+        @supports (color: color-mix(in srgb, red, white)) {
+            --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
+            --darkTheme: color-mix(in srgb, var(--theme), #242424 30%);
+        }
+    }
+
+    p {
+        margin: auto 0 0 0;
+    }
+}
+
+.c-card-support__amount {
+    font-size: 1.3em;
+    font-weight: bold;
+
+    small {
+        font-size: 0.5em;
+        font-weight: normal;
+    }
+}
