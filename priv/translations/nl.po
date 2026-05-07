@@ -32,6 +32,10 @@ msgstr ""
 "Een link wordt toegevoegd om de titel. De website link heeft prioriteit over "
 "de Facebook of Instagram link."
 
+#: queercal/priv/templates/page.name.page_support.tpl:10
+msgid "A one-time contribution. Every euro helps keep the calendar running"
+msgstr "Een eenmalige bijdrage. Elke euro helpt de kalender draaiende te houden"
+
 #: queercal/priv/templates/base.tpl:101
 msgid "Add Event"
 msgstr "Voeg event toe"
@@ -96,6 +100,10 @@ msgstr "Filter Toepassen"
 #: queercal/priv/templates/footer/footer.tpl:10
 msgid "Back to top"
 msgstr "Terug omhoog"
+
+#: queercal/priv/templates/page.name.page_support.tpl:20
+msgid "Become a recurring supporter and help the calendar grow every month"
+msgstr "Word een vaste supporter en help de kalender elke maand groeien"
 
 #: queercal/priv/templates/cards/_empty-calendar.tpl:5
 msgid "But sadly there are no events 🥺, know something? Mail it to:"
@@ -416,6 +424,14 @@ msgstr "Straat"
 msgid "Summary"
 msgstr "Omschrijving"
 
+#: queercal/priv/templates/page.name.page_support.tpl:22
+msgid "Support monthly"
+msgstr "Maandelijks steunen"
+
+#: queercal/priv/templates/page.name.page_support.tpl:12
+msgid "Support once"
+msgstr "Eenmalig steunen"
+
 #: queercal/priv/templates/cards/card.support.tpl:3
 msgid "Support Queer Calendar"
 msgstr "Steun Queer Kalender"
@@ -541,6 +557,14 @@ msgstr "bijv. De Trut of Club Church"
 #: queercal/priv/templates/page.keyword.tpl:5
 msgid "keyword"
 msgstr "trefwoorden"
+
+#: queercal/priv/templates/page.name.page_support.tpl:17
+msgid "month"
+msgstr "maand"
+
+#: queercal/priv/templates/page.name.page_support.tpl:7
+msgid "one-time"
+msgstr "eenmalig"
 
 #: queercal/priv/templates/event/_filters.tpl:51
 msgid "reset"
