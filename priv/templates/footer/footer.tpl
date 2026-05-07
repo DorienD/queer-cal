@@ -8,7 +8,7 @@
     <nav aria-label="{_ Footer _}">
         <a href="{{ m.rsc.page_support.page_url }}">{{ m.rsc.page_support.short_title|default:m.rsc.page_support.title }}</a>
         <a href="{{ m.rsc.page_disclaimer.page_url }}">{{ m.rsc.page_disclaimer.title }}</a>
-        <a href="https://github.com/DorienD/queer-cal" class="c-footer__github">Github</a>
+        <a href="https://github.com/DorienD/queer-cal" rel="noopener" class="c-footer__github">Github</a>
         <a href="#top" class="c-footer__top">{% include "icons/icon-caret-left.tpl" width="16" height="16" %} <span>{_ Back to top _}</span></a>
     </nav>
 </footer>
