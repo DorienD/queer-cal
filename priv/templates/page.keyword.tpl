@@ -3,7 +3,19 @@
 {% block below_body %}
     <div class="c-calendar-listing">
         <h2>{_ All events with the _} <span class="c-keyword-list__item">{{ id.title }}</span> {_ keyword _}</h2>
-        
+
+        {% if id.summary or id.body %}
+            <div class="c-body-text">
+                {% if id.summary %}
+                    <p class="c-summary">{{ id.summary }}</p>
+                {% endif %}
+
+                {% if id.body %}
+                    {{ id.body|show_media }}
+                {% endif %}
+            </div>
+        {%endif %}
+
         {% with m.search.query::%{
             cat: "event",
             qargs: true,
