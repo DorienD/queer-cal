@@ -40,8 +40,60 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row recurring">
+                    <div class="form-group col-sm-12">
+                        <div class="c-custom-toggle">
+                            <input type="checkbox" id="recurring" value="1"><label for="recurring"><span></span> {_ Recurring event? _}</label>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="row recurring-date-edit">
+                    <div class="form-group col-sm-12">
+                        <h3>{_ Recurrence _}</h3>
+                        <label for="recurring_weekly">
+                            Weekly
+                            <input type="radio" id="recurring_weekly" name="recurring_step" value="weekly">
+                        </label>
+                        <label for="recurring_monthly">
+                            Monthly
+                            <input type="radio" id="recurring_monthly" name="recurring_step" value="monthly">
+                        </label>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <h3>{_ Pattern _}</h3>
+                        <p>
+                            {_ Every _} <input type="number" name="recurring_step_int"> week or month on
+                        </p>
+                        <p>
+                            <label for="recurring_day_monday"><input type="radio" id="recurring_day_monday" name="recurring_day"> {_ Monday _}</label>
+                            <label for="recurring_day_tuesday"><input type="radio" id="recurring_day_tuesday" name="recurring_day"> {_ Tuesday _}</label>
+                            <label for="recurring_day_wednesday"><input type="radio" id="recurring_day_wednesday" name="recurring_day"> {_ Wednesday _}</label>
+                            <label for="recurring_day_thursday"><input type="radio" id="recurring_day_thursday" name="recurring_day"> {_ Thursday _}</label>
+                            <label for="recurring_day_friday"><input type="radio" id="recurring_day_friday" name="recurring_day"> {_ Friday _}</label>
+                            <label for="recurring_day_saturday"><input type="radio" id="recurring_day_saturday" name="recurring_day"> {_ Saturday _}</label>
+                            <label for="recurring_day_sunday"><input type="radio" id="recurring_day_sunday" name="recurring_day"> {_ Sunday _}</label>
+                        </p>
+                        <p>
+                            <h3>{_ Ending _}</h3>
+                            <label>
+                                <input type="radio" name="recurring_end" value="no_end"> No end
+                            </label>
+                            <label>
+                                <input type="radio" name="recurring_end" value="end_date"> End by
+                                <input type="date">
+                            </label>
+                            <label>
+                                <input type="radio" name="recurring_end" value="end_ocurrences"> {_ End after _}
+                                <input type="number" name="end_ocurrences_int"> occurences
+                            </label>
+                        </p>
+                    </div>
+
+                </div>
             </fieldset>
-            
+
             <p class="help-block" {% if not id.tz or id.tz == m.req.timezone %}style="display:none"{% endif %}>
                 <i class="fa fa-exclamation-triangle"></i>
                 {_ Showing dates in _}: <b class="rsc-timezone">{{ id.tz|escape }}</b>

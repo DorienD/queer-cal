@@ -86,3 +86,12 @@
 .form-control[name="find_cg"] {
     display: none;
 }
+
+.recurring-date-edit {
+    display: none;
+    transition: block 0.3s;
+}
+
+.recurring:has(#recurring:checked) + .recurring-date-edit {
+    display: block;
+}
