@@ -1,6 +1,6 @@
 <div class="c-filters">
     {% if result %}
-        <p class="c-filters__months">
+        <nav class="c-filters__months" aria-label="{_ Months _}">
             Go to: 
             
             {% for r in result %}
@@ -8,7 +8,7 @@
                     <a href="#{{ r.date_start|date:"F"|slugify }}">{{ r.date_start|date:"F" }}</a>
                 {% endif %}
             {% endfor %}
-        </p>
+        </nav>
     {% endif %}
 
     <form action="/" id="j-filters" class="c-filters__options">

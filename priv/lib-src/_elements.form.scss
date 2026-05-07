@@ -50,6 +50,7 @@ form {
 
     label {
         font-family: var(--primaryFont);
+        cursor: pointer;
     }
 
     select.form-control,
@@ -75,6 +76,8 @@ form {
         appearance: none;
     }
 }
+
+
 
 body input.form-control:not([type="date"]):not([type="time"]):focus {
     padding: 0 1rem;
@@ -130,6 +133,58 @@ body textarea.form-control:focus {
     @include setInteractive {
         &:before {
             border-color: var(--darkTheme);
+        }
+    }
+}
+
+.c-custom-toggle {
+    input {
+        opacity: 0;
+        width: 1em;
+        height: 1em;
+        position: absolute;
+        left: .5em;
+        top: .4em;
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        position: relative;
+    }
+
+    span {
+        --_width: 3rem;
+        --_color: var(--typographyColor);
+        display: block;
+        width: calc(var(--_width)*2);
+        height: var(--_width);
+        background: color-mix(in srgb, var(--_color), white 80%);
+        position: relative;
+        border: 1px solid var(--_color);
+        border-radius: 4.5rem;
+
+        &:after {
+            content: '';
+            width: calc(var(--_width) - 0.5rem);
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 4px;
+            transform: translateY(-50%);
+            background: var(--_color);
+            transition: all 0.3s;
+        }
+    }
+
+    input:checked + label span {
+        --_color: var(--flagBlue);
+
+        &:after {
+            left: calc(100% - var(--_width));
+
         }
     }
 }

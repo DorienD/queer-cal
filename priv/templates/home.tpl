@@ -12,7 +12,7 @@
     {% with m.search.query::%{
         cat: "event",
         qargs: true,
-        unfinished: true,
+        
         sort: "rsc.pivot_date_start",
         is_findable: true,
         pagelen: 10000
@@ -60,6 +60,7 @@
                     {% endif %}
                         {% catinclude "cards/card.tpl" r %}
                     </li>
+                    
                     {% if forloop.counter == 6 %}
                         <li>{% include "cards/card.support.tpl" %}</li>
                     {% endif %}
