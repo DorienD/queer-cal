@@ -103,10 +103,10 @@
                     <input class="form-control" id="ticket_url" type="text" name="ticket_url" inputmode="url" value="{{ id.ticket_url|default:id.ticket_link }}">
                 </div>
 
-                <div class="form-group">
+                {# <div class="form-group">
                     <label class="control-label" for="ticket_link">{_ Ticket link old _}</label>
                     <input class="form-control" id="ticket_link" type="text" name="ticket_link" inputmode="url" value="{{ id.ticket_link }}">
-                </div>
+                </div> #}
             </div>
         </div>
 
