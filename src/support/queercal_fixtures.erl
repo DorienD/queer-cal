@@ -24,12 +24,13 @@ datamodel(Context) ->
     Env = m_config:get_value(site, environment, Context),
     #datamodel{
         categories = [
-            % {project, undefined, #{
-            %     <<"language">> => [ nl ],
-            %     <<"title">> => #trans{ tr = [
-            %         {nl, <<"Project">>}
-            %     ]}
-            % }}
+            {year_overview, query, #{
+                <<"language">> => [ nl ],
+                <<"title">> => #trans{ tr = [
+                    {en, <<"Yearly overview">>},
+                    {nl, <<"Jaaroverzicht">>}
+                ]}
+            }}
         ],
         predicates = [
             {haslocation, #{
@@ -68,22 +69,23 @@ datamodel(Context) ->
             {page_about, text, #{
                 <<"language">> => [ nl ],
                 <<"title">> => #trans{ tr = [
+                    {en, <<"About us">>},
                     {nl, <<"Over ons">>}
                 ]}
             }},
             {page_support, text, #{
                 <<"language">> => [ nl ],
                 <<"title">> => #trans{ tr = [
+                    {en, <<"Support Queer Calendar">>},
                     {nl, <<"Steun Queer Kalender">>}
                 ]}
             }},
-            {page_ticket_disclaimer, text, #{
+            {page_year_2025, year_overview, #{
                 <<"language">> => [ nl ],
                 <<"title">> => #trans{ tr = [
-                    {nl, <<"Let op!">>},
-                    {en, <<"Heads up!">>}
-                ]},
-                <<"is_unfindable">> => true
+                    {en, <<"Yearly overview 2025">>},
+                    {nl, <<"Jaaroverzicht 2025">>}
+                ]}
             }},
             {page_disclaimer, text, #{
                 <<"language">> => [ nl ],
