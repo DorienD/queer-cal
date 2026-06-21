@@ -46,7 +46,7 @@
                 <td>{{ r.title }}</td>
                 <td>[{% for keyword in r.o.subject %}"{{ keyword.title }}"{%if not forloop.last %}, {% endif %}{% endfor %}]</td>
                 <td>
-                    {{ r.o.haslocation.title|default:r.address_title }}
+                    {{ r.o.haslocation.title|default:r.address_title|default:r.address_street_1 }}
                 </td>
             </tr>
         {% endfor %}
