@@ -23,7 +23,7 @@
     pagelen=100
     is_findable 
     is_published
-    asort='-rsc.is_featured' }] as result %}
+}] as result %}
 <table>
     <thead>
         <th>#</th>
