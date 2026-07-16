@@ -41,6 +41,8 @@
                 <td>
                     {% if not r.date_is_all_day %}
                         {{ r.date_start|date:"H:i" }}
+                    {% else %}
+                        {_ All day _}
                     {% endif %}
                 </td>
                 <td>{{ r.title }}</td>
