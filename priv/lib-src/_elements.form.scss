@@ -6,6 +6,15 @@ form {
         font-size: inherit;
         border: 2px solid var(--typographyColor);
     }
+
+    .form-control:has(+ .z_validation) {
+        margin-bottom: 0;
+    }
+
+    .form-control + .z_validation {
+        display: inline-block;
+        margin-bottom: 1em;
+    }
     
     input[type="text"].form-control,
     input[type="text"],

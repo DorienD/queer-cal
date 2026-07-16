@@ -85,7 +85,7 @@
             {_ Links _}
         </h2>
         <p class="helper-text">
-            {_ A link will be added around the title of the event. The website link will have priority over Facebook or Instagram. _}
+            {_ A link will be added around the title of the event. _}
         </p>
         <div class="row">
             <div class="col-md-12">

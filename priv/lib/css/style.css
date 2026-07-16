@@ -725,6 +725,13 @@ form .form-control {
   font-size: inherit;
   border: 2px solid var(--typographyColor);
 }
+form .form-control:has(+ .z_validation) {
+  margin-bottom: 0;
+}
+form .form-control + .z_validation {
+  display: inline-block;
+  margin-bottom: 1em;
+}
 form input[type=text].form-control,
 form input[type=text],
 form input[type=search].form-control,
@@ -876,6 +883,53 @@ body textarea.form-control:focus {
   height: 4rem;
   margin-left: auto;
   text-decoration: none;
+}
+
+#signup-email-step2 {
+  border-top: 2px solid var(--theme);
+}
+
+body .z-logon-box {
+  width: 50ch;
+}
+body .z-logon-box h2 {
+  font-size: 1.3em;
+}
+body .z-logon-box p {
+  margin-bottom: 1.5em;
+}
+body .z-logon-box div.help-block {
+  margin-top: 1.5em;
+}
+body .z-logon-box .help-block {
+  font-size: 0.8em;
+}
+body .z-logon-box #new-password + #copy-password {
+  margin-left: 1em;
+}
+body .z-logon-box #signup_password input {
+  margin-bottom: 0;
+}
+body .z-logon-box #signup_password + .help-block {
+  display: flex;
+  justify-content: space-between;
+}
+body .z-logon-box #signup_tos .z_validation {
+  margin-bottom: 1em;
+}
+body .z-logon-box label {
+  font-size: 0.8em;
+}
+@media only screen and (min-width: 1088px) {
+  body .z-logon-box .signup-name {
+    flex-flow: row nowrap;
+  }
+  body .z-logon-box .signup-name #signup_name_first {
+    min-width: 0;
+  }
+  body .z-logon-box .signup-name label {
+    display: block;
+  }
 }
 
 button {
@@ -1878,7 +1932,7 @@ button.c-keyword-list__item:hover {
   display: flex;
   align-items: center;
   justify-content: end;
-  gap: 2rem;
+  gap: 1rem;
   width: 100%;
   height: 40px;
   padding: 0 2.5%;
@@ -1910,6 +1964,7 @@ button.c-keyword-list__item:hover {
 @media only screen and (min-width: 800px) {
   .c-main-nav {
     padding: 0 4rem;
+    gap: 2rem;
   }
 }
 
@@ -1961,6 +2016,32 @@ body.color--flagBrown .c-main-nav {
 .c-main-nav__lang li:not(:last-child):after {
   transform: rotate(10deg);
   right: -0.5em;
+}
+
+.c-main-nav__user span + span {
+  display: none;
+}
+@media only screen and (min-width: 800px) {
+  .c-main-nav__user {
+    text-decoration: none;
+  }
+  .c-main-nav__user:hover span + span, .c-main-nav__user:active span + span, .c-main-nav__user:focus span + span, .c-main-nav__user:focus:active span + span {
+    text-decoration: none;
+  }
+  .c-main-nav__user span + span {
+    display: inline-block;
+    text-decoration: underline;
+  }
+}
+
+.c-main-nav__user__icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 1lh;
+  height: 1lh;
+  border-radius: 50%;
+  border: 1px solid black;
 }
 
 @supports not (inset: 0) {
