@@ -1,14 +1,18 @@
 .c-main-nav {
+    --navHeight: 4.5rem;
+    container-type: inline-size;
+    container-name: main-nav;
+
     display: flex;
     align-items: center;
     justify-content: end;
     gap: 1rem;
     width: 100%;
-    height: 40px;
+    height: var(--navHeight);
     padding: 0 2.5%;
     margin-bottom: 2em;
     background: var(--flagRed);
-    
+
     @supports (color: light-dark(black, white)) {
         background: light-dark(var(--theme), var(--lightTheme));
     }
@@ -17,45 +21,17 @@
     text-transform: uppercase;
     font-size: 0.9em;
 
-    li {
-        position: relative;
-    }
-
-    li:not(:last-child):after {
-        content: '';
-        width: 0.08em;
-        height: 1em;
-        height: 0.8lh;
-        background: currentColor;
-        position: absolute;
-        right: -0.75em;
-        top: 4px;
-        top: 0.15lh;
-    }
-
     @include breakpoint($mediumBreakpoint) {
-        padding: 0 4rem;
+        padding: 0 0 0 4rem;
         gap: 2rem;
     }
 }
 
-.c-main-nav__menu,
-.c-main-nav__lang {
-    @include striplist;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    gap: 1.5em;
-    height: 100%;
-}
-
 .c-main-nav__logo {
-    display: none;
+    display: block;
     margin-right: auto;
-
-    @include breakpoint(600px) {
-        display: block;
-    }
+    position: relative;
+    z-index: 910;
 }
 
 body.color--flagBlack,
@@ -65,13 +41,151 @@ body.color--flagBrown {
     }
 }
 
-.c-main-nav__btns {
+.c-main-nav__toggle {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    height: 100%;
+    padding: 0.25rem 0.5rem;
+    position: relative;
+    z-index: 910;
+    color: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    @include setInteractive {
+        opacity: 0.8;
+    }
+}
+
+.c-main-nav__toggle__icon {
+    width: 1.375em;
+    height: 2px;
+    position: relative;
+    background: currentColor;
+    border-radius: 1px;
+    transition: background-color 0.2s ease;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: currentColor;
+        border-radius: 1px;
+        transition: transform 0.2s ease, top 0.2s ease;
+    }
+
+    &::before {
+        top: -0.4em;
+    }
+
+    &::after {
+        top: 0.4em;
+    }
+}
+
+.c-main-nav__toggle[aria-expanded="true"] .c-main-nav__toggle-icon {
+    background: transparent;
+
+    &::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+}
+
+html:has(.c-main-nav__toggle[aria-expanded="true"]) {
+    overflow: hidden;
+}
+
+.c-main-nav__panel {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
+    height: 100%;
+
+    // ul {
+    //     width: 100%;
+    //     padding-left: 2.5%;
+    //     padding-right: 2.5%;
+    // }
+}
+
+.c-main-nav__panel:where(:not([hidden])) {
+    display: flex;
+}
+
+.c-main-nav__toggle:not([hidden]) ~ .c-main-nav__panel {
+    gap: 1.5rem;
+    padding: calc(var(--navHeight) + 2rem) 0 0;
+    height: 100dvh;
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    overflow-y: auto;
+    background: var(--flagRed);
+    color: inherit;
+    text-transform: inherit;
+    font-size: 1.15em;
+
+    @supports (color: light-dark(black, white)) {
+        background: light-dark(var(--theme), var(--lightTheme));
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition: opacity 0.2s ease, display 0.2s allow-discrete;
+
+        @starting-style {
+            opacity: 0;
+        }
+    }
+}
+
+.c-main-nav__user-nav,
+.c-main-nav__menu,
+.c-main-nav__lang {
+    @include striplist;
+    display: flex;
+    flex-flow: column;
+    gap: 1.5rem;
+    width: 100%;
+    padding-inline: 2.5%;
+    white-space: nowrap;
+
+    li {
+        position: relative;
+    }
 }
 
 .c-main-nav__lang {
-    gap: 1em;
+    flex-flow: row nowrap;
+
+    li {
+        display: flex;
+        align-items: center;
+    }
+
+    li:not(:last-child):after {
+        content: "";
+        width: 0.08em;
+        height: 1em;
+        height: 0.8lh;
+        background: currentColor;
+        position: absolute;
+        right: -0.5em;
+        top: 0.15lh;
+        transform: rotate(10deg);
+    }
 
     a {
         text-decoration: none;
@@ -84,32 +198,51 @@ body.color--flagBrown {
     a.is-active {
         text-decoration: underline;
     }
+}
 
-    li:not(:last-child):after {
-        transform: rotate(10deg);
-        right: -0.5em;
-    }
+.c-main-nav__user-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 1.5em;
+    height: 100%;
+    padding-block: 1em;
+    background: var(--darkTheme);
 }
 
 .c-main-nav__user {
-    span + span {
-        display: none;
-    }
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    position: relative;
+    text-decoration: none;
 
-    @include breakpoint($mediumBreakpoint) {
-        text-decoration: none;
-        
-        @include setInteractive {
-            span + span {
-                text-decoration: none;
-            }
-        }
-
+    @include setInteractive {
         span + span {
-            display: inline-block;
-            text-decoration: underline;
+            text-decoration: none;
         }
     }
+
+    span + span {
+        text-decoration: underline;
+    }
+}
+
+.c-main-nav__menu li:not(:last-child):after,
+.c-main-nav__user-nav li:not(:last-child):after {
+    content: "";
+    width: 0.08em;
+    height: 1em;
+    height: 0.8lh;
+    background: currentColor;
+    position: absolute;
+    right: -0.75em;
+    top: 4px;
+    top: 0.15lh;
+}
+
+.c-main-nav__menu li:not(:last-child):after {
+    display: none;
 }
 
 .c-main-nav__user__icon {
@@ -119,17 +252,83 @@ body.color--flagBrown {
     width: 1lh;
     height: 1lh;
     border-radius: 50%;
-    border: 1px solid black;
+    border: 1px solid currentColor;
 }
 
-@supports not (inset: 0) {
-    // Supports query for checking if gap works
-    .c-main-nav__menu {
-        margin-right: 2rem;
+@container main-nav (min-width: #{$mediumBreakpoint}) {
+    .c-main-nav__toggle {
+        display: none;
     }
 
-    .c-main-nav__menu li + li,
-    .c-main-nav__lang li + li {
-        margin-left: 1.5em;
-    } 
+    .c-main-nav__panel,
+    .c-main-nav__toggle:not([hidden]) ~ .c-main-nav__panel {
+        display: flex;
+        position: static;
+        inset: auto;
+        height: 100%;
+        padding: 0;
+        overflow: visible;
+        background: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
+        font-size: 1em;
+
+        @include breakpoint($mediumBreakpoint) {
+            gap: 2rem;
+        }
+    }
+
+    .c-main-nav__menu {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5em;
+        height: 100%;
+    }
+
+    .c-main-nav__menu,
+    .c-main-nav__lang {
+        padding: 0;
+    }
+
+    .c-main-nav__menu li:not(:last-child):after{
+        display: block;
+    }
+
+    .c-main-nav__user-nav {
+        align-items: center;
+        padding: 0 1em;
+    }
+}
+
+@supports not (container-type: inline-size) {
+    @include breakpoint($mediumBreakpoint) {
+        .c-main-nav__toggle {
+            display: none;
+        }
+
+        .c-main-nav__panel,
+        .c-main-nav__toggle:not([hidden]) ~ .c-main-nav__panel {
+            display: flex;
+            position: static;
+            inset: auto;
+            height: auto;
+            padding: 0;
+            overflow: visible;
+            background: none;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 2rem;
+            font-size: 1em;
+        }
+
+        .c-main-nav__menu {
+            flex-direction: row;
+            align-items: center;
+            gap: 1.5em;
+            height: 100%;
+        }
+    }
 }
