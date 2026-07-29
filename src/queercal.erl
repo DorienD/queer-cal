@@ -35,6 +35,7 @@
 % Exports - if exports change then the module is restarted after
 % compilation.
 -export([
+    observe_signup_form_fields/3,
     manage_schema/2,
     manage_data/2
     ]).
@@ -59,3 +60,8 @@ manage_data(_Version, Context) ->
     queercal_fixtures:install_acl_rules(Context),
     queercal_fixtures:maybe_update_fixtures(Context).
 
+%% Queer Calendar does not require a real name to sign up: drop
+%% name_first and name_surname from the signup form fields fold so
+%% controller_signup does not require or read them.
+observe_signup_form_fields(signup_form_fields, Fields, _Context) ->
+    proplists:delete(name_surname, proplists:delete(name_first, Fields)).

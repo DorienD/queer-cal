@@ -84,6 +84,10 @@ form {
         border-radius: 0;
         appearance: none;
     }
+
+    .label-floating label, .label-floating label.control-label {
+        display: block;
+    }
 }
 
 body input.form-control:not([type="date"]):not([type="time"]):focus {

@@ -71,7 +71,7 @@ button {
     }
 
     @include setInteractive {
-        text-decoration: none;
+        text-decoration: underline;
         border: 2px solid var(--typographyColor);
         background: white;
         color: var(--typographyColor);
@@ -98,7 +98,7 @@ button {
     transition: all 0.3s ease-out;
 
     @include setInteractive {
-        text-decoration: none;
+        // text-decoration: none;
         color: #242424;
         background: var(--primaryColor);
         border-color: var(--darkTheme);
@@ -162,11 +162,11 @@ body.color--flagBlack {
 
 .c-btns-admin {
     display: flex;
-    gap: 1rem;
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 900;
+    justify-content: end;
+    gap: 1.5rem;
+    position: sticky;
+    bottom: 1.5rem;
+    z-index: 500;
 }
 
 .c-btn-add-event {
@@ -184,6 +184,8 @@ body.color--flagBlack {
     }
 
     &:hover {
+        color: #242424;
+        text-decoration: underline;
         background: color-mix(in srgb, var(--theme), black 15%);
     }
 }
@@ -266,10 +268,6 @@ body.color--flagBrown {
 }
 
 .c-cover-link {
-    @include setInteractive {
-        text-decoration: none;
-    }
-    
     &:before {
         content: '';
         position: absolute;

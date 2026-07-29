@@ -6,7 +6,9 @@
     <article class="o-page-content">
         <a href="{% url home %}" class="c-btn-back">{% include "icons/icon-caret-left.tpl" width="14px" height="14px" %}{_ All events _}</a>
 
-        <h1>{{ id.title }}</h1>
+        {% block page_title %}
+            <h1>{{ id.title }}</h1>
+        {% endblock %}
 
         {% include "event/event-keywords.tpl" page %}
 

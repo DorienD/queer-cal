@@ -1,5 +1,24 @@
 .t-logon {
+    main {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+    }
     .z-logon-box label {
+        display: block;
+        font-size: 1em;
+        margin-bottom: 0.3em;
+    }
+
+    .z-logon-box .z-logon-support {
+        padding-top: 0;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .z-logon-title {
         font-size: 1.3em;
     }
 }

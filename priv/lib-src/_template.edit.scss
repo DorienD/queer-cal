@@ -2,7 +2,7 @@
     --typographyColor: #242424;
     --lightTheme: #242424;
     --darkTheme: #242424;
-    padding: 1em 0;
+    padding: 8rem 0 0;
     color: var(--typographyColor);
     font-family: var(--primaryFont);
     font-size: 16px;
@@ -36,8 +36,21 @@
         padding-right: 0;
     }
 
+    .btn-sm {
+        min-height: 0;
+    }
+
+    @media only screen and (max-width: $smallBreakpoint) {
+        .table {
+            tr {
+                display: flex;
+                flex-flow: row wrap;
+            }
+        }
+    }
+
     @include breakpoint($mediumBreakpoint) {
-        padding: 3em 0;
+        padding-top: 10rem;
     }
 }
 
@@ -85,4 +98,17 @@
 
 .form-control[name="find_cg"] {
     display: none;
+}
+
+.c-frontend-edit__buttons {
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 2.5%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 900;
+    background: white;
 }
