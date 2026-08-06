@@ -147,3 +147,10 @@ body textarea.form-control:focus {
         }
     }
 }
+
+.text-danger {
+    padding: 0.5em;
+    color: color-mix(in srgb, var(--flagRed), #242424 30%);
+    border: 2px solid currentColor;
+    background: color-mix(in srgb, var(--flagRed), var(--bodyBg) 90%);
+}

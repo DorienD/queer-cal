@@ -15,6 +15,7 @@ button {
     line-height: 1;
     cursor: pointer;
     transition: color 0.2s, border 0.2s, background 0.3s ease-out;
+    text-underline-offset: 3px;
 
     @include aa;
 
@@ -98,7 +99,6 @@ button {
     transition: all 0.3s ease-out;
 
     @include setInteractive {
-        // text-decoration: none;
         color: #242424;
         background: var(--primaryColor);
         border-color: var(--darkTheme);
@@ -109,6 +109,10 @@ button {
     background: none;
     color: var(--darkTheme);
     border-color: var(--darkTheme);
+
+    @include setInteractive {
+        background: none;
+    }
 }
 
 .c-btn-small {

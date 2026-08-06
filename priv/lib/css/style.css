@@ -847,6 +847,13 @@ body textarea.form-control:focus {
   border-color: var(--darkTheme);
 }
 
+.text-danger {
+  padding: 0.5em;
+  color: color-mix(in srgb, var(--flagRed), #242424 30%);
+  border: 2px solid currentColor;
+  background: color-mix(in srgb, var(--flagRed), var(--bodyBg) 90%);
+}
+
 @media only screen and (min-width: 800px) {
   .o-grid {
     display: grid;
@@ -952,6 +959,7 @@ button {
   line-height: 1;
   cursor: pointer;
   transition: color 0.2s, border 0.2s, background 0.3s ease-out;
+  text-underline-offset: 3px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1038,6 +1046,9 @@ button {
   background: none;
   color: var(--darkTheme);
   border-color: var(--darkTheme);
+}
+.c-btn-secondary:hover, .c-btn-secondary:active, .c-btn-secondary:focus, .c-btn-secondary:focus:active {
+  background: none;
 }
 
 .c-btn-small {
@@ -2546,6 +2557,15 @@ html:has(.c-main-nav__toggle[aria-expanded=true]) {
 }
 .t-logon .z-logon-title {
   font-size: 1.3em;
+  font-weight: 500;
+}
+
+.z-logon-box__new-account {
+  width: 100%;
+  margin-block: 3em 0;
+}
+.z-logon-box__new-account .c-btn, .z-logon-box__new-account .btn {
+  width: 100%;
 }
 
 @media print {
