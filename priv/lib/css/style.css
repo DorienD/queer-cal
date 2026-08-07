@@ -2062,14 +2062,14 @@ body.color--flagBrown .c-main-nav {
   top: 0.4em;
 }
 
-.c-main-nav__toggle[aria-expanded=true] .c-main-nav__toggle-icon {
+.c-main-nav__toggle[aria-expanded=true] .c-main-nav__toggle__icon {
   background: transparent;
 }
-.c-main-nav__toggle[aria-expanded=true] .c-main-nav__toggle-icon::before {
+.c-main-nav__toggle[aria-expanded=true] .c-main-nav__toggle__icon::before {
   top: 0;
   transform: rotate(45deg);
 }
-.c-main-nav__toggle[aria-expanded=true] .c-main-nav__toggle-icon::after {
+.c-main-nav__toggle[aria-expanded=true] .c-main-nav__toggle__icon::after {
   top: 0;
   transform: rotate(-45deg);
 }

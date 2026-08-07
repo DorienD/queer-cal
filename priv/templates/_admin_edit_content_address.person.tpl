@@ -15,12 +15,12 @@
         <div class="row">
             <div class="col-lg-6 col-md-6">
                 <div class="form-group label-floating">
-                        <input class="form-control" id="phone" type="text" name="phone" inputmode="tel" value="{{ id.phone }}" placeholder="{_ Telephone _}">
+                    <input class="form-control" id="phone" type="text" name="phone" inputmode="tel" value="{{ id.phone }}" placeholder="{_ Telephone _}">
                     <label class="control-label" for="phone">{_ Telephone _}</label>
                 </div>
                 <div class="form-group label-floating">
                     <input class="form-control" id="phone_mobile" type="text" name="phone_mobile" inputmode="tel" value="{{ id.phone_mobile }}" placeholder="{_ Mobile _}">
-                    <label class="control-label" for="phone">{_ Mobile _}</label>
+                    <label class="control-label" for="phone_mobile">{_ Mobile _}</label>
                 </div>
             </div>
 

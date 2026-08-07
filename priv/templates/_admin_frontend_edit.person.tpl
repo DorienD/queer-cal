@@ -20,7 +20,7 @@
                         <div class="widget">
                             <div class="widget-content">
                                 <h2>{_ Profile _}</h2>
-                                <p>{_ You can edit your name here, this is only used on your profile page.  _}</p>
+                                <p>{_ You can edit your name here, this is only used on your profile page. _}</p>
                                 <fieldset>
                                     <div class="row">
                                         <div class="form-group col-lg-4 col-md-4 label-floating">

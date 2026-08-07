@@ -20,7 +20,7 @@
                 <a href="{{ m.rsc.page_disclaimer.page_url }}">{{ m.rsc.page_disclaimer.title }}</a>
             </li>
             <li>
-                <a href="https://github.com/DorienD/queer-cal" rel="noopener" class="c-footer__github">Github</a>
+                <a href="https://github.com/DorienD/queer-cal" rel="noopener" class="c-footer__github">GitHub</a>
             </li>
             <li>
                 <a href="#top" class="c-footer__top">{% include "icons/icon-caret-left.tpl" width="16" height="16" %} <span>{_ Back to top _}</span></a>

@@ -90,7 +90,7 @@ body.color--flagBrown {
     }
 }
 
-.c-main-nav__toggle[aria-expanded="true"] .c-main-nav__toggle-icon {
+.c-main-nav__toggle[aria-expanded="true"] .c-main-nav__toggle__icon {
     background: transparent;
 
     &::before {
@@ -113,12 +113,6 @@ html:has(.c-main-nav__toggle[aria-expanded="true"]) {
     align-items: flex-start;
     gap: 1rem;
     height: 100%;
-
-    // ul {
-    //     width: 100%;
-    //     padding-left: 2.5%;
-    //     padding-right: 2.5%;
-    // }
 }
 
 .c-main-nav__panel:where(:not([hidden])) {
