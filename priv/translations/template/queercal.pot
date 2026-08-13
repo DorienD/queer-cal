@@ -258,9 +258,15 @@ msgid ""
 msgstr ""
 ""
 
-#: queercal/priv/templates/_logon_link.tpl:2
+#: queercal/priv/templates/_logon_link.tpl:7
 msgid ""
 "Create a new account"
+msgstr ""
+""
+
+#: queercal/priv/templates/_logon_link.tpl:3
+msgid ""
+"Create an account"
 msgstr ""
 ""
 
@@ -402,6 +408,12 @@ msgstr ""
 #: queercal/priv/templates/__admin_edit_content_address.event.tpl:43
 msgid ""
 "From"
+msgstr ""
+""
+
+#: queercal/priv/templates/logon.tpl:13
+msgid ""
+"Go to your profile"
 msgstr ""
 ""
 
@@ -922,6 +934,14 @@ msgstr ""
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:61
 msgid ""
 "Title of the venue/location"
+msgstr ""
+""
+
+#: queercal/priv/templates/_logon_link.tpl:5
+msgid ""
+"To keep the calendar spam-free and trustworthy, we ask you to create an "
+"account before adding events. All we need is your email and a password. "
+"Your data stays on European servers and is never shared or sold."
 msgstr ""
 ""
 

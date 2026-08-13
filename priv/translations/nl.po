@@ -16,7 +16,7 @@ msgstr ""
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.9\n"
 
@@ -43,8 +43,7 @@ msgstr "Een link wordt toegevoegd om de titel."
 
 #: queercal/priv/templates/page.name.page_support.tpl:10
 msgid "A one-time contribution. Every euro helps keep the calendar running"
-msgstr ""
-"Een eenmalige bijdrage. Elke euro helpt de kalender draaiende te houden"
+msgstr "Een eenmalige bijdrage. Elke euro helpt de kalender draaiende te houden"
 
 #: queercal/priv/templates/_admin_frontend_edit.person.tpl:51
 msgid "Add 2FA for extra security on your profile."
@@ -92,8 +91,6 @@ msgid "Admin edit"
 msgstr "Beheer bewerken"
 
 #: queercal/priv/templates/page.name.hidden_agenda_export.tpl:45
-#, fuzzy
-#| msgid "All day event"
 msgid "All day"
 msgstr "Hele dag"
 
@@ -187,9 +184,13 @@ msgstr "Content"
 msgid "Country"
 msgstr "Land"
 
-#: queercal/priv/templates/_logon_link.tpl:2
+#: queercal/priv/templates/_logon_link.tpl:7
 msgid "Create a new account"
 msgstr "Maak een nieuw account aan"
+
+#: queercal/priv/templates/_logon_link.tpl:3
+msgid "Create an account"
+msgstr "Maak een account aan"
 
 #: queercal/priv/templates/_admin_overview_list.event.tpl:32
 #: queercal/priv/templates/_admin_overview_list.event.tpl:111
@@ -288,12 +289,13 @@ msgstr "Neem voor het verwijderen van je profiel contact op met:"
 msgid "From"
 msgstr "Van"
 
+#: queercal/priv/templates/logon.tpl:13
+msgid "Go to your profile"
+msgstr "Ga naar je profiel"
+
 #: queercal/priv/templates/page.person.tpl:18
-msgid ""
-"If you need some help adding events, check out the <a href=\"{url}\">FAQ</a>."
-msgstr ""
-"Heb je hulp nodig bij het toevoegen van evenementen? Bekijk dan de <a "
-"href=\"{url}\">FAQ</a>."
+msgid "If you need some help adding events, check out the <a href=\"{url}\">FAQ</a>."
+msgstr "Heb je hulp nodig bij het toevoegen van evenementen? Bekijk dan de <a href=\"{url}\">FAQ</a>."
 
 #: queercal/priv/templates/event/_filters.tpl:28
 msgid "Keyword"
@@ -527,20 +529,12 @@ msgid "Sign up link"
 msgstr "Aanmelding"
 
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:142
-msgid ""
-"Some locations are already in the system, if you can't find the location add "
-"the address in the form."
-msgstr ""
-"Sommige locaties zijn al bekend in het systeem, als je de lokatie niet kunt "
-"vinden vul dan het formulier in."
+msgid "Some locations are already in the system, if you can't find the location add the address in the form."
+msgstr "Sommige locaties zijn al bekend in het systeem, als je de lokatie niet kunt vinden vul dan het formulier in."
 
 #: queercal/priv/templates/_admin_frontend_edit.event.tpl:173
-msgid ""
-"Some organisations are already in the system, if you can't find the "
-"organisation add the title in the form."
-msgstr ""
-"Sommige organisaties zijn al bekend in het systeem, als je de organisatie "
-"niet kunt vinden vul dan het formulier in."
+msgid "Some organisations are already in the system, if you can't find the organisation add the title in the form."
+msgstr "Sommige organisaties zijn al bekend in het systeem, als je de organisatie niet kunt vinden vul dan het formulier in."
 
 #: queercal/priv/templates/page.person.tpl:44
 msgid "Start adding your events!"
@@ -620,11 +614,8 @@ msgid "The page might have been deleted."
 msgstr "Deze pagina zou wel eens verwijderd kunnen zijn."
 
 #: queercal/priv/templates/page_admin_frontend_edit.tpl:96
-msgid ""
-"There are unsaved changes. Are you sure you want to leave without saving?"
-msgstr ""
-"Er zijn niet-opgeslagen wijzigingen. Weet je zeker dat je wilt vertrekken "
-"zonder op te slaan?"
+msgid "There are unsaved changes. Are you sure you want to leave without saving?"
+msgstr "Er zijn niet-opgeslagen wijzigingen. Weet je zeker dat je wilt vertrekken zonder op te slaan?"
 
 #: queercal/priv/templates/page.event.tpl:11
 msgid "This event has passed"
@@ -664,6 +655,10 @@ msgstr "Titel"
 #: queercal/priv/templates/_admin_frontend_edit_address.tpl:61
 msgid "Title of the venue/location"
 msgstr "Titel van de lokatie"
+
+#: queercal/priv/templates/_logon_link.tpl:5
+msgid "To keep the calendar spam-free and trustworthy, we ask you to create an account before adding events. All we need is your email and a password. Your data stays on European servers and is never shared or sold."
+msgstr "Om de kalender spamvrij en betrouwbaar te houden, vragen we je een account aan te maken voordat je events toevoegt. We hebben alleen je e-mailadres en een wachtwoord nodig. Je gegevens blijven op Europese servers en worden nooit gedeeld of verkocht."
 
 #: queercal/priv/templates/event/event-date.tpl:17
 #: queercal/priv/templates/event/event-date.tpl:40
@@ -714,9 +709,7 @@ msgstr "Je kunt meerdere trefwoorden toevoegen."
 
 #: queercal/priv/templates/_admin_frontend_edit.person.tpl:23
 msgid "You can edit your name here, this is only used on your profile page."
-msgstr ""
-"Je kunt hier je naam bewerken, dit wordt alleen gebruikt op je "
-"profielpagina."
+msgstr "Je kunt hier je naam bewerken, dit wordt alleen gebruikt op je profielpagina."
 
 #: queercal/priv/templates/cards/_empty-calendar.tpl:4
 msgid "You filtered on"
@@ -794,12 +787,8 @@ msgstr "tonen"
 #~ msgid "This will add a ticket button."
 #~ msgstr "Dit zal een ticket button toevoegen."
 
-#~ msgid ""
-#~ "Print made by queer-kalender.nl, check de site for the full overview. "
-#~ "Missing something or want to add your event? Mail events@queer-kalender.nl"
-#~ msgstr ""
-#~ "Print made by queer-kalender.nl, check de site for the full overview. "
-#~ "Missing something or want to add your event? Mail events@queer-kalender.nl"
+#~ msgid "Print made by queer-kalender.nl, check de site for the full overview. Missing something or want to add your event? Mail events@queer-kalender.nl"
+#~ msgstr "Print made by queer-kalender.nl, check de site for the full overview. Missing something or want to add your event? Mail events@queer-kalender.nl"
 
 #~ msgid "Proceed to external ticket sale"
 #~ msgstr "Doorgaan naar externe ticket verkoop"

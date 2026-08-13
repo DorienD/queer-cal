@@ -600,13 +600,13 @@ h2 a:hover, h2 a:active, h2 a:focus, h2 a:focus:active {
 
 .h3,
 h3 {
-  font-size: 1.9em;
+  font-size: 1.8em;
   margin-bottom: 0.8em;
 }
 
 .h4,
 h4 {
-  font-size: 1.8em;
+  font-size: 1.6em;
   margin-bottom: 0.5em;
 }
 
@@ -2544,6 +2544,9 @@ html:has(.c-main-nav__toggle[aria-expanded=true]) {
   flex-flow: column;
   justify-content: center;
 }
+.t-logon .z-logon-box {
+  margin-top: 0;
+}
 .t-logon .z-logon-box label {
   display: block;
   font-size: 1em;
@@ -2562,10 +2565,20 @@ html:has(.c-main-nav__toggle[aria-expanded=true]) {
 
 .z-logon-box__new-account {
   width: 100%;
-  margin-block: 3em 0;
+  margin-block: 2em 0;
 }
 .z-logon-box__new-account .c-btn, .z-logon-box__new-account .btn {
   width: 100%;
+}
+
+.t-logon-intro {
+  width: 90%;
+  max-width: 50ch;
+  margin: 0 auto;
+}
+
+.z-logon-form:has(#form-password:not(.x-hidden)) + .z-logon-box__new-account {
+  display: none;
 }
 
 @media print {

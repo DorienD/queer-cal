@@ -9,7 +9,7 @@
         {% javascript %}
             window.location.replace("{{ m.acl.user.page_url }}");
         {% endjavascript %}
-        
+
         <noscript><p><a href="{{ m.acl.user.page_url }}">{_ Go to your profile _}</a></p></noscript>
     {% else %}
         {% include
