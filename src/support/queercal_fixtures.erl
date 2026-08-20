@@ -25,11 +25,19 @@ datamodel(Context) ->
     #datamodel{
         categories = [
             {year_overview, query, #{
-                <<"language">> => [ nl ],
+                <<"language">> => [ en, nl ],
                 <<"title">> => #trans{ tr = [
                     {en, <<"Yearly overview">>},
                     {nl, <<"Jaaroverzicht">>}
                 ]}
+            }},
+            {person, undefined, #{
+                <<"language">> => [ en, nl ],
+                <<"title">> => #trans{ tr = [
+                    {en, <<"Person">>},
+                    {nl, <<"Persoon">>}
+                ]},
+                <<"is_seo_noindex_cat">> => true
             }}
         ],
         predicates = [
@@ -61,48 +69,60 @@ datamodel(Context) ->
             %     }
             % },
             {page_home, collection, #{
-                <<"language">> => [ nl ],
+                <<"language">> => [ en, nl ],
                 <<"title">> => #trans{ tr = [
-                    {nl, <<"Home">>}
+                    {nl, <<"Home">>},
+                    {en, <<"Home">>}
                 ]}
             }},
             {page_about, text, #{
-                <<"language">> => [ nl ],
+                <<"language">> => [ en, nl ],
                 <<"title">> => #trans{ tr = [
                     {en, <<"About us">>},
                     {nl, <<"Over ons">>}
                 ]}
             }},
             {page_support, text, #{
-                <<"language">> => [ nl ],
+                <<"language">> => [ en, nl ],
                 <<"title">> => #trans{ tr = [
                     {en, <<"Support Queer Calendar">>},
                     {nl, <<"Steun Queer Kalender">>}
                 ]}
             }},
+            {page_faq, text, #{
+                <<"language">> => [ en, nl ],
+                <<"title">> => #trans{ tr = [
+                    {en, <<"Frequently asked questions">>},
+                    {nl, <<"Veelgestelde vragen">>}
+                ]},
+                <<"short_title">> => #trans{ tr = [
+                    {en, <<"FAQ">>},
+                    {nl, <<"FAQ">>}
+                ]}
+            }},
             {page_year_2025, year_overview, #{
-                <<"language">> => [ nl ],
+                <<"language">> => [ en, nl ],
                 <<"title">> => #trans{ tr = [
                     {en, <<"Yearly overview 2025">>},
                     {nl, <<"Jaaroverzicht 2025">>}
                 ]}
             }},
             {page_disclaimer, text, #{
-                <<"language">> => [ nl ],
+                <<"language">> => [ en, nl ],
                 <<"title">> => #trans{ tr = [
                     {nl, <<"Disclaimer">>},
                     {en, <<"Disclaimer">>}
                 ]}
             }},
             {print_overview, text, #{
-                <<"language">> => [ nl ],
+                <<"language">> => [ en, nl ],
                 <<"title">> => #trans{ tr = [
                     {nl, <<"Print overview">>},
                     {en, <<"Print overview">>}
                 ]}
             }},
             {hidden_agenda_export, query, #{
-                <<"language">> => [ nl ],
+                <<"language">> => [ en, nl ],
                 <<"title">> => #trans{ tr = [
                     {nl, <<"Hidden agenda export">>},
                     {en, <<"Hidden agenda export">>}
@@ -111,7 +131,7 @@ datamodel(Context) ->
                 <<"seo_noindex">> => true
             }},
             {special_pages, collection, #{
-                <<"language">> => [ nl ],
+                <<"language">> => [ en, nl ],
                 <<"title">> => #trans{ tr = [
                     {nl, <<"Special pages">>},
                     {en, <<"Special pages">>}

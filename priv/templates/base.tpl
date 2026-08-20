@@ -86,19 +86,13 @@
 		        (This is <code>block main</code>)
 		    {% endblock %}	    
 	    {% endblock %}
-    </main>
 
-    {% block above_footer %}{% endblock %}
-
-    {% block footer %}
-        {% include 'footer/footer.tpl' %}
-    {% endblock %}
-
-    {% block admin_edit %}
-    	{% if m.acl.is_allowed.use.mod_admin or m.acl.is_allowed.insert.event %}
+	    {% block admin_edit %}
 	    	<div class="c-btns-admin">
 		        {% if m.acl.is_allowed.insert.event %}
 		            <a href="{% url new_event %}" class="c-btn-add-event -bg{{ theme }}">{% include "icons/icon-plus.tpl" color="#242424" %} {_ Add Event _}</a>
+		        {% else %}
+		        	<a href="{% url logon %}" class="c-btn-add-event -bg{{ theme }}">{% include "icons/icon-plus.tpl" color="#242424" %} {_ Add Event _}</a>
 		        {% endif %}
 
 		        {% if m.acl.is_allowed.use.mod_admin %}
@@ -109,7 +103,13 @@
 		            {% endif %}
 		        {% endif %}
 		    </div>
-		{% endif %}
+	    {% endblock %}
+    </main>
+
+    {% block above_footer %}{% endblock %}
+
+    {% block footer %}
+        {% include 'footer/footer.tpl' %}
     {% endblock %}
 
     <script data-goatcounter="https://queercal.goatcounter.com/count" async src="//gc.zgo.at/count.js" nonce="{{ m.req.csp_nonce }}"></script>
