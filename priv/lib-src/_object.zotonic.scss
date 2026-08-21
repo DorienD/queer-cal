@@ -23,3 +23,62 @@
     margin-left: auto;
     text-decoration: none;
 }
+
+#signup-email-step2 {
+    border-top: 2px solid var(--theme);
+}
+
+body .z-logon-box {
+    width: 50ch;
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    p {
+        margin-bottom: 1.5em;
+    }
+
+    div.help-block {
+        margin-top: 1.5em;
+    }
+
+    .help-block {
+        font-size: 0.8em;
+    }
+
+    #new-password + #copy-password {
+        margin-left: 1em;
+    }
+
+    #signup_password input {
+        margin-bottom: 0;
+    }
+
+    #signup_password + .help-block {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #signup_tos .z_validation {
+        margin-bottom: 1em;
+    }
+
+    label {
+        font-size: 0.8em;
+    }
+
+    .signup-name {
+        @include breakpoint($largeBreakpoint) {
+            flex-flow: row nowrap;
+            #signup_name_first {
+                min-width: 0;
+            }
+
+            label {
+                display: block;
+            }    
+        }
+        
+    }
+}

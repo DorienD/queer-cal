@@ -86,7 +86,6 @@
 		        (This is <code>block main</code>)
 		    {% endblock %}	    
 	    {% endblock %}
-    </main>
 
     {% block above_footer %}{% endblock %}
 
@@ -113,8 +112,9 @@
 		            {% endif %}
 		        {% endif %}
 		    {% endblock %}
-	    </div>
-    {% endblock %}
+		</div>
+	    {% endblock %}
+    </main>
 
     <script data-goatcounter="https://queercal.goatcounter.com/count" async src="//gc.zgo.at/count.js" nonce="{{ m.req.csp_nonce }}"></script>
     

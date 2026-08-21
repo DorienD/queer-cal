@@ -1,13 +1,9 @@
 <div class="widget">
     <div class="widget-content">
         <div class="date-range">
-            <h2 class="h3">
-                {_ Date & time _}
-            </h2>
+            <h2 class="h3">{_ Date & time _}</h2>
 
-            <p class="helper-text">
-                {_ The end date must be in the future relative to the start date.  _}
-            </p>
+            <p class="helper-text">{_ The end date must be in the future relative to the start date.  _}</p>
 
             <fieldset>
                 <div class="checkbox">
@@ -25,6 +21,7 @@
                             $times.fadeIn("fast");
                     });
                 {% endjavascript %}
+
                 <div class="row">
                     <div class="form-group col-sm-6">
                         <label class="control-label">{_ Start date _} *</label>
@@ -52,9 +49,8 @@
 
         <input type="hidden" name="address_country" value="nl">
 
-        <h2 class="h3">
-            {_ Location _}
-        </h2>
+        <h2 class="h3">{_ Location _}</h2>
+
         <div id="visit_address">
             <div class="form-group">
                 <label class="control-label" for="org_title">{_ Organisation name _} ({_ Not required _})</label>
@@ -85,7 +81,7 @@
             {_ Links _}
         </h2>
         <p class="helper-text">
-            {_ A link will be added around the title of the event. The website link will have priority over Facebook or Instagram. _}
+            {_ A link will be added around the title of the event. _}
         </p>
         <div class="row">
             <div class="col-md-12">
