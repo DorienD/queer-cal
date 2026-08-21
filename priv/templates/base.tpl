@@ -94,13 +94,17 @@
         {% include 'footer/footer.tpl' %}
     {% endblock %}
 
-    {% block admin_edit %}
-    	{% if m.acl.is_allowed.use.mod_admin or m.acl.is_allowed.insert.event %}
-	    	<div class="c-btns-admin">
+    {% block base_actions %}
+    	<div class="c-btns-admin">
+    		{% block base_add_event %}
 		        {% if m.acl.is_allowed.insert.event %}
 		            <a href="{% url new_event %}" class="c-btn-add-event -bg{{ theme }}">{% include "icons/icon-plus.tpl" color="#242424" %} {_ Add Event _}</a>
+		        {% else %}
+		        	<a href="{% url logon %}" class="c-btn-add-event -bg{{ theme }}">{% include "icons/icon-plus.tpl" color="#242424" %} {_ Add Event _}</a>
 		        {% endif %}
+		    {% endblock %}
 
+	        {% block base_admin_edit %}
 		        {% if m.acl.is_allowed.use.mod_admin %}
 		            {% if id %}
 		                <a href="{% url admin_edit_rsc id=id %}" class="c-btn-admin-edit">{_ Admin edit _}</a>
@@ -108,8 +112,8 @@
 		                <a href="{% url admin %}" class="c-btn-admin-edit">{_ Admin _}</a>
 		            {% endif %}
 		        {% endif %}
-		    </div>
-		{% endif %}
+		    {% endblock %}
+	    </div>
     {% endblock %}
 
     <script data-goatcounter="https://queercal.goatcounter.com/count" async src="//gc.zgo.at/count.js" nonce="{{ m.req.csp_nonce }}"></script>

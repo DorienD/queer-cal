@@ -80,6 +80,17 @@ datamodel(Context) ->
                     {nl, <<"Steun Queer Kalender">>}
                 ]}
             }},
+            {page_faq, collection, #{
+                <<"language">> => [ en, nl ],
+                <<"title">> => #trans{ tr = [
+                    {en, <<"Frequently asked questions">>},
+                    {nl, <<"Veelgestelde vragen">>}
+                ]},
+                <<"short_title">> => #trans{ tr = [
+                    {en, <<"FAQ">>},
+                    {nl, <<"FAQ">>}
+                ]}
+            }},
             {page_year_2025, year_overview, #{
                 <<"language">> => [ nl ],
                 <<"title">> => #trans{ tr = [

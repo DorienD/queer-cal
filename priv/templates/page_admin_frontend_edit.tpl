@@ -3,7 +3,7 @@
 {% block body_class %}t-edit{% endblock %}
 
 {% block navbar %}{% endblock %}
-{% block admin_edit %}{% endblock %}
+{% block base_actions %}{% endblock %}
 
 {% block nav %}
     <nav class="c-btns-admin">
