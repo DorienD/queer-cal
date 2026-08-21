@@ -60,6 +60,8 @@ body {
         background: var(--darkTheme, rgba(0, 0, 0, 0.5));
         opacity: 0.3;
     }
+
+    --textDecoOffset: 3px;
 }
 
 @font-face {

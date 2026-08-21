@@ -9,6 +9,11 @@
         gap: 1em;
         cursor: pointer;
         font-weight: bold;
+        text-underline-offset: var(--textDecoOffset);
+
+        @include setInteractive {
+            text-decoration: underline;
+        }
 
         &:before {
             content: '';
@@ -26,6 +31,10 @@
     }
 
     &[open] {
+        summary {
+            text-decoration: underline;
+        }
+
         summary:before {
             position: relative;
             top: 2px;

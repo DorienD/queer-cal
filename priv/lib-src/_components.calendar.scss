@@ -276,7 +276,7 @@ body.color--flagBrown {
         background: none;
         border: none;
         text-decoration: underline;
-        text-underline-offset: 3px;
+        text-underline-offset: var(--textDecoOffset);
         color: #242424;
 
         @include setInteractive {
