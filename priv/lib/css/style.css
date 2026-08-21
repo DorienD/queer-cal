@@ -332,6 +332,7 @@ body {
   --mainMargin: 4rem;
   --lightTheme: #ffeeef;
   --darkTheme: #be474b;
+  --textDecoOffset: 3px;
 }
 @supports (color: color-mix(in srgb, red, white)) {
   body {
@@ -526,7 +527,7 @@ body {
 a {
   color: currentColor;
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: var(--textDecoOffset);
 }
 a:hover, a:active, a:focus, a:focus:active {
   color: currentColor;
@@ -959,7 +960,7 @@ button {
   line-height: 1;
   cursor: pointer;
   transition: color 0.2s, border 0.2s, background 0.3s ease-out;
-  text-underline-offset: 3px;
+  text-underline-offset: var(--textDecoOffset);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1452,7 +1453,7 @@ body.color--flagBrown .c-calendar__divider__nav svg {
     background: none;
     border: none;
     text-decoration: underline;
-    text-underline-offset: 3px;
+    text-underline-offset: var(--textDecoOffset);
     color: #242424;
   }
   .c-calendar-item__details-close:hover, .c-calendar-item__details-close:active, .c-calendar-item__details-close:focus, .c-calendar-item__details-close:focus:active {
@@ -1531,6 +1532,45 @@ body.color--flagBrown .c-calendar__divider__nav svg {
   .c-calendar-modified {
     padding: 0 4rem 0;
   }
+}
+
+.c-faq-collection {
+  margin-block: 2em;
+}
+
+.c-faq__question summary {
+  display: flex;
+  align-items: baseline;
+  gap: 1em;
+  cursor: pointer;
+  font-weight: bold;
+  text-underline-offset: var(--textDecoOffset);
+}
+.c-faq__question summary:hover, .c-faq__question summary:active, .c-faq__question summary:focus, .c-faq__question summary:focus:active {
+  text-decoration: underline;
+}
+.c-faq__question summary:before {
+  content: "";
+  width: 0.6em;
+  height: 0.6em;
+  border-top: 0.2em solid var(--darkTheme);
+  border-right: 0.2em solid var(--darkTheme);
+  transform: rotate(135deg);
+  transition: transform 0.2s ease-out;
+}
+.c-faq__question summary::marker {
+  display: none;
+}
+.c-faq__question[open] summary {
+  text-decoration: underline;
+}
+.c-faq__question[open] summary:before {
+  position: relative;
+  top: 2px;
+  transform: rotate(-45deg);
+}
+.c-faq__question + .c-faq__question {
+  margin-top: 0.5em;
 }
 
 .c-filters {
@@ -1712,14 +1752,14 @@ body.color--flagBrown .c-footer {
 }
 .c-footer__mode label:hover, .c-footer__mode label:active, .c-footer__mode label:focus, .c-footer__mode label:focus:active {
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: var(--textDecoOffset);
 }
 .c-footer__mode input[type=radio] {
   appearance: none;
 }
 .c-footer__mode label:has(input:checked) {
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: var(--textDecoOffset);
 }
 .c-footer__mode label:has(input:focus),
 .c-footer__mode label:has(input:focus-within),
@@ -2303,7 +2343,7 @@ html:has(.c-main-nav__toggle[aria-expanded=true]) {
   background: none;
   border: 1px solid transparent;
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: var(--textDecoOffset);
   color: var(--darkTheme);
 }
 .c-share-event-toggle svg {

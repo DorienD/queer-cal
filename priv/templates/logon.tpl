@@ -2,7 +2,7 @@
 
 {% block body_class %}t-logon{% endblock %}
 
-{% block admin_edit %}{% endblock %}
+{% block base_actions %}{% endblock %}
 
 {% block content_area %}
     {% if q.zotonic_dispatch == 'logon' and m.acl.user %}

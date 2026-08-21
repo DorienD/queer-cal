@@ -87,23 +87,27 @@
 		    {% endblock %}	    
 	    {% endblock %}
 
-	    {% block admin_edit %}
+	    {% block base_actions %}
 	    	<div class="c-btns-admin">
-		        {% if m.acl.is_allowed.insert.event %}
-		            <a href="{% url new_event %}" class="c-btn-add-event -bg{{ theme }}">{% include "icons/icon-plus.tpl" color="#242424" %} {_ Add Event _}</a>
-		        {% else %}
-		        	<a href="{% url logon %}" class="c-btn-add-event -bg{{ theme }}">{% include "icons/icon-plus.tpl" color="#242424" %} {_ Add Event _}</a>
-		        {% endif %}
+	    		{% block base_add_event %}
+			        {% if m.acl.is_allowed.insert.event %}
+			            <a href="{% url new_event %}" class="c-btn-add-event -bg{{ theme }}">{% include "icons/icon-plus.tpl" color="#242424" %} {_ Add Event _}</a>
+			        {% else %}
+			        	<a href="{% url logon %}" class="c-btn-add-event -bg{{ theme }}">{% include "icons/icon-plus.tpl" color="#242424" %} {_ Add Event _}</a>
+			        {% endif %}
+			    {% endblock %}
 
-		        {% if m.acl.is_allowed.use.mod_admin %}
-		            {% if id %}
-		                <a href="{% url admin_edit_rsc id=id %}" class="c-btn-admin-edit">{_ Admin edit _}</a>
-		            {% else %}
-		                <a href="{% url admin %}" class="c-btn-admin-edit">{_ Admin _}</a>
-		            {% endif %}
-		        {% endif %}
-		    </div>
-	    {% endblock %}
+		        {% block base_admin_edit %}
+			        {% if m.acl.is_allowed.use.mod_admin %}
+			            {% if id %}
+			                <a href="{% url admin_edit_rsc id=id %}" class="c-btn-admin-edit">{_ Admin edit _}</a>
+			            {% else %}
+			                <a href="{% url admin %}" class="c-btn-admin-edit">{_ Admin _}</a>
+			            {% endif %}
+			        {% endif %}
+			    {% endblock %}
+			</div>
+		{% endblock %}
     </main>
 
     {% block above_footer %}{% endblock %}
