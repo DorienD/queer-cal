@@ -144,9 +144,13 @@ datamodel(Context) ->
 
 testdata(development) ->
     [
-        % {project1, project, [
-        %     {title, <<"Wandkast met opklapbaar bed">>}
-        % ]}
+        {faq_collection_1, collection, [
+            {title, <<"Creating an account">>}
+        ]},
+        {faq_question_1, text, [
+            {title, <<"Why do I need an account?">>},
+            {body, <<"An account helps us keep the calendar reliable and spam-free. Without one, bots and trolls could easily add fake events. With an account, we know there's a real person behind each submission."/utf8>>}
+        ]}
     ];
 testdata(_) ->
     [].
@@ -179,6 +183,8 @@ testmedia(_) ->
 testedges(development) ->
     [
         % {project1, hassubject, keyword_closets},
+        {page_faq, haspart, faq_collection_1},
+        {faq_collection_1, haspart, faq_question_1}
     ];
 testedges(_) ->
     [].
