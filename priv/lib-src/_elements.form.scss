@@ -32,6 +32,10 @@ form {
         background: var(--bodyBg);
         border: 2px solid var(--darkTheme);
         color: var(--typographyColor);
+
+        &[disabled] {
+            background: #ccc;
+        }
     }
 
     input[type="text"].form-control,
@@ -46,6 +50,8 @@ form {
     input[type="file"]{ 
         width: 100%;
     }
+
+
 
     textarea.form-control,
     textarea {

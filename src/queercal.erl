@@ -35,12 +35,45 @@
 % Exports - if exports change then the module is restarted after
 % compilation.
 -export([
+    init/1,
+    event/2,
     observe_signup_form_fields/3,
     manage_schema/2,
-    manage_data/2
+    manage_data/2,
+    observe_custom_pivot/2
     ]).
 
 -include_lib("zotonic_core/include/zotonic.hrl").
+
+init(Context) ->
+    PivotCols = [
+        {is_request_publication, "boolean"}
+    ],
+    z_pivot_rsc:define_custom_pivot(?MODULE, PivotCols, Context),
+    ok.
+
+event(#postback{ message={request_publication, Args} }, Context) ->
+    %% Set an event in review
+    {rsc_id, RscId} = proplists:lookup(rsc_id, Args),
+
+    case (m_rsc:is_a(RscId, event, Context))
+            andalso z_acl:rsc_editable(RscId, Context)
+    of
+        true ->
+            m_rsc:update(RscId, [{is_request_publication, true}], Context),
+            z_render:wire({reload, []}, Context);
+        false ->
+            z_render:growl(
+                ?__("Sorry, this action cannot be performed.", Context),
+                Context)
+    end.
+
+%% @doc Make the request publication a searchable value
+observe_custom_pivot(#custom_pivot{ id = Id }, Context) ->
+    Cols = [
+        {is_request_publication, m_rsc:p_no_acl(Id, is_request_publication, Context)}
+    ],
+    {?MODULE, Cols}.
 
 %%====================================================================
 %% support functions go here
@@ -65,3 +98,4 @@ manage_data(_Version, Context) ->
 %% controller_signup does not require or read them.
 observe_signup_form_fields(signup_form_fields, Fields, _Context) ->
     proplists:delete(name_surname, proplists:delete(name_first, Fields)).
+

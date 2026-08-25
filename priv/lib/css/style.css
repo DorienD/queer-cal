@@ -750,6 +750,19 @@ form input[type=date] {
   border: 2px solid var(--darkTheme);
   color: var(--typographyColor);
 }
+form input[type=text].form-control[disabled],
+form input[type=text][disabled],
+form input[type=search].form-control[disabled],
+form input[type=search][disabled],
+form input[type=password].form-control[disabled],
+form input[type=password][disabled],
+form input[type=email].form-control[disabled],
+form input[type=email][disabled],
+form input[type=file].form-control[disabled],
+form input[type=file][disabled],
+form input[type=date][disabled] {
+  background: #ccc;
+}
 form input[type=text].form-control,
 form input[type=text],
 form input[type=search].form-control,
@@ -2479,16 +2492,20 @@ html:has(.c-main-nav__toggle[aria-expanded=true]) {
   --typographyColor: #242424;
   --lightTheme: #242424;
   --darkTheme: #242424;
-  padding: 8rem 0 0;
+  padding-block: 8rem;
   color: var(--typographyColor);
   font-family: var(--primaryFont);
   font-size: 16px;
   line-height: 1.4;
   font-weight: 400;
+  height: auto;
   color-scheme: light;
 }
 .t-edit h2 {
   font-size: 1.4em;
+}
+.t-edit .helper-text a {
+  text-decoration: underline;
 }
 .t-edit input[type=text],
 .t-edit input[type=date],
@@ -2499,9 +2516,6 @@ html:has(.c-main-nav__toggle[aria-expanded=true]) {
 }
 .t-edit .form-group label.control-label {
   color: var(--typographyColor);
-}
-.t-edit a[id*=subject] {
-  text-decoration: underline;
 }
 .t-edit main {
   padding-left: 0;
@@ -2541,12 +2555,12 @@ html:has(.c-main-nav__toggle[aria-expanded=true]) {
   }
 }
 
-.edit-container__content {
+.c-edit-content {
   width: 100%;
 }
 
 @media only screen and (min-width: 1088px) {
-  .edit-container__sidebar {
+  .c-edit-sidebar {
     flex-shrink: 0;
     width: 30%;
   }
@@ -2577,6 +2591,17 @@ html:has(.c-main-nav__toggle[aria-expanded=true]) {
   right: 0;
   z-index: 900;
   background: white;
+}
+
+.c-widget:has(.menu-item) .c-widget__form {
+  display: none;
+}
+
+@media only screen and (min-width: 1088px) {
+  div[id*=live-]:has(.c-widget-approval) {
+    position: sticky;
+    top: 76px;
+  }
 }
 
 .t-logon main {

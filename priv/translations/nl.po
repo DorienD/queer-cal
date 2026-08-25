@@ -88,7 +88,7 @@ msgstr "Beheer"
 #: queercal/priv/templates/base.tpl:100
 #: queercal/priv/templates/page.person.tpl:64
 msgid "Admin edit"
-msgstr "Beheer bewerken"
+msgstr "Admin edit"
 
 #: queercal/priv/templates/page.name.hidden_agenda_export.tpl:45
 msgid "All day"

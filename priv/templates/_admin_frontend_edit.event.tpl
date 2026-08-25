@@ -2,7 +2,7 @@
 
 {% block rscform %}
 <div class="edit-container">
-    <div class="edit-container__content">
+    <div class="c-edit-content">
         {% if id.exists %}
             {% with id.is_editable as is_editable %}
             {% with id.is_a|default:(m.category[cat].is_a) as cats %}
@@ -14,8 +14,8 @@
 
             <form id="rscform" method="post" action="postback" class="form do_formdirty">
                 <input type="hidden" name="id" value="{{ id }}" />
-                <input type="hidden" name="is_published" value="1" />
-                {# <input type="hidden" name="is_published" value="{% if id.is_published|is_defined %}{{ id.is_published }}{% else %}0{% endif %}" /> #}
+                {# <input type="hidden" name="is_published" value="1" /> #}
+                <input type="hidden" name="is_published" value="{% if id.is_published|is_defined %}{{ id.is_published }}{% else %}0{% endif %}" />
 
                 {% if id.is_temporary %}
                     <input type="hidden" name="o.author[]" value="{{ m.acl.user.id }}">
@@ -28,6 +28,7 @@
                         <li><a href="#meta-language" data-toggle="tab">{_ Language _}</a></li>
                     {% endif %}
                 </ul>
+
                 <div class="tab-content">
                     <div class="tab-pane active" id="poststuff">
                         {% optional include "_translation_init_languages.tpl" %}
@@ -37,9 +38,66 @@
 
                             {% catinclude "_admin_edit_basics.tpl" cats %}
 
+                            <div class="widget">
+                                <div class="widget-content">
+                                    <div class="date-range">
+                                        <h2 class="h3">{_ Date & time _} <sup>*</sup></h2>
+
+                                        <p class="helper-text">{_ The end date must be in the future relative to the start date.  _}</p>
+
+                                        <fieldset>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input name="date_is_all_day" id="{{ #all_day }}" type="checkbox" {% if id.date_is_all_day %}checked{% endif %}> {_ All day event _}
+                                                </label>
+                                            </div>
+
+                                            {% javascript %}
+                                                $("#{{ #all_day }}").on('change', function() {
+                                                    var $times = $(this).closest('.date-range').find("input[type='time']");
+                                                    if ($(this).is(":checked"))
+                                                        $times.fadeOut("fast").val('');
+                                                    else
+                                                        $times.fadeIn("fast");
+                                                });
+                                            {% endjavascript %}
+
+                                            <div class="form-group">
+                                                <label class="control-label">{_ Start date _} *</label>
+                                                <div>
+                                                    {% include "_admin_frontend_edit_date.tpl" date=id.date_start name="date_start" is_end=0 date_is_all_day=id.date_is_all_day is_editable=id.is_editable timezone=id.tz %}
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="control-label">{_ End date _} *</label>
+                                                <div>
+                                                    {% include "_admin_frontend_edit_date.tpl" date=id.date_end name="date_end" is_end=1 date_is_all_day=id.date_is_all_day  is_editable=id.is_editable timezone=id.tz %}
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        
+                                        <p class="help-block" {% if not id.tz or id.tz == m.req.timezone %}style="display:none"{% endif %}>
+                                            <i class="fa fa-exclamation-triangle"></i>
+                                            {_ Showing dates in _}: <b class="rsc-timezone">{{ id.tz|escape }}</b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
                             {% if id.category_id.is_feature_show_address|if_undefined:true %}
                                 {% catinclude "_admin_frontend_edit_address.tpl" cats %}
                             {% endif %}
+
+                            <div class="widget">
+                                <div class="widget-content">
+                                    <h2 class="h3">{_ Delete your event _}</h2>
+
+                                    <p>
+                                        {% button class="btn btn-danger btn-sm" disabled=(id.is_protected or not id.is_deletable) id="delete-button" text=_"Delete" action={dialog_delete_rsc id=id on_success={redirect back}} title=_"Delete" %}
+                                    </p>
+                                </div>
+                            </div>
                         {% endblock %}
                     </div>
                     {% block meta_panels %}{% endblock %}
@@ -84,117 +142,11 @@
         {% endif %}
         
     </div>
-    <div class="edit-container__sidebar" id="sidebar">
-        {# {% live template="edit/_request_approval.tpl"
+    <div class="c-edit-sidebar" id="sidebar">
+        {% live template="edit/_request_approval.tpl"
             id=id
             topic=id
-        %} #}
-        
-        <div class="widget">
-            <div class="widget-content">
-                <h4>{_ Keywords _} <span class="indicator-required">*</span></h4>
-                
-                <p class="helper-text">
-                    {_ You can add multiple keywords if needed. _}
-                </p>
-                <br>
-
-                {% live template="_admin_edit_content_page_connections_list.tpl"
-                    topic={object id=id predicate="subject"}
-                    id=id
-                    predicate="subject"|as_atom
-                    button_label=button_label
-                    button_class=button_class
-                    dialog_title_add=dialog_title_add
-                    callback=callback
-                    action=action
-                    nocatselect
-                    cat=m.rsc.keyword.id
-                    content_group=content_group
-                    unlink_action=unlink_action
-                    undo_message_id="unlink-undo-message"
-                    list_id=list_id
-                    tabs_enabled=["find"]
-                    dialog_title_add=_"Add keywords"
-                %}
-                <br>
-
-                <div class="form-group">
-                    <input type="hidden" id="check-subject" value="subject" form="rscform">
-                    {% validate id="check-subject"
-                                type={hasedge id=id minimum=1}
-                                only_on_submit
-                    %}
-                    <p class="if-has-error" style="display: none">{_ You must have at least one keyword. _}</p>
-                </div>
-
-                <p>
-                    <small>{_ Missing a keyword? Please send them to _} <a href="mailto:event@queer-kalender.nl">event@queer-kalender.nl</a>.</small>
-                </p>
-            </div>
-        </div>
-        <div id="known-location" style="position: relative; top: -100px;"></div>
-        <div class="widget">
-            <div class="widget-content">
-                <h4>{_ Known location _}</h4>
-
-                <p>
-                    {_ Some locations are already in the system, if you can't find the location add the address in the form. _}
-                </p>
-                <br>
-
-                {% live template="_admin_edit_content_page_connections_list.tpl"
-                    topic={object id=id predicate="haslocation"}
-                    id=id
-                    predicate="haslocation"|as_atom
-                    button_label=button_label
-                    button_class=button_class
-                    dialog_title_add=dialog_title_add
-                    callback=callback
-                    action=action
-                    nocatselect
-                    cat=m.rsc.location.id
-                    content_group=content_group
-                    unlink_action=unlink_action
-                    undo_message_id="unlink-undo-message"
-                    list_id=list_id
-                    tabs_enabled=["find"]
-                    dialog_title_add=_"Connect a location"
-                %}
-                <br>
-            </div>
-        </div>
-
-        <div class="widget">
-            <div class="widget-content">
-                <h4>{_ Known organisation _}</h4>
-
-                <p>
-                    {_ Some organisations are already in the system, if you can't find the organisation add the title in the form. _}
-                </p>
-                <br>
-
-                {% live template="_admin_edit_content_page_connections_list.tpl"
-                    topic={object id=id predicate="hasorganisation"}
-                    id=id
-                    predicate="hasorganisation"|as_atom
-                    button_label=button_label
-                    button_class=button_class
-                    dialog_title_add=dialog_title_add
-                    callback=callback
-                    action=action
-                    nocatselect
-                    cat=m.rsc.organization.id
-                    content_group=content_group
-                    unlink_action=unlink_action
-                    undo_message_id="unlink-undo-message"
-                    list_id=list_id
-                    tabs_enabled=["find"]
-                    dialog_title_add=_"Connect an organization"
-                %}
-                <br>
-            </div>
-        </div>
+        %}
     </div>
 
     {% javascript %}

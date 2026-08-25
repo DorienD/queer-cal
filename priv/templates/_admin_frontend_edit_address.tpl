@@ -1,61 +1,36 @@
-<div class="widget">
+<div class="widget c-widget">
     <div class="widget-content">
-        <div class="date-range">
-            <h2 class="h3">{_ Date & time _}</h2>
-
-            <p class="helper-text">{_ The end date must be in the future relative to the start date.  _}</p>
-
-            <fieldset>
-                <div class="checkbox">
-                    <label>
-                        <input name="date_is_all_day" id="{{ #all_day }}" type="checkbox" {% if id.date_is_all_day %}checked{% endif %}> {_ All day event _}
-                    </label>
-                </div>
-
-                {% javascript %}
-                    $("#{{ #all_day }}").on('change', function() {
-                        var $times = $(this).closest('.date-range').find("input[type='time']");
-                        if ($(this).is(":checked"))
-                            $times.fadeOut("fast").val('');
-                        else
-                            $times.fadeIn("fast");
-                    });
-                {% endjavascript %}
-
-                <div class="row">
-                    <div class="form-group col-sm-6">
-                        <label class="control-label">{_ Start date _} *</label>
-                        <div>
-                            {% include "_edit_date.tpl" date=id.date_start name="date_start" is_end=0 date_is_all_day=id.date_is_all_day is_editable=id.is_editable timezone=id.tz %}
-                        </div>
-                    </div>
-
-                    <div class="form-group col-sm-6">
-                        <label class="control-label">{_ End date _} *</label>
-                        <div>
-                            {% include "_edit_date.tpl" date=id.date_end name="date_end" is_end=1 date_is_all_day=id.date_is_all_day  is_editable=id.is_editable timezone=id.tz %}
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-            
-            <p class="help-block" {% if not id.tz or id.tz == m.req.timezone %}style="display:none"{% endif %}>
-                <i class="fa fa-exclamation-triangle"></i>
-                {_ Showing dates in _}: <b class="rsc-timezone">{{ id.tz|escape }}</b>
-            </p>
-        </div>
-
-        <hr>
-
         <input type="hidden" name="address_country" value="nl">
 
-        <h2 class="h3">{_ Location _}</h2>
+        <h2 class="h3">{_ Location _} <sup>*</sup></h2>
 
-        <div id="visit_address">
-            <div class="form-group">
-                <label class="control-label" for="org_title">{_ Organisation name _} ({_ Not required _})</label>
-                <input class="form-control" id="org_title" type="text" name="org_title" value="{{ id.org_title }}">
-            </div>
+        <p class="helper-text">
+            {_ Find the location in our database or add it below _}
+        </p>
+        
+        {% live template="_admin_edit_content_page_connections_list.tpl"
+            topic={object id=id predicate="haslocation"}
+            id=id
+            predicate="haslocation"|as_atom
+            button_label=_'Find location'
+            button_class='c-btn c-btn-primary'
+            dialog_title_add=dialog_title_add
+            callback=callback
+            action=action
+            nocatselect
+            cat=m.rsc.location.id
+            content_group=content_group
+            unlink_action=unlink_action
+            undo_message_id="unlink-undo-message"
+            list_id=list_id
+            tabs_enabled=["find"]
+            dialog_title_add=_"Connect a location"
+        %}
+
+        <br>
+
+        <div id="visit_address" class="c-widget__form">
+            <p class="helper-text"><strong>{_ Add a new location _}</strong></p>
 
             <div class="form-group">
                 <label class="control-label" for="address_title">{_ Title of the venue/location _}</label>
@@ -70,13 +45,57 @@
 
                 <div class="form-group col-md-6">
                     <label class="control-label" for="address_city">{_ City _}</label>
-                    <input class="form-control" id="address_city" type="text" name="address_city" value="{{ id.address_city|default:"Amsterdam" }}">
+                    <input class="form-control" id="address_city" type="text" disabled name="address_city" value="{{ id.address_city|default:"Amsterdam" }}">
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
-        <hr>
+<div class="widget c-widget">
+    <div class="widget-content">
+        <h2 class="h3">{_ Organisation _}</h2>
 
+        <p class="helper-text">
+            {_ Find the organisation in our database or add it below _}
+        </p>
+        
+        {% live template="_admin_edit_content_page_connections_list.tpl"
+            topic={object id=id predicate="hasorganisation"}
+            id=id
+            predicate="hasorganisation"|as_atom
+            button_label=_'Find organisation'
+            button_class='c-btn c-btn-primary'
+            dialog_title_add=dialog_title_add
+            callback=callback
+            action=action
+            nocatselect
+            cat=m.rsc.organisation.id
+            content_group=content_group
+            unlink_action=unlink_action
+            undo_message_id="unlink-undo-message"
+            list_id=list_id
+            tabs_enabled=["find"]
+            dialog_title_add=_"Connect a organisation"
+        %}
+
+        <br>
+
+        <div class="c-widget__form">
+
+            <p class="helper-text"><strong>{_ Add a new organisation _}</strong></p>
+
+            <div class="form-group">
+                <label class="control-label" for="org_title">{_ Organisation name _}</label>
+                <input class="form-control" id="org_title" type="text" name="org_title" value="{{ id.org_title }}">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="widget">
+    <div class="widget-content">
         <h2 class="h3">
             {_ Links _}
         </h2>
@@ -114,5 +133,47 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="widget">
+    <div class="widget-content">
+        <h2 class="h3">{_ Keywords _} <sup>*</sup></h2>
+
+        <p class="helper-text">
+            {_ Add at least one keyword to your event. _}
+        </p>
+        
+        {% live template="_admin_edit_content_page_connections_list.tpl"
+            topic={object id=id predicate="subject"}
+            id=id
+            predicate="subject"|as_atom
+            button_label='Add keywords'
+            button_class='c-btn c-btn-primary'
+            dialog_title_add=dialog_title_add
+            callback=callback
+            action=action
+            nocatselect
+            cat=m.rsc.organisation.id
+            content_group=content_group
+            unlink_action=unlink_action
+            undo_message_id="unlink-undo-message"
+            list_id=list_id
+            tabs_enabled=["find"]
+            dialog_title_add=_"Add keywords"
+        %}
+
+        <div class="form-group">
+            <input type="hidden" id="check-subject" value="subject" form="rscform">
+            {% validate id="check-subject"
+                        type={hasedge id=id minimum=1}
+                        only_on_submit
+            %}
+            <p class="if-has-error" style="display: none">{_ You must have at least one keyword. _}</p>
+        </div>
+
+        <p class="helper-text">
+            <small>{_ Missing a keyword? Please send them to _} <a href="mailto:event@queer-kalender.nl">event@queer-kalender.nl</a>.</small>
+        </p>
     </div>
 </div>

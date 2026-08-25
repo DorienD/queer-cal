@@ -138,6 +138,16 @@ datamodel(Context) ->
                 ]},
                 <<"is_unfindable">> => true,
                 <<"seo_noindex">> => true
+            }},
+            {event_approval_list, admin_content_query, #{
+                <<"language">> => [ en, de ],
+                <<"title">> => #trans{ tr = [
+                    {en, <<"Member requests">>},
+                    {de, <<"Member requests"/utf8>>}
+                ]},
+                <<"query">> => <<"cat='event'\n
+                                is_published=0\n
+                                filter=['pivot.queercal.is_request_publication', 'true']">>
             }}
         ] ++ keywords()
         ++ testdata(Env),
