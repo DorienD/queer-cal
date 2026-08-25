@@ -64,9 +64,7 @@
     inset: unset;
     max-width: 40ch;
     margin: 0;
-    position: absolute;
-    bottom: calc(anchor(top) + 20px);
-    justify-self: anchor-center;
+    position-area: bottom;
     padding: 8px;
     border-radius: 6px;
     background: var(--lightTheme);
