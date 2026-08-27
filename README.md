@@ -73,7 +73,6 @@ Queer Calendar is built as a [Zotonic](https://zotonic.com) site module, so you'
 - [ ] Community event submission - allow users to add events
 - [ ] Expand to other cities, think of a good UX
 - [ ] Integrate with a, possibly paid, newsletter system
-- [ ] Allow sync with personal calendars (Google/iCal/ICS — user-controlled)
 
 ---
 
