@@ -2,17 +2,24 @@
     --typographyColor: #242424;
     --lightTheme: #242424;
     --darkTheme: #242424;
-    padding: 1em 0;
+    padding-block: 8rem;
     color: var(--typographyColor);
     font-family: var(--primaryFont);
     font-size: 16px;
     line-height: 1.4;
     font-weight: 400;
+    height: auto;
 
     color-scheme: light;
 
     h2 {
         font-size: 1.4em;
+    }
+
+    .helper-text {
+        a {
+            text-decoration: underline;
+        }
     }
 
     input[type="text"],
@@ -27,17 +34,26 @@
         color: var(--typographyColor);
     }
 
-    a[id*="subject"] {
-        text-decoration: underline;
-    }
-
     main {
         padding-left: 0;
         padding-right: 0;
     }
 
+    .btn-sm {
+        min-height: 0;
+    }
+
+    @media only screen and (max-width: $smallBreakpoint) {
+        .table {
+            tr {
+                display: flex;
+                flex-flow: row wrap;
+            }
+        }
+    }
+
     @include breakpoint($mediumBreakpoint) {
-        padding: 3em 0;
+        padding-top: 10rem;
     }
 }
 
@@ -60,11 +76,11 @@
     }
 }
 
-.edit-container__content {
+.c-edit-content {
     width: 100%;
 }
 
-.edit-container__sidebar {
+.c-edit-sidebar {
     @include breakpoint($largeBreakpoint) {
         flex-shrink: 0;
         width: 30%;
@@ -86,3 +102,30 @@
 .form-control[name="find_cg"] {
     display: none;
 }
+
+.c-frontend-edit__buttons {
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 2.5%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 900;
+    background: white;
+}
+
+.c-widget:has(.menu-item) {
+    .c-widget__form {
+        display: none;
+    }
+}
+
+div[id*='live-']:has(.c-widget-approval) {
+    @include breakpoint($largeBreakpoint) {
+        position: sticky;
+        top: 76px;
+    }
+}
+

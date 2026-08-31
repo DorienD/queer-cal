@@ -104,6 +104,17 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
     }
 }
 
+body.color--flagBlack,
+body.color--flagBrown {
+    .c-calendar__divider__nav {
+        color: white;
+    }
+
+    .c-calendar__divider__nav svg {
+        fill: white;
+    }
+}
+
 .c-calendar-item {
     height: 100%;
     padding: 0 0 1em;
@@ -265,7 +276,7 @@ body .c-calendar:last-of-type .c-calendar__divider__nav.-next {
         background: none;
         border: none;
         text-decoration: underline;
-        text-underline-offset: 3px;
+        text-underline-offset: var(--textDecoOffset);
         color: #242424;
 
         @include setInteractive {

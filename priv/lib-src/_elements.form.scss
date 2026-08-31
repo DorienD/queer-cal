@@ -6,6 +6,15 @@ form {
         font-size: inherit;
         border: 2px solid var(--typographyColor);
     }
+
+    .form-control:has(+ .z_validation) {
+        margin-bottom: 0;
+    }
+
+    .form-control + .z_validation {
+        display: inline-block;
+        margin-bottom: 1em;
+    }
     
     input[type="text"].form-control,
     input[type="text"],
@@ -23,6 +32,10 @@ form {
         background: var(--bodyBg);
         border: 2px solid var(--darkTheme);
         color: var(--typographyColor);
+
+        &[disabled] {
+            background: #ccc;
+        }
     }
 
     input[type="text"].form-control,
@@ -37,6 +50,8 @@ form {
     input[type="file"]{ 
         width: 100%;
     }
+
+
 
     textarea.form-control,
     textarea {
@@ -74,6 +89,10 @@ form {
         padding: 0 1rem;
         border-radius: 0;
         appearance: none;
+    }
+
+    .label-floating label, .label-floating label.control-label {
+        display: block;
     }
 }
 
@@ -133,4 +152,11 @@ body textarea.form-control:focus {
             border-color: var(--darkTheme);
         }
     }
+}
+
+.text-danger {
+    padding: 0.5em;
+    color: color-mix(in srgb, var(--flagRed), #242424 30%);
+    border: 2px solid currentColor;
+    background: color-mix(in srgb, var(--flagRed), var(--bodyBg) 90%);
 }

@@ -3,28 +3,26 @@
 {% block body_class %}t-edit{% endblock %}
 
 {% block navbar %}{% endblock %}
-{% block admin_edit %}{% endblock %}
+{% block base_actions %}{% endblock %}
 
 {% block nav %}
-    <nav class="c-btns-admin">
-        <div id="save-buttons" style="display:none" class="c-main-nav__btns">
+    
+    <div id="save-buttons" class="c-frontend-edit__buttons" style="display:none">
+        {% if id.is_temporary %}
+            <a href="{% url mx_resource_cleanup id=id %}" class="c-btn-admin-edit -cancel">{_ Cancel _}</a>
+        {% elseif not tree_id %}
+            {% button class="c-btn-admin-edit -cancel" text=_"Cancel" action={redirect back} tag="a" %}
+        {% else %}
+            {% button class="c-btn-admin-edit -cancel" text=_"Cancel" action={redirect back} tag="a" %}
+        {% endif %}
 
-            {% button 
-                class="c-btn-add-event -bg{{ theme }}" 
-                text=_"Save" 
-                title=_"Save and view the page"
-                action={script script="$('#save_view').click();"}
-            %}
-
-            {% if id.is_temporary %}
-                <a href="{% url mx_resource_cleanup id=id %}" class="c-btn-admin-edit -cancel">{_ Cancel _}</a>
-            {% elseif not tree_id %}
-                {% button class="c-btn-admin-edit -cancel" text=_"Cancel" action={redirect back} tag="a" %}
-            {% else %}
-                {% button class="c-btn-admin-edit -cancel" text=_"Cancel" action={redirect back} tag="a" %}
-            {% endif %}
-        </div>
-    </nav>
+        {% button 
+            class="c-btn-add-event -bg{{ theme }}" 
+            text=_"Save" 
+            title=_"Save and view the page"
+            action={script script="$('#save_view').click();"}
+        %}
+    </div>
 {% endblock %}
 
 {% block content_area %}
