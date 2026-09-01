@@ -146,6 +146,10 @@ body.color--flagBrown {
         }
     }
 
+    &.-unpublished {
+        filter: grayscale(100%);
+    }
+
     @starting-style {
         opacity: 0;
     }

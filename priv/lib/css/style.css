@@ -1352,6 +1352,9 @@ body.color--flagBrown .c-calendar__divider__nav svg {
 .c-calendar-item.-featured h3 {
   font-size: 1.5em;
 }
+.c-calendar-item.-unpublished {
+  filter: grayscale(100%);
+}
 @starting-style {
   .c-calendar-item {
     opacity: 0;

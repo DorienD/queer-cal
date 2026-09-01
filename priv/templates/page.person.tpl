@@ -15,13 +15,33 @@
         {% endif %}
     </h1>
 
-    <p>{% trans "If you need some help adding events, check out the <a href=\"{url}\">FAQ</a>."
-                     url=m.rsc.page_faq.page_url
-            %}</p>
+    {% if m.acl.user.id == id %}
+        <p>{% trans "If you need some help adding events, check out the <a href=\"{url}\">FAQ</a>."
+             url=m.rsc.page_faq.page_url%}</p>
+    {% endif %}
     
 {% endblock %}
 
 {% block below_body %}
+    {% if m.acl.user.id == id %}
+        {% with m.search.paged[{query 
+                query_id=id 
+                qargs
+                page=q.page
+                id_exclude=m.rsc.administrator.id 
+                cat="event"
+                hasobject=id
+                pagelen=100
+                is_published=false 
+                sort="-rsc.pivot_date_start"}] as result %}
+            {% if result %}
+                <h2>{_ Your requests for publication _}</h2>
+
+                {% include "cards/list.tpl" card_template="cards/card.tpl" %}
+            {% endif %}
+         {% endwith %}
+     {% endif %}
+
     {% with m.search.paged[{query 
             query_id=id 
             qargs
@@ -34,7 +54,9 @@
             sort="-rsc.pivot_date_start"
             is_published}] as result %}
         {% if result %}
-            <h2>{_ Your added events _}</h2>
+            {% if m.acl.user.id == id %}
+                <h2>{_ Your added events _}</h2>
+            {% endif %}
 
             {% include "cards/list.tpl" card_template="cards/card.tpl" %}
 

@@ -11,7 +11,7 @@
                 <h2>{{ faqs.title }}</h2>
 
                 {% for r in faqs.o.haspart %}
-                    <details class="c-faq__question">
+                    <details class="c-faq__question" name="{{ faqs.title|slugify }}">
                         <summary>{{ r.title }}</summary>
                         {{ r.body }}
                     </details>
