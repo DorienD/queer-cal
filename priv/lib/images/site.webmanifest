@@ -1,18 +1,23 @@
 {
   "name": "Queer Calendar",
   "short_name": "Queer Cal",
+  "start_url": "/",
   "icons": [
     {
       "src": "/lib/images/web-app-manifest-192x192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
+      "type": "image/png"
     },
     {
       "src": "/lib/images/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    },
+    {
+      "src": "/lib/images/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "background_color": "#FF575B",

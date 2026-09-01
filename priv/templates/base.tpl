@@ -3,8 +3,11 @@
 <!DOCTYPE html>
 <html lang="{{ z_language|default:"en"|escape }}" class="environment-{{ m.site.environment }}">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="text-scale" content="scale">
+    <meta name="author" content="{{ m.site.title }}" />
+    <meta name="viewport" content="width=device-width">
+	
 	<title>{#
 		#}{% block title %}{#
 			#}{% if id and id.name != 'page_home' %}{{ id.title }} | {% endif %}{{ m.site.title }}{#
@@ -19,16 +22,10 @@
 		Proudly powered by: Zotonic, the Erlang CMS 
 		<https://www.zotonic.com>
 	-->
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="author" content="{{ m.site.title }}" />
-	<meta name="view-transition" content="same-origin" />
-
-	<link rel="icon" type="image/png" href="/lib/images/favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/svg+xml" href="/lib/images/favicon.svg" />
-	<link rel="shortcut icon" href="/lib/images/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="180x180" href="/lib/images/apple-touch-icon.png" />
-	<meta name="apple-mobile-web-app-title" content="Queer Cal" />
+	
+	<link rel="icon" href="/lib/images/favicon.ico" sizes="32x32">
+	<link rel="icon" href="/lib/images/favicon.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="/lib/images/apple-touch-icon.png">
 	<link rel="manifest" href="/lib/images/site.webmanifest" />
 	
 	<meta name="theme-color" content="
