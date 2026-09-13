@@ -1,0 +1,48 @@
+.c-faq-collection {
+    margin-block: 2em;
+}
+
+.c-faq__question {
+    summary {
+        display: flex;
+        align-items: baseline; 
+        gap: 1em;
+        cursor: pointer;
+        font-weight: bold;
+        text-underline-offset: var(--textDecoOffset);
+
+        @include setInteractive {
+            text-decoration: underline;
+        }
+
+        &:before {
+            content: '';
+            width: 0.6em;
+            height: 0.6em;
+            border-top: 0.2em solid var(--darkTheme);
+            border-right: 0.2em solid var(--darkTheme);
+            transform: rotate(135deg);
+            transition: transform 0.2s ease-out;
+        }
+
+        &::marker {
+            display: none;
+        }
+    }
+
+    &[open] {
+        summary {
+            text-decoration: underline;
+        }
+
+        summary:before {
+            position: relative;
+            top: 2px;
+            transform: rotate(-45deg);
+        }
+    }
+
+    + .c-faq__question {
+        margin-top: 0.5em;
+    }
+}

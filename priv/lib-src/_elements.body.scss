@@ -83,11 +83,11 @@ body {
 
 main {
     flex: 1 0 auto;
-    padding: 0 2.5% 2rem;
-    margin-bottom: var(--mainMargin);
+    padding: 0 2.5%;
+    position: relative;
     
     @include breakpoint($mediumBreakpoint) {
-        padding: 0 4rem 4rem;
+        padding: 0 4rem;
     }
 }
 

@@ -1,4 +1,4 @@
-<article class="c-calendar-item{% if id.is_featured %} -featured{% endif %}">
+<article class="c-calendar-item{% if id.is_featured %} -featured{% endif %}{% if not id.is_published %} -unpublished{% endif %}">
     <h3 class="c-calendar-item__title">
         {% include "event/event-title.tpl" id=r %}
         {% if r.is_editable %}

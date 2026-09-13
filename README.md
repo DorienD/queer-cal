@@ -2,6 +2,7 @@
 
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 ![Made with Zotonic](https://img.shields.io/badge/Made%20with-Zotonic-blue)
+![License](https://img.shields.io/badge/license-Apache%202.0-lightgrey)
 ![Sponsor this project](https://img.shields.io/badge/sponsor-%E2%9D%A4-lightgrey?logo=github&style=social)
 
 **A community-driven, open source calendar for queer events in, for the moment, Amsterdam.**
@@ -12,6 +13,20 @@ Queer Calendar is a grassroots initiative to centralize LGBTQIA+ event listings 
 
 ---
 
+## 📚 Table of Contents
+
+- [Features](#-features)
+- [Getting Started](#-getting-started)
+- [Roadmap](#-roadmap)
+- [Done So Far](#-done-so-far)
+- [Tech Stack](#-tech-stack)
+- [Contributing](#-contributing)
+- [Support This Project](#️-support-this-project)
+- [License](#-license)
+- [Contact](#-contact)
+
+---
+
 ## ✨ Features
 
 - 📅 Overview of upcoming events
@@ -19,6 +34,35 @@ Queer Calendar is a grassroots initiative to centralize LGBTQIA+ event listings 
 - 🌐 Multilingual support
 - 🔍 Filter by date and keyword
 - 📝 Community event entry (planned)
+
+---
+
+## 🛠️ Getting Started
+
+Queer Calendar is built as a [Zotonic](https://zotonic.com) site module, so you'll need a working Zotonic installation to run it locally.
+
+### Prerequisites
+
+- Erlang/OTP 22.3 or newer
+- [Zotonic](https://zotonic.com/docs/latest/manuals/installation.html) (see Zotonic's own installation guide)
+
+### Installation
+
+1. Clone this repository into the `apps_user/` directory of your Zotonic site:
+   ```bash
+   git clone https://github.com/DorienD/queer-cal.git apps_user/queercal
+   ```
+2. From your Zotonic site, fetch dependencies and compile:
+   ```bash
+   ./bin/zotonic compile
+   ```
+3. Start (or restart) Zotonic and activate the `queercal` module via the admin interface, or from the Zotonic shell:
+   ```erlang
+   m_modules:activate(queercal, z:c(yoursite)).
+   ```
+4. Visit your site in the browser to see the calendar.
+
+> Exact steps may vary slightly depending on your Zotonic setup — see [`CONTRIBUTING.md`](CONTRIBUTING.md) if you get stuck or want to ask for help.
 
 ---
 
@@ -75,6 +119,8 @@ Check out [`CONTRIBUTING.md`](CONTRIBUTING.md) for guidelines on how to get star
 - Fork the repo and submit a pull request
 - Reach out if you'd like to collaborate on outreach, accessibility, design, or moderation
 
+Please also read our [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) — we want this to be a safe, welcoming space for everyone.
+
 ### 💡 Note
 
 This project **intentionally avoids Google, Meta, and other corporate platforms** that have a poor track record on privacy, inclusion, or ethical data use. We aim to provide a *privacy-conscious, community-first alternative* to event discovery.
@@ -87,6 +133,12 @@ Queer Calendar is a labor of love — and your support makes a difference.
 If you’d like to help sustain development and maintenance, consider becoming a **[GitHub Sponsor](https://github.com/sponsors/DorienD)**. Every bit helps. Thank you!
 
 See [`SUPPORT.md`](SUPPORT.md) for more ways to help.
+
+---
+
+## 📄 License
+
+This project is licensed under the [Apache License 2.0](LICENSE).
 
 ---
 

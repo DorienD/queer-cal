@@ -2,7 +2,7 @@
     {% if id.summary %}
         <dialog id="details-{{ id.id }}" class="c-calendar-item__details">
             <div class="c-calendar-item__details__content">
-                <button class="c-calendar-item__details-close -top"><span class="sr-only">Close</span></button>
+                <button class="c-calendar-item__details-close -top" title="{_ Close _}"><span class="sr-only">{_ Close _}</span></button>
 
                 <h3>{{ id.title }}</h3>
 
@@ -13,7 +13,7 @@
 
                 {{ id.body }}
 
-                <button class="c-calendar-item__details-close">Close</button>
+                <button class="c-calendar-item__details-close">{_ Close _}</button>
             </div>
         </dialog>
     {% endif %}

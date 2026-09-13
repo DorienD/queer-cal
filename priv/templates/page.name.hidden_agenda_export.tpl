@@ -11,7 +11,7 @@
 {% block skip_link %}{% endblock %}
 {% block nav %}{% endblock %}
 {% block footer %}{% endblock %}
-{% block admin_edit %}{% endblock %}
+{% block base_actions %}{% endblock %}
 
 {% block content %}
 {% with m.search[{query 

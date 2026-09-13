@@ -6,7 +6,7 @@
     background: none;
     border: 1px solid transparent;
     text-decoration: underline;
-    text-underline-offset: 3px;
+    text-underline-offset: var(--textDecoOffset);
     color: var(--darkTheme);
 
     svg {
