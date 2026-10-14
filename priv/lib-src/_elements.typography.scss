@@ -8,6 +8,10 @@ body {
     @include breakpoint($largeBreakpoint) {
         font-size: 18px;
     }
+
+    &.font-accessibility {
+        font-family: var(--accessibilityFont);
+    }
 }
 
 a {

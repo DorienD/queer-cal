@@ -90,6 +90,52 @@ body.color--flagBrown {
     }
 }
 
+.has-submenu {
+    button {
+        padding: 0;
+        border: 0;
+        background: none;
+        color: inherit;
+        font: inherit;
+        text-transform: inherit;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    // Hidden until hovered or focused, see moderncss.dev/css-only-accessible-dropdown-navigation-menu
+    ul {
+        @include striplist;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        padding: 0.5em;
+        white-space: nowrap;
+        background: var(--flagRed);
+        visibility: hidden;
+        opacity: 0;
+        transition: 280ms all 120ms ease-out;
+
+        @supports (color: light-dark(black, white)) {
+            background: light-dark(var(--theme), var(--lightTheme));
+        }
+    }
+
+    &:hover ul,
+    &:focus-within ul {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+// The toggle's on/off label follows the class app.js sets on <body>
+body:not(.font-accessibility) .is-on,
+body.font-accessibility .is-off {
+    display: none;
+}
+
 @supports not (inset: 0) {
     // Supports query for checking if gap works
     .c-main-nav__menu {

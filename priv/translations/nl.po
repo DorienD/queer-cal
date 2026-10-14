@@ -36,6 +36,10 @@ msgstr ""
 msgid "A one-time contribution. Every euro helps keep the calendar running"
 msgstr "Een eenmalige bijdrage. Elke euro helpt de kalender draaiende te houden"
 
+#: queercal/priv/templates/nav/_accessibility_dropdown.tpl:4
+msgid "Accessibility"
+msgstr "Toegankelijkheid"
+
 #: queercal/priv/templates/base.tpl:101
 msgid "Add Event"
 msgstr "Voeg event toe"
@@ -175,6 +179,10 @@ msgstr "Details alleen in het Nederlands"
 #: queercal/priv/templates/page.event.tpl:34
 msgid "Description only provided in English"
 msgstr "Details alleen in het Engels"
+
+#: queercal/priv/templates/nav/_accessibility_dropdown.tpl:9
+msgid "Dyslexic font"
+msgstr "Dyslexie-lettertype"
 
 #: queercal/priv/templates/page.event.tpl:13
 #: queercal/priv/templates/cards/card.event.tpl:6
@@ -573,6 +581,14 @@ msgstr "trefwoorden"
 #: queercal/priv/templates/page.name.page_support.tpl:17
 msgid "month"
 msgstr "maand"
+
+#: queercal/priv/templates/nav/_accessibility_dropdown.tpl:9
+msgid "off"
+msgstr "uit"
+
+#: queercal/priv/templates/nav/_accessibility_dropdown.tpl:9
+msgid "on"
+msgstr "aan"
 
 #: queercal/priv/templates/page.name.page_support.tpl:7
 msgid "one-time"

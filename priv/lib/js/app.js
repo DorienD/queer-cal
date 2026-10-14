@@ -105,6 +105,22 @@ document.addEventListener('DOMContentLoaded', function () {
           });
         }
     });
+
+
+    // Accessiblity Events
+
+    const FONT_ACCESSIBLITY_CLASS = 'font-accessibility';
+    const isFontAccessibilityEnabled = () => localStorage.getItem(FONT_ACCESSIBLITY_CLASS) === 'true' || false
+
+    if (!localStorage.getItem(FONT_ACCESSIBLITY_CLASS)) localStorage.setItem(FONT_ACCESSIBLITY_CLASS, false);
+    else if (isFontAccessibilityEnabled()) document.querySelector('body').classList.add(FONT_ACCESSIBLITY_CLASS);
+
+    document.querySelector('#accessibility-font-toggle').addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector('body').classList.toggle(FONT_ACCESSIBLITY_CLASS);
+        localStorage.setItem(FONT_ACCESSIBLITY_CLASS, !isFontAccessibilityEnabled())
+    })
 });
 
 if (CSS.supports('color', 'light-dark(black, white)')){

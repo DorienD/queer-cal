@@ -313,6 +313,7 @@ template {
 
 body {
   --primaryFont: "Roboto mono", monospace, sans-serif;
+  --accessibilityFont: "OpenDyslexic", tahoma, arial;
   --white: #fff;
   --bodyBg: light-dark(#fff, #242424);
   --flagRed: #FF575B;
@@ -521,6 +522,9 @@ body {
   body {
     font-size: 18px;
   }
+}
+body.font-accessibility {
+  font-family: var(--accessibilityFont);
 }
 
 a {
@@ -1884,14 +1888,16 @@ button.c-keyword-list__item:hover {
   padding: 0 2.5%;
   margin-bottom: 2em;
   background: var(--flagRed);
-  border-bottom: 3px solid var(--darkTheme);
-  text-transform: uppercase;
-  font-size: 0.9em;
 }
 @supports (color: light-dark(black, white)) {
   .c-main-nav {
     background: light-dark(var(--theme), var(--lightTheme));
   }
+}
+.c-main-nav {
+  border-bottom: 3px solid var(--darkTheme);
+  text-transform: uppercase;
+  font-size: 0.9em;
 }
 .c-main-nav li {
   position: relative;
@@ -1961,6 +1967,48 @@ body.color--flagBrown .c-main-nav {
 .c-main-nav__lang li:not(:last-child):after {
   transform: rotate(10deg);
   right: -0.5em;
+}
+
+.has-submenu button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-transform: inherit;
+  text-decoration: underline;
+}
+.has-submenu button:hover {
+  text-decoration: none;
+}
+.has-submenu ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  list-style-type: "";
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding: 0.5em;
+  white-space: nowrap;
+  background: var(--flagRed);
+  visibility: hidden;
+  opacity: 0;
+  transition: 280ms all 120ms ease-out;
+}
+@supports (color: light-dark(black, white)) {
+  .has-submenu ul {
+    background: light-dark(var(--theme), var(--lightTheme));
+  }
+}
+.has-submenu:hover ul, .has-submenu:focus-within ul {
+  visibility: visible;
+  opacity: 1;
+}
+
+body:not(.font-accessibility) .is-on,
+body.font-accessibility .is-off {
+  display: none;
 }
 
 @supports not (inset: 0) {
@@ -2081,18 +2129,20 @@ body.color--flagBrown .c-main-nav {
   --theme: var(--flagBlue);
   --primaryColor: var(--flagBlue);
   background: color-mix(in srgb, var(--typographyColor), var(--bodyBg) 90%);
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 1.5em;
-  padding: 1em;
-  position: relative;
-  border-top: 5px solid var(--darkTheme);
 }
 @supports (color: color-mix(in srgb, red, white)) {
   .c-card-support {
     --lightTheme: color-mix(in srgb, var(--theme), var(--bodyBg) 90%);
     --darkTheme: color-mix(in srgb, var(--theme), #242424 30%);
   }
+}
+.c-card-support {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.5em;
+  padding: 1em;
+  position: relative;
+  border-top: 5px solid var(--darkTheme);
 }
 .c-card-support.-monthly {
   --theme: var(--flagGreen);
